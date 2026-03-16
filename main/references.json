@@ -13,22 +13,22 @@
     },
     "zh_CN" : 
     {
-      "branch" : "",
+      "branch" : "main",
       "commit" : 
       {
-        "date" : "",
-        "hash" : "",
-        "title" : ""
+        "date" : "2026-03-15 08:16:53 +0800",
+        "hash" : "a1bd618059de49d35a33e077ad23544680532d81",
+        "title" : "Update cargo-cyclonedx to 0.5.8"
       }
     },
     "zh_TW" : 
     {
-      "branch" : "",
+      "branch" : "main",
       "commit" : 
       {
-        "date" : "",
-        "hash" : "",
-        "title" : ""
+        "date" : "2026-03-15 08:16:53 +0800",
+        "hash" : "a1bd618059de49d35a33e077ad23544680532d81",
+        "title" : "Update cargo-cyclonedx to 0.5.8"
       }
     }
   },
