@@ -5,19 +5,19 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/config.md:1
 msgid "Configuration"
-msgstr ""
+msgstr "組態"
 
 #: src/config.md:3
 msgid "Configuration format"
-msgstr ""
+msgstr "組態格式"
 
 #: src/config.md:5
 msgid ""
@@ -31,7 +31,7 @@ msgstr ""
 
 #: src/config.md:9
 msgid "Cargo options"
-msgstr ""
+msgstr "Cargo 選項"
 
 #: src/config.md:11
 msgid ""
@@ -69,7 +69,7 @@ msgstr ""
 
 #: src/config.md:37
 msgid "maturin options"
-msgstr ""
+msgstr "maturin 選項"
 
 #: src/config.md:39
 msgid ""

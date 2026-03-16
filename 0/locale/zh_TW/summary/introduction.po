@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/index.md:1
 msgid "Maturin User Guide"
-msgstr ""
+msgstr "Maturin 使用者指南"
 
 #: src/index.md:3
 msgid ""
@@ -376,6 +376,10 @@ msgid ""
 "get_42 = \"my_project:DummyClass.get_42\"\n"
 "```"
 msgstr ""
+"```toml\n"
+"[project.scripts]\n"
+"get_42 = \"my_project:DummyClass.get_42\"\n"
+"```"
 
 #: src/index.md:229
 msgid ""
@@ -391,6 +395,11 @@ msgid ""
 "classifiers = [\"Programming Language :: Python\"]\n"
 "```"
 msgstr ""
+"```toml\n"
+"[project]\n"
+"name = \"my-project\"\n"
+"classifiers = [\"Programming Language :: Python\"]\n"
+"```"
 
 #: src/index.md:237
 msgid "Source distribution"
@@ -542,7 +551,7 @@ msgstr ""
 
 #: src/index.md:304
 msgid "Examples"
-msgstr ""
+msgstr "範例"
 
 #: src/index.md:306
 msgid ""
