@@ -1,0 +1,243 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-03-16T14:34:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/bindings.md:1
+msgid "Bindings"
+msgstr ""
+
+#: src/bindings.md:3
+msgid ""
+"Maturin supports several kinds of bindings, some of which are automatically "
+"detected. You can also pass `-b` / `--bindings` command line option to "
+"manually specify which bindings to use."
+msgstr ""
+
+#: src/bindings.md:7
+msgid "`pyo3`"
+msgstr ""
+
+#: src/bindings.md:9
+msgid ""
+"[pyo3](https://github.com/PyO3/pyo3) is Rust bindings for Python, including "
+"tools for creating native Python extension modules. It supports both CPython "
+"and PyPy."
+msgstr ""
+
+#: src/bindings.md:13
+msgid ""
+"maturin automatically detects pyo3 bindings when it's added as a dependency "
+"in `Cargo.toml`."
+msgstr ""
+
+#: src/bindings.md:15
+msgid "`Py_LIMITED_API`/abi3"
+msgstr ""
+
+#: src/bindings.md:17
+msgid ""
+"pyo3 bindings has `Py_LIMITED_API`/abi3 support, enable the `abi3` feature "
+"of the `pyo3` crate to use it:"
+msgstr ""
+
+#: src/bindings.md:19
+msgid ""
+"```toml\n"
+"pyo3 = { version = \"0.14\", features = [\"abi3\"] }\n"
+"```"
+msgstr ""
+
+#: src/bindings.md:23
+msgid ""
+"You may additionally specify a minimum Python version by using the `abi3-"
+"pyXX` format for the pyo3 features, where `XX` is corresponds to a Python "
+"version. For example `abi3-py37` will indicate a minimum Python version of "
+"3.7."
+msgstr ""
+
+#: src/bindings.md:27
+msgid ""
+"**Note**: Read more about abi3 support in [pyo3's documentation](https://"
+"pyo3.rs/latest/building_and_distribution.html#py_limited_apiabi3)."
+msgstr ""
+
+#: src/bindings.md:30
+msgid "Cross Compiling"
+msgstr ""
+
+#: src/bindings.md:32
+msgid ""
+"pyo3 bindings has decent cross compilation support. For manylinux support "
+"the [manylinux-cross](https://github.com/rust-cross/manylinux-cross) docker "
+"images can be used."
+msgstr ""
+
+#: src/bindings.md:35
+msgid ""
+"**Note**: Read more about cross compiling in [pyo3's documentation](https://"
+"pyo3.rs/latest/building_and_distribution.html#cross-compiling)."
+msgstr ""
+
+#: src/bindings.md:38
+msgid "`cffi`"
+msgstr ""
+
+#: src/bindings.md:40
+msgid ""
+"Cffi wheels are compatible with all python versions including pypy. If "
+"`cffi` isn't installed and python is running inside a virtualenv, maturin "
+"will install it, otherwise you have to install it yourself (`pip install "
+"cffi`)."
+msgstr ""
+
+#: src/bindings.md:44
+msgid ""
+"Maturin uses cbindgen to generate a header file for [supported Rust types]"
+"(https://github.com/eqrion/cbindgen/blob/master/docs.md#supported-types). "
+"The header file can be customized by configuring cbindgen through a "
+"`cbindgen.toml` file inside your project root. Aternatively you can use a "
+"build script that writes a header file to `$PROJECT_ROOT/target/header.h`, "
+"like so:"
+msgstr ""
+
+#: src/bindings.md:56
+msgid "\"CARGO_MANIFEST_DIR\""
+msgstr ""
+
+#: src/bindings.md:64
+msgid "\"target\""
+msgstr ""
+
+#: src/bindings.md:64
+msgid "\"header.h\""
+msgstr ""
+
+#: src/bindings.md:68
+msgid ""
+"Maturin uses the cbindgen-generated header to create a module that exposes "
+"`ffi` and `lib` objects as attributes. See the [cffi docs](https://cffi."
+"readthedocs.io/en/latest/using.html) for more information on using these "
+"`ffi`/`lib` objects to call the Rust code from Python."
+msgstr ""
+
+#: src/bindings.md:73
+msgid ""
+"**Note**: Maturin _does not_ automatically detect `cffi` bindings. You "
+"_must_ specify them via either command line with `-b cffi` or in `pyproject."
+"toml`."
+msgstr ""
+
+#: src/bindings.md:76
+msgid "`rust-cpython`"
+msgstr ""
+
+#: src/bindings.md:78
+msgid ""
+"[rust-cpython](https://github.com/dgrunwald/rust-cpython) is Rust bindings "
+"for the Python interpreter. Currently it only supports CPython."
+msgstr ""
+
+#: src/bindings.md:81
+msgid ""
+"Maturin automatically detects rust-cpython bindings when it's added as a "
+"dependency in `Cargo.toml`."
+msgstr ""
+
+#: src/bindings.md:84
+msgid "`bin`"
+msgstr ""
+
+#: src/bindings.md:86
+msgid ""
+"Maturin also supports distributing binary applications written in Rust as "
+"Python packages using the `bin` bindings. Binaries are packaged into the "
+"wheel as \"scripts\" and are available on the user's `PATH` (e.g. in the "
+"`bin` directory of a virtual environment) once installed."
+msgstr ""
+
+#: src/bindings.md:91
+msgid ""
+"**Note**: Maturin _does not_ automatically detect `bin` bindings. You _must_ "
+"specify them via either command line with `-b bin` or in `pyproject.toml`."
+msgstr ""
+
+#: src/bindings.md:94
+msgid "Both binary and library?"
+msgstr ""
+
+#: src/bindings.md:96
+msgid ""
+"Shipping both a binary and library would double the size of your wheel. "
+"Consider instead exposing a CLI function in the library and using a Python "
+"entrypoint:"
+msgstr ""
+
+#: src/bindings.md:101
+msgid ""
+"// This one includes python and the name of the wrapper script itself, e.g.\n"
+"    // `[\"/home/ferris/.venv/bin/python\", \"/home/ferris/.venv/bin/"
+"print_cli_args\", \"a\", \"b\", \"c\"]`\n"
+msgstr ""
+
+#: src/bindings.md:103 src/bindings.md:107
+msgid "\"{:?}\""
+msgstr ""
+
+#: src/bindings.md:104
+msgid ""
+"// This one includes only the name of the wrapper script itself, e.g.\n"
+"    // `[\"/home/ferris/.venv/bin/print_cli_args\", \"a\", \"b\", \"c\"])`\n"
+msgstr ""
+
+#: src/bindings.md:108
+msgid "\"sys\""
+msgstr ""
+
+#: src/bindings.md:109
+msgid "\"argv\""
+msgstr ""
+
+#: src/bindings.md:123
+msgid "In pyproject.toml:"
+msgstr ""
+
+#: src/bindings.md:125
+msgid ""
+"```toml\n"
+"[project.scripts]\n"
+"print_cli_args = \"my_module:print_cli_args\"\n"
+"```"
+msgstr ""
+
+#: src/bindings.md:130
+msgid "`uniffi`"
+msgstr ""
+
+#: src/bindings.md:132
+msgid ""
+"uniffi bindings use [uniffi-rs](https://mozilla.github.io/uniffi-rs/) to "
+"generate Python `ctypes` bindings from an interface definition file. uniffi "
+"wheels are compatible with all python versions including pypy."
+msgstr ""
+
+#: src/bindings.md:135
+msgid ""
+"You need to install [uniffi-bindgen](https://mozilla.github.io/uniffi-rs/"
+"tutorial/Prerequisites.html#the-uniffi-bindgen-cli-tool) first to build "
+"wheels for `uniffi` bindings:"
+msgstr ""
+
+#: src/bindings.md:141
+msgid ""
+"Note that `uniffi-bindgen` version should be aligned with your Rust `uniffi` "
+"dependency version."
+msgstr ""
