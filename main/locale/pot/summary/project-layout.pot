@@ -1,0 +1,254 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-03-16T14:33:57Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/project_layout.md:1
+msgid "Project Layout"
+msgstr ""
+
+#: src/project_layout.md:3
+msgid ""
+"Maturin expects a particular project layout depending on the contents of the "
+"package."
+msgstr ""
+
+#: src/project_layout.md:6
+msgid "Pure Rust project"
+msgstr ""
+
+#: src/project_layout.md:8
+msgid ""
+"For a pure Rust project, the structure is as expected and what you get from "
+"`cargo new`:"
+msgstr ""
+
+#: src/project_layout.md:19
+msgid ""
+"Maturin will add a necessary `__init__.py` to the package when building the "
+"wheel. For convenience, this file includes the following:"
+msgstr ""
+
+#: src/project_layout.md:26
+msgid "\"__all__\""
+msgstr ""
+
+#: src/project_layout.md:30
+msgid "such that the module functions may be called directly with:"
+msgstr ""
+
+#: src/project_layout.md:37
+msgid "rather than:"
+msgstr ""
+
+#: src/project_layout.md:43
+msgid ""
+"**Note**: there is currently no way to tell maturin to include extra data (e."
+"g. `package_data` in setuptools) for a pure Rust project. Instead, consider "
+"using the layout described below for the mixed Rust/Python project."
+msgstr ""
+
+#: src/project_layout.md:47
+msgid "Mixed Rust/Python project"
+msgstr ""
+
+#: src/project_layout.md:49
+msgid ""
+"To create a mixed Rust/Python project, add a directory with your package "
+"name (i.e. matching `lib.name` in your `Cargo.toml`) to contain the Python "
+"source:"
+msgstr ""
+
+#: src/project_layout.md:64
+msgid ""
+"Note that in a mixed Rust/Python project, maturin _does not_ modify the "
+"existing `__init__.py` in the root package, so now to import the rust module "
+"in Python you must use:"
+msgstr ""
+
+#: src/project_layout.md:72
+msgid ""
+"You can modify `__init__.py` yourself (see above) if you would like to "
+"import Rust functions from a higher-level namespace."
+msgstr ""
+
+#: src/project_layout.md:75
+msgid ""
+"You can specify a different python source directory in `pyproject.toml` by "
+"setting `tool.maturin.python-source`, for example"
+msgstr ""
+
+#: src/project_layout.md:77
+msgid "**pyproject.toml**"
+msgstr ""
+
+#: src/project_layout.md:79
+msgid ""
+"```toml\n"
+"[tool.maturin]\n"
+"python-source = \"python\"\n"
+"```"
+msgstr ""
+
+#: src/project_layout.md:84
+msgid "then the project structure would look like this:"
+msgstr ""
+
+#: src/project_layout.md:99
+msgid "**Note**"
+msgstr ""
+
+#: src/project_layout.md:101
+msgid ""
+"This structure is recommended to avoid [a common `ImportError` pitfall]"
+"(https://github.com/PyO3/maturin/issues/490)"
+msgstr ""
+
+#: src/project_layout.md:104
+msgid "Alternate Python source directory (src layout)"
+msgstr ""
+
+#: src/project_layout.md:106
+msgid ""
+"Having a directory with `package_name` in the root of the project can "
+"occasionally cause confusion as Python allows importing local packages and "
+"modules. A popular way to avoid this is with the `src`\\-layout, where the "
+"Python package is nested within a `src` directory. Unfortunately this "
+"interferes with the structure of a typical Rust project. Fortunately, Python "
+"is not particular about the name of the parent source directory."
+msgstr ""
+
+#: src/project_layout.md:113
+msgid "maturin will detect the following src layout automatically:"
+msgstr ""
+
+#: src/project_layout.md:128
+msgid "Import Rust as a submodule of your project"
+msgstr ""
+
+#: src/project_layout.md:130
+msgid ""
+"If the Python module created by Rust has the same name as the Python package "
+"in a mixed Rust/Python project, IDEs might get confused. You might also want "
+"to discourage end users from using the Rust functions directly by giving it "
+"a different name, say '\\_my_project'. This can be done by adding `module-"
+"name = <package name>.<rust pymodule name>` to the `[tool.maturin]` in your "
+"`pyproject.toml`. For example:"
+msgstr ""
+
+#: src/project_layout.md:134
+msgid ""
+"```toml\n"
+"[tool.maturin]\n"
+"module-name = \"my_project._my_project\"\n"
+"```"
+msgstr ""
+
+#: src/project_layout.md:139
+msgid "Update the module name in `lib.rs` to match the expected module name:"
+msgstr ""
+
+#: src/project_layout.md:147
+msgid ""
+"If you are using the `pyo3` bindings, you can alternatively add `#[pyo3(name "
+"= ...)]` to the `#[pymodule]` declaration:"
+msgstr ""
+
+#: src/project_layout.md:155
+msgid ""
+"You can then import your Rust module inside your Python source as follows:"
+msgstr ""
+
+#: src/project_layout.md:161
+msgid ""
+"IDEs can then recognize the `_my_project` module as separate from your main "
+"Python source module. This allows for code completion of the types inside "
+"your Rust Python module for certain IDEs."
+msgstr ""
+
+#: src/project_layout.md:164
+msgid "Adding Python type information"
+msgstr ""
+
+#: src/project_layout.md:166
+msgid "To distribute typing information, you need to add:"
+msgstr ""
+
+#: src/project_layout.md:168
+msgid ""
+"an empty marker file called `py.typed` in the root of the Python package"
+msgstr ""
+
+#: src/project_layout.md:169
+msgid "inline types in Python files and/or `.pyi` \"stub\" files"
+msgstr ""
+
+#: src/project_layout.md:171
+msgid ""
+"In a pure Rust project, add type stubs in a `<module_name>.pyi` file in the "
+"project root. Maturin will automatically include this file along with the "
+"required `py.typed` file for you."
+msgstr ""
+
+#: src/project_layout.md:184
+msgid ""
+"In a mixed Rust/Python project, additional files in the Python source dir "
+"(but not in `.gitignore`) will be automatically included in the build "
+"outputs (source distribution and/or wheel). Type information can be "
+"therefore added to the root Python package directory as you might do in a "
+"pure Python package. This requires you to add the `py.typed` marker file "
+"yourself."
+msgstr ""
+
+#: src/project_layout.md:206
+msgid "Data"
+msgstr ""
+
+#: src/project_layout.md:208
+msgid ""
+"You can add wheel data by creating a `<module_name>.data` folder or setting "
+"its location as `data` in pyproject.toml under `[tool.maturin]` or in Cargo."
+"toml under `[project.metadata.maturin]`."
+msgstr ""
+
+#: src/project_layout.md:210
+msgid "The data folder may have the following subfolder:"
+msgstr ""
+
+#: src/project_layout.md:212
+msgid ""
+"`data`: The contents of this folder will simply be unpacked into the "
+"virtualenv"
+msgstr ""
+
+#: src/project_layout.md:213
+msgid ""
+"`scripts`: Treated similar to entry points, files in there are installed as "
+"standalone executable"
+msgstr ""
+
+#: src/project_layout.md:214
+msgid "`headers`: For `.h` C header files"
+msgstr ""
+
+#: src/project_layout.md:215
+msgid "`purelib`: This also exists, but seems to be barely used"
+msgstr ""
+
+#: src/project_layout.md:216
+msgid "`platlib`: This also exists, but seems to be barely used"
+msgstr ""
+
+#: src/project_layout.md:218
+msgid ""
+"If you add a symlink in the data directory, we'll include the actual file so "
+"you have more flexibility."
+msgstr ""

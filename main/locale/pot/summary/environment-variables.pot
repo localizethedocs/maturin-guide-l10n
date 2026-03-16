@@ -1,0 +1,231 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-03-16T14:33:57Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: en\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/environment-variables.md:1
+msgid "Environment Variables"
+msgstr ""
+
+#: src/environment-variables.md:3
+msgid ""
+"Maturin reads a number of environment variables which you can use to "
+"configure the build process. Here is a list of all environment variables "
+"that are read by maturin:"
+msgstr ""
+
+#: src/environment-variables.md:6
+msgid "Cargo environment variables"
+msgstr ""
+
+#: src/environment-variables.md:8
+msgid ""
+"See [environment variables Cargo reads](https://doc.rust-lang.org/cargo/"
+"reference/environment-variables.html#environment-variables-cargo-reads)"
+msgstr ""
+
+#: src/environment-variables.md:10
+msgid "Python environment variables"
+msgstr ""
+
+#: src/environment-variables.md:12
+msgid "`VIRTUAL_ENV`: Path to a Python virtual environment"
+msgstr ""
+
+#: src/environment-variables.md:13
+msgid "`CONDA_PREFIX`: Path to a conda environment"
+msgstr ""
+
+#: src/environment-variables.md:14
+msgid "`_PYTHON_SYSCONFIGDATA_NAME`: Name of a `sysconfigdata*.py` file"
+msgstr ""
+
+#: src/environment-variables.md:15
+msgid ""
+"`MATURIN_PEP517_USE_BASE_PYTHON`: Use base Python executable instead of venv "
+"Python executable in PEP 517 build to avoid unnecessary rebuilds, should not "
+"be set when the sdist build requires packages installed in venv."
+msgstr ""
+
+#: src/environment-variables.md:17
+msgid "PEP 517 build environment variables"
+msgstr ""
+
+#: src/environment-variables.md:19
+msgid ""
+"`MATURIN_PEP517_ARGS`: Extra arguments passed to `maturin` during PEP 517 "
+"builds (e.g. `pip install .`). The value is parsed using shell-style "
+"splitting. For example: `MATURIN_PEP517_ARGS=\"--features foo --profile "
+"release\"`"
+msgstr ""
+
+#: src/environment-variables.md:20
+msgid ""
+"`MATURIN_NO_INSTALL_RUST`: If set, do not attempt to auto-install Rust via "
+"`puccinialin` when `cargo` is not found during PEP 517 builds."
+msgstr ""
+
+#: src/environment-variables.md:22
+msgid "pip config-settings"
+msgstr ""
+
+#: src/environment-variables.md:24
+msgid ""
+"You can also pass extra maturin arguments via pip's `--config-settings` flag:"
+msgstr ""
+
+#: src/environment-variables.md:27
+msgid "\"build-args=--features foo\""
+msgstr ""
+
+#: src/environment-variables.md:27
+msgid "# or with the namespaced key\n"
+msgstr ""
+
+#: src/environment-variables.md:29
+msgid "\"maturin.build-args=--features foo\""
+msgstr ""
+
+#: src/environment-variables.md:32
+msgid ""
+"Config-settings take priority over `MATURIN_PEP517_ARGS`; the environment "
+"variable is only used when no `build-args` config-setting is provided."
+msgstr ""
+
+#: src/environment-variables.md:34
+msgid "Upload environment variables"
+msgstr ""
+
+#: src/environment-variables.md:36
+msgid ""
+"`MATURIN_PYPI_TOKEN`: PyPI token for uploading wheels (token-based "
+"authentication)"
+msgstr ""
+
+#: src/environment-variables.md:37
+msgid ""
+"`MATURIN_REPOSITORY`: The repository (package index) to upload the package "
+"to, defaults to `pypi`"
+msgstr ""
+
+#: src/environment-variables.md:38
+msgid ""
+"`MATURIN_REPOSITORY_URL`: The URL of the registry where the wheels are "
+"uploaded to, overrides `MATURIN_REPOSITORY`"
+msgstr ""
+
+#: src/environment-variables.md:39
+msgid "`MATURIN_USERNAME`: Username for pypi or your custom registry"
+msgstr ""
+
+#: src/environment-variables.md:40
+msgid "`MATURIN_PASSWORD`: Password for pypi or your custom registry"
+msgstr ""
+
+#: src/environment-variables.md:41
+msgid ""
+"`MATURIN_NON_INTERACTIVE`: Do not interactively prompt for username/password "
+"if the required credentials are missing"
+msgstr ""
+
+#: src/environment-variables.md:43
+msgid "`pyo3` environment variables"
+msgstr ""
+
+#: src/environment-variables.md:45
+msgid ""
+"`PYO3_CROSS_PYTHON_VERSION`: Python version to use for cross compilation"
+msgstr ""
+
+#: src/environment-variables.md:46
+msgid ""
+"`PYO3_CROSS_LIB_DIR`: This variable can be set to the directory containing "
+"the target's libpython DSO and the associated `_sysconfigdata*.py` file for "
+"Unix-like targets, or the Python DLL import libraries for the Windows target."
+msgstr ""
+
+#: src/environment-variables.md:47
+msgid ""
+"`PYO3_CONFIG_FILE`: Path to a [pyo3 config file](https://pyo3.rs/latest/"
+"building-and-distribution.html#advanced-config-files)"
+msgstr ""
+
+#: src/environment-variables.md:49
+msgid "Networking environment variables"
+msgstr ""
+
+#: src/environment-variables.md:51
+msgid "`HTTP_PROXY` / `HTTPS_PROXY`: Proxy to use for HTTP/HTTPS requests"
+msgstr ""
+
+#: src/environment-variables.md:52
+msgid ""
+"`MATURIN_CA_BUNDLE` / `REQUESTS_CA_BUNDLE` / `CURL_CA_BUNDLE`: Path to a CA "
+"bundle to use for HTTPS requests"
+msgstr ""
+
+#: src/environment-variables.md:54
+msgid "Other environment variables"
+msgstr ""
+
+#: src/environment-variables.md:56
+msgid "`MACOSX_DEPLOYMENT_TARGET`: The minimum macOS version to target"
+msgstr ""
+
+#: src/environment-variables.md:57
+msgid "`IPHONEOS_DEPLOYMENT_TARGET`: The minimum iOS version to target"
+msgstr ""
+
+#: src/environment-variables.md:58
+msgid ""
+"`SOURCE_DATE_EPOCH`: The time to use for the timestamp in the wheel metadata"
+msgstr ""
+
+#: src/environment-variables.md:59
+msgid ""
+"`MATURIN_EMSCRIPTEN_VERSION`: The version of emscripten to use for "
+"emscripten builds"
+msgstr ""
+
+#: src/environment-variables.md:60
+msgid "`MATURIN_STRIP`: Strip the library for minimum file size"
+msgstr ""
+
+#: src/environment-variables.md:61
+msgid ""
+"`MATURIN_NO_MISSING_BUILD_BACKEND_WARNING`: Suppress missing build backend "
+"warning"
+msgstr ""
+
+#: src/environment-variables.md:62
+msgid ""
+"`MATURIN_USE_XWIN`: Set to `1` to force to use `xwin` for cross compiling "
+"even on Windows that supports native compilation"
+msgstr ""
+
+#: src/environment-variables.md:63
+msgid ""
+"`ANDROID_API_LEVEL`: The Android API level to target when cross compiling "
+"for Android"
+msgstr ""
+
+#: src/environment-variables.md:64
+msgid ""
+"`TARGET_SYSROOT`: The sysroot to use for auditwheel wheel when cross "
+"compiling"
+msgstr ""
+
+#: src/environment-variables.md:65
+msgid ""
+"`ARCHFLAGS`: Flags to control the architecture of the build on macOS, for "
+"example you can use `ARCHFLAGS=\"-arch x86_64 -arch arm64\"` to build "
+"universal2 wheels"
+msgstr ""
