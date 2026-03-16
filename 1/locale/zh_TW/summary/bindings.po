@@ -5,10 +5,10 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/bindings.md:1
@@ -72,7 +72,7 @@ msgstr ""
 
 #: src/bindings.md:30
 msgid "Cross Compiling"
-msgstr ""
+msgstr "交叉編譯"
 
 #: src/bindings.md:32
 msgid ""

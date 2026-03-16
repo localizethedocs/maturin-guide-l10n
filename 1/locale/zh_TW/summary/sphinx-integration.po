@@ -5,15 +5,15 @@ msgstr ""
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
+"Language: zh_TW\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Language: zh_TW\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
 #: src/sphinx.md:1
 msgid "Sphinx Documentation Integration"
-msgstr ""
+msgstr "Sphinx 文件整合"
 
 #: src/sphinx.md:3
 msgid ""
@@ -165,7 +165,7 @@ msgstr ""
 
 #: src/sphinx.md:69
 msgid "Netlify Integration"
-msgstr ""
+msgstr "Netlify 整合"
 
 #: src/sphinx.md:71
 msgid ""
