@@ -155,7 +155,7 @@ msgstr ""
 
 #: src/sphinx.md:61
 msgid "docs/requirements.txt"
-msgstr ""
+msgstr "docs/requirements.txt"
 
 #: src/sphinx.md:66
 msgid ""

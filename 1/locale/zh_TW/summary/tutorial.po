@@ -24,7 +24,7 @@ msgstr ""
 
 #: src/tutorial.md:7
 msgid "Create a new Rust project"
-msgstr ""
+msgstr "建立新的 Rust 專案"
 
 #: src/tutorial.md:9
 msgid ""
@@ -98,7 +98,7 @@ msgstr ""
 
 #: src/tutorial.md:59
 msgid "Use `maturin new`"
-msgstr ""
+msgstr "使用 `maturin new`"
 
 #: src/tutorial.md:61
 msgid ""
