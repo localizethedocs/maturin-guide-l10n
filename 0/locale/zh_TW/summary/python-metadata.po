@@ -141,6 +141,11 @@ msgid ""
 "classifiers = [\"Programming Language :: Python\"]\n"
 "```"
 msgstr ""
+"```toml\n"
+"[project]\n"
+"name = \"my-project\"\n"
+"classifiers = [\"Programming Language :: Python\"]\n"
+"```"
 
 #: src/metadata.md:89
 msgid "Add SPDX license expressions"

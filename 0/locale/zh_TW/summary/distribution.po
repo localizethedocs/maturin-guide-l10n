@@ -336,7 +336,7 @@ msgstr ""
 
 #: src/distribution.md:208
 msgid "Use Zig"
-msgstr ""
+msgstr "使用 Zig"
 
 #: src/distribution.md:210
 msgid ""

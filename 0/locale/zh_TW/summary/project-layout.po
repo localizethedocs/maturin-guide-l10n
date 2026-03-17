@@ -58,7 +58,7 @@ msgstr ""
 
 #: src/project_layout.md:47
 msgid "Mixed Rust/Python project"
-msgstr ""
+msgstr "Rust/Python 混合專案"
 
 #: src/project_layout.md:49
 msgid ""

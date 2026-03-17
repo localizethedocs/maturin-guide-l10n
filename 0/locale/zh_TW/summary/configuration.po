@@ -114,6 +114,9 @@ msgid ""
 "include = [\"path/**/*\", \"some/other/file\"]\n"
 "```"
 msgstr ""
+"```toml\n"
+"include = [\"path/**/*\", \"some/other/file\"]\n"
+"```"
 
 #: src/config.md:72
 msgid "To specify a specific target format (`sdist` or `wheel`):"
@@ -129,6 +132,13 @@ msgid ""
 "]\n"
 "```"
 msgstr ""
+"```toml\n"
+"include = [\n"
+"  { path = \"path/**/*\", format = \"sdist\" },\n"
+"  { path = \"all\", format = [\"sdist\", \"wheel\"] },\n"
+"  { path = \"for/wheel/**/*\", format = \"wheel\" }\n"
+"]\n"
+"```"
 
 #: src/config.md:82
 msgid ""
