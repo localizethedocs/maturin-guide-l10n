@@ -29,11 +29,11 @@ msgstr ""
 
 #: src/index.md:7
 msgid "Sponsors"
-msgstr ""
+msgstr "贊助者"
 
 #: src/index.md:9
 msgid "Development of maturin is made possible by the following sponsors:"
-msgstr ""
+msgstr "Maturin 的開發得益於以下贊助者的支援："
 
 #: src/index.md:68
 msgid ""
@@ -43,7 +43,7 @@ msgstr ""
 
 #: src/index.md:70
 msgid "Maturin"
-msgstr ""
+msgstr "Maturin"
 
 #: src/index.md:72
 msgid "_formerly pyo3-pack_"
@@ -177,7 +177,7 @@ msgstr ""
 
 #: src/index.md:128
 msgid "Mixed rust/python projects"
-msgstr ""
+msgstr "Rust/Python 混合專案"
 
 #: src/index.md:130
 msgid ""
@@ -664,7 +664,7 @@ msgstr ""
 
 #: src/index.md:336
 msgid "[messense](https://github.com/sponsors/messense)"
-msgstr ""
+msgstr "[messense](https://github.com/sponsors/messense)"
 
 #: src/index.md:338
 msgid "License"

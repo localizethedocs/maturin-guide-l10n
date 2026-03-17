@@ -184,7 +184,7 @@ msgstr ""
 
 #: src/contributing.md:83
 msgid "Guide"
-msgstr ""
+msgstr "指南"
 
 #: src/contributing.md:85
 msgid ""
@@ -244,7 +244,7 @@ msgstr ""
 
 #: src/contributing.md:106
 msgid "Update the changelog:"
-msgstr ""
+msgstr "更新變更日誌："
 
 #: src/contributing.md:112
 msgid "Update the version in `Cargo.toml` and run:"

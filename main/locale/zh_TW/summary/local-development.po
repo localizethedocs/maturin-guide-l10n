@@ -46,6 +46,11 @@ msgid ""
 "build-backend = \"maturin\"\n"
 "```"
 msgstr ""
+"```toml\n"
+"[build-system]\n"
+"requires = [\"maturin>=1.0,<2.0\"]\n"
+"build-backend = \"maturin\"\n"
+"```"
 
 #: src/local_development.md:134
 msgid ""

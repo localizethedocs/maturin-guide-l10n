@@ -357,7 +357,7 @@ msgstr ""
 
 #: src/distribution.md:218
 msgid "Use Zig"
-msgstr ""
+msgstr "使用 Zig"
 
 #: src/distribution.md:220
 msgid ""
@@ -393,6 +393,10 @@ msgid ""
 "pyo3 = { version = \"0.27.0\", features = [\"generate-import-lib\"] }\n"
 "```"
 msgstr ""
+"```toml\n"
+"[dependencies]\n"
+"pyo3 = { version = \"0.27.0\", features = [\"generate-import-lib\"] }\n"
+"```"
 
 #: src/distribution.md:241
 msgid ""
