@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-03-15 08:16:53 +0800",
-      "hash" : "a1bd618059de49d35a33e077ad23544680532d81",
-      "title" : "Update cargo-cyclonedx to 0.5.8"
+      "date" : "2026-03-17 11:59:05 +0800",
+      "hash" : "517bb9eded2179c1f604cdea4956314892c76013",
+      "title" : "[pre-commit.ci] pre-commit autoupdate (#3088)"
     }
   },
   "type" : "branch",
