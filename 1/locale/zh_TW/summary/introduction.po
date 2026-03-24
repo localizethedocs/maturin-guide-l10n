@@ -47,7 +47,7 @@ msgstr "Maturin"
 
 #: src/index.md:72
 msgid "_formerly pyo3-pack_"
-msgstr ""
+msgstr "_原名 pyo3-pack_"
 
 #: src/index.md:74
 msgid ""
