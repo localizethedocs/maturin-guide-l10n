@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-03-16T14:33:57Z\n"
+"POT-Creation-Date: 2026-03-17T10:07:51Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -48,7 +48,7 @@ msgstr ""
 
 #: src/import_hook.md:17
 msgid "Installation"
-msgstr ""
+msgstr "安裝"
 
 #: src/import_hook.md:19
 msgid "Install the package with:"
@@ -347,7 +347,7 @@ msgstr ""
 
 #: src/import_hook.md:172
 msgid "Environment Variables"
-msgstr ""
+msgstr "環境變數"
 
 #: src/import_hook.md:174
 msgid ""

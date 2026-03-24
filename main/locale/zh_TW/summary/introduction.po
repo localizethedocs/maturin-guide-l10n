@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-03-16T14:33:56Z\n"
+"POT-Creation-Date: 2026-03-17T10:07:51Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -47,7 +47,7 @@ msgstr "Maturin"
 
 #: src/index.md:72
 msgid "_formerly pyo3-pack_"
-msgstr ""
+msgstr "_原名 pyo3-pack_"
 
 #: src/index.md:74
 msgid ""
