@@ -13,21 +13,23 @@ msgstr ""
 
 #: src/installation.md:1
 msgid "Installation"
-msgstr ""
+msgstr "安裝"
 
 #: src/installation.md:3
 msgid "Install from package managers"
-msgstr ""
+msgstr "從軟體包管理器安裝"
 
 #: src/installation.md:5
 msgid ""
 "[![Packaging status](https://repology.org/badge/vertical-allrepos/maturin."
 "svg?columns=4)](https://repology.org/project/maturin/versions)"
 msgstr ""
+"[![軟體包狀態](https://repology.org/badge/vertical-allrepos/maturin.svg?"
+"columns=4)](https://repology.org/project/maturin/versions)"
 
 #: src/installation.md:7
 msgid "PyPI"
-msgstr ""
+msgstr "PyPI"
 
 #: src/installation.md:9
 msgid ""
@@ -94,7 +96,7 @@ msgstr ""
 
 #: src/installation.md:54
 msgid "Download from GitHub Releases"
-msgstr ""
+msgstr "從 GitHub Releases 下載"
 
 #: src/installation.md:56
 msgid ""
@@ -116,18 +118,20 @@ msgstr ""
 
 #: src/installation.md:65
 msgid "Build from source"
-msgstr ""
+msgstr "從來源碼建置"
 
 #: src/installation.md:67
 msgid "crates.io"
-msgstr ""
+msgstr "crates.io"
 
 #: src/installation.md:69
 msgid ""
 "You can install maturin from [crates.io](https://crates.io/crates/maturin) "
 "using cargo:"
 msgstr ""
+"您可以使用 cargo 從 [crates.io](https://crates.io/crates/maturin) 安裝 "
+"maturin："
 
 #: src/installation.md:75
 msgid "Git repository"
-msgstr ""
+msgstr "Git 儲存庫"
