@@ -1,0 +1,248 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-03-17T10:07:51Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/metadata.md:1
+msgid "Python Project Metadata"
+msgstr ""
+
+#: src/metadata.md:3
+msgid ""
+"maturin supports [PEP 621](https://www.python.org/dev/peps/pep-0621/), you "
+"can specify python package metadata in `pyproject.toml`. maturin merges "
+"metadata from `Cargo.toml` and `pyproject.toml`, `pyproject.toml` takes "
+"precedence over `Cargo.toml`."
+msgstr ""
+
+#: src/metadata.md:7
+msgid "Here is a `pyproject.toml` example from PEP 621 for reference purpose:"
+msgstr ""
+
+#: src/metadata.md:9
+msgid ""
+"```toml\n"
+"[project]\n"
+"name = \"spam\"\n"
+"version = \"2020.0.0\"\n"
+"description = \"Lovely Spam! Wonderful Spam!\"\n"
+"readme = \"README.rst\"\n"
+"requires-python = \">=3.8\"\n"
+"license = {file = \"LICENSE.txt\"}\n"
+"keywords = [\"egg\", \"bacon\", \"sausage\", \"tomatoes\", \"Lobster "
+"Thermidor\"]\n"
+"authors = [\n"
+"  {email = \"hi@pradyunsg.me\"},\n"
+"  {name = \"Tzu-Ping Chung\"}\n"
+"]\n"
+"maintainers = [\n"
+"  {name = \"Brett Cannon\", email = \"brett@python.org\"}\n"
+"]\n"
+"classifiers = [\n"
+"  \"Development Status :: 4 - Beta\",\n"
+"  \"Programming Language :: Python\"\n"
+"]\n"
+"\n"
+"dependencies = [\n"
+"  \"httpx\",\n"
+"  \"gidgethub[httpx]>4.0.0\",\n"
+"  \"django>2.1; os_name != 'nt'\",\n"
+"  \"django>2.0; os_name == 'nt'\"\n"
+"]\n"
+"\n"
+"[project.optional-dependencies]\n"
+"test = [\n"
+"  \"pytest < 5.0.0\",\n"
+"  \"pytest-cov[all]\"\n"
+"]\n"
+"\n"
+"[project.urls]\n"
+"homepage = \"example.com\"\n"
+"documentation = \"readthedocs.org\"\n"
+"repository = \"github.com\"\n"
+"changelog = \"github.com/me/spam/blob/master/CHANGELOG.md\"\n"
+"\n"
+"[project.scripts]\n"
+"spam-cli = \"spam:main_cli\"\n"
+"\n"
+"[project.gui-scripts]\n"
+"spam-gui = \"spam:main_gui\"\n"
+"\n"
+"[project.entry-points.\"spam.magical\"]\n"
+"tomatoes = \"spam:main_tomatoes\"\n"
+"```"
+msgstr ""
+
+#: src/metadata.md:59
+msgid "Dynamic metadata"
+msgstr ""
+
+#: src/metadata.md:61
+msgid ""
+"Maturin has limited support for [dynamic metadata](https://packaging.python."
+"org/en/latest/specifications/pyproject-toml/#dynamic) in `pyproject.toml`."
+msgstr ""
+
+#: src/metadata.md:63
+msgid ""
+"When the `[project]` section is not present, maturin will populate metadata "
+"from `Cargo.toml` with the following fields:"
+msgstr ""
+
+#: src/metadata.md:65
+msgid "`name` - From `package.name` in Cargo.toml"
+msgstr ""
+
+#: src/metadata.md:66
+msgid ""
+"`version` - From `package.version` in Cargo.toml (converted from SemVer to "
+"PEP 440 format)"
+msgstr ""
+
+#: src/metadata.md:67
+msgid "`summary` - From `package.description` in Cargo.toml"
+msgstr ""
+
+#: src/metadata.md:68
+msgid ""
+"`description` - From the contents of the README file specified in Cargo."
+"toml's `package.readme`"
+msgstr ""
+
+#: src/metadata.md:69
+msgid ""
+"`description_content_type` - Set based on the README file extension (e.g. "
+"`text/markdown` for `.md` files)"
+msgstr ""
+
+#: src/metadata.md:70
+msgid "`keywords` - From `package.keywords` in Cargo.toml, joined with commas"
+msgstr ""
+
+#: src/metadata.md:71
+msgid "`home_page` - From `package.homepage` in Cargo.toml"
+msgstr ""
+
+#: src/metadata.md:72
+msgid "`author` - From `package.authors` in Cargo.toml, joined with commas"
+msgstr ""
+
+#: src/metadata.md:73
+msgid ""
+"`author_email` - From `package.authors` in Cargo.toml if it contains email "
+"addresses"
+msgstr ""
+
+#: src/metadata.md:74
+msgid "`license` - From `package.license` in Cargo.toml"
+msgstr ""
+
+#: src/metadata.md:75
+msgid ""
+"`project_url` - From various URLs in Cargo.toml (like repository, homepage, "
+"etc.)"
+msgstr ""
+
+#: src/metadata.md:77
+msgid ""
+"When the `[project]` section is present in `pyproject.toml`, it must contain "
+"at least the `name` field. Maturin will then merge metadata from `Cargo."
+"toml` and `pyproject.toml`, `pyproject.toml` takes precedence over `Cargo."
+"toml`. Per specification, maturin is not allowed to populate fields that are "
+"not present in `project.dynamic` list when the `[project]` section is "
+"present. For example, to use the Rust crate version as the Python package "
+"version, you need to add `version` to the `project.dynamic` list. To use "
+"`package.homepage` from `Cargo.toml`, add `urls` to `project.dynamic` and so "
+"forth:"
+msgstr ""
+
+#: src/metadata.md:83
+msgid ""
+"```toml\n"
+"[project]\n"
+"name = \"my-awesome-project\"\n"
+"dynamic = [\n"
+"    \"version\",\n"
+"    \"description\",\n"
+"    \"readme\",\n"
+"    \"urls\",\n"
+"    \"authors\",\n"
+"    \"license\",\n"
+"    \"keywords\",\n"
+"]\n"
+"```"
+msgstr ""
+
+#: src/metadata.md:97
+msgid "Add Python dependencies"
+msgstr ""
+
+#: src/metadata.md:99
+msgid ""
+"To specify python dependencies, add a list `dependencies` in a `[project]` "
+"section in the `pyproject.toml`. This list is equivalent to "
+"`install_requires` in setuptools:"
+msgstr ""
+
+#: src/metadata.md:101
+msgid ""
+"```toml\n"
+"[project]\n"
+"name = \"my-project\"\n"
+"dependencies = [\"flask~=1.1.0\", \"toml==0.10.0\"]\n"
+"```"
+msgstr ""
+
+#: src/metadata.md:107
+msgid "Add console scripts"
+msgstr ""
+
+#: src/metadata.md:109
+msgid ""
+"Pip allows adding so called console scripts, which are shell commands that "
+"execute some function in your program. You can add console scripts in a "
+"section `[project.scripts]`. The keys are the script names while the values "
+"are the path to the function in the format `some.module.path:class."
+"function`, where the `class` part is optional. The function is called with "
+"no arguments. Example:"
+msgstr ""
+
+#: src/metadata.md:112
+msgid ""
+"```toml\n"
+"[project.scripts]\n"
+"get_42 = \"my_project:DummyClass.get_42\"\n"
+"```"
+msgstr ""
+
+#: src/metadata.md:117
+msgid "Add trove classifiers"
+msgstr ""
+
+#: src/metadata.md:119
+msgid ""
+"You can also specify [trove classifiers](https://pypi.org/classifiers/) "
+"under `project.classifiers`:"
+msgstr ""
+
+#: src/metadata.md:121
+msgid ""
+"```toml\n"
+"[project]\n"
+"name = \"my-project\"\n"
+"classifiers = [\"Programming Language :: Python\"]\n"
+"```"
+msgstr ""
+"```toml\n"
+"[project]\n"
+"name = \"my-project\"\n"
+"classifiers = [\"Programming Language :: Python\"]\n"
+"```"

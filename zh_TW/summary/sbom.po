@@ -1,0 +1,253 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-03-17T10:07:51Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/sbom.md:1
+msgid "SBOM (Software Bill of Materials)"
+msgstr ""
+
+#: src/sbom.md:3
+msgid ""
+"Maturin can automatically generate [CycloneDX](https://cyclonedx.org/) SBOMs "
+"and include them in the built wheel under the `.dist-info/sboms/` directory, "
+"following the convention described in [PEP 770](https://peps.python.org/"
+"pep-0770/)."
+msgstr ""
+
+#: src/sbom.md:7
+msgid "Overview"
+msgstr ""
+
+#: src/sbom.md:9
+msgid "Three kinds of SBOMs can be included in a wheel:"
+msgstr ""
+
+#: src/sbom.md:11
+msgid "Kind"
+msgstr ""
+
+#: src/sbom.md:11
+msgid "File in wheel"
+msgstr ""
+
+#: src/sbom.md:11
+msgid "Description"
+msgstr ""
+
+#: src/sbom.md:13
+msgid "**Rust**"
+msgstr ""
+
+#: src/sbom.md:13
+msgid "`<dist-info>/sboms/<crate>.cyclonedx.json`"
+msgstr ""
+
+#: src/sbom.md:13
+msgid ""
+"CycloneDX 1.5 SBOM of the Rust dependency tree, generated via `cargo-"
+"cyclonedx`."
+msgstr ""
+
+#: src/sbom.md:14
+msgid "**Auditwheel**"
+msgstr ""
+
+#: src/sbom.md:14
+msgid "`<dist-info>/sboms/auditwheel.cdx.json`"
+msgstr ""
+
+#: src/sbom.md:14
+msgid ""
+"CycloneDX 1.4 SBOM listing the OS packages (deb/rpm/apk) that provided "
+"shared libraries grafted during `auditwheel` repair."
+msgstr ""
+
+#: src/sbom.md:15
+msgid "**Custom**"
+msgstr ""
+
+#: src/sbom.md:15
+msgid "`<dist-info>/sboms/<filename>`"
+msgstr ""
+
+#: src/sbom.md:15
+msgid "Any additional SBOM files you provide."
+msgstr ""
+
+#: src/sbom.md:17
+msgid "Requirements"
+msgstr ""
+
+#: src/sbom.md:19
+msgid ""
+"The **Rust** and **Auditwheel** SBOMs require the `sbom` Cargo feature, "
+"which is included in the `full` feature set and enabled by default. If you "
+"installed maturin from PyPI or a pre-built binary, SBOM support is already "
+"available."
+msgstr ""
+
+#: src/sbom.md:23
+msgid ""
+"If you build maturin from source without default features, enable it with:"
+msgstr ""
+
+#: src/sbom.md:29
+msgid "**Custom** SBOM includes work regardless of the `sbom` feature."
+msgstr ""
+
+#: src/sbom.md:31
+msgid "Configuration"
+msgstr "組態"
+
+#: src/sbom.md:33
+msgid ""
+"SBOM generation is configured in the `[tool.maturin.sbom]` section of "
+"`pyproject.toml`:"
+msgstr ""
+
+#: src/sbom.md:36
+msgid ""
+"```toml\n"
+"[tool.maturin.sbom]\n"
+"# Generate a CycloneDX SBOM for the Rust dependency tree.\n"
+"# Defaults to true when the sbom feature is enabled.\n"
+"rust = true\n"
+"\n"
+"# Generate a CycloneDX SBOM for external shared libraries grafted during\n"
+"# auditwheel repair. Defaults to true when repair copies libraries.\n"
+"auditwheel = true\n"
+"\n"
+"# Additional SBOM files to include in the wheel.\n"
+"# Paths are relative to the project root.\n"
+"include = [\"sboms/vendor.cdx.json\", \"sboms/license-report.spdx.json\"]\n"
+"```"
+msgstr ""
+
+#: src/sbom.md:51
+msgid ""
+"All three keys are optional. When the section is omitted entirely, the "
+"defaults apply (Rust and auditwheel SBOMs are generated automatically)."
+msgstr ""
+
+#: src/sbom.md:54
+msgid "Disabling SBOM generation"
+msgstr "停用 SBOM 生成"
+
+#: src/sbom.md:56
+msgid "To disable Rust SBOM generation:"
+msgstr ""
+
+#: src/sbom.md:63
+msgid "To disable the auditwheel SBOM:"
+msgstr ""
+
+#: src/sbom.md:70
+msgid "Rust SBOM"
+msgstr ""
+
+#: src/sbom.md:72
+msgid ""
+"When enabled, maturin uses [`cargo-cyclonedx`](https://github.com/CycloneDX/"
+"cyclonedx-rust-cargo) to produce a CycloneDX 1.5 SBOM that captures the full "
+"transitive dependency graph of the crate being built. The SBOM is generated "
+"once per build and reused across all wheels (the Rust dependency graph does "
+"not change per Python interpreter)."
+msgstr ""
+
+#: src/sbom.md:78
+msgid ""
+"The output file is named `<crate_name>.cyclonedx.json` and placed in the `."
+"dist-info/sboms/` directory."
+msgstr ""
+
+#: src/sbom.md:81
+msgid "Auditwheel SBOM"
+msgstr ""
+
+#: src/sbom.md:83
+msgid ""
+"On Linux, when maturin repairs a wheel by copying external shared libraries "
+"into it (the `auditwheel = \"repair\"` mode), it can also generate a "
+"CycloneDX 1.4 SBOM that records which OS packages provided those libraries. "
+"It queries the system package manager (`dpkg`, `rpm`, or `apk`) to determine "
+"the package name, version, and PURL for each grafted library."
+msgstr ""
+
+#: src/sbom.md:89
+msgid ""
+"The output file is named `auditwheel.cdx.json` and placed in the `.dist-info/"
+"sboms/` directory."
+msgstr ""
+
+#: src/sbom.md:92
+msgid "Custom SBOM includes"
+msgstr ""
+
+#: src/sbom.md:94
+msgid ""
+"You can bundle arbitrary SBOM files (any format) into the wheel using the "
+"`include` option. Paths are resolved relative to the project root and must "
+"not escape it. Each included file must have a unique filename."
+msgstr ""
+
+#: src/sbom.md:98
+msgid ""
+"```toml\n"
+"[tool.maturin.sbom]\n"
+"include = [\n"
+"    \"sboms/third-party.cdx.json\",\n"
+"    \"sboms/licenses.spdx.json\",\n"
+"]\n"
+"```"
+msgstr ""
+
+#: src/sbom.md:106
+msgid "CLI argument"
+msgstr "CLI 引數"
+
+#: src/sbom.md:108
+msgid ""
+"Additional SBOM files can also be included via the `--sbom-include` CLI "
+"argument, which is useful when you only want to include SBOMs in certain "
+"environments (e.g. CI) without modifying `pyproject.toml`:"
+msgstr ""
+
+#: src/sbom.md:114
+msgid "# Multiple files at once\n"
+msgstr ""
+
+#: src/sbom.md:117
+msgid "# Or repeated flags\n"
+msgstr ""
+
+#: src/sbom.md:122
+msgid ""
+"Paths from `--sbom-include` are merged with any `include` paths in "
+"`pyproject.toml` and deduplicated."
+msgstr ""
+
+#: src/sbom.md:125
+msgid "Inspecting SBOMs in a wheel"
+msgstr ""
+
+#: src/sbom.md:127
+msgid ""
+"After building a wheel, you can inspect the included SBOMs by unzipping it:"
+msgstr ""
+
+#: src/sbom.md:134
+msgid "Or extract a specific SBOM:"
+msgstr ""
+
+#: src/sbom.md:137
+msgid "'*.dist-info/sboms/*.json'"
+msgstr ""
