@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-03-17 11:59:05 +0800",
-      "hash" : "517bb9eded2179c1f604cdea4956314892c76013",
-      "title" : "[pre-commit.ci] pre-commit autoupdate (#3088)"
+      "date" : "2026-03-31 08:56:00 +0800",
+      "hash" : "da71d84237e6c1017e0dded572d2417c6bb929ed",
+      "title" : "Refactor to store CPython ABI metadata in a struct combining two enums (#3110)"
     }
   },
   "type" : "branch",
