@@ -1,0 +1,276 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-03-16T14:34:05Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/contributing.md:1
+msgid "Contributing"
+msgstr ""
+
+#: src/contributing.md:3
+msgid "Contributions are welcome, and they are greatly appreciated!"
+msgstr ""
+
+#: src/contributing.md:5
+msgid "You can contribute in many ways:"
+msgstr ""
+
+#: src/contributing.md:7
+msgid "Types of Contributions"
+msgstr ""
+
+#: src/contributing.md:9
+msgid "Report Bugs"
+msgstr ""
+
+#: src/contributing.md:11
+msgid ""
+"Report bugs at [https://github.com/PyO3/maturin/issues](https://github.com/"
+"PyO3/maturin/issues)."
+msgstr ""
+
+#: src/contributing.md:13
+msgid "Fix Bugs"
+msgstr ""
+
+#: src/contributing.md:15
+msgid ""
+"Look through the GitHub issues for bugs. Anything tagged with `bug` and "
+"`help wanted` is open to whoever wants to implement it."
+msgstr ""
+
+#: src/contributing.md:18
+msgid "Implement Features"
+msgstr ""
+
+#: src/contributing.md:20
+msgid "Look through the GitHub issues for features."
+msgstr ""
+
+#: src/contributing.md:22
+msgid "Write Documentation"
+msgstr ""
+
+#: src/contributing.md:24
+msgid ""
+"Maturin could always use more documentation, whether as part of the official "
+"guide, in docstrings or even on the web in blog posts, articles and such."
+msgstr ""
+
+#: src/contributing.md:27
+msgid "Submit Feedback"
+msgstr ""
+
+#: src/contributing.md:29
+msgid ""
+"The best way to send feedback is to start a new discussion at [https://"
+"github.com/PyO3/maturin/discussions](https://github.com/PyO3/maturin/"
+"discussions)."
+msgstr ""
+
+#: src/contributing.md:32
+msgid "Get Started!"
+msgstr ""
+
+#: src/contributing.md:34
+msgid "Ready to contribute? Here's how to setup maturin for local development."
+msgstr ""
+
+#: src/contributing.md:36
+msgid "Fork the maturin repository on GitHub."
+msgstr ""
+
+#: src/contributing.md:37
+msgid "Clone your fork locally:"
+msgstr ""
+
+#: src/contributing.md:41
+msgid ""
+"[Install a stable Rust toolchain](https://www.rust-lang.org/tools/install) "
+"and of course [Python 3.6 or later is also required](https://realpython.com/"
+"installing-python/)."
+msgstr ""
+
+#: src/contributing.md:43
+msgid "Create a branch for local development:"
+msgstr ""
+
+#: src/contributing.md:48
+msgid "Now you can make your changes locally."
+msgstr ""
+
+#: src/contributing.md:49
+msgid "When you're done making changes, ensure the tests pass by running"
+msgstr ""
+
+#: src/contributing.md:53
+msgid ""
+"Note that in order to run tests you need to install `virtualenv` (`pip "
+"install virtualenv`) and add WebAssembly compilation target (`rustup target "
+"add wasm32-wasip1`)."
+msgstr ""
+
+#: src/contributing.md:54
+msgid ""
+"make sure your changes are well formatted and pass the linting checks by "
+"installing [pre-commit](https://pre-commit.com/) and running"
+msgstr ""
+
+#: src/contributing.md:59
+msgid ""
+"running `pre-commit install` will enable running the checks automatically "
+"before every commit (except for the slow checks: `cargo check` and `cargo "
+"clippy` which are only run manually). You can also look at `.pre-commit-"
+"config.yaml` and run the individual checks yourself if you prefer."
+msgstr ""
+
+#: src/contributing.md:62
+msgid "Commit your changes and push your branch to GitHub:"
+msgstr ""
+
+#: src/contributing.md:68
+msgid ""
+"Submit a pull request through the [GitHub website](https://github.com/PyO3/"
+"maturin/pulls)."
+msgstr ""
+
+#: src/contributing.md:70
+msgid ""
+"We provide a pre-configured [dev container](https://containers.dev/) that "
+"could be used in [Github Codespaces](https://github.com/features/"
+"codespaces), [VSCode](https://code.visualstudio.com/), [JetBrains](https://"
+"www.jetbrains.com/remote-development/gateway/), [JupyterLab](https://"
+"jupyterlab.readthedocs.io/en/stable/)."
+msgstr ""
+
+#: src/contributing.md:72
+msgid ""
+"[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)]"
+"(https://codespaces.new/pyo3/maturin?quickstart=1&machine=standardLinux32gb)"
+msgstr ""
+
+#: src/contributing.md:74
+msgid "Pull Request Guidelines"
+msgstr ""
+
+#: src/contributing.md:76
+msgid "Before you submit a pull request, check that it meets these guidelines:"
+msgstr ""
+
+#: src/contributing.md:78
+msgid ""
+"The pull request should include tests if it adds or changes functionalities."
+msgstr ""
+
+#: src/contributing.md:79
+msgid ""
+"Add a [changelog](https://github.com/PyO3/maturin/blob/main/Changelog.md) "
+"entry."
+msgstr ""
+
+#: src/contributing.md:81
+msgid ""
+"When command line interface changes, run `python3 test-crates/update_readme."
+"py` to update related documentation."
+msgstr ""
+
+#: src/contributing.md:83
+msgid "Guide"
+msgstr ""
+
+#: src/contributing.md:85
+msgid ""
+"To build the guide for local viewing, install [mdBook](https://rust-lang."
+"github.io/mdBook/guide/installation.html) and run `mdbook watch guide` from "
+"the repository root. The output can then be found at `guide/book/index.html`."
+msgstr ""
+
+#: src/contributing.md:88
+msgid "Code"
+msgstr ""
+
+#: src/contributing.md:90
+msgid ""
+"The main part is the maturin library, which is completely documented and "
+"should be well integrable. The accompanying `main.rs` takes care username "
+"and password for the pypi upload and otherwise calls into the library."
+msgstr ""
+
+#: src/contributing.md:92
+msgid ""
+"The `sysconfig` folder contains the output of `python -m sysconfig` for "
+"different python versions and platform, which is helpful during development."
+msgstr ""
+
+#: src/contributing.md:94
+msgid ""
+"You need to install `cffi` and `virtualenv` (`pip install cffi virtualenv`) "
+"to run the tests."
+msgstr ""
+
+#: src/contributing.md:96
+msgid ""
+"You can set the `MATURIN_TEST_PYTHON` environment variable to run the tests "
+"against a specific Python version, for example "
+"`MATURIN_TEST_PYTHON=python3.11 cargo test` will run the tests against "
+"Python 3.11."
+msgstr ""
+
+#: src/contributing.md:99
+msgid ""
+"There are some optional hacks that can speed up the tests (over 80s to 17s "
+"on my machine)."
+msgstr ""
+
+#: src/contributing.md:100
+msgid ""
+"By running `cargo build --release --manifest-path test-crates/cargo-mock/"
+"Cargo.toml` you can activate a cargo cache avoiding to rebuild the pyo3 test "
+"crates with every python version."
+msgstr ""
+
+#: src/contributing.md:101
+msgid ""
+"Delete `target/test-cache` to clear the cache (e.g. after changing a test "
+"crate) or remove `test-crates/cargo-mock/target/release/cargo` to deactivate "
+"it."
+msgstr ""
+
+#: src/contributing.md:102
+msgid ""
+"By running the tests with the `faster-tests` feature, binaries are stripped "
+"and wheels are only stored and not compressed."
+msgstr ""
+
+#: src/contributing.md:104
+msgid "Releasing"
+msgstr ""
+
+#: src/contributing.md:106
+msgid "_These instructions are a work in progress_"
+msgstr ""
+
+#: src/contributing.md:108
+msgid "Update the changelog:"
+msgstr ""
+
+#: src/contributing.md:114
+msgid "Update the version in `Cargo.toml` and run:"
+msgstr ""
+
+#: src/contributing.md:120
+msgid "Create a PR a release PR."
+msgstr ""
+
+#: src/contributing.md:122
+msgid ""
+"After the release PR merged, update main, create a git tag and push the tag."
+msgstr ""

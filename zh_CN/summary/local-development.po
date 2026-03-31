@@ -1,0 +1,71 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-03-16T14:34:05Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_CN\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/local_development.md:1
+msgid "Local Development"
+msgstr ""
+
+#: src/local_development.md:3
+msgid "`maturin develop` command"
+msgstr ""
+
+#: src/local_development.md:5
+msgid ""
+"For local development, the `maturin develop` command can be used to quickly "
+"build a package in debug mode by default and install it to virtualenv. Debug "
+"info files (.pdb, .dSYM, .dwp) are automatically included alongside the "
+"built artifact unless `--strip` is used."
+msgstr ""
+
+#: src/local_development.md:123
+msgid "PEP 660 Editable Installs"
+msgstr ""
+
+#: src/local_development.md:125
+msgid ""
+"Maturin supports [PEP 660](https://www.python.org/dev/peps/pep-0660/) "
+"editable installs since v0.12.0. You need to add `maturin` to `build-system` "
+"section of `pyproject.toml` to use it:"
+msgstr ""
+
+#: src/local_development.md:128
+msgid ""
+"```toml\n"
+"[build-system]\n"
+"requires = [\"maturin>=1.0,<2.0\"]\n"
+"build-backend = \"maturin\"\n"
+"```"
+msgstr ""
+
+#: src/local_development.md:134
+msgid ""
+"Editable installs can be used with mixed Rust/Python projects so you don't "
+"have to recompile and reinstall when only Python source code changes. They "
+"can also be used with mixed and pure projects together with the [import hook]"
+"(./import_hook.md) so that recompilation/re-installation occurs "
+"automatically when Python or Rust source code changes."
+msgstr ""
+
+#: src/local_development.md:140
+msgid "To install a package in editable mode with pip:"
+msgstr ""
+
+#: src/local_development.md:147
+msgid "or"
+msgstr ""
+
+#: src/local_development.md:154
+msgid ""
+"Then Python source code changes will take effect immediately because the "
+"interpreter looks for the modules directly in the project source tree."
+msgstr ""
