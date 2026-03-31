@@ -1,0 +1,206 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-03-16T14:34:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/sphinx.md:1
+msgid "Sphinx Documentation Integration"
+msgstr "Sphinx 文件整合"
+
+#: src/sphinx.md:3
+msgid ""
+"Sphinx is a popular documentation generator in Python community. It's "
+"commonly used together with services like [Read The Docs](https://"
+"readthedocs.org/) which automates documentation building, versioning, and "
+"hosting for you."
+msgstr ""
+
+#: src/sphinx.md:7
+msgid ""
+"Usually in a pure Python project setting up Sphinx is easy, just follow the "
+"[quick start](https://www.sphinx-doc.org/en/master/usage/quickstart.html) of "
+"Sphinx documentation is enough. But it can get complicated when Rust based "
+"Python extension modules are involved."
+msgstr ""
+
+#: src/sphinx.md:12
+msgid ""
+"With maturin, first you need to make sure you have added a `pyproject.toml` "
+"and properly configured it to build source distributions, for example a "
+"minimal configuration below:"
+msgstr ""
+
+#: src/sphinx.md:15
+msgid ""
+"```toml\n"
+"[build-system]\n"
+"requires = [\"maturin>=0.14,<0.15\"]\n"
+"build-backend = \"maturin\"\n"
+"```"
+msgstr ""
+
+#: src/sphinx.md:21
+msgid ""
+"With this `pip install .` should work when invoked in the project directory."
+msgstr ""
+
+#: src/sphinx.md:23
+msgid "Read The Docs Integration"
+msgstr ""
+
+#: src/sphinx.md:25
+msgid ""
+"To build documentation on [Read The Docs](https://readthedocs.org/), you "
+"need to tell it to install the Rust compiler and Python interpreter in its "
+"build environment, you can do it by adding a `.readthedocs.yaml` in your "
+"project root:"
+msgstr ""
+
+#: src/sphinx.md:30
+msgid ""
+"# https://docs.readthedocs.io/en/stable/config-file/v2.html#supported-"
+"settings\n"
+msgstr ""
+
+#: src/sphinx.md:31
+msgid "version"
+msgstr ""
+
+#: src/sphinx.md:33
+msgid "sphinx"
+msgstr ""
+
+#: src/sphinx.md:35
+msgid "builder"
+msgstr ""
+
+#: src/sphinx.md:35
+msgid "html"
+msgstr ""
+
+#: src/sphinx.md:36
+msgid "build"
+msgstr ""
+
+#: src/sphinx.md:38
+msgid "os"
+msgstr ""
+
+#: src/sphinx.md:38
+msgid "\"ubuntu-20.04\""
+msgstr ""
+
+#: src/sphinx.md:39
+msgid "tools"
+msgstr ""
+
+#: src/sphinx.md:40 src/sphinx.md:42 src/sphinx.md:59
+msgid "python"
+msgstr ""
+
+#: src/sphinx.md:40
+msgid "\"3.9\""
+msgstr ""
+
+#: src/sphinx.md:41
+msgid "rust"
+msgstr ""
+
+#: src/sphinx.md:41
+msgid "\"1.55\""
+msgstr ""
+
+#: src/sphinx.md:44 src/sphinx.md:60
+msgid "install"
+msgstr ""
+
+#: src/sphinx.md:45 src/sphinx.md:62
+msgid "method"
+msgstr ""
+
+#: src/sphinx.md:45 src/sphinx.md:62
+msgid "pip"
+msgstr ""
+
+#: src/sphinx.md:46 src/sphinx.md:63
+msgid "path"
+msgstr ""
+
+#: src/sphinx.md:49
+msgid ""
+"If you're using a mixed Rust/Python project layout, make sure you didn't add "
+"the Python project path to `sys.path` in `conf.py` of Sphinx. Read The Docs "
+"doesn't install your project in editable mode, adding it to `sys.path` will "
+"make your project fail to import which breaks documentation generation."
+msgstr ""
+
+#: src/sphinx.md:54
+msgid ""
+"If you need to install a specific version of Sphinx or adding Sphinx themes/"
+"extensions, you can change the `python.install` section a bit to add an "
+"extra installation step, for example:"
+msgstr ""
+
+#: src/sphinx.md:61
+msgid "requirements"
+msgstr ""
+
+#: src/sphinx.md:61
+msgid "docs/requirements.txt"
+msgstr "docs/requirements.txt"
+
+#: src/sphinx.md:66
+msgid ""
+"In `docs/requirements.txt` you can add some Python package requirements you "
+"needs build the documentation."
+msgstr ""
+
+#: src/sphinx.md:69
+msgid "Netlify Integration"
+msgstr "Netlify 整合"
+
+#: src/sphinx.md:71
+msgid ""
+"[Netlify](https://www.netlify.com/) is another popular automated site "
+"hosting service that can be used with Sphinx and other documentation tools."
+msgstr ""
+
+#: src/sphinx.md:74
+msgid ""
+"Netlify configuration can be specified in a `.netlify.toml` file. Assuming "
+"your Sphinx documentation files are placed in `docs/` directory, a minimal "
+"configurationfor maturin based project can be:"
+msgstr ""
+
+#: src/sphinx.md:78
+msgid ""
+"```toml\n"
+"[build]\n"
+"  base = \"docs\"\n"
+"  publish = \"_build/html\"\n"
+"  command = \"maturin develop -m ../Cargo.toml && make html\"\n"
+"```"
+msgstr ""
+
+#: src/sphinx.md:85
+msgid ""
+"You also need to add a `rust-toolchain` file at `docs/rust-toolchain` which "
+"netlify will use to install the specified Rust toolchain that maturin needs "
+"to compile your project."
+msgstr ""
+
+#: src/sphinx.md:89
+msgid ""
+"For Sphinx which is written in Python to run you need to add a `runtime.txt` "
+"at `docs/runtime.txt`, its content should be a Python interpreter version "
+"for example `3.8`. Then a `requirements.txt` file at `docs/requirements.txt` "
+"is needed to install Sphinx and its dependencies, you can generate one by:"
+msgstr ""
