@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-03-16T14:34:05Z\n"
+"POT-Creation-Date: 2026-04-14T09:23:28Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -102,26 +102,25 @@ msgid ""
 "          Rustc flags\n"
 "\n"
 "Options:\n"
-"      --strip\n"
-"          Strip the library for minimum file size\n"
+"      --strip [<STRIP>]\n"
+"          Strip the library for minimum file size. Can be set to `true` or "
+"`false`, or used as a flag (`--strip` implies `true`)\n"
 "\n"
-"      --include-debuginfo\n"
-"          Include debug info files (.pdb on Windows, .dSYM on macOS, .dwp on "
-"Linux) in the wheel.\n"
-"          When enabled, maturin automatically configures split-"
-"debuginfo=packed so that separate\n"
-"          debug info files are produced. Cannot be used with --strip.\n"
+"          [env: MATURIN_STRIP=]\n"
+"          [possible values: true, false]\n"
 "\n"
 "      --sdist\n"
-"          Build a source distribution\n"
+"          Build a source distribution and build wheels from it.\n"
 "\n"
-"      --compatibility [<compatibility>...]\n"
-"          Control platform tags. Use `pypi` to ensure PyPI compatibility, or "
-"specify platform-specific\n"
-"          tags like `manylinux2014`, `musllinux_1_2`, or `linux`.\n"
+"          This verifies that the source distribution is complete and can be "
+"used to build the project from source.\n"
 "\n"
-"          The default is the lowest compatible `manylinux` tag, or plain "
-"`linux` if nothing matched\n"
+"      --pgo\n"
+"          Build with Profile-Guided Optimization (PGO).\n"
+"\n"
+"          Requires `pgo-command` to be set in `[tool.maturin]` in pyproject."
+"toml. This performs a three-phase build: instrumented build, profile "
+"training, and optimized rebuild.\n"
 "\n"
 "  -i, --interpreter [<INTERPRETER>...]\n"
 "          The python versions to build wheels for, given as the executables "
@@ -135,9 +134,25 @@ msgid ""
 "\n"
 "          [possible values: pyo3, pyo3-ffi, cffi, uniffi, bin]\n"
 "\n"
-"  -o, --out <OUT>\n"
-"          The directory to store the built wheels in. Defaults to a new "
-"\"wheels\" directory in the project's target directory\n"
+"      --compatibility [<compatibility>...]\n"
+"          Control the platform tag and PyPI compatibility.\n"
+"\n"
+"          This options offers both fine-grained control over the linux libc "
+"tag and a more automatic PyPI-compatibility option.\n"
+"\n"
+"          The `pypi` option applies on all platforms and ensure that only "
+"tags that can be uploaded to PyPI are used. The linux-specific options are "
+"`manylinux` tags (for example `manylinux2014`/`manylinux_2_24`) or "
+"`musllinux` tags (for example `musllinux_1_2`), and `linux` for the native "
+"linux tag. They are\n"
+"          ignored on non-linux platforms.\n"
+"\n"
+"          Note that `manylinux1` and `manylinux2010` are unsupported by the "
+"rust compiler. Wheels with the native `linux` tag will be rejected by pypi, "
+"unless they are separately validated by `auditwheel`.\n"
+"\n"
+"          The default is the lowest compatible `manylinux` tag, or plain "
+"`linux` if nothing matched.\n"
 "\n"
 "      --auditwheel <AUDITWHEEL>\n"
 "          Audit wheel for manylinux compliance\n"
@@ -155,6 +170,19 @@ msgid ""
 "`--compatibility`\n"
 "\n"
 "          Make sure you installed zig with `pip install maturin[zig]`\n"
+"\n"
+"  -o, --out <OUT>\n"
+"          The directory to store the built wheels in. Defaults to a new "
+"\"wheels\" directory in the project's target directory\n"
+"\n"
+"      --include-debuginfo\n"
+"          Include debug info files (.pdb on Windows, .dSYM on macOS, .dwp on "
+"Linux) in the wheel. When enabled, maturin automatically configures split-"
+"debuginfo=packed so that separate debug info files are produced\n"
+"\n"
+"      --sbom-include <SBOM_INCLUDE>...\n"
+"          Additional SBOM files to include in the `.dist-info/sboms` "
+"directory. Can be specified multiple times\n"
 "\n"
 "  -q, --quiet\n"
 "          Do not print cargo log messages\n"
@@ -180,14 +208,28 @@ msgid ""
 "(unstable)\n"
 "\n"
 "      --compression-method <COMPRESSION_METHOD>\n"
-"          Zip compression method to use\n"
+"          Zip compression method. Only Stored and Deflated are currently "
+"compatible with all package managers\n"
+"\n"
+"          Possible values:\n"
+"          - deflated: Deflate compression (levels 0-9, default 6)\n"
+"          - stored:   No compression\n"
+"          - bzip2:    BZIP2 compression (levels 0-9, default 6)\n"
+"          - zstd:     Zstandard compression (supported from Python 3.14; "
+"levels -7-22, default 3)\n"
 "\n"
 "          [default: deflated]\n"
 "\n"
-"          Possible values:\n"
-"          - deflated: Deflate compression\n"
-"          - stored:   No compression\n"
-"          - zstd:     Zstandard compression\n"
+"      --compression-level <COMPRESSION_LEVEL>\n"
+"          Zip compression level. Defaults to method default\n"
+"\n"
+"      --compression-enable-large-file-support\n"
+"          Whether to use large file support for ZIP files. Defaults to "
+"false\n"
+"\n"
+"      --generate-stubs\n"
+"          Auto generate Python type stubs by introspecting the binary. "
+"Requires PyO3 and its \"experimental-inspect\" feature\n"
 "\n"
 "  -h, --help\n"
 "          Print help (see a summary with '-h')\n"
@@ -238,17 +280,17 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/distribution.md:167
+#: src/distribution.md:194
 msgid "Source Distribution"
 msgstr ""
 
-#: src/distribution.md:169
+#: src/distribution.md:196
 msgid ""
 "Maturin supports building through `pyproject.toml`. To use it, create a "
 "`pyproject.toml` next to your `Cargo.toml` with the following content:"
 msgstr ""
 
-#: src/distribution.md:171
+#: src/distribution.md:198
 msgid ""
 "```toml\n"
 "[build-system]\n"
@@ -257,7 +299,7 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/distribution.md:177
+#: src/distribution.md:204
 msgid ""
 "If a `pyproject.toml` with a `[build-system]` entry is present, maturin can "
 "build a source distribution of your package when `--sdist` is specified. The "
@@ -265,13 +307,13 @@ msgid ""
 "build a source distribution, use the `maturin sdist` command."
 msgstr ""
 
-#: src/distribution.md:180
+#: src/distribution.md:207
 msgid ""
 "You can then e.g. install your package with `pip install .`. With `pip "
 "install . -v` you can see the output of cargo and maturin."
 msgstr ""
 
-#: src/distribution.md:182
+#: src/distribution.md:209
 msgid ""
 "You can use the options `compatibility`, `skip-auditwheel`, `bindings`, "
 "`strip` and common Cargo build options such as `features` under `[tool."
@@ -282,12 +324,12 @@ msgid ""
 "for details)."
 msgstr ""
 
-#: src/distribution.md:185
+#: src/distribution.md:212
 msgid ""
 "For a non-manylinux build with cffi bindings you could use the following:"
 msgstr ""
 
-#: src/distribution.md:187
+#: src/distribution.md:214
 msgid ""
 "```toml\n"
 "[build-system]\n"
@@ -309,19 +351,19 @@ msgstr ""
 "compatibility = \"linux\"\n"
 "```"
 
-#: src/distribution.md:197
+#: src/distribution.md:224
 msgid ""
 "`manylinux` option is also accepted as an alias of `compatibility` for "
 "backward compatibility with old version of maturin."
 msgstr ""
 
-#: src/distribution.md:199
+#: src/distribution.md:226
 msgid ""
 "To include arbitrary files in the sdist for use during compilation specify "
 "`include` as an array of `path` globs with `format` set to `sdist`:"
 msgstr ""
 
-#: src/distribution.md:201
+#: src/distribution.md:228
 msgid ""
 "```toml\n"
 "[tool.maturin]\n"
@@ -329,25 +371,25 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/distribution.md:206
+#: src/distribution.md:233
 msgid "Cross Compiling"
 msgstr "交叉編譯"
 
-#: src/distribution.md:208
+#: src/distribution.md:235
 msgid ""
 "Maturin has decent cross compilation support for `pyo3` and `bin` bindings, "
 "other kind of bindings may work but aren't tested regularly."
 msgstr ""
 
-#: src/distribution.md:211
+#: src/distribution.md:238
 msgid "Cross-compile to Linux/macOS"
 msgstr ""
 
-#: src/distribution.md:213
+#: src/distribution.md:240
 msgid "Use Docker"
 msgstr "使用 Docker"
 
-#: src/distribution.md:215
+#: src/distribution.md:242
 msgid ""
 "For manylinux support the [manylinux-cross](https://github.com/rust-cross/"
 "manylinux-cross) docker images can be used. And [maturin-action](https://"
@@ -355,11 +397,11 @@ msgid ""
 "GitHub Actions."
 msgstr ""
 
-#: src/distribution.md:218
+#: src/distribution.md:245
 msgid "Use Zig"
 msgstr "使用 Zig"
 
-#: src/distribution.md:220
+#: src/distribution.md:247
 msgid ""
 "Since v0.12.7 maturin added support for linking with [`zig cc`](https://"
 "andrewkelley.me/post/zig-cc-powerful-drop-in-replacement-gcc-clang.html), "
@@ -367,18 +409,18 @@ msgid ""
 "also work but aren't tested regularly."
 msgstr ""
 
-#: src/distribution.md:223
+#: src/distribution.md:250
 msgid ""
 "You can install zig following the [official documentation](https://ziglang."
 "org/download), or install it from PyPI via `pip install ziglang`. Then pass "
 "`--zig` to maturin `build` or `publish` commands to use it, for example"
 msgstr ""
 
-#: src/distribution.md:230
+#: src/distribution.md:257
 msgid "Cross-compile to Windows"
 msgstr ""
 
-#: src/distribution.md:232
+#: src/distribution.md:259
 msgid ""
 "Pyo3 0.16.5 added an experimental feature `generate-import-lib` enables the "
 "user to cross compile extension modules for Windows targets without setting "
@@ -386,19 +428,15 @@ msgid ""
 "Python library files."
 msgstr ""
 
-#: src/distribution.md:236
+#: src/distribution.md:263
 msgid ""
 "```toml\n"
 "[dependencies]\n"
-"pyo3 = { version = \"0.27.0\", features = [\"generate-import-lib\"] }\n"
+"pyo3 = { version = \"0.28.2\", features = [\"generate-import-lib\"] }\n"
 "```"
 msgstr ""
-"```toml\n"
-"[dependencies]\n"
-"pyo3 = { version = \"0.27.0\", features = [\"generate-import-lib\"] }\n"
-"```"
 
-#: src/distribution.md:241
+#: src/distribution.md:268
 msgid ""
 "It uses an external [`python3-dll-a`](https://docs.rs/python3-dll-a/latest/"
 "python3_dll_a/) crate to generate import libraries for the Python DLL for "
@@ -408,7 +446,7 @@ msgid ""
 "present in `PATH` when targeting `*-pc-windows-msvc`."
 msgstr ""
 
-#: src/distribution.md:246
+#: src/distribution.md:273
 msgid ""
 "maturin integrates [`cargo-xwin`](https://github.com/messense/cargo-xwin) to "
 "enable MSVC targets cross compilation support, it will download and unpack "
@@ -416,7 +454,7 @@ msgid ""
 "import libraries needed for compiling and linking automatically."
 msgstr ""
 
-#: src/distribution.md:250
+#: src/distribution.md:277
 msgid ""
 "**By using this to cross compiling to Windows MSVC targets you are consented "
 "to accept the license at [https://go.microsoft.com/fwlink/?LinkId=2086102]"
@@ -424,21 +462,21 @@ msgid ""
 "natively does not apply.)"
 msgstr ""
 
-#: src/distribution.md:253
+#: src/distribution.md:280
 msgid "GitHub Actions"
 msgstr ""
 
-#: src/distribution.md:255
+#: src/distribution.md:282
 msgid ""
 "If your project uses GitHub Actions, you can use the `maturin generate-ci` "
 "command to generate a GitHub Actions workflow file."
 msgstr ""
 
-#: src/distribution.md:262
+#: src/distribution.md:289
 msgid "There are some options to customize the generated workflow file:"
 msgstr ""
 
-#: src/distribution.md:264
+#: src/distribution.md:291
 msgid ""
 "```\n"
 "Generate CI configuration\n"
@@ -501,11 +539,11 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/distribution.md:320
+#: src/distribution.md:347
 msgid "Using PyPI's trusted publishing"
 msgstr ""
 
-#: src/distribution.md:322
+#: src/distribution.md:349
 msgid ""
 "By default, the workflow provided by `generate-ci` will publish the release "
 "artifacts to PyPI using API token authentication. However, maturin also "
@@ -513,19 +551,19 @@ msgid ""
 "publishers/)."
 msgstr ""
 
-#: src/distribution.md:324
+#: src/distribution.md:351
 msgid ""
 "To enable it, modify the `release` action in the generated GitHub workflow "
 "file:"
 msgstr ""
 
-#: src/distribution.md:326
+#: src/distribution.md:353
 msgid ""
 "remove `MATURIN_PYPI_TOKEN` from the `env` section to make maturin use "
 "trusted publishing"
 msgstr ""
 
-#: src/distribution.md:327
+#: src/distribution.md:354
 msgid ""
 "add `id-token: write` to the action's `permissions` (see [Configuring OpenID "
 "Connect in PyPI](https://docs.github.com/en/actions/deployment/security-"
@@ -533,14 +571,25 @@ msgid ""
 "documentation)."
 msgstr ""
 
-#: src/distribution.md:328
+#: src/distribution.md:355
 msgid "if `Environment name: pypi` was set in PyPI, add `environment: pypi`"
 msgstr ""
 
-#: src/distribution.md:330
+#: src/distribution.md:357
 msgid ""
 "Make sure to follow the steps listed in [PyPI's documentation](https://docs."
 "pypi.org/trusted-publishers/adding-a-publisher/) to set up your GitHub "
 "repository as a trusted publisher in the PyPI project settings before "
 "attempting to run the workflow."
 msgstr ""
+
+#~ msgid ""
+#~ "```toml\n"
+#~ "[dependencies]\n"
+#~ "pyo3 = { version = \"0.27.0\", features = [\"generate-import-lib\"] }\n"
+#~ "```"
+#~ msgstr ""
+#~ "```toml\n"
+#~ "[dependencies]\n"
+#~ "pyo3 = { version = \"0.27.0\", features = [\"generate-import-lib\"] }\n"
+#~ "```"

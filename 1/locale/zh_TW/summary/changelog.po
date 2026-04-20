@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-03-16T14:34:05Z\n"
+"POT-Creation-Date: 2026-04-14T09:23:28Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -15,765 +15,1019 @@ msgstr ""
 msgid "Changelog"
 msgstr "變更日誌"
 
-#: src/changelog.md:3
-msgid "1.12.6"
+#: src/changelog.md:3 src/changelog.md:7
+msgid "1.13.0"
 msgstr ""
 
 #: src/changelog.md:5
+msgid ""
+"Fix: fall back to placeholder for abi3 when found interpreters are too old "
+"([\\#3126](https://github.com/pyo3/maturin/pull/3126))"
+msgstr ""
+
+#: src/changelog.md:9
+msgid ""
+"Refactor: unified interpreter resolution pipeline ([\\#3032](https://github."
+"com/pyo3/maturin/pull/3032))"
+msgstr ""
+
+#: src/changelog.md:10
+msgid ""
+"Refactor: decompose large modules into focused submodules ([\\#3052](https://"
+"github.com/pyo3/maturin/pull/3052))"
+msgstr ""
+
+#: src/changelog.md:11
+msgid ""
+"Keep cargo build artifact at original path after staging ([\\#3054](https://"
+"github.com/pyo3/maturin/pull/3054))"
+msgstr ""
+
+#: src/changelog.md:12
+msgid ""
+"Fix `--strip` conflicting with `--include-debuginfo` in develop ([\\#3057]"
+"(https://github.com/pyo3/maturin/pull/3057))"
+msgstr ""
+
+#: src/changelog.md:13
+msgid ""
+"Fix abi3 wheel producing version-specific tags for CPython below minimum "
+"([\\#3061](https://github.com/pyo3/maturin/pull/3061))"
+msgstr ""
+
+#: src/changelog.md:14
+msgid ""
+"Generate-ci: use uv pip for pytest steps to fix local wheel preference "
+"([\\#3063](https://github.com/pyo3/maturin/pull/3063))"
+msgstr ""
+
+#: src/changelog.md:15
+msgid "Update reflink-copy to 0.1.29 to fix sparc Linux builds"
+msgstr ""
+
+#: src/changelog.md:16
+msgid ""
+"Add `[tool.maturin.generate-ci.github]` config support ([\\#3066](https://"
+"github.com/pyo3/maturin/pull/3066))"
+msgstr ""
+
+#: src/changelog.md:17
+msgid ""
+"Fix(sdist): handle parent workspaces and refactor sdist generation ([\\#3055]"
+"(https://github.com/pyo3/maturin/pull/3055))"
+msgstr ""
+
+#: src/changelog.md:18
+msgid ""
+"Test: refactor integration suite and switch mixed fixtures to cffi ([\\#3068]"
+"(https://github.com/pyo3/maturin/pull/3068))"
+msgstr ""
+
+#: src/changelog.md:19
+msgid ""
+"Fix `data` symlink permission handling ([\\#3069](https://github.com/pyo3/"
+"maturin/pull/3069))"
+msgstr ""
+
+#: src/changelog.md:20
+msgid ""
+"Fix: correct bugs in audit.rs typo and module_writer ([\\#3070](https://"
+"github.com/pyo3/maturin/pull/3070))"
+msgstr ""
+
+#: src/changelog.md:21
+msgid ""
+"Perf: use lazy-initialized regexes instead of per-call compilation ([\\#3071]"
+"(https://github.com/pyo3/maturin/pull/3071))"
+msgstr ""
+
+#: src/changelog.md:22
+msgid ""
+"Refactor: extract duplicated helpers and reduce code repetition ([\\#3072]"
+"(https://github.com/pyo3/maturin/pull/3072))"
+msgstr ""
+
+#: src/changelog.md:23
+msgid ""
+"Refactor: split monster functions into focused methods ([\\#3073](https://"
+"github.com/pyo3/maturin/pull/3073))"
+msgstr ""
+
+#: src/changelog.md:24
+msgid ""
+"Refactor: improve type safety and API clarity ([\\#3074](https://github.com/"
+"pyo3/maturin/pull/3074))"
+msgstr ""
+
+#: src/changelog.md:25
+msgid ""
+"Refactor: cleanup anti-patterns ([\\#3075](https://github.com/pyo3/maturin/"
+"pull/3075))"
+msgstr ""
+
+#: src/changelog.md:26
+msgid ""
+"Refactor: decompose `build_context` into focused submodules ([\\#3076]"
+"(https://github.com/pyo3/maturin/pull/3076))"
+msgstr ""
+
+#: src/changelog.md:27
+msgid ""
+"Fix: skip legacy manylinux aliases not in PyPI allow-list ([\\#3078](https://"
+"github.com/pyo3/maturin/pull/3078))"
+msgstr ""
+
+#: src/changelog.md:28
+msgid ""
+"Fix: auto-generate `.def` file for zig + windows-gnu to export `PyInit` "
+"symbol ([\\#3079](https://github.com/pyo3/maturin/pull/3079))"
+msgstr ""
+
+#: src/changelog.md:29
+msgid ""
+"Ci: upgrade run-on-arch-action to ubuntu24.04, add deadsnakes PPA for newer "
+"Python ([\\#3081](https://github.com/pyo3/maturin/pull/3081))"
+msgstr ""
+
+#: src/changelog.md:30
+msgid ""
+"Fix: pass `-undefined dynamic_lookup` via `CARGO_ENCODED_RUSTFLAGS` on macOS "
+"([\\#3083](https://github.com/pyo3/maturin/pull/3083))"
+msgstr ""
+
+#: src/changelog.md:31
+msgid ""
+"Feat: add Profile-Guided Optimization (PGO) support ([\\#3085](https://"
+"github.com/pyo3/maturin/pull/3085))"
+msgstr ""
+
+#: src/changelog.md:32
+msgid ""
+"Respect `metadata_directory` in `build_wheel` per PEP 517 ([\\#3086](https://"
+"github.com/pyo3/maturin/pull/3086))"
+msgstr ""
+
+#: src/changelog.md:33
+msgid "Update lddtree to 0.5.0"
+msgstr ""
+
+#: src/changelog.md:34
+msgid ""
+"Fix cargo path with puccinialin for Windows ([\\#3093](https://github.com/"
+"pyo3/maturin/pull/3093))"
+msgstr ""
+
+#: src/changelog.md:35
+msgid "Update and pin cargo-cyclonedx to 0.5.9"
+msgstr ""
+
+#: src/changelog.md:36
+msgid ""
+"Ci: improve GitHub Actions generation logic ([\\#3097](https://github.com/"
+"pyo3/maturin/pull/3097))"
+msgstr ""
+
+#: src/changelog.md:37
+msgid ""
+"Refactor: split BuildOptions and BuildContext into logical sub-groups "
+"([\\#3098](https://github.com/pyo3/maturin/pull/3098))"
+msgstr ""
+
+#: src/changelog.md:38
+msgid ""
+"Refactor: move subcommands to separate modules ([\\#3099](https://github.com/"
+"pyo3/maturin/pull/3099))"
+msgstr ""
+
+#: src/changelog.md:39
+msgid ""
+"Refactor: decouple build orchestration from BuildContext ([\\#3100](https://"
+"github.com/pyo3/maturin/pull/3100))"
+msgstr ""
+
+#: src/changelog.md:40
+msgid ""
+"Upgrade pyo3 to 0.28 ([\\#3101](https://github.com/pyo3/maturin/pull/3101))"
+msgstr ""
+
+#: src/changelog.md:41
+msgid ""
+"Fix: only enable include_debuginfo by default on Windows in develop command"
+msgstr ""
+
+#: src/changelog.md:42
+msgid ""
+"PyO3: Adds `--generate_stubs` build options ([\\#3105](https://github.com/"
+"pyo3/maturin/pull/3105))"
+msgstr ""
+
+#: src/changelog.md:43
+msgid ""
+"Fix: prevent panic when no interpreters match abi3 minimum version ([\\#3108]"
+"(https://github.com/pyo3/maturin/pull/3108))"
+msgstr ""
+
+#: src/changelog.md:44
+msgid ""
+"Refactor to store CPython ABI metadata in a struct combining two enums "
+"([\\#3110](https://github.com/pyo3/maturin/pull/3110))"
+msgstr ""
+
+#: src/changelog.md:45
+msgid ""
+"Refactor: introduce `WheelRepairer` trait ([\\#3112](https://github.com/pyo3/"
+"maturin/pull/3112))"
+msgstr ""
+
+#: src/changelog.md:46
+msgid ""
+"Feat: re-implement delocate for repairing macOS wheels ([\\#3114](https://"
+"github.com/pyo3/maturin/pull/3114))"
+msgstr ""
+
+#: src/changelog.md:47
+msgid ""
+"PyO3: Adds generate-stubs command ([\\#3115](https://github.com/pyo3/maturin/"
+"pull/3115))"
+msgstr ""
+
+#: src/changelog.md:48
+msgid ""
+"Feat: re-implement delvewheel for repairing Windows wheels ([\\#3116]"
+"(https://github.com/pyo3/maturin/pull/3116))"
+msgstr ""
+
+#: src/changelog.md:49
+msgid ""
+"Add auditwheel Warn mode, default to Warn on macOS/Windows ([\\#3121]"
+"(https://github.com/pyo3/maturin/pull/3121))"
+msgstr ""
+
+#: src/changelog.md:50
+msgid ""
+"Feat: Support large zip files ([\\#3118](https://github.com/pyo3/maturin/"
+"pull/3118))"
+msgstr ""
+
+#: src/changelog.md:52
+msgid "1.12.6"
+msgstr ""
+
+#: src/changelog.md:54
 msgid ""
 "Sync legacy_py.rs with upstream PyPI warehouse legacy.py ([\\#3053](https://"
 "github.com/PyO3/maturin/pull/3053))"
 msgstr ""
 
-#: src/changelog.md:6
+#: src/changelog.md:55
 msgid ""
 "Keep cargo build artifact at original path after staging ([\\#3054](https://"
 "github.com/PyO3/maturin/pull/3054))"
 msgstr ""
 
-#: src/changelog.md:8
+#: src/changelog.md:57
 msgid "1.12.5"
 msgstr ""
 
-#: src/changelog.md:10
+#: src/changelog.md:59
 msgid ""
 "Feat: include debug info files (.pdb, .dSYM, .dwp) in wheels ([\\#3024]"
 "(https://github.com/pyo3/maturin/pull/3024))"
 msgstr ""
 
-#: src/changelog.md:11
+#: src/changelog.md:60
 msgid ""
 "Fix wrong abi3 tag for conditional cargo features enabled pyo3 abi3 feature "
 "([\\#3029](https://github.com/pyo3/maturin/pull/3029))"
 msgstr ""
 
-#: src/changelog.md:12
+#: src/changelog.md:61
 msgid ""
 "Fix: `maturin build --sdist` wheel name/layout for excluded workspace crates "
 "([\\#3031](https://github.com/pyo3/maturin/pull/3031))"
 msgstr ""
 
-#: src/changelog.md:13
+#: src/changelog.md:62
 msgid ""
 "Fix: preserve wheel output dir when building from unpacked sdist ([\\#3036]"
 "(https://github.com/pyo3/maturin/pull/3036))"
 msgstr ""
 
-#: src/changelog.md:14
+#: src/changelog.md:63
 msgid ""
 "Feat: add python-implementation condition to conditional features ([\\#3038]"
 "(https://github.com/pyo3/maturin/pull/3038))"
 msgstr ""
 
-#: src/changelog.md:15
+#: src/changelog.md:64
 msgid ""
 "Update zip to 8.1 ([\\#3039](https://github.com/pyo3/maturin/pull/3039))"
 msgstr ""
 
-#: src/changelog.md:16
+#: src/changelog.md:65
 msgid ""
 "Use the latest version of github actions ([\\#3040](https://github.com/pyo3/"
 "maturin/pull/3040))"
 msgstr ""
 
-#: src/changelog.md:17
+#: src/changelog.md:66
 msgid ""
 "Use renovate and pinned hashes for GitHub Actions ([\\#3043](https://github."
 "com/pyo3/maturin/pull/3043))"
 msgstr ""
 
-#: src/changelog.md:18
+#: src/changelog.md:67
 msgid ""
 "Chore(deps): update taiki-e/install-action digest to 7410117 ([\\#3046]"
 "(https://github.com/pyo3/maturin/pull/3046))"
 msgstr ""
 
-#: src/changelog.md:19
+#: src/changelog.md:68
 msgid ""
 "Chore(deps): update dtolnay/rust-toolchain digest to efa25f7 ([\\#3045]"
 "(https://github.com/pyo3/maturin/pull/3045))"
 msgstr ""
 
-#: src/changelog.md:20
+#: src/changelog.md:69
 msgid ""
 "Chore(deps): update actions/attest-build-provenance action to v4 ([\\#3047]"
 "(https://github.com/pyo3/maturin/pull/3047))"
 msgstr ""
 
-#: src/changelog.md:21
+#: src/changelog.md:70
 msgid ""
 "Use mmap for faster warn_missing_py_init ([\\#2950](https://github.com/pyo3/"
 "maturin/pull/2950))"
 msgstr ""
 
-#: src/changelog.md:23
+#: src/changelog.md:72
 msgid "1.12.4"
 msgstr ""
 
-#: src/changelog.md:25
+#: src/changelog.md:74
 msgid ""
 "Upgrade memmap2 version ([\\#3021](https://github.com/pyo3/maturin/"
 "pull/3021))"
 msgstr ""
 
-#: src/changelog.md:26
+#: src/changelog.md:75
 msgid ""
 "Fix: platform tag detection for Android targets ([\\#3023](https://github."
 "com/pyo3/maturin/pull/3023))"
 msgstr ""
 
-#: src/changelog.md:27
+#: src/changelog.md:76
 msgid ""
 "Fix: only ignore maturin-generated native libraries on all platforms "
 "([\\#3025](https://github.com/pyo3/maturin/pull/3025))"
 msgstr ""
 
-#: src/changelog.md:28
+#: src/changelog.md:77
 msgid ""
 "Fix: ignore develop artifacts for all binding types during build ([\\#3026]"
 "(https://github.com/pyo3/maturin/pull/3026))"
 msgstr ""
 
-#: src/changelog.md:29
+#: src/changelog.md:78
 msgid ""
 "Feat: support conditional cargo features based on Python version ([\\#3027]"
 "(https://github.com/pyo3/maturin/pull/3027))"
 msgstr ""
 
-#: src/changelog.md:31
+#: src/changelog.md:80
 msgid "1.12.3"
 msgstr ""
 
-#: src/changelog.md:33
+#: src/changelog.md:82
 msgid ""
 "Ci: set crt-static for riscv64 and loongarch64 musl targets ([\\#3009]"
 "(https://github.com/pyo3/maturin/pull/3009))"
 msgstr ""
 
-#: src/changelog.md:34
+#: src/changelog.md:83
 msgid ""
 "Fix: support `maturin develop` on Windows ARM with x86 Python ([\\#3011]"
 "(https://github.com/pyo3/maturin/pull/3011))"
 msgstr ""
 
-#: src/changelog.md:35
+#: src/changelog.md:84
 msgid ""
 "Fix: exclude `external_packages` bindings from uniffi wheels ([\\#3013]"
 "(https://github.com/pyo3/maturin/pull/3013))"
 msgstr ""
 
-#: src/changelog.md:36
+#: src/changelog.md:85
 msgid ""
 "Update cargo-zigbuild to 0.22.1 ([\\#3015](https://github.com/pyo3/maturin/"
 "pull/3015))"
 msgstr ""
 
-#: src/changelog.md:37
+#: src/changelog.md:86
 msgid ""
 "Feat: build wheels from sdist with `--sdist` flag ([\\#3014](https://github."
 "com/pyo3/maturin/pull/3014))"
 msgstr ""
 
-#: src/changelog.md:38
+#: src/changelog.md:87
 msgid ""
 "Feat: add `include-import-lib` option to bundle Windows import libraries in "
 "wheels ([\\#3017](https://github.com/pyo3/maturin/pull/3017))"
 msgstr ""
 
-#: src/changelog.md:39
+#: src/changelog.md:88
 msgid ""
 "Fix: auditwheel external lib check respects musllinux and reports symbol "
 "versions ([\\#3019](https://github.com/pyo3/maturin/pull/3019))"
 msgstr ""
 
-#: src/changelog.md:41
+#: src/changelog.md:90
 msgid "1.12.2"
 msgstr ""
 
-#: src/changelog.md:43
+#: src/changelog.md:92
 msgid ""
 "Fix: allow absolute paths for `--sbom-include` ([\\#3004](https://github.com/"
 "pyo3/maturin/pull/3004))"
 msgstr ""
 
-#: src/changelog.md:45
+#: src/changelog.md:94
 msgid "1.12.1"
 msgstr ""
 
-#: src/changelog.md:47
+#: src/changelog.md:96
 msgid "Fix crates.io trusted publishing"
 msgstr ""
 
-#: src/changelog.md:48
+#: src/changelog.md:97
 msgid "Replace addnab/docker-run-action with direct docker run command"
 msgstr ""
 
-#: src/changelog.md:49
+#: src/changelog.md:98
 msgid "Document SBOM support in user guide"
 msgstr ""
 
-#: src/changelog.md:50
+#: src/changelog.md:99
 msgid ""
 "Add `--sbom-include` CLI argument for additional SBOM files ([\\#2999]"
 "(https://github.com/pyo3/maturin/pull/2999))"
 msgstr ""
 
-#: src/changelog.md:51
+#: src/changelog.md:100
 msgid ""
 "Fix: resolve include patterns relative to python-source for sdist and wheel "
 "([\\#3000](https://github.com/pyo3/maturin/pull/3000))"
 msgstr ""
 
-#: src/changelog.md:52
+#: src/changelog.md:101
 msgid ""
 "Feat: log external shared libraries and their dependents before patchelf"
 msgstr ""
 
-#: src/changelog.md:53
+#: src/changelog.md:102
 msgid ""
 "Feat: support including `OUT_DIR` assets in wheel builds ([\\#3001](https://"
 "github.com/pyo3/maturin/pull/3001))"
 msgstr ""
 
-#: src/changelog.md:54
+#: src/changelog.md:103
 msgid ""
 "Add test case for uniffi with multiple crates ([\\#2839](https://github.com/"
 "pyo3/maturin/pull/2839))"
 msgstr ""
 
-#: src/changelog.md:56
+#: src/changelog.md:105
 msgid "1.12.0"
 msgstr ""
 
-#: src/changelog.md:58
+#: src/changelog.md:107
 msgid ""
 "Use pypi compatibility validation for own CI ([\\#2929](https://github.com/"
 "pyo3/maturin/pull/2929))"
 msgstr ""
 
-#: src/changelog.md:59
+#: src/changelog.md:108
 msgid ""
 "Update toml crates for toml 1.1 support ([\\#2934](https://github.com/pyo3/"
 "maturin/pull/2934))"
 msgstr ""
 
-#: src/changelog.md:60
+#: src/changelog.md:109
 msgid ""
 "Fix editable install for binary projects with Python modules ([\\#2938]"
 "(https://github.com/pyo3/maturin/pull/2938))"
 msgstr ""
 
-#: src/changelog.md:61
+#: src/changelog.md:110
 msgid ""
 "Release to crates.io only after the builds passed ([\\#2939](https://github."
 "com/pyo3/maturin/pull/2939))"
 msgstr ""
 
-#: src/changelog.md:62
+#: src/changelog.md:111
 msgid ""
 "Use `mymindstorm/setup-emsdk@v14` in generated GitHub Actions workflow "
 "([\\#2941](https://github.com/pyo3/maturin/pull/2941))"
 msgstr ""
 
-#: src/changelog.md:63
+#: src/changelog.md:112
 msgid ""
 "Filter linked_paths by KIND and linked_libs ([\\#2949](https://github.com/"
 "pyo3/maturin/pull/2949))"
 msgstr ""
 
-#: src/changelog.md:64
+#: src/changelog.md:113
 msgid ""
 "Update bytes to 1.11.1 ([\\#2960](https://github.com/pyo3/maturin/pull/2960))"
 msgstr ""
 
-#: src/changelog.md:65
+#: src/changelog.md:114
 msgid ""
 "Normalize wheel distribution names to match the PyPA spec ([\\#2954](https://"
 "github.com/pyo3/maturin/pull/2954))"
 msgstr ""
 
-#: src/changelog.md:66
+#: src/changelog.md:115
 msgid ""
 "Allow build loongarch64 and riscv64 for musllinux ([\\#2963](https://github."
 "com/pyo3/maturin/pull/2963))"
 msgstr ""
 
-#: src/changelog.md:67
+#: src/changelog.md:116
 msgid ""
 "Strip excluded cargo targets in sdist ([\\#2964](https://github.com/pyo3/"
 "maturin/pull/2964))"
 msgstr ""
 
-#: src/changelog.md:68
+#: src/changelog.md:117
 msgid ""
 "Normalize wheel `RECORD` paths (on Windows) ([\\#2965](https://github.com/"
 "pyo3/maturin/pull/2965))"
 msgstr ""
 
-#: src/changelog.md:69
+#: src/changelog.md:118
 msgid ""
 "Bump MSRV to 1.88.0 ([\\#2966](https://github.com/pyo3/maturin/pull/2966))"
 msgstr ""
 
-#: src/changelog.md:70
+#: src/changelog.md:119
 msgid ""
 "Support MATURIN_STRIP env var and --strip true/false to override pyproject."
 "toml ([\\#2968](https://github.com/pyo3/maturin/pull/2968))"
 msgstr ""
 
-#: src/changelog.md:71
+#: src/changelog.md:120
 msgid ""
 "Fix: copy bin artifacts before auditwheel repair to avoid rerun failures "
 "([\\#2969](https://github.com/pyo3/maturin/pull/2969))"
 msgstr ""
 
-#: src/changelog.md:72
+#: src/changelog.md:121
 msgid ""
 "Fix: rewrite python-source in pyproject.toml when building sdist ([\\#2972]"
 "(https://github.com/pyo3/maturin/pull/2972))"
 msgstr ""
 
-#: src/changelog.md:73
+#: src/changelog.md:122
 msgid ""
 "Fix: resolve wheel include patterns relative to project root ([\\#2973]"
 "(https://github.com/pyo3/maturin/pull/2973))"
 msgstr ""
 
-#: src/changelog.md:74
+#: src/changelog.md:123
 msgid ""
 "Fix: always include workspace Cargo.toml in sdist ([\\#2974](https://github."
 "com/pyo3/maturin/pull/2974))"
 msgstr ""
 
-#: src/changelog.md:75
+#: src/changelog.md:124
 msgid ""
 "Refactor: simplify source_distribution.rs ([\\#2976](https://github.com/pyo3/"
 "maturin/pull/2976))"
 msgstr ""
 
-#: src/changelog.md:76
+#: src/changelog.md:125
 msgid ""
 "Feat: support PEP 735 dependency groups in develop command ([\\#2978]"
 "(https://github.com/pyo3/maturin/pull/2978))"
 msgstr ""
 
-#: src/changelog.md:77
+#: src/changelog.md:126
 msgid ""
 "Fix license file handling for workspace-level license files ([\\#2970]"
 "(https://github.com/pyo3/maturin/pull/2970))"
 msgstr ""
 
-#: src/changelog.md:78
+#: src/changelog.md:127
 msgid ""
 "Support PEP 739 build-details.json when cross compiling ([\\#2979](https://"
 "github.com/pyo3/maturin/pull/2979))"
 msgstr ""
 
-#: src/changelog.md:79
+#: src/changelog.md:128
 msgid ""
 "Fix .libs directory name for namespace packages ([\\#2981](https://github."
 "com/pyo3/maturin/pull/2981))"
 msgstr ""
 
-#: src/changelog.md:80
+#: src/changelog.md:129
 msgid ""
 "Fix: exclude duplicate python source files from sdist for workspace members "
 "([\\#2982](https://github.com/pyo3/maturin/pull/2982))"
 msgstr ""
 
-#: src/changelog.md:81
+#: src/changelog.md:130
 msgid ""
 "Fix: remove default-members from workspace Cargo.toml in sdist ([\\#2983]"
 "(https://github.com/pyo3/maturin/pull/2983))"
 msgstr ""
 
-#: src/changelog.md:82
+#: src/changelog.md:131
 msgid ""
 "Fix: correctly filter workspace members in sdist by directory path ([\\#2984]"
 "(https://github.com/pyo3/maturin/pull/2984))"
 msgstr ""
 
-#: src/changelog.md:83
+#: src/changelog.md:132
 msgid ""
 "Feat: Add PEP 770 SBOM support ([\\#2980](https://github.com/pyo3/maturin/"
 "pull/2980))"
 msgstr ""
 
-#: src/changelog.md:84
+#: src/changelog.md:133
 msgid ""
 "Error when python-source is set but Python module is missing ([\\#2986]"
 "(https://github.com/pyo3/maturin/pull/2986))"
 msgstr ""
 
-#: src/changelog.md:85
+#: src/changelog.md:134
 msgid ""
 "Feat: add auditwheel SBOM for grafted shared libraries ([\\#2985](https://"
 "github.com/pyo3/maturin/pull/2985))"
 msgstr ""
 
-#: src/changelog.md:86
+#: src/changelog.md:135
 msgid ""
 "Fix sdist duplicate README error when readme is in both Cargo.toml and "
 "pyproject.toml ([\\#2987](https://github.com/pyo3/maturin/pull/2987))"
 msgstr ""
 
-#: src/changelog.md:87
+#: src/changelog.md:136
 msgid ""
 "Fix: support python-source pointing outside Rust source directory ([\\#2988]"
 "(https://github.com/pyo3/maturin/pull/2988))"
 msgstr ""
 
-#: src/changelog.md:88
+#: src/changelog.md:137
 msgid ""
 "Relax ziglang dependency version requirement ([\\#2990](https://github.com/"
 "pyo3/maturin/pull/2990))"
 msgstr ""
 
-#: src/changelog.md:89
+#: src/changelog.md:138
 msgid ""
 "Stop adding link-native-libraries flag by default in Emscripten platform in "
 "latest Rust ([\\#2991](https://github.com/pyo3/maturin/pull/2991))"
 msgstr ""
 
-#: src/changelog.md:90
+#: src/changelog.md:139
 msgid ""
 "Fix: platform.system() on Android for Python 3.13+ ([\\#2992](https://github."
 "com/pyo3/maturin/pull/2992))"
 msgstr ""
 
-#: src/changelog.md:91
+#: src/changelog.md:140
 msgid "Document more environment variables in user guide"
 msgstr ""
 
-#: src/changelog.md:92
+#: src/changelog.md:141
 msgid ""
 "Fix: check external libs for glibc version when determining platform tag "
 "([\\#2993](https://github.com/pyo3/maturin/pull/2993))"
 msgstr ""
 
-#: src/changelog.md:93
+#: src/changelog.md:142
 msgid ""
 "Update cargo-zigbuild to 0.22.0 ([\\#2994](https://github.com/pyo3/maturin/"
 "pull/2994))"
 msgstr ""
 
-#: src/changelog.md:94
+#: src/changelog.md:143
 msgid ""
 "Sbom: filter to bindings crate only and upgrade to CycloneDX v1.5 ([\\#2995]"
 "(https://github.com/pyo3/maturin/pull/2995))"
 msgstr ""
 
-#: src/changelog.md:95
+#: src/changelog.md:144
 msgid ""
 "Upgrade ureq to 3.2.0 and migrate to built-in multipart ([\\#2997](https://"
 "github.com/pyo3/maturin/pull/2997))"
 msgstr ""
 
-#: src/changelog.md:97
+#: src/changelog.md:146
 msgid "1.11.5"
 msgstr ""
 
-#: src/changelog.md:99
+#: src/changelog.md:148
 msgid ""
 "Allow combining `--compatibility pypi` with other `--compatibility` values "
 "([\\#2928](https://github.com/pyo3/maturin/pull/2928))"
 msgstr ""
 
-#: src/changelog.md:101
+#: src/changelog.md:150
 msgid "1.11.4"
 msgstr ""
 
-#: src/changelog.md:103
+#: src/changelog.md:152
 msgid ""
 "Support armv6l and armv7l in pypi compatibility ([\\#2926](https://github."
 "com/pyo3/maturin/pull/2926))"
 msgstr ""
 
-#: src/changelog.md:104
+#: src/changelog.md:153
 msgid "Improve the reliability of maturin's own CI"
 msgstr ""
 
-#: src/changelog.md:106
+#: src/changelog.md:155
 msgid "1.11.3"
 msgstr ""
 
-#: src/changelog.md:108
+#: src/changelog.md:157
 msgid ""
 "Fix manylinux2014 compliance check ([\\#2922](https://github.com/pyo3/"
 "maturin/pull/2922))"
 msgstr ""
 
-#: src/changelog.md:110
+#: src/changelog.md:159
 msgid "1.11.2"
 msgstr ""
 
-#: src/changelog.md:112
+#: src/changelog.md:161
 msgid "Fix failed release"
 msgstr ""
 
-#: src/changelog.md:114
+#: src/changelog.md:163
 msgid "1.11.1"
 msgstr ""
 
-#: src/changelog.md:116
+#: src/changelog.md:165
 msgid ""
 "Fix compiled artifacts being excluded by source path matching ([\\#2910]"
 "(https://github.com/pyo3/maturin/pull/2910))"
 msgstr ""
 
-#: src/changelog.md:117
+#: src/changelog.md:166
 msgid ""
 "Better error reporting for missing interpreters ([\\#2918](https://github."
 "com/pyo3/maturin/pull/2918))"
 msgstr ""
 
-#: src/changelog.md:118
+#: src/changelog.md:167
 msgid ""
 "Ignore unreadable excluded directories ([\\#2916](https://github.com/pyo3/"
 "maturin/pull/2916))"
 msgstr ""
 
-#: src/changelog.md:120
+#: src/changelog.md:169
 msgid ""
 "[1.11.0](https://github.com/pyo3/maturin/compare/v1.10.2...v1.11.0) - Yanked"
 msgstr ""
 
-#: src/changelog.md:122
+#: src/changelog.md:171
 msgid ""
 "Note: This release was yanked to a regression: https://github.com/PyO3/"
 "maturin/issues/2909"
 msgstr ""
 
-#: src/changelog.md:124
+#: src/changelog.md:173
 msgid "Refactor `ModuleWriter` to be easier to implement and use"
 msgstr ""
 
-#: src/changelog.md:125
+#: src/changelog.md:174
 msgid "Add Android cross compilation support, fix wheel tags for Android"
 msgstr ""
 
-#: src/changelog.md:126
+#: src/changelog.md:175
 msgid "Update generate-ci to macos-15-intel and add windows arm support"
 msgstr ""
 
-#: src/changelog.md:127
+#: src/changelog.md:176
 msgid "Deprecate 'upload' and 'publish' CLI commands"
 msgstr ""
 
-#: src/changelog.md:129
+#: src/changelog.md:178
 msgid "[1.10.2](https://github.com/pyo3/maturin/compare/v1.10.1...v1.10.2)"
 msgstr ""
 
-#: src/changelog.md:131
+#: src/changelog.md:180
 msgid "Fix tagging for iOS x86_64 simulator wheels."
 msgstr ""
 
-#: src/changelog.md:132
+#: src/changelog.md:181
 msgid "Set entry type when adding to the tar file."
 msgstr ""
 
-#: src/changelog.md:134
+#: src/changelog.md:183
 msgid "[1.10.1](https://github.com/pyo3/maturin/compare/v1.10.0...v1.10.1)"
 msgstr ""
 
-#: src/changelog.md:136
+#: src/changelog.md:185
 msgid ""
 "Fix wrong dependency on Homebrew liblzma on macOS by static linking liblama"
 msgstr ""
 
-#: src/changelog.md:138
+#: src/changelog.md:187
 msgid "[1.10.0](https://github.com/pyo3/maturin/compare/v1.9.6...v1.10.0)"
 msgstr ""
 
-#: src/changelog.md:140
+#: src/changelog.md:189
 msgid ""
 "Add `tool.maturin.editable-profile` option to override profile for editable "
 "package installations."
 msgstr ""
 
-#: src/changelog.md:141
+#: src/changelog.md:190
 msgid "Add support for Cygwin."
 msgstr ""
 
-#: src/changelog.md:142
+#: src/changelog.md:191
 msgid ""
 "When building `abi3` wheels on non-Windows platforms that aren't cross-"
 "compiling, the `sysconfigdata` of the interpreter used to run maturin will "
 "now be used, rather than a dummy interpreter."
 msgstr ""
 
-#: src/changelog.md:143
+#: src/changelog.md:192
 msgid ""
 "Allow iOS cross-platform virtual environments, such as those used by "
 "cibuildwheel, to imply an iOS target."
 msgstr ""
 
-#: src/changelog.md:144
+#: src/changelog.md:193
 msgid "Fix iOS wheel naming to be compliant with PEP 730."
 msgstr ""
 
-#: src/changelog.md:145
+#: src/changelog.md:194
 msgid "Fix generated WHEEL Tag metadata to be spec compliant."
 msgstr ""
 
-#: src/changelog.md:146
+#: src/changelog.md:195
 msgid ""
 "Fix incorrect warning about missing `extension-module` feature on PyO3 0.26+."
 msgstr ""
 
-#: src/changelog.md:147
+#: src/changelog.md:196
 msgid ""
 "Remove `add_directory()` from ModuleWriter and make it an implementation "
 "detail for the specific impl."
 msgstr ""
 
-#: src/changelog.md:148
+#: src/changelog.md:197
 msgid "Clear out uid/gid and set deterministic mtime for files in sdist."
 msgstr ""
 
-#: src/changelog.md:149
+#: src/changelog.md:198
 msgid "Always use \"library\" mode to build uniffi bindings."
 msgstr ""
 
-#: src/changelog.md:151
+#: src/changelog.md:200
 msgid "[1.9.6](https://github.com/pyo3/maturin/compare/v1.9.5...v1.9.6)"
 msgstr ""
 
-#: src/changelog.md:153
+#: src/changelog.md:202
 msgid "Fix regressions to interpreter platform detection on Windows from 1.9.5"
 msgstr ""
 
-#: src/changelog.md:154
+#: src/changelog.md:203
 msgid "Further fixes to interpreter detection for Windows ARM64"
 msgstr ""
 
-#: src/changelog.md:156
+#: src/changelog.md:205
 msgid "[1.9.5](https://github.com/pyo3/maturin/compare/v1.9.4...v1.9.5)"
 msgstr ""
 
-#: src/changelog.md:158
+#: src/changelog.md:207
 msgid "Add builtin sysconfig for FreeBSD 14.2 amd64"
 msgstr ""
 
-#: src/changelog.md:159
+#: src/changelog.md:208
 msgid "Fix issue searching lib dir containing Python 3.14 `build-details.json`"
 msgstr ""
 
-#: src/changelog.md:160
+#: src/changelog.md:209
 msgid "Fix detection of compatible interpreters on Windows ARM64"
 msgstr ""
 
-#: src/changelog.md:162
+#: src/changelog.md:211
 msgid "[1.9.4](https://github.com/pyo3/maturin/compare/v1.9.3...v1.9.4)"
 msgstr ""
 
-#: src/changelog.md:164
+#: src/changelog.md:213
 msgid ""
 "Add a `use-base-python` option to `pyproject.toml` with the same behaviour "
 "as `MATURIN_PEP517_USE_BASE_PYTHON`."
 msgstr ""
 
-#: src/changelog.md:165
+#: src/changelog.md:214
 msgid "Add builtin sysconfigs for GraalPy"
 msgstr ""
 
-#: src/changelog.md:166
+#: src/changelog.md:215
 msgid "Fix calculation of platform tag for FreeBSD"
 msgstr ""
 
-#: src/changelog.md:168
+#: src/changelog.md:217
 msgid "[1.9.3](https://github.com/pyo3/maturin/compare/v1.9.2...v1.9.3)"
 msgstr ""
 
-#: src/changelog.md:170
+#: src/changelog.md:219
 msgid "Fix adding `project.license-files` to source distributions."
 msgstr ""
 
-#: src/changelog.md:171
+#: src/changelog.md:220
 msgid "Fix relative Readme rewrite of the root crate in source distributions."
 msgstr ""
 
-#: src/changelog.md:173
+#: src/changelog.md:222
 msgid "[1.9.2](https://github.com/pyo3/maturin/compare/v1.9.1...v1.9.2)"
 msgstr ""
 
-#: src/changelog.md:175
+#: src/changelog.md:224
 msgid "Fix PEP 639 implementation, use `License-Expression` over `License`."
 msgstr ""
 
-#: src/changelog.md:177
+#: src/changelog.md:226
 msgid "[1.9.1](https://github.com/pyo3/maturin/compare/v1.9.0...v1.9.1)"
 msgstr ""
 
-#: src/changelog.md:179
+#: src/changelog.md:228
 msgid ""
 "Fix absolute license file path from `Cargo.toml` in [\\#2667](https://github."
 "com/PyO3/maturin/pull/2667)"
 msgstr ""
 
-#: src/changelog.md:181
+#: src/changelog.md:230
 msgid "[1.9.0](https://github.com/pyo3/maturin/compare/v1.8.7...v1.9.0)"
 msgstr ""
 
-#: src/changelog.md:183
+#: src/changelog.md:232
 msgid ""
 "Add full PEP 639 support for `project.license` and `project.license-files` "
 "in [\\#2647](https://github.com/PyO3/maturin/pull/2647)."
 msgstr ""
 
-#: src/changelog.md:184
+#: src/changelog.md:233
 msgid ""
 "Add `--compatibility pypi` to only build wheels with platform tags that can "
 "also be uploaded to PyPI. This blocks e.g. building for riscv64, which is "
 "supported by manylinux, but not by PyPI."
 msgstr ""
 
-#: src/changelog.md:186
+#: src/changelog.md:235
 msgid "[1.8.7](https://github.com/pyo3/maturin/compare/v1.8.6...v1.8.7)"
 msgstr ""
 
-#: src/changelog.md:188
+#: src/changelog.md:237
 msgid ""
 "Allow specifying compression method and level, in both `build` and `develop` "
 "modes, in [\\#2625](https://github.com/PyO3/maturin/pull/2625)."
 msgstr ""
 
-#: src/changelog.md:189
+#: src/changelog.md:238
 msgid ""
 "Fix Windows free-threaded builds on Python 3.14 in [\\#2632](https://github."
 "com/PyO3/maturin/pull/2632)"
 msgstr ""
 
-#: src/changelog.md:191
+#: src/changelog.md:240
 msgid "[1.8.6](https://github.com/pyo3/maturin/compare/v1.8.5...v1.8.6)"
 msgstr ""
 
-#: src/changelog.md:193
+#: src/changelog.md:242
 msgid ""
 "Print a message when overriding platform tag from `_PYTHON_HOST_PLATFORM` in "
 "[\\#2594](https://github.com/PyO3/maturin/pull/2594)"
 msgstr ""
 
-#: src/changelog.md:194
+#: src/changelog.md:243
 msgid ""
 "Use the current python interpreter's version when the abi3 feature is set "
 "with no explicit version in [\\#2597](https://github.com/PyO3/maturin/"
 "pull/2597)"
 msgstr ""
 
-#: src/changelog.md:196
+#: src/changelog.md:245
 msgid "[1.8.5](https://github.com/pyo3/maturin/compare/v1.8.4...v1.8.5)"
 msgstr ""
 
-#: src/changelog.md:198
+#: src/changelog.md:247
 msgid "Fix release CI build"
 msgstr ""
 
-#: src/changelog.md:200
+#: src/changelog.md:249
 msgid "[1.8.4](https://github.com/pyo3/maturin/compare/v1.8.3...v1.8.4)"
 msgstr ""
 
-#: src/changelog.md:202
+#: src/changelog.md:251
 msgid ""
 "Install a Rust toolchain into a temporary directory when building maturin "
 "itself or a package and a Rust toolchain is missing. Set "
@@ -781,460 +1035,460 @@ msgid ""
 "com/PyO3/maturin/pull/2421)"
 msgstr ""
 
-#: src/changelog.md:204
+#: src/changelog.md:253
 msgid ""
 "Fix broken `maturin develop` with latest uv in [\\#2584](https://github.com/"
 "PyO3/maturin/pull/2584)"
 msgstr ""
 
-#: src/changelog.md:205
+#: src/changelog.md:254
 msgid ""
 "Add `PYO3_PYTHON` env var support in [\\#2534](https://github.com/PyO3/"
 "maturin/pull/2534)"
 msgstr ""
 
-#: src/changelog.md:206
+#: src/changelog.md:255
 msgid ""
 "Sort RECORD file in wheel archives to make them deterministic in [\\#2550]"
 "(https://github.com/PyO3/maturin/pull/2550)"
 msgstr ""
 
-#: src/changelog.md:207
+#: src/changelog.md:256
 msgid ""
 "Publish wheel for loongarch64 in [\\#2548](https://github.com/PyO3/maturin/"
 "pull/2548)"
 msgstr ""
 
-#: src/changelog.md:208
+#: src/changelog.md:257
 msgid ""
 "Add --compression-level option to build command in [\\#2572](https://github."
 "com/PyO3/maturin/pull/2572)"
 msgstr ""
 
-#: src/changelog.md:210
+#: src/changelog.md:259
 msgid "[1.8.3](https://github.com/pyo3/maturin/compare/v1.8.2...v1.8.3)"
 msgstr ""
 
-#: src/changelog.md:212
+#: src/changelog.md:261
 msgid ""
 "Fix relocating shared library for namespace modules in [\\#2513](https://"
 "github.com/PyO3/maturin/pull/2513)"
 msgstr ""
 
-#: src/changelog.md:213
+#: src/changelog.md:262
 msgid ""
 "Don't install dependencies when running `maturin develop --skip-install` in "
 "[\\#2504](https://github.com/PyO3/maturin/pull/2504)"
 msgstr ""
 
-#: src/changelog.md:214
+#: src/changelog.md:263
 msgid ""
 "Use emcc.bat to query version on Windows in [\\#2478](https://github.com/"
 "PyO3/maturin/pull/2478)"
 msgstr ""
 
-#: src/changelog.md:215
+#: src/changelog.md:264
 msgid ""
 "Bump the attest-build-provenance version in the generated ci file in "
 "[\\#2484](https://github.com/PyO3/maturin/pull/2478)"
 msgstr ""
 
-#: src/changelog.md:216
+#: src/changelog.md:265
 msgid ""
 "Fix platform tag on Solaris/Illumos in [\\#2483](https://github.com/PyO3/"
 "maturin/pull/2483)"
 msgstr ""
 
-#: src/changelog.md:217
+#: src/changelog.md:266
 msgid ""
 "Fix cargo run uniffi-bindgen when cross compiling in [\\#2476](https://"
 "github.com/PyO3/maturin/pull/2476)"
 msgstr ""
 
-#: src/changelog.md:219
+#: src/changelog.md:268
 msgid "[1.8.2](https://github.com/pyo3/maturin/compare/v1.8.1...v1.8.2)"
 msgstr ""
 
-#: src/changelog.md:221
+#: src/changelog.md:270
 msgid ""
 "Exclude packages not in the dependency tree when finding bindings in "
 "[\\#2426](https://github.com/PyO3/maturin/pull/2426)"
 msgstr ""
 
-#: src/changelog.md:222
+#: src/changelog.md:271
 msgid ""
 "Use uv automatically when running maturin develop inside uv-created "
 "virtualenv in [\\#2433](https://github.com/PyO3/maturin/pull/2433)"
 msgstr ""
 
-#: src/changelog.md:223
+#: src/changelog.md:272
 msgid ""
 "Consider abi3 minor version when resolving Python interpreters in [\\#2437]"
 "(https://github.com/PyO3/maturin/pull/2437)"
 msgstr ""
 
-#: src/changelog.md:224
+#: src/changelog.md:273
 msgid ""
 "Handle archived dylibs on AIX in [\\#2442](https://github.com/PyO3/maturin/"
 "pull/2442)"
 msgstr ""
 
-#: src/changelog.md:225
+#: src/changelog.md:274
 msgid ""
 "Fix unnecessary rebuilds due to pyo3 config file modified time change in "
 "[\\#2446](https://github.com/PyO3/maturin/pull/2446)"
 msgstr ""
 
-#: src/changelog.md:226
+#: src/changelog.md:275
 msgid ""
 "Fix the name of the .data directory in the generated wheel in [\\#2449]"
 "(https://github.com/PyO3/maturin/pull/2449)"
 msgstr ""
 
-#: src/changelog.md:227
+#: src/changelog.md:276
 msgid ""
 "Update minimal manylinux version for loongarch64 in [\\#2451](https://github."
 "com/PyO3/maturin/pull/2451)"
 msgstr ""
 
-#: src/changelog.md:229
+#: src/changelog.md:278
 msgid "[1.8.1](https://github.com/pyo3/maturin/compare/v1.8.0...v1.8.1)"
 msgstr ""
 
-#: src/changelog.md:231
+#: src/changelog.md:280
 msgid ""
 "Downgrade invalid version info in `pyproject.toml` error to warning in "
 "[\\#2417](https://github.com/PyO3/maturin/pull/2417)"
 msgstr ""
 
-#: src/changelog.md:232
+#: src/changelog.md:281
 msgid ""
 "Make `maturin develop` fail if version info is invalid in pyproject.toml in "
 "[\\#2418](https://github.com/PyO3/maturin/pull/2418)"
 msgstr ""
 
-#: src/changelog.md:234
+#: src/changelog.md:283
 msgid "[1.8.0](https://github.com/pyo3/maturin/compare/v1.7.8...v1.8.0)"
 msgstr ""
 
-#: src/changelog.md:236
+#: src/changelog.md:285
 msgid ""
 "Don't add wheel data to sdist in [\\#2367](https://github.com/PyO3/maturin/"
 "pull/2367)"
 msgstr ""
 
-#: src/changelog.md:237
+#: src/changelog.md:286
 msgid ""
 "Add sparcv9 architecture support in [\\#2380](https://github.com/PyO3/"
 "maturin/pull/2380)"
 msgstr ""
 
-#: src/changelog.md:238
+#: src/changelog.md:287
 msgid ""
 "Properly handle dynamic version in pyproject.toml in [\\#2391](https://"
 "github.com/PyO3/maturin/pull/2391)"
 msgstr ""
 
-#: src/changelog.md:239
+#: src/changelog.md:288
 msgid ""
 "Fix xwin cross compile on non-Windows system in [\\#2391](https://github.com/"
 "PyO3/maturin/pull/2391)"
 msgstr ""
 
-#: src/changelog.md:240
+#: src/changelog.md:289
 msgid ""
 "Fix interpreter selection for abi3 bindings in [\\#2392](https://github.com/"
 "PyO3/maturin/pull/2392)"
 msgstr ""
 
-#: src/changelog.md:241
+#: src/changelog.md:290
 msgid ""
 "Use the official recommended naming pattern for cffi module file in [\\#2406]"
 "(https://github.com/PyO3/maturin/pull/2406)"
 msgstr ""
 
-#: src/changelog.md:242
+#: src/changelog.md:291
 msgid ""
 "Add Linux armv5te architecture support in [\\#2409](https://github.com/PyO3/"
 "maturin/pull/2409)"
 msgstr ""
 
-#: src/changelog.md:243
+#: src/changelog.md:292
 msgid ""
 "Only build Python 3.13t wheels by default for `pyo3` 0.23+ in [\\#2413]"
 "(https://github.com/PyO3/maturin/pull/2413)"
 msgstr ""
 
-#: src/changelog.md:245
+#: src/changelog.md:294
 msgid "[1.7.8](https://github.com/pyo3/maturin/compare/v1.7.7...v1.7.8)"
 msgstr ""
 
-#: src/changelog.md:247
+#: src/changelog.md:296
 msgid ""
 "Fix aarch64 Windows cross compilation in [\\#2359](https://github.com/PyO3/"
 "maturin/pull/2359)"
 msgstr ""
 
-#: src/changelog.md:249
+#: src/changelog.md:298
 msgid "[1.7.7](https://github.com/pyo3/maturin/compare/v1.7.6...v1.7.7)"
 msgstr ""
 
-#: src/changelog.md:251
+#: src/changelog.md:300
 msgid ""
 "Fix abi3 interpreter discovery on Windows in [\\#2333](https://github.com/"
 "PyO3/maturin/pull/2333)"
 msgstr ""
 
-#: src/changelog.md:252
+#: src/changelog.md:301
 msgid ""
 "Normalize python source directory path in [\\#2343](https://github.com/PyO3/"
 "maturin/pull/2343)"
 msgstr ""
 
-#: src/changelog.md:253
+#: src/changelog.md:302
 msgid ""
 "Use different binding dirs for different uniffi modules in [\\#2348](https://"
 "github.com/PyO3/maturin/pull/2348)"
 msgstr ""
 
-#: src/changelog.md:254
+#: src/changelog.md:303
 msgid ""
 "Limit minimal PyPy version based on bindings crate version in [\\#2351]"
 "(https://github.com/PyO3/maturin/pull/2351)"
 msgstr ""
 
-#: src/changelog.md:255
+#: src/changelog.md:304
 msgid ""
 "Do not use `xwin` to compile on Windows when MSVC compiler can build for the "
 "target in [\\#2353](https://github.com/PyO3/maturin/pull/2353)"
 msgstr ""
 
-#: src/changelog.md:257
+#: src/changelog.md:306
 msgid "[1.7.6](https://github.com/pyo3/maturin/compare/v1.7.5...v1.7.6)"
 msgstr ""
 
-#: src/changelog.md:259
+#: src/changelog.md:308
 msgid ""
 "Set core metadata version to 2.4 to fix `project.license.files` handling in "
 "[\\#2332](https://github.com/PyO3/maturin/pull/2332)"
 msgstr ""
 
-#: src/changelog.md:261
+#: src/changelog.md:310
 msgid "[1.7.5](https://github.com/pyo3/maturin/compare/v1.7.4...v1.7.5)"
 msgstr ""
 
-#: src/changelog.md:263
+#: src/changelog.md:312
 msgid ""
 "Improve wheel reproducibility by sorting external libraries [\\#2261]"
 "(https://github.com/PyO3/maturin/pull/2261)"
 msgstr ""
 
-#: src/changelog.md:264
+#: src/changelog.md:313
 msgid ""
 "Fix Readme and pyproject.toml inclusions for workspace where the bindings "
 "crate is not in the root in [\\#2262](https://github.com/PyO3/maturin/"
 "pull/2262)"
 msgstr ""
 
-#: src/changelog.md:265
+#: src/changelog.md:314
 msgid ""
 "Add support for GNU/Hurd target in [\\#2306](https://github.com/PyO3/maturin/"
 "pull/2306)"
 msgstr ""
 
-#: src/changelog.md:266
+#: src/changelog.md:315
 msgid ""
 "Add preliminary free-threaded Python wheel building support in [\\#2310]"
 "(https://github.com/PyO3/maturin/pull/2310)"
 msgstr ""
 
-#: src/changelog.md:268
+#: src/changelog.md:317
 msgid "[1.7.4](https://github.com/pyo3/maturin/compare/v1.7.3...v1.7.4)"
 msgstr ""
 
-#: src/changelog.md:270
+#: src/changelog.md:319
 msgid ""
 "Fix musllinux rpath for non-cffi bindings in [\\#2233](https://github.com/"
 "PyO3/maturin/pull/2233)"
 msgstr ""
 
-#: src/changelog.md:271
+#: src/changelog.md:320
 msgid ""
 "Add GitHub Actions attestation support to generate-ci in [\\#2234](https://"
 "github.com/PyO3/maturin/pull/2234)"
 msgstr ""
 
-#: src/changelog.md:273
+#: src/changelog.md:322
 msgid "[1.7.3](https://github.com/pyo3/maturin/compare/v1.7.2...v1.7.3)"
 msgstr ""
 
-#: src/changelog.md:275
+#: src/changelog.md:324
 msgid ""
 "Fix upload regression to pypi/testpypi in [\\#2229](https://github.com/PyO3/"
 "maturin/pull/2229)"
 msgstr ""
 
-#: src/changelog.md:277
+#: src/changelog.md:326
 msgid "[1.7.2](https://github.com/pyo3/maturin/compare/v1.7.1...v1.7.2)"
 msgstr ""
 
-#: src/changelog.md:279
+#: src/changelog.md:328
 msgid ""
 "Fix cross compilation issues for armv7l, mips64 and ppc in [\\#2204](https://"
 "github.com/PyO3/maturin/pull/2204)"
 msgstr ""
 
-#: src/changelog.md:280
+#: src/changelog.md:329
 msgid ""
 "UniFFI: supports bindings generated from multiple crates in [\\#2208]"
 "(https://github.com/PyO3/maturin/pull/2208)"
 msgstr ""
 
-#: src/changelog.md:281
+#: src/changelog.md:330
 msgid ""
 "Enable `--all-features` when building source distribution in [\\#2215]"
 "(https://github.com/PyO3/maturin/pull/2215)"
 msgstr ""
 
-#: src/changelog.md:282
+#: src/changelog.md:331
 msgid ""
 "Fix rpath when module-name contains `.` in [\\#2219](https://github.com/PyO3/"
 "maturin/pull/2219)"
 msgstr ""
 
-#: src/changelog.md:284
+#: src/changelog.md:333
 msgid "[1.7.1](https://github.com/pyo3/maturin/compare/v1.7.0...v1.7.1)"
 msgstr ""
 
-#: src/changelog.md:286
+#: src/changelog.md:335
 msgid ""
 "Forward `cargo package --list` warnings in [\\#2186](https://github.com/PyO3/"
 "maturin/pull/2186)"
 msgstr ""
 
-#: src/changelog.md:287
+#: src/changelog.md:336
 msgid ""
 "In source distributions, we move the readmes of path dependencies into the "
 "respective crate to avoid collision between different readmes in [\\#2184]"
 "(https://github.com/PyO3/maturin/pull/2184)"
 msgstr ""
 
-#: src/changelog.md:289
+#: src/changelog.md:338
 msgid ""
 "[1.7.0](https://github.com/pyo3/maturin/compare/v1.6.0...v1.7.0) - 2024-07-07"
 msgstr ""
 
-#: src/changelog.md:291
+#: src/changelog.md:340
 msgid ""
 "Initial iOS support in [\\#2101](https://github.com/PyO3/maturin/pull/2102)"
 msgstr ""
 
-#: src/changelog.md:292
+#: src/changelog.md:341
 msgid ""
 "Remove old import hook in [\\#2105](https://github.com/PyO3/maturin/"
 "pull/2105), use [maturin-import-hook](https://github.com/PyO3/maturin-import-"
 "hook) instead"
 msgstr ""
 
-#: src/changelog.md:293
+#: src/changelog.md:342
 msgid ""
 "Bump MSRV to 1.74.0 in [\\#2108](https://github.com/PyO3/maturin/pull/2108)"
 msgstr ""
 
-#: src/changelog.md:294
+#: src/changelog.md:343
 msgid ""
 "Add support for overriding wheel tag with `_PYTHON_HOST_PLATFORM` in "
 "[\\#2122](https://github.com/PyO3/maturin/pull/2122)"
 msgstr ""
 
-#: src/changelog.md:295
+#: src/changelog.md:344
 msgid ""
 "Don't add files to an archive more than once [\\#2125](https://github.com/"
 "PyO3/maturin/issues/2125)"
 msgstr ""
 
-#: src/changelog.md:296
+#: src/changelog.md:345
 msgid ""
 "Only use base python executable when `MATURIN_PEP517_USE_BASE_PYTHON` is set "
 "in [\\#2134](https://github.com/PyO3/maturin/pull/2134)"
 msgstr ""
 
-#: src/changelog.md:298
+#: src/changelog.md:347
 msgid ""
 "[1.6.0](https://github.com/pyo3/maturin/compare/v1.5.1...v1.6.0) - 2024-06-04"
 msgstr ""
 
-#: src/changelog.md:300
+#: src/changelog.md:349
 msgid ""
 "Detect compiling from Linux gnu to Linux musl as cross compiling in [\\#2010]"
 "(https://github.com/PyO3/maturin/pull/2010)"
 msgstr ""
 
-#: src/changelog.md:301
+#: src/changelog.md:350
 msgid ""
 "Add musllinux support to `generate-ci` in [\\#2011](https://github.com/PyO3/"
 "maturin/pull/2011)"
 msgstr ""
 
-#: src/changelog.md:302
+#: src/changelog.md:351
 msgid ""
 "Add uv support to `develop` command in [\\#2015](https://github.com/PyO3/"
 "maturin/pull/2015)"
 msgstr ""
 
-#: src/changelog.md:303
+#: src/changelog.md:352
 msgid ""
 "Add support for AIX target in [\\#2030](https://github.com/PyO3/maturin/"
 "pull/2030)"
 msgstr ""
 
-#: src/changelog.md:304
+#: src/changelog.md:353
 msgid ""
 "Remove rust-cpython support in [\\#2044](https://github.com/PyO3/maturin/"
 "pull/2044)"
 msgstr ""
 
-#: src/changelog.md:305
+#: src/changelog.md:354
 msgid ""
 "Add a global `-v` option in [\\#2080](https://github.com/PyO3/maturin/"
 "pull/2080)"
 msgstr ""
 
-#: src/changelog.md:306
+#: src/changelog.md:355
 msgid ""
 "Detect target based on interpreter for pep517 build-wheel  in [\\#2088]"
 "(https://github.com/PyO3/maturin/pull/2088)"
 msgstr ""
 
-#: src/changelog.md:307
+#: src/changelog.md:356
 msgid ""
 "Use base executable when possible in PEP 517 build in [\\#2094](https://"
 "github.com/PyO3/maturin/pull/2094)"
 msgstr ""
 
-#: src/changelog.md:309
+#: src/changelog.md:358
 msgid ""
 "[1.5.1](https://github.com/pyo3/maturin/compare/v1.5.0...v1.5.1) - 2024-03-21"
 msgstr ""
 
-#: src/changelog.md:311
+#: src/changelog.md:360
 msgid ""
 "Fix usage of `--compatibility` when run as a PEP517 backend in [\\#1992]"
 "(https://github.com/PyO3/maturin/pull/1992)"
 msgstr ""
 
-#: src/changelog.md:312
+#: src/changelog.md:361
 msgid ""
 "Fix upload returning malformed summary error in [\\#2002](https://github.com/"
 "PyO3/maturin/pull/2002)"
 msgstr ""
 
-#: src/changelog.md:314
+#: src/changelog.md:363
 msgid ""
 "[1.5.0](https://github.com/pyo3/maturin/compare/v1.4.0...v1.5.0) - 2024-03-05"
 msgstr ""
 
-#: src/changelog.md:316
+#: src/changelog.md:365
 msgid ""
 "Bump metadata version from 2.1 to 2.3 in [\\#1965](https://github.com/PyO3/"
 "maturin/pull/1965). Source distributions created by maturin now have "
@@ -1242,431 +1496,431 @@ msgid ""
 "building them for version resolution."
 msgstr ""
 
-#: src/changelog.md:317
+#: src/changelog.md:366
 msgid ""
 "Allow identical `VIRTUAL_ENV` and `CONDA_PREFIX` env vars in [\\#1879]"
 "(https://github.com/PyO3/maturin/pull/1879)"
 msgstr ""
 
-#: src/changelog.md:318
+#: src/changelog.md:367
 msgid ""
 "Reject `-i python` when cross compiling in [\\#1891](https://github.com/PyO3/"
 "maturin/pull/1891)"
 msgstr ""
 
-#: src/changelog.md:319
+#: src/changelog.md:368
 msgid ""
 "Support uniffi-bindgen in cargo workspaces in [\\#1909](https://github.com/"
 "PyO3/maturin/pull/1909)"
 msgstr ""
 
-#: src/changelog.md:320
+#: src/changelog.md:369
 msgid ""
 "Add support for configuring `xwin` using env vars in [\\#1961](https://"
 "github.com/PyO3/maturin/pull/1961)"
 msgstr ""
 
-#: src/changelog.md:321
+#: src/changelog.md:370
 msgid ""
 "Add validation for crate/package name in new/init in [\\#1943](https://"
 "github.com/PyO3/maturin/pull/1943)"
 msgstr ""
 
-#: src/changelog.md:322
+#: src/changelog.md:371
 msgid ""
 "Add 32-bit RISC-V support in [\\#1969](https://github.com/PyO3/maturin/"
 "pull/1969)"
 msgstr ""
 
-#: src/changelog.md:323
+#: src/changelog.md:372
 msgid ""
 "Improve import hook changes in [\\#1958](https://github.com/PyO3/maturin/"
 "pull/1958)"
 msgstr ""
 
-#: src/changelog.md:324
+#: src/changelog.md:373
 msgid ""
 "Adjust cbindgen Overrides for CFFI in [\\#1957](https://github.com/PyO3/"
 "maturin/pull/1957)"
 msgstr ""
 
-#: src/changelog.md:326
+#: src/changelog.md:375
 msgid ""
 "[1.4.0](https://github.com/pyo3/maturin/compare/v1.3.2...v1.4.0) - 2023-12-02"
 msgstr ""
 
-#: src/changelog.md:328
+#: src/changelog.md:377
 msgid ""
 "Bump MSRV to 1.67.0 in [\\#1847](https://github.com/PyO3/maturin/pull/1847)"
 msgstr ""
 
-#: src/changelog.md:329
+#: src/changelog.md:378
 msgid ""
 "Add support for cross compiling with `cross` in [\\#1865](https://github.com/"
 "PyO3/maturin/pull/1865)"
 msgstr ""
 
-#: src/changelog.md:331
+#: src/changelog.md:380
 msgid ""
 "[1.3.2](https://github.com/pyo3/maturin/compare/v1.3.1...v1.3.2) - 2023-11-14"
 msgstr ""
 
-#: src/changelog.md:333
+#: src/changelog.md:382
 msgid ""
 "Add support for uniffi library mode in [\\#1729](https://github.com/PyO3/"
 "maturin/pull/1729)"
 msgstr ""
 
-#: src/changelog.md:334
+#: src/changelog.md:383
 msgid ""
 "Un-deprecate `MATURIN_PEP517_ARGS` env var in [\\#1820](https://github.com/"
 "PyO3/maturin/pull/1820)"
 msgstr ""
 
-#: src/changelog.md:335
+#: src/changelog.md:384
 msgid ""
 "Fix missing member in Cargo.toml for sdist of nested workspace layout in "
 "[\\#1828](https://github.com/PyO3/maturin/pull/1828)"
 msgstr ""
 
-#: src/changelog.md:336
+#: src/changelog.md:385
 msgid ""
 "Escape display name in email addresses of wheel metadata in [\\#1832]"
 "(https://github.com/PyO3/maturin/pull/1832)"
 msgstr ""
 
-#: src/changelog.md:337
+#: src/changelog.md:386
 msgid ""
 "Fix rewriting workspace Cargo.toml in sdist in [\\#1841](https://github.com/"
 "PyO3/maturin/pull/1841)"
 msgstr ""
 
-#: src/changelog.md:338
+#: src/changelog.md:387
 msgid ""
 "Fix glob workspace members matching in sdist in [\\#1846](https://github.com/"
 "PyO3/maturin/pull/1846)"
 msgstr ""
 
-#: src/changelog.md:340
+#: src/changelog.md:389
 msgid ""
 "[1.3.1](https://github.com/pyo3/maturin/compare/v1.3.0...v1.3.1) - 2023-10-24"
 msgstr ""
 
-#: src/changelog.md:342
+#: src/changelog.md:391
 msgid ""
 "Use external `uniffi-bindgen` if no root package is configured in [\\#1797]"
 "(https://github.com/PyO3/maturin/pull/1797)"
 msgstr ""
 
-#: src/changelog.md:343
+#: src/changelog.md:392
 msgid ""
 "Fix wheel filename for GraalPy in [\\#1802](https://github.com/PyO3/maturin/"
 "pull/1802)"
 msgstr ""
 
-#: src/changelog.md:344
+#: src/changelog.md:393
 msgid ""
 "Add unittest skeleton to mixed Python/Rust projects in [\\#1807](https://"
 "github.com/PyO3/maturin/pull/1807)"
 msgstr ""
 
-#: src/changelog.md:345
+#: src/changelog.md:394
 msgid ""
 "Preserve trailing whitespace in new project files in [\\#1808](https://"
 "github.com/PyO3/maturin/pull/1808)"
 msgstr ""
 
-#: src/changelog.md:346
+#: src/changelog.md:395
 msgid ""
 "Fix missing `workspace.members` in sdist in [\\#1811](https://github.com/"
 "PyO3/maturin/pull/1811)"
 msgstr ""
 
-#: src/changelog.md:347
+#: src/changelog.md:396
 msgid ""
 "Don't set `MACOSX_DEPLOYMENT_TARGET` for editable builds by default in "
 "[\\#1815](https://github.com/PyO3/maturin/pull/1815)"
 msgstr ""
 
-#: src/changelog.md:349
+#: src/changelog.md:398
 msgid ""
 "[1.3.0](https://github.com/pyo3/maturin/compare/v1.2.3...v1.3.0) - 2023-10-02"
 msgstr ""
 
-#: src/changelog.md:351
+#: src/changelog.md:400
 msgid ""
 "Refactor Cargo sdist generator to avoid rewriting local dependencies in "
 "[\\#1741](https://github.com/PyO3/maturin/pull/1741)"
 msgstr ""
 
-#: src/changelog.md:352
+#: src/changelog.md:401
 msgid ""
 "Added `--pip-path` argument to `develop` command in [\\#1753](https://github."
 "com/PyO3/maturin/pull/1753)"
 msgstr ""
 
-#: src/changelog.md:353
+#: src/changelog.md:402
 msgid ""
 "Ignore sdist output files when building sdist in [\\#1756](https://github."
 "com/PyO3/maturin/pull/1756)"
 msgstr ""
 
-#: src/changelog.md:354
+#: src/changelog.md:403
 msgid ""
 "Use `python.exe` by default in `build` command on Windows in [\\#1757]"
 "(https://github.com/PyO3/maturin/pull/1757)"
 msgstr ""
 
-#: src/changelog.md:355
+#: src/changelog.md:404
 msgid ""
 "Don't require `uniffi-bindgen` to be installed for uniffi bindings in "
 "[\\#1762](https://github.com/PyO3/maturin/pull/1762)"
 msgstr ""
 
-#: src/changelog.md:356
+#: src/changelog.md:405
 msgid ""
 "Fix platform tag for graalpy in [\\#1773](https://github.com/PyO3/maturin/"
 "pull/1773)"
 msgstr ""
 
-#: src/changelog.md:357
+#: src/changelog.md:406
 msgid ""
 "Always set minor version to 0 when major version >= 11 for macOS in [\\#1778]"
 "(https://github.com/PyO3/maturin/pull/1778)"
 msgstr ""
 
-#: src/changelog.md:358
+#: src/changelog.md:407
 msgid ""
 "Warning about incorrect maturin version pyproject.toml `[build-system] "
 "requires` in [\\#1793](https://github.com/PyO3/maturin/pull/1793)"
 msgstr ""
 
-#: src/changelog.md:360
+#: src/changelog.md:409
 msgid ""
 "[1.2.3](https://github.com/pyo3/maturin/compare/v1.2.2...v1.2.3) - 2023-08-17"
 msgstr ""
 
-#: src/changelog.md:362
+#: src/changelog.md:411
 msgid ""
 "Fix sdist build failure with workspace path dependencies by "
 "HerringtonDarkholme in [\\#1739](https://github.com/PyO3/maturin/pull/1739)"
 msgstr ""
 
-#: src/changelog.md:364
+#: src/changelog.md:413
 msgid ""
 "[1.2.2](https://github.com/pyo3/maturin/compare/v1.2.1...v1.2.2) - 2023-08-14"
 msgstr ""
 
-#: src/changelog.md:366
+#: src/changelog.md:415
 msgid ""
 "Fix non interactive mode check when username/password was supplied from cli "
 "in #[1737](https://github.com/PyO3/maturin/pull/1737)"
 msgstr ""
 
-#: src/changelog.md:368
+#: src/changelog.md:417
 msgid ""
 "[1.2.1](https://github.com/pyo3/maturin/compare/v1.2.0...v1.2.1) - 2023-08-14"
 msgstr ""
 
-#: src/changelog.md:370
+#: src/changelog.md:419
 msgid ""
 "Add non-interactive mode to `upload` command in [\\#1722](https://github.com/"
 "PyO3/maturin/pull/1722)"
 msgstr ""
 
-#: src/changelog.md:371
+#: src/changelog.md:420
 msgid ""
 "Fix `link-native-libraries` check for emscripten target in [\\#1724](https://"
 "github.com/PyO3/maturin/pull/1724)"
 msgstr ""
 
-#: src/changelog.md:372
+#: src/changelog.md:421
 msgid ""
 "Add support for `ALL_PROXY` to `upload` command in [\\#1727](https://github."
 "com/PyO3/maturin/pull/1727)"
 msgstr ""
 
-#: src/changelog.md:373
+#: src/changelog.md:422
 msgid ""
 "Handle renamed Rust dependency in sdist in [\\#1728](https://github.com/PyO3/"
 "maturin/pull/1728)"
 msgstr ""
 
-#: src/changelog.md:374
+#: src/changelog.md:423
 msgid ""
 "Fix invalid TOML when rewriting workspace inherited dependencies in [\\#1733]"
 "(https://github.com/PyO3/maturin/pull/1733)"
 msgstr ""
 
-#: src/changelog.md:376
+#: src/changelog.md:425
 msgid ""
 "[1.2.0](https://github.com/pyo3/maturin/compare/v1.1.0...v1.2.0) - 2023-08-06"
 msgstr ""
 
-#: src/changelog.md:378
+#: src/changelog.md:427
 msgid ""
 "Add basic support for implicit namespaces [\\#1645](https://github.com/PyO3/"
 "maturin/pull/1696)"
 msgstr ""
 
-#: src/changelog.md:379
+#: src/changelog.md:428
 msgid ""
 "Add Linux mips64 and mips architecture support in [\\#1712](https://github."
 "com/PyO3/maturin/pull/1712)"
 msgstr ""
 
-#: src/changelog.md:380
+#: src/changelog.md:429
 msgid ""
 "Add `x86_64h-apple-darwin` target support in [\\#1717](https://github.com/"
 "PyO3/maturin/pull/1717)"
 msgstr ""
 
-#: src/changelog.md:382
+#: src/changelog.md:431
 msgid ""
 "[1.1.0](https://github.com/pyo3/maturin/compare/v1.0.1...v1.1.0) - 2023-06-10"
 msgstr ""
 
-#: src/changelog.md:384
+#: src/changelog.md:433
 msgid ""
 "Add basic support for GraalPy in [\\#1645](https://github.com/PyO3/maturin/"
 "pull/1645)"
 msgstr ""
 
-#: src/changelog.md:385
+#: src/changelog.md:434
 msgid ""
 "Refactor abi tag to use `EXT_SUFFIX` in [\\#1648](https://github.com/PyO3/"
 "maturin/pull/1648)"
 msgstr ""
 
-#: src/changelog.md:386
+#: src/changelog.md:435
 msgid ""
 "Add Linux loongarch64 architecture support in [\\#1653](https://github.com/"
 "PyO3/maturin/pull/1653)"
 msgstr ""
 
-#: src/changelog.md:387
+#: src/changelog.md:436
 msgid ""
 "Add `--skip-install` option to `maturin develop` in [\\#1654](https://github."
 "com/PyO3/maturin/pull/1654)"
 msgstr ""
 
-#: src/changelog.md:389
+#: src/changelog.md:438
 msgid ""
 "[1.0.1](https://github.com/pyo3/maturin/compare/v1.0.0...v1.0.1) - 2023-05-28"
 msgstr ""
 
-#: src/changelog.md:391
+#: src/changelog.md:440
 msgid ""
 "Add more Python 3.12 sysconfigs in [\\#1629](https://github.com/PyO3/maturin/"
 "pull/1629)"
 msgstr ""
 
-#: src/changelog.md:392
+#: src/changelog.md:441
 msgid ""
 "Fix panicking when no cargo build targets are selected in [\\#1635](https://"
 "github.com/PyO3/maturin/pull/1635)"
 msgstr ""
 
-#: src/changelog.md:394
+#: src/changelog.md:443
 msgid ""
 "[1.0.0](https://github.com/pyo3/maturin/compare/v0.15.3...v1.0.0) - "
 "2023-05-23"
 msgstr ""
 
-#: src/changelog.md:396
+#: src/changelog.md:445
 msgid ""
 "Add support for multiple `--config-settings` in PEP517 backend in [\\#1624]"
 "(https://github.com/PyO3/maturin/pull/1624)"
 msgstr ""
 
-#: src/changelog.md:397
+#: src/changelog.md:446
 msgid ""
 "Remove deprecated `--universal2` cli option in [\\#1620](https://github.com/"
 "PyO3/maturin/pull/1620), use `--target universal2-apple-darwin` instead."
 msgstr ""
 
-#: src/changelog.md:400
+#: src/changelog.md:449
 msgid ""
 "[0.15.3](https://github.com/pyo3/maturin/compare/v0.15.2...v0.15.3) - "
 "2023-05-20"
 msgstr ""
 
-#: src/changelog.md:402
+#: src/changelog.md:451
 msgid ""
 "Fix cross compile Apple universal2 wheels on non-macOS platforms by MisLink "
 "in [\\#1613](https://github.com/PyO3/maturin/pull/1613)"
 msgstr ""
 
-#: src/changelog.md:403
+#: src/changelog.md:452
 msgid ""
 "Add PEP 517 `config_settings` support in [\\#1619](https://github.com/PyO3/"
 "maturin/pull/1619), deprecate `MATURIN_PEP517_ARGS` in favor of the new "
 "`build-args` config setting."
 msgstr ""
 
-#: src/changelog.md:406
+#: src/changelog.md:455
 msgid ""
 "[0.15.2](https://github.com/pyo3/maturin/compare/v0.15.1...v0.15.2) - "
 "2023-05-16"
 msgstr ""
 
-#: src/changelog.md:408
+#: src/changelog.md:457
 msgid ""
 "When determining the python module name, use pyproject.toml `project.name` "
 "over Cargo.toml `package.name` in [\\#1608](https://github.com/PyO3/maturin/"
 "pull/1608)"
 msgstr ""
 
-#: src/changelog.md:409
+#: src/changelog.md:458
 msgid ""
 "Fix rewriting `dev-dependencies` in sdist in [\\#1610](https://github.com/"
 "PyO3/maturin/pull/1610)"
 msgstr ""
 
-#: src/changelog.md:411
+#: src/changelog.md:460
 msgid ""
 "[0.15.1](https://github.com/pyo3/maturin/compare/v0.15.0...v0.15.1) - "
 "2023-05-07"
 msgstr ""
 
-#: src/changelog.md:413
+#: src/changelog.md:462
 msgid ""
 "Fix finding interpreters from bundled sysconfigs in [\\#1598](https://github."
 "com/PyO3/maturin/pull/1598)"
 msgstr ""
 
-#: src/changelog.md:415
+#: src/changelog.md:464
 msgid ""
 "[0.15.0](https://github.com/pyo3/maturin/compare/v0.14.17...v0.15.0) - "
 "2023-05-07"
 msgstr ""
 
-#: src/changelog.md:417
+#: src/changelog.md:466
 msgid ""
 "**Breaking Change**: Build with `--no-default-features` by default when "
 "bootstrapping from sdist in [\\#1333](https://github.com/PyO3/maturin/"
 "pull/1333)"
 msgstr ""
 
-#: src/changelog.md:418
+#: src/changelog.md:467
 msgid ""
 "**Breaking Change**: Remove deprecated `sdist-include` option in `pyproject."
 "toml` in [\\#1335](https://github.com/PyO3/maturin/pull/1335)"
 msgstr ""
 
-#: src/changelog.md:419
+#: src/changelog.md:468
 msgid ""
 "**Breaking Change**: Remove deprecated `python-source` option in `Cargo."
 "toml` in [\\#1335](https://github.com/PyO3/maturin/pull/1335)"
 msgstr ""
 
-#: src/changelog.md:420
+#: src/changelog.md:469
 msgid ""
 "**Breaking Change**: Turn `patchelf` version warning into a hard error in "
 "[\\#1335](https://github.com/PyO3/maturin/pull/1335)"
 msgstr ""
 
-#: src/changelog.md:421
+#: src/changelog.md:470
 msgid ""
 "**Breaking Change**: [`uniffi_bindgen` CLI](https://mozilla.github.io/uniffi-"
 "rs/tutorial/Prerequisites.html#the-uniffi-bindgen-cli-tool) is required for "
@@ -1674,404 +1928,404 @@ msgid ""
 "maturin/pull/1352)"
 msgstr ""
 
-#: src/changelog.md:422
+#: src/changelog.md:471
 msgid ""
 "Add Cargo compile targets configuration for filtering multiple bin targets "
 "in [\\#1339](https://github.com/PyO3/maturin/pull/1339)"
 msgstr ""
 
-#: src/changelog.md:423
+#: src/changelog.md:472
 msgid ""
 "Respect `rustflags` settings in cargo configuration file in [\\#1405]"
 "(https://github.com/PyO3/maturin/pull/1405)"
 msgstr ""
 
-#: src/changelog.md:424
+#: src/changelog.md:473
 msgid ""
 "Add support for uniffi 0.23 in [\\#1481](https://github.com/PyO3/maturin/"
 "pull/1481)"
 msgstr ""
 
-#: src/changelog.md:425
+#: src/changelog.md:474
 msgid ""
 "Add support for custom TLS certificate authority bundle in [\\#1483](https://"
 "github.com/PyO3/maturin/pull/1483)"
 msgstr ""
 
-#: src/changelog.md:426
+#: src/changelog.md:475
 msgid ""
 "Bump MSRV to 1.64.0 in [\\#1528](https://github.com/PyO3/maturin/pull/1528)"
 msgstr ""
 
-#: src/changelog.md:427
+#: src/changelog.md:476
 msgid ""
 "Add wildcards support to publish/upload commands on Windows in [\\#1534]"
 "(https://github.com/PyO3/maturin/pull/1534)"
 msgstr ""
 
-#: src/changelog.md:428
+#: src/changelog.md:477
 msgid ""
 "Add support for configuring macOS deployment target version in `pyproject."
 "toml` in [\\#1536](https://github.com/PyO3/maturin/pull/1536)"
 msgstr ""
 
-#: src/changelog.md:429
+#: src/changelog.md:478
 msgid ""
 "Rewrite platform specific dependencies in `Cargo.toml` by viccie30 in "
 "[\\#1572](https://github.com/PyO3/maturin/pull/1572)"
 msgstr ""
 
-#: src/changelog.md:430
+#: src/changelog.md:479
 msgid ""
 "Add trusted publisher support in [\\#1578](https://github.com/PyO3/maturin/"
 "pull/1578)"
 msgstr ""
 
-#: src/changelog.md:431
+#: src/changelog.md:480
 msgid ""
 "Add new `git` source distribution generator in [\\#1587](https://github.com/"
 "PyO3/maturin/pull/1587)"
 msgstr ""
 
-#: src/changelog.md:433
+#: src/changelog.md:482
 msgid ""
 "[0.14.17](https://github.com/pyo3/maturin/compare/v0.14.16...v0.14.17) - "
 "2023-04-06"
 msgstr ""
 
-#: src/changelog.md:435
+#: src/changelog.md:484
 msgid ""
 "Fix wrong `EXT_SUFFIX` when cross compiling musllinux wheels for Python 3.11 "
 "in [\\#1560](https://github.com/PyO3/maturin/pull/1560)"
 msgstr ""
 
-#: src/changelog.md:437
+#: src/changelog.md:486
 msgid ""
 "[0.14.16](https://github.com/pyo3/maturin/compare/v0.14.15...v0.14.16) - "
 "2023-03-26"
 msgstr ""
 
-#: src/changelog.md:439
+#: src/changelog.md:488
 msgid ""
 "Deprecate `package.metadata.maturin.name` in favor of `tool.maturin.module-"
 "name` in `pyproject.toml` in [\\#1531](https://github.com/PyO3/maturin/"
 "pull/1531)"
 msgstr ""
 
-#: src/changelog.md:441
+#: src/changelog.md:490
 msgid ""
 "[0.14.15](https://github.com/pyo3/maturin/compare/v0.14.14...v0.14.15) - "
 "2023-03-03"
 msgstr ""
 
-#: src/changelog.md:443
+#: src/changelog.md:492
 msgid "Add sdist and sccache support to `generate-ci` command"
 msgstr ""
 
-#: src/changelog.md:445
+#: src/changelog.md:494
 msgid ""
 "[0.14.14](https://github.com/pyo3/maturin/compare/v0.14.13...v0.14.14) - "
 "2023-02-24"
 msgstr ""
 
-#: src/changelog.md:447
+#: src/changelog.md:496
 msgid ""
 "Add support for Emscripten in `generate-ci` command in [\\#1484](https://"
 "github.com/PyO3/maturin/pull/1484)"
 msgstr ""
 
-#: src/changelog.md:448
+#: src/changelog.md:497
 msgid ""
 "Add support for linking with pyo3 in abi3 debug mode on Windows in [\\#1487]"
 "(https://github.com/PyO3/maturin/pull/1487)"
 msgstr ""
 
-#: src/changelog.md:449
+#: src/changelog.md:498
 msgid ""
 "Use default `ext_suffix` for Emscripten target if not provided in "
 "`PYO3_CONFIG_FILE` in [\\#1491](https://github.com/PyO3/maturin/pull/1491)"
 msgstr ""
 
-#: src/changelog.md:450
+#: src/changelog.md:499
 msgid ""
 "Deprecate `package.metadata.maturin.data` in favor of `tool.maturin.data` in "
 "`pyproject.toml` in [\\#1492](https://github.com/PyO3/maturin/pull/1492)"
 msgstr ""
 
-#: src/changelog.md:452
+#: src/changelog.md:501
 msgid ""
 "[0.14.13](https://github.com/pyo3/maturin/compare/v0.14.12...v0.14.13) - "
 "2023-02-12"
 msgstr ""
 
-#: src/changelog.md:454
+#: src/changelog.md:503
 msgid ""
 "`maturin develop` now looks for a virtualenv `.venv` in the current or any "
 "parent directory if no virtual environment is active."
 msgstr ""
 
-#: src/changelog.md:455
+#: src/changelog.md:504
 msgid ""
 "Add a new `generate-ci` command to generate CI configuration in [\\#1456]"
 "(https://github.com/PyO3/maturin/pull/1456)"
 msgstr ""
 
-#: src/changelog.md:456
+#: src/changelog.md:505
 msgid ""
 "Deprecate `--universal2` in favor of `universal2-apple-darwin` target in "
 "[\\#1457](https://github.com/PyO3/maturin/pull/1457)"
 msgstr ""
 
-#: src/changelog.md:457
+#: src/changelog.md:506
 msgid ""
 "Raise an error when `Cargo.toml` contains removed python package metadata in "
 "[\\#1471](https://github.com/PyO3/maturin/pull/1471)"
 msgstr ""
 
-#: src/changelog.md:458
+#: src/changelog.md:507
 msgid ""
 "Use `extension_name` instead of `module_name` for CFFI extensions in develop "
 "mode in [\\#1476](https://github.com/PyO3/maturin/pull/1476)"
 msgstr ""
 
-#: src/changelog.md:460
+#: src/changelog.md:509
 msgid ""
 "[0.14.12](https://github.com/pyo3/maturin/compare/v0.14.11...v0.14.12) - "
 "2023-01-31"
 msgstr ""
 
-#: src/changelog.md:462
+#: src/changelog.md:511
 msgid ""
 "Keep `dev-dependencies` in sdist when there are no path dependencies in "
 "[\\#1441](https://github.com/PyO3/maturin/pull/1441)"
 msgstr ""
 
-#: src/changelog.md:464
+#: src/changelog.md:513
 msgid ""
 "[0.14.11](https://github.com/pyo3/maturin/compare/v0.14.10...v0.14.11) - "
 "2023-01-31"
 msgstr ""
 
-#: src/changelog.md:466
+#: src/changelog.md:515
 msgid ""
 "Don't package dev-only path dependencies in sdist in [\\#1435](https://"
 "github.com/PyO3/maturin/pull/1435)"
 msgstr ""
 
-#: src/changelog.md:468
+#: src/changelog.md:517
 msgid ""
 "[0.14.10](https://github.com/pyo3/maturin/compare/v0.14.9...v0.14.10) - "
 "2023-01-13"
 msgstr ""
 
-#: src/changelog.md:470
+#: src/changelog.md:519
 msgid ""
 "Use module name specified by `[package.metadata.maturin]` in [\\#1409]"
 "(https://github.com/PyO3/maturin/pull/1409)"
 msgstr ""
 
-#: src/changelog.md:472
+#: src/changelog.md:521
 msgid ""
 "[0.14.9](https://github.com/pyo3/maturin/compare/v0.14.8...v0.14.9) - "
 "2023-01-10"
 msgstr ""
 
-#: src/changelog.md:474
+#: src/changelog.md:523
 msgid ""
 "Don't pass `MACOSX_DEPLOYMENT_TARGET` when query default value from rustc in "
 "[\\#1395](https://github.com/PyO3/maturin/pull/1395)"
 msgstr ""
 
-#: src/changelog.md:476
+#: src/changelog.md:525
 msgid ""
 "[0.14.8](https://github.com/pyo3/maturin/compare/v0.14.7...v0.14.8) - "
 "2022-12-31"
 msgstr ""
 
-#: src/changelog.md:478
+#: src/changelog.md:527
 msgid ""
 "Add support for packaging multiple pure Python packages in [\\#1378](https://"
 "github.com/PyO3/maturin/pull/1378)"
 msgstr ""
 
-#: src/changelog.md:479
+#: src/changelog.md:528
 msgid ""
 "Fallback to sysconfig interpreters for pyo3 bindings in [\\#1381](https://"
 "github.com/PyO3/maturin/pull/1381)"
 msgstr ""
 
-#: src/changelog.md:481
+#: src/changelog.md:530
 msgid ""
 "[0.14.7](https://github.com/pyo3/maturin/compare/v0.14.6...v0.14.7) - "
 "2022-12-20"
 msgstr ""
 
-#: src/changelog.md:483
+#: src/changelog.md:532
 msgid ""
 "Add workspace lock file to sdist as a fallback in [\\#1362](https://github."
 "com/PyO3/maturin/pull/1362)"
 msgstr ""
 
-#: src/changelog.md:485
+#: src/changelog.md:534
 msgid ""
 "[0.14.6](https://github.com/pyo3/maturin/compare/v0.14.5...v0.14.6) - "
 "2022-12-13"
 msgstr ""
 
-#: src/changelog.md:487
+#: src/changelog.md:536
 msgid ""
 "Allow Rust crate to be placed outside of the directory containing `pyproject."
 "toml` in [\\#1347](https://github.com/PyO3/maturin/pull/1347)"
 msgstr ""
 
-#: src/changelog.md:488
+#: src/changelog.md:537
 msgid ""
 "Disallow uniffi bin bindings in [\\#1353](https://github.com/PyO3/maturin/"
 "pull/1353)"
 msgstr ""
 
-#: src/changelog.md:489
+#: src/changelog.md:538
 msgid "Update bundled Python sysconfigs for Linux and macOS"
 msgstr ""
 
-#: src/changelog.md:491
+#: src/changelog.md:540
 msgid ""
 "[0.14.5](https://github.com/pyo3/maturin/compare/v0.14.4...v0.14.5) - "
 "2022-12-08"
 msgstr ""
 
-#: src/changelog.md:493
+#: src/changelog.md:542
 msgid ""
 "Support `SOURCE_DATE_EPOCH` when building wheels in [\\#1334](https://github."
 "com/PyO3/maturin/pull/1334)"
 msgstr ""
 
-#: src/changelog.md:494
+#: src/changelog.md:543
 msgid ""
 "Fix sdist when all Cargo workspace members are excluded in [\\#1343](https://"
 "github.com/PyO3/maturin/pull/1343)"
 msgstr ""
 
-#: src/changelog.md:496
+#: src/changelog.md:545
 msgid ""
 "[0.14.4](https://github.com/pyo3/maturin/compare/v0.14.3...v0.14.4) - "
 "2022-12-05"
 msgstr ""
 
-#: src/changelog.md:498
+#: src/changelog.md:547
 msgid ""
 "Expanded architecture support for FreeBSD, NetBSD and OpenBSD in [\\#1318]"
 "(https://github.com/PyO3/maturin/pull/1318)"
 msgstr ""
 
-#: src/changelog.md:499
+#: src/changelog.md:548
 msgid ""
 "Better error message when upload failed with status code 403 in [\\#1323]"
 "(https://github.com/PyO3/maturin/pull/1323)"
 msgstr ""
 
-#: src/changelog.md:501
+#: src/changelog.md:550
 msgid ""
 "[0.14.3](https://github.com/pyo3/maturin/compare/v0.14.2...v0.14.3) - "
 "2022-12-01"
 msgstr ""
 
-#: src/changelog.md:503
+#: src/changelog.md:552
 msgid ""
 "Bump MSRV to 1.62.0 in [\\#1297](https://github.com/PyO3/maturin/pull/1297)"
 msgstr ""
 
-#: src/changelog.md:504
+#: src/changelog.md:553
 msgid ""
 "Fix build error when required features of bin target isn't enabled in "
 "[\\#1299](https://github.com/PyO3/maturin/pull/1299)"
 msgstr ""
 
-#: src/changelog.md:505
+#: src/changelog.md:554
 msgid ""
 "Fix wrong platform tag when building in i386 docker container on x86_64 host "
 "in [\\#1301](https://github.com/PyO3/maturin/pull/1301)"
 msgstr ""
 
-#: src/changelog.md:506
+#: src/changelog.md:555
 msgid ""
 "Fix wrong platform tag when building in armv7 docker container on aarch64 "
 "host in [\\#1303](https://github.com/PyO3/maturin/pull/1303)"
 msgstr ""
 
-#: src/changelog.md:507
+#: src/changelog.md:556
 msgid ""
 "Add Solaris operating system support in [\\#1310](https://github.com/PyO3/"
 "maturin/pull/1310)"
 msgstr ""
 
-#: src/changelog.md:508
+#: src/changelog.md:557
 msgid ""
 "Add armv6 and armv7 target support for FreeBSD in [\\#1312](https://github."
 "com/PyO3/maturin/pull/1312)"
 msgstr ""
 
-#: src/changelog.md:509
+#: src/changelog.md:558
 msgid ""
 "Add riscv64 and powerpc target support for FreeBSD in [\\#1313](https://"
 "github.com/PyO3/maturin/pull/1313)"
 msgstr ""
 
-#: src/changelog.md:510
+#: src/changelog.md:559
 msgid ""
 "Fix powerpc64 and powerpc64le Python wheel platform tag for FreeBSD in "
 "[\\#1313](https://github.com/PyO3/maturin/pull/1313)"
 msgstr ""
 
-#: src/changelog.md:512
+#: src/changelog.md:561
 msgid ""
 "[0.14.2](https://github.com/pyo3/maturin/compare/v0.14.1...v0.14.2) - "
 "2022-11-24"
 msgstr ""
 
-#: src/changelog.md:514
+#: src/changelog.md:563
 msgid ""
 "Tighten src-layout detection logic in [\\#1281](https://github.com/PyO3/"
 "maturin/pull/1282)"
 msgstr ""
 
-#: src/changelog.md:515
+#: src/changelog.md:564
 msgid ""
 "Fix generating pep517 sdist for src-layout in [\\#1288](https://github.com/"
 "PyO3/maturin/pull/1288)"
 msgstr ""
 
-#: src/changelog.md:516
+#: src/changelog.md:565
 msgid ""
 "Deprecate `python-source` option in `Cargo.toml` in favor of the one in "
 "`pyproject.toml` in [\\#1291](https://github.com/PyO3/maturin/pull/1291)"
 msgstr ""
 
-#: src/changelog.md:517
+#: src/changelog.md:566
 msgid ""
 "Fix auditwheel with read-only libraries in [\\#1292](https://github.com/PyO3/"
 "maturin/pull/1292)"
 msgstr ""
 
-#: src/changelog.md:519
+#: src/changelog.md:568
 msgid ""
 "[0.14.1](https://github.com/pyo3/maturin/compare/v0.14.0...v0.14.1) - "
 "2022-11-20"
 msgstr ""
 
-#: src/changelog.md:521
+#: src/changelog.md:570
 msgid ""
 "Downgrade `cargo_metadata` to 0.15.0 to fix `maturin build` on old Rust "
 "versions like 1.48.0 in [\\#1279](https://github.com/PyO3/maturin/pull/1279)"
 msgstr ""
 
-#: src/changelog.md:523
+#: src/changelog.md:572
 msgid ""
 "[0.14.0](https://github.com/pyo3/maturin/compare/v0.13.7...v0.14.0) - "
 "2022-11-19"
 msgstr ""
 
-#: src/changelog.md:525
+#: src/changelog.md:574
 msgid ""
 "**Breaking Change**: Remove support for specifying python package metadata "
 "in `Cargo.toml` in [\\#1200](https://github.com/PyO3/maturin/pull/1200). "
@@ -2080,7 +2334,7 @@ msgid ""
 "specifies."
 msgstr ""
 
-#: src/changelog.md:527
+#: src/changelog.md:576
 msgid ""
 "Initial support for shipping bin targets as wasm32-wasi binaries that are "
 "run through wasmtime in [\\#1107](https://github.com/PyO3/maturin/"
@@ -2089,254 +2343,254 @@ msgid ""
 "host. Usage is by setting `--target wasm32-wasi`."
 msgstr ""
 
-#: src/changelog.md:530
+#: src/changelog.md:579
 msgid ""
 "Add support for python first [`src` project layout](https://py-pkgs.org/04-"
 "package-structure.html#the-source-layout) in [\\#1185](https://github.com/"
 "PyO3/maturin/pull/1185)"
 msgstr ""
 
-#: src/changelog.md:531
+#: src/changelog.md:580
 msgid ""
 "Add `--src` option to generate src layout for mixed Python/Rust projects in "
 "[\\#1189](https://github.com/PyO3/maturin/pull/1189)"
 msgstr ""
 
-#: src/changelog.md:532
+#: src/changelog.md:581
 msgid ""
 "Add Python metadata support for `license-file` field of `Cargo.toml` in "
 "[\\#1195](https://github.com/PyO3/maturin/pull/1195)"
 msgstr ""
 
-#: src/changelog.md:533
+#: src/changelog.md:582
 msgid ""
 "Upgrade to clap 4.0 in [\\#1197](https://github.com/PyO3/maturin/pull/1197). "
 "This bumps MSRV to 1.61.0."
 msgstr ""
 
-#: src/changelog.md:534
+#: src/changelog.md:583
 msgid ""
 "Remove `workspace.members` in `Cargo.toml` from sdist if there isn't any "
 "path dependency in #[1227](https://github.com/PyO3/maturin/pull/1227)"
 msgstr ""
 
-#: src/changelog.md:535
+#: src/changelog.md:584
 msgid ""
 "Fix auditwheel `libpython` check on Python 3.7 and older versions in "
 "[\\#1229](https://github.com/PyO3/maturin/pull/1229)"
 msgstr ""
 
-#: src/changelog.md:536
+#: src/changelog.md:585
 msgid ""
 "Use generic tags when `sys.implementation.name` != `platform."
 "python_implementation()` in [\\#1232](https://github.com/PyO3/maturin/"
 "pull/1232). Fixes the compatibility tags for Pyston."
 msgstr ""
 
-#: src/changelog.md:538
+#: src/changelog.md:587
 msgid ""
 "Set default macOS deployment target version if `MACOSX_DEPLOYMENT_TARGET` "
 "isn't specified in [\\#1251](https://github.com/PyO3/maturin/pull/1251)"
 msgstr ""
 
-#: src/changelog.md:539
+#: src/changelog.md:588
 msgid ""
 "Add support for 32-bit x86 FreeBSD target in [\\#1254](https://github.com/"
 "PyO3/maturin/pull/1254)"
 msgstr ""
 
-#: src/changelog.md:540
+#: src/changelog.md:589
 msgid ""
 "Add `[tool.maturin.include]` and `[tool.maturin.exclude]` and deprecate "
 "`[tool.maturin.sdist-include]` [\\#1255](https://github.com/PyO3/maturin/"
 "pull/1255)"
 msgstr ""
 
-#: src/changelog.md:541
+#: src/changelog.md:590
 msgid ""
 "Ignore sdist tar ball instead of error out in [\\#1259](https://github.com/"
 "PyO3/maturin/pull/1259)"
 msgstr ""
 
-#: src/changelog.md:542
+#: src/changelog.md:591
 msgid ""
 "Add support for [`uniffi`](https://github.com/mozilla/uniffi-rs) bindings in "
 "[\\#1275](https://github.com/PyO3/maturin/pull/1275)"
 msgstr ""
 
-#: src/changelog.md:544
+#: src/changelog.md:593
 msgid ""
 "[0.13.7](https://github.com/pyo3/maturin/compare/v0.13.6...v0.13.7) - "
 "2022-10-29"
 msgstr ""
 
-#: src/changelog.md:546
+#: src/changelog.md:595
 msgid ""
 "Fix macOS `LC_ID_DYLIB` for abi3 wheels in [\\#1208](https://github.com/PyO3/"
 "maturin/pull/1208)"
 msgstr ""
 
-#: src/changelog.md:547
+#: src/changelog.md:596
 msgid ""
 "Pass `--locked` to Cargo when bootstrap from sdist in [\\#1212](https://"
 "github.com/PyO3/maturin/pull/1212)"
 msgstr ""
 
-#: src/changelog.md:548
+#: src/changelog.md:597
 msgid ""
 "Fix build for Python 3.11 on Windows in [\\#1222](https://github.com/PyO3/"
 "maturin/pull/1222)"
 msgstr ""
 
-#: src/changelog.md:550
+#: src/changelog.md:599
 msgid ""
 "[0.13.6](https://github.com/pyo3/maturin/compare/v0.13.5...v0.13.6) - "
 "2022-10-08"
 msgstr ""
 
-#: src/changelog.md:552
+#: src/changelog.md:601
 msgid ""
 "Fix `maturin develop` in Windows conda virtual environment in [\\#1146]"
 "(https://github.com/PyO3/maturin/pull/1146)"
 msgstr ""
 
-#: src/changelog.md:553
+#: src/changelog.md:602
 msgid ""
 "Fix build for crate using `pyo3` and `build.rs` without `cdylib` crate type "
 "in [\\#1150](https://github.com/PyO3/maturin/pull/1150)"
 msgstr ""
 
-#: src/changelog.md:554
+#: src/changelog.md:603
 msgid ""
 "Fix build on some 32-bit platform by downgrading `indicatif` in [\\#1163]"
 "(https://github.com/PyO3/maturin/pull/1163)"
 msgstr ""
 
-#: src/changelog.md:555
+#: src/changelog.md:604
 msgid ""
 "Include `Cargo.lock` by default in source distribution in [\\#1170](https://"
 "github.com/PyO3/maturin/pull/1170)"
 msgstr ""
 
-#: src/changelog.md:557
+#: src/changelog.md:606
 msgid ""
 "[0.13.5](https://github.com/pyo3/maturin/compare/v0.13.4...v0.13.5) - "
 "2022-09-27"
 msgstr ""
 
-#: src/changelog.md:559
+#: src/changelog.md:608
 msgid ""
 "Fix resolving crate name bug in [\\#1142](https://github.com/PyO3/maturin/"
 "pull/1142)"
 msgstr ""
 
-#: src/changelog.md:561
+#: src/changelog.md:610
 msgid ""
 "[0.13.4](https://github.com/pyo3/maturin/compare/v0.13.3...v0.13.4) - "
 "2022-09-27"
 msgstr ""
 
-#: src/changelog.md:563
+#: src/changelog.md:612
 msgid ""
 "Fix `Cargo.toml` in new project template in [\\#1109](https://github.com/"
 "PyO3/maturin/pull/1109)"
 msgstr ""
 
-#: src/changelog.md:564
+#: src/changelog.md:613
 msgid ""
 "Fix `maturin develop` on Windows when using Python installed from msys2 in "
 "[\\#1112](https://github.com/PyO3/maturin/pull/1112)"
 msgstr ""
 
-#: src/changelog.md:565
+#: src/changelog.md:614
 msgid ""
 "Fix duplicated `Cargo.toml` of local dependencies in sdist in [\\#1114]"
 "(https://github.com/PyO3/maturin/pull/1114)"
 msgstr ""
 
-#: src/changelog.md:566
+#: src/changelog.md:615
 msgid ""
 "Add support for Cargo workspace dependencies inheritance in [\\#1123]"
 "(https://github.com/PyO3/maturin/pull/1123)"
 msgstr ""
 
-#: src/changelog.md:567
+#: src/changelog.md:616
 msgid ""
 "Add support for Cargo workspace metadata inheritance in [\\#1131](https://"
 "github.com/PyO3/maturin/pull/1131)"
 msgstr ""
 
-#: src/changelog.md:568
+#: src/changelog.md:617
 msgid ""
 "Use `goblin` instead of shelling out to `patchelf` to get rpath in [\\#1139]"
 "(https://github.com/PyO3/maturin/pull/1139)"
 msgstr ""
 
-#: src/changelog.md:570
+#: src/changelog.md:619
 msgid ""
 "[0.13.3](https://github.com/pyo3/maturin/compare/v0.13.2...v0.13.3) - "
 "2022-09-15"
 msgstr ""
 
-#: src/changelog.md:572
+#: src/changelog.md:621
 msgid ""
 "Allow user to override default Emscripten settings in [\\#1059](https://"
 "github.com/PyO3/maturin/pull/1059)"
 msgstr ""
 
-#: src/changelog.md:573
+#: src/changelog.md:622
 msgid ""
 "Enable `--crate-type cdylib` on Rust 1.64.0 in [\\#1060](https://github.com/"
 "PyO3/maturin/pull/1060)"
 msgstr ""
 
-#: src/changelog.md:574
+#: src/changelog.md:623
 msgid ""
 "Update MSRV to 1.59.0 in [\\#1071](https://github.com/PyO3/maturin/pull/1071)"
 msgstr ""
 
-#: src/changelog.md:575
+#: src/changelog.md:624
 msgid ""
 "Fix abi3 wheel build when no Python interpreters found in [\\#1072](https://"
 "github.com/PyO3/maturin/pull/1072)"
 msgstr ""
 
-#: src/changelog.md:576
+#: src/changelog.md:625
 msgid ""
 "Add `zig ar` support in [\\#1073](https://github.com/PyO3/maturin/pull/1073)"
 msgstr ""
 
-#: src/changelog.md:577
+#: src/changelog.md:626
 msgid ""
 "Fix sdist build for optional path dependencies in [\\#1084](https://github."
 "com/PyO3/maturin/pull/1084)"
 msgstr ""
 
-#: src/changelog.md:578
+#: src/changelog.md:627
 msgid ""
 "auditwheel: find dylibs in Cargo target directory in [\\#1092](https://"
 "github.com/PyO3/maturin/pull/1092)"
 msgstr ""
 
-#: src/changelog.md:579
+#: src/changelog.md:628
 msgid ""
 "Add library search paths in Cargo target directory to rpath in editable mode "
 "on Linux in [\\#1094](https://github.com/PyO3/maturin/pull/1094)"
 msgstr ""
 
-#: src/changelog.md:580
+#: src/changelog.md:629
 msgid ""
 "Remove default manifest path for `maturin sdist` command in [\\#1097]"
 "(https://github.com/PyO3/maturin/pull/1097)"
 msgstr ""
 
-#: src/changelog.md:581
+#: src/changelog.md:630
 msgid ""
 "Fix sdist when `pyproject.toml` isn't in the same dir of `Cargo.toml` in "
 "[\\#1099](https://github.com/PyO3/maturin/pull/1099)"
 msgstr ""
 
-#: src/changelog.md:582
+#: src/changelog.md:631
 msgid ""
 "Change readme and license paths in `pyproject.toml` to be relative to "
 "`pyproject.toml` in [\\#1100](https://github.com/PyO3/maturin/pull/1100). "
@@ -2344,25 +2598,25 @@ msgid ""
 "properly."
 msgstr ""
 
-#: src/changelog.md:584
+#: src/changelog.md:633
 msgid ""
 "Add python source files specified in pyproject.toml to sdist in [\\#1102]"
 "(https://github.com/PyO3/maturin/pull/1102)"
 msgstr ""
 
-#: src/changelog.md:585
+#: src/changelog.md:634
 msgid ""
 "Change `sdist-include` paths to be relative to `pyproject.toml` in [\\#1103]"
 "(https://github.com/PyO3/maturin/pull/1103)"
 msgstr ""
 
-#: src/changelog.md:587
+#: src/changelog.md:636
 msgid ""
 "[0.13.2](https://github.com/pyo3/maturin/compare/v0.13.1...v0.13.2) - "
 "2022-08-14"
 msgstr ""
 
-#: src/changelog.md:589
+#: src/changelog.md:638
 msgid ""
 "Deprecate manylinux 2010 support in [\\#858](https://github.com/PyO3/maturin/"
 "pull/858). The [manylinux](https://github.com/pypa/manylinux) project "
@@ -2371,43 +2625,43 @@ msgid ""
 "kernel-requirements.html)."
 msgstr ""
 
-#: src/changelog.md:592
+#: src/changelog.md:641
 msgid ""
 "Add Linux mips64el architecture support in [\\#1023](https://github.com/PyO3/"
 "maturin/pull/1023)"
 msgstr ""
 
-#: src/changelog.md:593
+#: src/changelog.md:642
 msgid ""
 "Add Linux mipsel architecture support in [\\#1024](https://github.com/PyO3/"
 "maturin/pull/1024)"
 msgstr ""
 
-#: src/changelog.md:594
+#: src/changelog.md:643
 msgid ""
 "Add Linux 32-bit powerpc architecture support in [\\#1026](https://github."
 "com/PyO3/maturin/pull/1026)"
 msgstr ""
 
-#: src/changelog.md:595
+#: src/changelog.md:644
 msgid ""
 "Add Linux sparc64 architecture support in [\\#1027](https://github.com/PyO3/"
 "maturin/pull/1027)"
 msgstr ""
 
-#: src/changelog.md:596
+#: src/changelog.md:645
 msgid ""
 "Add PEP 440 local version identifier support in [\\#1037](https://github.com/"
 "PyO3/maturin/pull/1037)"
 msgstr ""
 
-#: src/changelog.md:597
+#: src/changelog.md:646
 msgid ""
 "Fix inconsistent `Cargo.toml` and `pyproject.toml` path handling in [\\#1043]"
 "(https://github.com/PyO3/maturin/pull/1043)"
 msgstr ""
 
-#: src/changelog.md:598
+#: src/changelog.md:647
 msgid ""
 "Find python module next to `pyproject.toml` if `pyproject.toml` exists in "
 "[\\#1044](https://github.com/PyO3/maturin/pull/1044). It's technically a "
@@ -2415,664 +2669,664 @@ msgid ""
 "directory containing `pyproject.toml` isn't recognized as project root."
 msgstr ""
 
-#: src/changelog.md:601
+#: src/changelog.md:650
 msgid ""
 "Add `python-source` option to `[tool.maturin]` section of pyproject.toml in "
 "[\\#1046](https://github.com/PyO3/maturin/pull/1046)"
 msgstr ""
 
-#: src/changelog.md:602
+#: src/changelog.md:651
 msgid ""
 "Deprecate support for specifying python metadata in `Cargo.toml` in [\\#1048]"
 "(https://github.com/PyO3/maturin/pull/1048). Please migrate to [PEP 621]"
 "(https://peps.python.org/pep-0621/) instead."
 msgstr ""
 
-#: src/changelog.md:604
+#: src/changelog.md:653
 msgid ""
 "Change `python-source` to be relative to the file specifies it in [\\#1049]"
 "(https://github.com/PyO3/maturin/pull/1049)"
 msgstr ""
 
-#: src/changelog.md:605
+#: src/changelog.md:654
 msgid ""
 "Change `data` to be relative to the file specifies it in [\\#1051](https://"
 "github.com/PyO3/maturin/pull/1051)"
 msgstr ""
 
-#: src/changelog.md:606
+#: src/changelog.md:655
 msgid ""
 "Don't reinstall dependencies in `maturin develop` in [\\#1052](https://"
 "github.com/PyO3/maturin/pull/1052)"
 msgstr ""
 
-#: src/changelog.md:607
+#: src/changelog.md:656
 msgid ""
 "Find `pyproject.toml` in parent directories of `Cargo.toml` in [\\#1054]"
 "(https://github.com/PyO3/maturin/pull/1054)"
 msgstr ""
 
-#: src/changelog.md:609
+#: src/changelog.md:658
 msgid ""
 "[0.13.1](https://github.com/pyo3/maturin/compare/v0.13.0...v0.13.1) - "
 "2022-07-26"
 msgstr ""
 
-#: src/changelog.md:611
+#: src/changelog.md:660
 msgid ""
 "Add 64-bit RISC-V support by felixonmars in [\\#1001](https://github.com/"
 "PyO3/maturin/pull/1001)"
 msgstr ""
 
-#: src/changelog.md:612
+#: src/changelog.md:661
 msgid ""
 "Add support for invoking with `python3 -m maturin` in [\\#1008](https://"
 "github.com/PyO3/maturin/pull/1008)"
 msgstr ""
 
-#: src/changelog.md:613
+#: src/changelog.md:662
 msgid ""
 "Fix detection of optional dependencies when declaring `features` in "
 "`pyproject.toml` in [\\#1014](https://github.com/PyO3/maturin/pull/1014)"
 msgstr ""
 
-#: src/changelog.md:614
+#: src/changelog.md:663
 msgid ""
 "Respect user specified Rust target in `maturin develop` in [\\#1016](https://"
 "github.com/PyO3/maturin/pull/1016)"
 msgstr ""
 
-#: src/changelog.md:615
+#: src/changelog.md:664
 msgid ""
 "Use `cargo rustc --crate-type cdylib` on Rust nightly/dev channel in "
 "[\\#1020](https://github.com/PyO3/maturin/pull/1020)"
 msgstr ""
 
-#: src/changelog.md:617
+#: src/changelog.md:666
 msgid ""
 "[0.13.0](https://github.com/pyo3/maturin/compare/v0.12.20...v0.13.0) - "
 "2022-07-09"
 msgstr ""
 
-#: src/changelog.md:619
+#: src/changelog.md:668
 msgid ""
 "**Breaking Change**: Drop support for python 3.6, which is end of life in "
 "[\\#945](https://github.com/PyO3/maturin/pull/945)"
 msgstr ""
 
-#: src/changelog.md:620
+#: src/changelog.md:669
 msgid ""
 "**Breaking Change**: Don't build source distribution by default in `maturin "
 "build` command in [\\#955](https://github.com/PyO3/maturin/pull/955), `--no-"
 "sdist` option is replaced by `--sdist`"
 msgstr ""
 
-#: src/changelog.md:621
+#: src/changelog.md:670
 msgid ""
 "**Breaking Change**: maturin no longer search for python interpreters by "
 "default and only build for current interpreter in `PATH` in [\\#964](https://"
 "github.com/PyO3/maturin/pull/964)"
 msgstr ""
 
-#: src/changelog.md:622
+#: src/changelog.md:671
 msgid ""
 "**Breaking Change**: Removed `--cargo-extra-args` and `--rustc-extra-args` "
 "options in [\\#972](https://github.com/PyO3/maturin/pull/972). You can now "
 "pass all common `cargo build` arguments directly to `maturin build`"
 msgstr ""
 
-#: src/changelog.md:623
+#: src/changelog.md:672
 msgid ""
 "**Breaking Change**: `--repository-url` option in `upload` command no longer "
 "accepts plain repository name, full url required and `-r` short option moved "
 "to `--repository` in [\\#987](https://github.com/PyO3/maturin/pull/987)"
 msgstr ""
 
-#: src/changelog.md:624
+#: src/changelog.md:673
 msgid ""
 "Add support for building with multiple binary targets in [\\#948](https://"
 "github.com/PyO3/maturin/pull/948)"
 msgstr ""
 
-#: src/changelog.md:625
+#: src/changelog.md:674
 msgid ""
 "Add a `--target` option to `maturin list-python` command in [\\#957](https://"
 "github.com/PyO3/maturin/pull/957)"
 msgstr ""
 
-#: src/changelog.md:626
+#: src/changelog.md:675
 msgid ""
 "Add support for using bundled python sysconfigs for PyPy when abi3 feature "
 "is enabled in [\\#958](https://github.com/PyO3/maturin/pull/958)"
 msgstr ""
 
-#: src/changelog.md:627
+#: src/changelog.md:676
 msgid ""
 "Add support for cross compiling PyPy wheels when abi3 feature is enabled in "
 "[\\#963](https://github.com/PyO3/maturin/pull/963)"
 msgstr ""
 
-#: src/changelog.md:628
+#: src/changelog.md:677
 msgid ""
 "Add `--find-interpreter` option to `build` and `publish` commands to search "
 "for python interpreters in [\\#964](https://github.com/PyO3/maturin/pull/964)"
 msgstr ""
 
-#: src/changelog.md:629
+#: src/changelog.md:678
 msgid ""
 "Infer target triple from `ARCHFLAGS` for macOS to be compatible with "
 "`cibuildwheel` in [\\#967](https://github.com/PyO3/maturin/pull/967)"
 msgstr ""
 
-#: src/changelog.md:630
+#: src/changelog.md:679
 msgid ""
 "Expose commonly used Cargo CLI options in `maturin build` command in [\\#972]"
 "(https://github.com/PyO3/maturin/pull/972)"
 msgstr ""
 
-#: src/changelog.md:631
+#: src/changelog.md:680
 msgid ""
 "Add support for `wasm32-unknown-emscripten` target in [\\#974](https://"
 "github.com/PyO3/maturin/pull/974)"
 msgstr ""
 
-#: src/changelog.md:632
+#: src/changelog.md:681
 msgid ""
 "Allow overriding platform release version using env var in [\\#975](https://"
 "github.com/PyO3/maturin/pull/975)"
 msgstr ""
 
-#: src/changelog.md:633
+#: src/changelog.md:682
 msgid ""
 "Fix `maturin develop` for arm64 Python on M1 Mac when default toolchain is "
 "x86_64 in [\\#980](https://github.com/PyO3/maturin/pull/980)"
 msgstr ""
 
-#: src/changelog.md:634
+#: src/changelog.md:683
 msgid ""
 "Add `--repository` option to `maturin upload` command in [\\#987](https://"
 "github.com/PyO3/maturin/pull/987)"
 msgstr ""
 
-#: src/changelog.md:635
+#: src/changelog.md:684
 msgid ""
 "Only lookup bundled Python sysconfig when interpreters aren't specified as "
 "file path in [\\#988](https://github.com/PyO3/maturin/pull/988)"
 msgstr ""
 
-#: src/changelog.md:636
+#: src/changelog.md:685
 msgid ""
 "Find CPython upper to 3.12 and PyPy upper to 3.10 in [\\#993](https://github."
 "com/PyO3/maturin/pull/993)"
 msgstr ""
 
-#: src/changelog.md:637
+#: src/changelog.md:686
 msgid ""
 "Add short alias `maturin b` for `maturin build` and `maturin dev` for "
 "`maturin develop` subcommands in [\\#994](https://github.com/PyO3/maturin/"
 "pull/994)"
 msgstr ""
 
-#: src/changelog.md:639
+#: src/changelog.md:688
 msgid ""
 "[0.12.20](https://github.com/pyo3/maturin/compare/v0.12.19...v0.12.20) - "
 "2022-06-15"
 msgstr ""
 
-#: src/changelog.md:641
+#: src/changelog.md:690
 msgid ""
 "Fix incompatibility with cibuildwheel for 32-bit Windows in [\\#951](https://"
 "github.com/PyO3/maturin/pull/951)"
 msgstr ""
 
-#: src/changelog.md:642
+#: src/changelog.md:691
 msgid ""
 "Don't require `pip` error messages to be utf-8 encoding in [\\#953](https://"
 "github.com/PyO3/maturin/pull/953)"
 msgstr ""
 
-#: src/changelog.md:643
+#: src/changelog.md:692
 msgid ""
 "Compare minimum python version requirement between `requires-python` and "
 "bindings crate in [\\#954](https://github.com/PyO3/maturin/pull/954)"
 msgstr ""
 
-#: src/changelog.md:644
+#: src/changelog.md:693
 msgid ""
 "Set `PYO3_PYTHON` env var for PyPy when abi3 is enabled in [\\#960](https://"
 "github.com/PyO3/maturin/pull/960)"
 msgstr ""
 
-#: src/changelog.md:645
+#: src/changelog.md:694
 msgid ""
 "Add sysconfigs for x64 Windows PyPy in [\\#962](https://github.com/PyO3/"
 "maturin/pull/962)"
 msgstr ""
 
-#: src/changelog.md:646
+#: src/changelog.md:695
 msgid ""
 "Add support for Linux armv6l in [\\#966](https://github.com/PyO3/maturin/"
 "pull/966)"
 msgstr ""
 
-#: src/changelog.md:647
+#: src/changelog.md:696
 msgid ""
 "Fix auditwheel bundled shared libs directory name in [\\#969](https://github."
 "com/PyO3/maturin/pull/969)"
 msgstr ""
 
-#: src/changelog.md:649
+#: src/changelog.md:698
 msgid ""
 "[0.12.19](https://github.com/pyo3/maturin/compare/v0.12.18...v0.12.19) - "
 "2022-06-05"
 msgstr ""
 
-#: src/changelog.md:651
+#: src/changelog.md:700
 msgid ""
 "Fix Windows Store install detection in [\\#949](https://github.com/PyO3/"
 "maturin/pull/949)"
 msgstr ""
 
-#: src/changelog.md:652
+#: src/changelog.md:701
 msgid ""
 "Filter Python interpreters by target pointer width on Windows in [\\#950]"
 "(https://github.com/PyO3/maturin/pull/950)"
 msgstr ""
 
-#: src/changelog.md:654
+#: src/changelog.md:703
 msgid ""
 "[0.12.18](https://github.com/pyo3/maturin/compare/v0.12.17...v0.12.18) - "
 "2022-05-29"
 msgstr ""
 
-#: src/changelog.md:656
+#: src/changelog.md:705
 msgid ""
 "Add support for building bin bindings wheels with multiple platform tags in "
 "[\\#928](https://github.com/PyO3/maturin/pull/928)"
 msgstr ""
 
-#: src/changelog.md:657
+#: src/changelog.md:706
 msgid ""
 "Skip auditwheel for non-compliant linux environment automatically in [\\#931]"
 "(https://github.com/PyO3/maturin/pull/931)"
 msgstr ""
 
-#: src/changelog.md:658
+#: src/changelog.md:707
 msgid ""
 "Fix abi3 wheel build issue when no Python interpreters found on host in "
 "[\\#933](https://github.com/PyO3/maturin/pull/933)"
 msgstr ""
 
-#: src/changelog.md:659
+#: src/changelog.md:708
 msgid ""
 "Add Python 3.11 sysconfigs for Linux, macOS and Windows in [\\#934](https://"
 "github.com/PyO3/maturin/pull/934)"
 msgstr ""
 
-#: src/changelog.md:660
+#: src/changelog.md:709
 msgid ""
 "Add Python 3.11 sysconfig for arm64 Windows in [\\#936](https://github.com/"
 "PyO3/maturin/pull/936)"
 msgstr ""
 
-#: src/changelog.md:661
+#: src/changelog.md:710
 msgid ""
 "Add network proxy support to upload command in [\\#939](https://github.com/"
 "PyO3/maturin/pull/939)"
 msgstr ""
 
-#: src/changelog.md:662
+#: src/changelog.md:711
 msgid ""
 "Fix python interpreter detection on arm64 Windows in [\\#940](https://github."
 "com/PyO3/maturin/pull/940)"
 msgstr ""
 
-#: src/changelog.md:663
+#: src/changelog.md:712
 msgid ""
 "Fallback to `py -X.Y` when `pythonX.Y` cannot be found on Windows in [\\#943]"
 "(https://github.com/PyO3/maturin/pull/943)"
 msgstr ""
 
-#: src/changelog.md:664
+#: src/changelog.md:713
 msgid ""
 "Auto-detect Python Installs from Microsoft Store in [\\#944](https://github."
 "com/PyO3/maturin/pull/944)"
 msgstr ""
 
-#: src/changelog.md:665
+#: src/changelog.md:714
 msgid ""
 "Add bindings detection to bin targets in [\\#938](https://github.com/PyO3/"
 "maturin/pull/938)"
 msgstr ""
 
-#: src/changelog.md:667
+#: src/changelog.md:716
 msgid ""
 "[0.12.17](https://github.com/pyo3/maturin/compare/v0.12.16...v0.12.17) - "
 "2022-05-18"
 msgstr ""
 
-#: src/changelog.md:669
+#: src/changelog.md:718
 msgid ""
 "Don't consider compile to i686 on x86_64 Windows cross compiling in [\\#923]"
 "(https://github.com/PyO3/maturin/pull/923)"
 msgstr ""
 
-#: src/changelog.md:670
+#: src/changelog.md:719
 msgid ""
 "Accept `-i x.y` and `-i python-x.y` in `maturin build` command in [\\#925]"
 "(https://github.com/PyO3/maturin/pull/925)"
 msgstr ""
 
-#: src/changelog.md:672
+#: src/changelog.md:721
 msgid ""
 "[0.12.16](https://github.com/pyo3/maturin/compare/v0.12.15...v0.12.16) - "
 "2022-05-16"
 msgstr ""
 
-#: src/changelog.md:674
+#: src/changelog.md:723
 msgid ""
 "Add Linux armv7l python sysconfig in [\\#901](https://github.com/PyO3/"
 "maturin/pull/901)"
 msgstr ""
 
-#: src/changelog.md:675
+#: src/changelog.md:724
 msgid ""
 "Add NetBSD python sysconfig in [\\#903](https://github.com/PyO3/maturin/"
 "pull/903)"
 msgstr ""
 
-#: src/changelog.md:676
+#: src/changelog.md:725
 msgid ""
 "Update 'replace_needed' to reduce total calls to 'patchelf' in [\\#905]"
 "(https://github.com/PyO3/maturin/pull/905)"
 msgstr ""
 
-#: src/changelog.md:677
+#: src/changelog.md:726
 msgid ""
 "Add wheel data support in [\\#906](https://github.com/PyO3/maturin/pull/906)"
 msgstr ""
 
-#: src/changelog.md:678
+#: src/changelog.md:727
 msgid ""
 "Allow use python interpreters from bundled sysconfig when not cross "
 "compiling in [\\#907](https://github.com/PyO3/maturin/pull/907)"
 msgstr ""
 
-#: src/changelog.md:679
+#: src/changelog.md:728
 msgid ""
 "Use setuptools-rust for bootstrapping in [\\#909](https://github.com/PyO3/"
 "maturin/pull/909)"
 msgstr ""
 
-#: src/changelog.md:680
+#: src/changelog.md:729
 msgid ""
 "Allow setting the publish repository URL via `MATURIN_REPOSITORY_URL` in "
 "[\\#913](https://github.com/PyO3/maturin/pull/913)"
 msgstr ""
 
-#: src/changelog.md:681
+#: src/changelog.md:730
 msgid ""
 "Allow stubs-only mixed project layout in [\\#914](https://github.com/PyO3/"
 "maturin/pull/914)"
 msgstr ""
 
-#: src/changelog.md:682
+#: src/changelog.md:731
 msgid ""
 "Allow setting the publish user name via `MATURIN_USERNAME` in [\\#915]"
 "(https://github.com/PyO3/maturin/pull/915)"
 msgstr ""
 
-#: src/changelog.md:683
+#: src/changelog.md:732
 msgid ""
 "Add Windows python sysconfig in [\\#917](https://github.com/PyO3/maturin/"
 "pull/917)"
 msgstr ""
 
-#: src/changelog.md:684
+#: src/changelog.md:733
 msgid ""
 "Add support for `generate-import-lib` feature of pyo3 in [\\#918](https://"
 "github.com/PyO3/maturin/pull/918)"
 msgstr ""
 
-#: src/changelog.md:685
+#: src/changelog.md:734
 msgid ""
 "Integrate [`cargo-xwin`](https://github.com/messense/cargo-xwin) for cross "
 "compiling to Windows MSVC targets in [\\#919](https://github.com/PyO3/"
 "maturin/pull/919)"
 msgstr ""
 
-#: src/changelog.md:687
+#: src/changelog.md:736
 msgid ""
 "[0.12.15](https://github.com/pyo3/maturin/compare/v0.12.14...v0.12.15) - "
 "2022-05-07"
 msgstr ""
 
-#: src/changelog.md:689
+#: src/changelog.md:738
 msgid ""
 "Re-export `__all__` for pure Rust projects in [\\#886](https://github.com/"
 "PyO3/maturin/pull/886)"
 msgstr ""
 
-#: src/changelog.md:690
+#: src/changelog.md:739
 msgid ""
 "Stop setting `RUSTFLAGS` environment variable to an empty string in [\\#887]"
 "(https://github.com/PyO3/maturin/pull/887)"
 msgstr ""
 
-#: src/changelog.md:691
+#: src/changelog.md:740
 msgid ""
 "Add hardcoded well-known sysconfigs for effortless cross compiling in "
 "[\\#896](https://github.com/PyO3/maturin/pull/896)"
 msgstr ""
 
-#: src/changelog.md:692
+#: src/changelog.md:741
 msgid ""
 "Add support for `PYO3_CONFIG_FILE` in [\\#899](https://github.com/PyO3/"
 "maturin/pull/899)"
 msgstr ""
 
-#: src/changelog.md:694
+#: src/changelog.md:743
 msgid ""
 "[0.12.14](https://github.com/pyo3/maturin/compare/v0.12.13...v0.12.14) - "
 "2022-04-25"
 msgstr ""
 
-#: src/changelog.md:696
+#: src/changelog.md:745
 msgid ""
 "Fix PyPy pep517 build when abi3 feature is enabled in [\\#883](https://"
 "github.com/PyO3/maturin/pull/883)"
 msgstr ""
 
-#: src/changelog.md:698
+#: src/changelog.md:747
 msgid ""
 "[0.12.13](https://github.com/pyo3/maturin/compare/v0.12.12...v0.12.13) - "
 "2022-04-25"
 msgstr ""
 
-#: src/changelog.md:700
+#: src/changelog.md:749
 msgid ""
 "Stop setting `PYO3_NO_PYTHON` environment variable for pyo3 0.16.4 and later "
 "in [\\#875](https://github.com/PyO3/maturin/pull/875)"
 msgstr ""
 
-#: src/changelog.md:701
+#: src/changelog.md:750
 msgid ""
 "Build Windows abi3 wheels for `pyo3` 0.16.4 and later versions with "
 "`generate-abi3-import-lib` feature enabled no longer require a Python "
 "interpreter in [\\#879](https://github.com/PyO3/maturin/pull/879)"
 msgstr ""
 
-#: src/changelog.md:703
+#: src/changelog.md:752
 msgid ""
 "[0.12.12](https://github.com/pyo3/maturin/compare/v0.12.11...v0.12.12) - "
 "2022-04-07"
 msgstr ""
 
-#: src/changelog.md:705
+#: src/changelog.md:754
 msgid ""
 "Migrate docker image to GitHub container registry in [\\#845](https://github."
 "com/PyO3/maturin/pull/845)"
 msgstr ""
 
-#: src/changelog.md:706
+#: src/changelog.md:755
 msgid ""
 "Change mixed rust/python template project layout for new projects in [\\#855]"
 "(https://github.com/PyO3/maturin/pull/855)"
 msgstr ""
 
-#: src/changelog.md:707
+#: src/changelog.md:756
 msgid ""
 "Automatically include license files in `.dist-info/license_files` following "
 "PEP 639 in [\\#862](https://github.com/PyO3/maturin/pull/862)"
 msgstr ""
 
-#: src/changelog.md:708
+#: src/changelog.md:757
 msgid ""
 "Bring back multiple values support for `--interpreter` option in [\\#873]"
 "(https://github.com/PyO3/maturin/pull/873)"
 msgstr ""
 
-#: src/changelog.md:709
+#: src/changelog.md:758
 msgid ""
 "Update the default edition to 2021 for new projects by sa- in [\\#874]"
 "(https://github.com/PyO3/maturin/pull/874)"
 msgstr ""
 
-#: src/changelog.md:710
+#: src/changelog.md:759
 msgid "Drop `python3.6` from `ghcr.io/pyo3/maturin` docker image."
 msgstr ""
 
-#: src/changelog.md:712
+#: src/changelog.md:761
 msgid ""
 "[0.12.11](https://github.com/pyo3/maturin/compare/v0.12.10...v0.12.11) - "
 "2022-03-15"
 msgstr ""
 
-#: src/changelog.md:714
+#: src/changelog.md:763
 msgid ""
 "Package license files in `.dist-info/license_files` following PEP 639 in "
 "[\\#837](https://github.com/PyO3/maturin/pull/837)"
 msgstr ""
 
-#: src/changelog.md:715
+#: src/changelog.md:764
 msgid ""
 "Stop testing Python 3.6 on CI since it's already EOL in [\\#840](https://"
 "github.com/PyO3/maturin/pull/840)"
 msgstr ""
 
-#: src/changelog.md:716
+#: src/changelog.md:765
 msgid ""
 "Update workspace members for sdist local dependencies in [\\#844](https://"
 "github.com/PyO3/maturin/pull/844)"
 msgstr ""
 
-#: src/changelog.md:717
+#: src/changelog.md:766
 msgid ""
 "Migrate docker image to github container registry in [\\#845](https://github."
 "com/PyO3/maturin/pull/845)"
 msgstr ""
 
-#: src/changelog.md:718
+#: src/changelog.md:767
 msgid ""
 "Remove `PYO3_NO_PYTHON` hack for Windows in [\\#848](https://github.com/PyO3/"
 "maturin/pull/848)"
 msgstr ""
 
-#: src/changelog.md:719
+#: src/changelog.md:768
 msgid ""
 "Remove Windows abi3 python lib link hack in [\\#851](https://github.com/PyO3/"
 "maturin/pull/851)"
 msgstr ""
 
-#: src/changelog.md:720
+#: src/changelog.md:769
 msgid ""
 "Add `-r` option as a short alias for `--release` in [\\#854](https://github."
 "com/PyO3/maturin/pull/854)"
 msgstr ""
 
-#: src/changelog.md:722
+#: src/changelog.md:771
 msgid ""
 "[0.12.10](https://github.com/pyo3/maturin/compare/v0.12.9...v0.12.10) - "
 "2022-03-09"
 msgstr ""
 
-#: src/changelog.md:724
+#: src/changelog.md:773
 msgid ""
 "Add support for `pyo3-ffi` by ijl in [\\#804](https://github.com/PyO3/"
 "maturin/pull/804)"
 msgstr ""
 
-#: src/changelog.md:725
+#: src/changelog.md:774
 msgid ""
 "Defaults to `musllinux_1_2` for musl target if it's not bin bindings in "
 "[\\#808](https://github.com/PyO3/maturin/pull/808)"
 msgstr ""
 
-#: src/changelog.md:726
+#: src/changelog.md:775
 msgid ""
 "Remove support for building only sdist via `maturin build -i` in [\\#813]"
 "(https://github.com/PyO3/maturin/pull/813), use `maturin sdist` instead."
 msgstr ""
 
-#: src/changelog.md:727
+#: src/changelog.md:776
 msgid ""
 "Add macOS target support for `--zig` in [\\#817](https://github.com/PyO3/"
 "maturin/pull/817)"
 msgstr ""
 
-#: src/changelog.md:728
+#: src/changelog.md:777
 msgid ""
 "Migrate Python dependency `toml` to `tomllib` / `tomli` by Contextualist in "
 "[\\#821](https://github.com/PyO3/maturin/pull/821)"
 msgstr ""
 
-#: src/changelog.md:729
+#: src/changelog.md:778
 msgid ""
 "Disable auditwheel for PEP 517 build wheel process in [\\#823](https://"
 "github.com/PyO3/maturin/pull/823)"
 msgstr ""
 
-#: src/changelog.md:730
+#: src/changelog.md:779
 msgid ""
 "Lookup existing cffi `header.h` in workspace target directory in [\\#833]"
 "(https://github.com/PyO3/maturin/pull/833)"
 msgstr ""
 
-#: src/changelog.md:731
+#: src/changelog.md:780
 msgid ""
 "Fix license line ending in wheel metadata for Windows in [\\#836](https://"
 "github.com/PyO3/maturin/pull/836)"
 msgstr ""
 
-#: src/changelog.md:733
+#: src/changelog.md:782
 msgid ""
 "[0.12.9](https://github.com/pyo3/maturin/compare/v0.12.8...v0.12.9) - "
 "2022-02-09"
 msgstr ""
 
-#: src/changelog.md:735
+#: src/changelog.md:784
 msgid ""
 "Don't require `pyproject.toml` when cargo manifest is not specified in "
 "[\\#806](https://github.com/PyO3/maturin/pull/806)"
 msgstr ""
 
-#: src/changelog.md:737
+#: src/changelog.md:786
 msgid ""
 "[0.12.8](https://github.com/pyo3/maturin/compare/v0.12.7...v0.12.8) - "
 "2022-02-08"
 msgstr ""
 
-#: src/changelog.md:739
+#: src/changelog.md:788
 msgid "Add missing `--version` flag from clap 3.0 upgrade"
 msgstr ""
 
-#: src/changelog.md:741
+#: src/changelog.md:790
 msgid ""
 "[0.12.7](https://github.com/pyo3/maturin/compare/v0.12.6...v0.12.7) - "
 "2022-02-08"
 msgstr ""
 
-#: src/changelog.md:743
+#: src/changelog.md:792
 msgid ""
 "Add support for using [`zig cc`](https://andrewkelley.me/post/zig-cc-"
 "powerful-drop-in-replacement-gcc-clang.html) as linker for easier cross "
@@ -3080,511 +3334,511 @@ msgid ""
 "maturin/pull/756)"
 msgstr ""
 
-#: src/changelog.md:744
+#: src/changelog.md:793
 msgid ""
 "Switch from reqwest to ureq to reduce dependencies in [\\#767](https://"
 "github.com/PyO3/maturin/pull/767)"
 msgstr ""
 
-#: src/changelog.md:745
+#: src/changelog.md:794
 msgid ""
 "Fix missing Python submodule in wheel in [\\#772](https://github.com/PyO3/"
 "maturin/pull/772)"
 msgstr ""
 
-#: src/changelog.md:746
+#: src/changelog.md:795
 msgid ""
 "Add support for specifying cargo manifest path in pyproject.toml in [\\#781]"
 "(https://github.com/PyO3/maturin/pull/781)"
 msgstr ""
 
-#: src/changelog.md:747
+#: src/changelog.md:796
 msgid ""
 "Add support for passing arguments to pep517 command via "
 "`MATURIN_PEP517_ARGS` env var in [\\#786](https://github.com/PyO3/maturin/"
 "pull/786)"
 msgstr ""
 
-#: src/changelog.md:748
+#: src/changelog.md:797
 msgid ""
 "Fix auditwheel `No such file or directory` error when `LD_LIBRARY_PATH` "
 "contains non-existent paths in [\\#794](https://github.com/PyO3/maturin/"
 "pull/794)"
 msgstr ""
 
-#: src/changelog.md:750
+#: src/changelog.md:799
 msgid ""
 "[0.12.6](https://github.com/pyo3/maturin/compare/v0.12.5...v0.12.6) - "
 "2021-12-31"
 msgstr ""
 
-#: src/changelog.md:752
+#: src/changelog.md:801
 msgid ""
 "Add support for repairing cross compiled linux wheels in [\\#754](https://"
 "github.com/PyO3/maturin/pull/754)"
 msgstr ""
 
-#: src/changelog.md:753
+#: src/changelog.md:802
 msgid ""
 "Add support for `manylinux_2_28` and `manylinux_2_31` in [\\#755](https://"
 "github.com/PyO3/maturin/pull/755)"
 msgstr ""
 
-#: src/changelog.md:754
+#: src/changelog.md:803
 msgid ""
 "Remove existing so file first in `maturin develop` command to avoid "
 "triggering SIGSEV in running process in [\\#760](https://github.com/PyO3/"
 "maturin/pull/760)"
 msgstr ""
 
-#: src/changelog.md:756
+#: src/changelog.md:805
 msgid ""
 "[0.12.5](https://github.com/pyo3/maturin/compare/v0.12.4...v0.12.5) - "
 "2021-12-20"
 msgstr ""
 
-#: src/changelog.md:758
+#: src/changelog.md:807
 msgid ""
 "Fix docs for `new` and `init` commands in `maturin --help` in [\\#734]"
 "(https://github.com/PyO3/maturin/pull/734)"
 msgstr ""
 
-#: src/changelog.md:759
+#: src/changelog.md:808
 msgid ""
 "Add support for x86_64 Haiku in [\\#735](https://github.com/PyO3/maturin/"
 "pull/735)"
 msgstr ""
 
-#: src/changelog.md:760
+#: src/changelog.md:809
 msgid ""
 "Fix undefined auditwheel policy panic in [\\#740](https://github.com/PyO3/"
 "maturin/pull/740)"
 msgstr ""
 
-#: src/changelog.md:761
+#: src/changelog.md:810
 msgid ""
 "Fix sdist upload for packages where the pkgname contains multiple "
 "underscores in [\\#741](https://github.com/PyO3/maturin/pull/741)"
 msgstr ""
 
-#: src/changelog.md:762
+#: src/changelog.md:811
 msgid ""
 "Implement auditwheel repair with patchelf in [\\#742](https://github.com/"
 "PyO3/maturin/pull/742)"
 msgstr ""
 
-#: src/changelog.md:763
+#: src/changelog.md:812
 msgid ""
 "Add `Cargo.lock` to sdist when `--locked` or `--frozen` specified in [\\#749]"
 "(https://github.com/PyO3/maturin/pull/749)"
 msgstr ""
 
-#: src/changelog.md:764
+#: src/changelog.md:813
 msgid ""
 "Infer readme file if not specified in [\\#751](https://github.com/PyO3/"
 "maturin/pull/751)"
 msgstr ""
 
-#: src/changelog.md:766
+#: src/changelog.md:815
 msgid ""
 "[0.12.4](https://github.com/pyo3/maturin/compare/v0.12.3...v0.12.4) - "
 "2021-12-06"
 msgstr ""
 
-#: src/changelog.md:768
+#: src/changelog.md:817
 msgid ""
 "Add a `maturin init` command as a companion to `maturin new` in [\\#719]"
 "(https://github.com/PyO3/maturin/pull/719)"
 msgstr ""
 
-#: src/changelog.md:769
+#: src/changelog.md:818
 msgid ""
 "Don't package non-path-dep crates in sdist for workspaces in [\\#720]"
 "(https://github.com/PyO3/maturin/pull/720)"
 msgstr ""
 
-#: src/changelog.md:770
+#: src/changelog.md:819
 msgid ""
 "Build release packages with `password-storage` feature in [\\#725](https://"
 "github.com/PyO3/maturin/pull/725)"
 msgstr ""
 
-#: src/changelog.md:771
+#: src/changelog.md:820
 msgid ""
 "Add support for x86_64 DargonFly BSD in [\\#727](https://github.com/PyO3/"
 "maturin/pull/727)"
 msgstr ""
 
-#: src/changelog.md:772
+#: src/changelog.md:821
 msgid ""
 "Add a Python import hook in [\\#729](https://github.com/PyO3/maturin/"
 "pull/729)"
 msgstr ""
 
-#: src/changelog.md:773
+#: src/changelog.md:822
 msgid ""
 "Allow pip warnings in `maturin develop` command in [\\#732](https://github."
 "com/PyO3/maturin/pull/732)"
 msgstr ""
 
-#: src/changelog.md:775
+#: src/changelog.md:824
 msgid ""
 "[0.12.3](https://github.com/pyo3/maturin/compare/v0.12.2...v0.12.3) - "
 "2021-11-29"
 msgstr ""
 
-#: src/changelog.md:777
+#: src/changelog.md:826
 msgid ""
 "Use platform tag from `sysconfig.platform` on non-portable Linux in [\\#709]"
 "(https://github.com/PyO3/maturin/pull/709)"
 msgstr ""
 
-#: src/changelog.md:778
+#: src/changelog.md:827
 msgid ""
 "Consider current machine architecture when generating platform tags for abi3 "
 "wheels on linux in [\\#709](https://github.com/PyO3/maturin/pull/709)"
 msgstr ""
 
-#: src/changelog.md:780
+#: src/changelog.md:829
 msgid ""
 "Revert back to Rust 2018 edition in [\\#710](https://github.com/PyO3/maturin/"
 "pull/710)"
 msgstr ""
 
-#: src/changelog.md:781
+#: src/changelog.md:830
 msgid ""
 "Warn missing `cffi` package dependency in [\\#711](https://github.com/PyO3/"
 "maturin/pull/711)"
 msgstr ""
 
-#: src/changelog.md:782
+#: src/changelog.md:831
 msgid ""
 "Add support for Illumos in [\\#712](https://github.com/PyO3/maturin/pull/712)"
 msgstr ""
 
-#: src/changelog.md:783
+#: src/changelog.md:832
 msgid ""
 "Account for `MACOSX_DEPLOYMENT_TARGET` env var in wheel platform tag in "
 "[\\#716](https://github.com/PyO3/maturin/pull/716)"
 msgstr ""
 
-#: src/changelog.md:785
+#: src/changelog.md:834
 msgid ""
 "[0.12.2](https://github.com/pyo3/maturin/compare/v0.12.1...v0.12.2) - "
 "2021-11-26"
 msgstr ""
 
-#: src/changelog.md:787
+#: src/changelog.md:836
 msgid ""
 "Add support for excluding files from wheels by `.gitignore` in [\\#695]"
 "(https://github.com/PyO3/maturin/pull/695)"
 msgstr ""
 
-#: src/changelog.md:788
+#: src/changelog.md:837
 msgid ""
 "Fix `pip install maturin` on OpenBSD 6.8 in [\\#697](https://github.com/PyO3/"
 "maturin/pull/697)"
 msgstr ""
 
-#: src/changelog.md:789
+#: src/changelog.md:838
 msgid ""
 "Add support for x86, x86_64 and aarch64 on NetBSD in [\\#704](https://github."
 "com/PyO3/maturin/pull/704)"
 msgstr ""
 
-#: src/changelog.md:790
+#: src/changelog.md:839
 msgid ""
 "Add a `maturin new` command for bootstrapping new projects in [\\#705]"
 "(https://github.com/PyO3/maturin/pull/705)"
 msgstr ""
 
-#: src/changelog.md:792
+#: src/changelog.md:841
 msgid ""
 "[0.12.1](https://github.com/pyo3/maturin/compare/v0.12.0...v0.12.1) - "
 "2021-11-21"
 msgstr ""
 
-#: src/changelog.md:794
+#: src/changelog.md:843
 msgid ""
 "Add support for cross compiling PyPy wheels in [\\#687](https://github.com/"
 "PyO3/maturin/pull/687)"
 msgstr ""
 
-#: src/changelog.md:795
+#: src/changelog.md:844
 msgid ""
 "Fix `sysconfig.get_platform` parsing for macOS in [\\#690](https://github."
 "com/PyO3/maturin/pull/690)"
 msgstr ""
 
-#: src/changelog.md:797
+#: src/changelog.md:846
 msgid ""
 "[0.12.0](https://github.com/pyo3/maturin/compare/v0.11.5...v0.12.0) - "
 "2021-11-19"
 msgstr ""
 
-#: src/changelog.md:799
+#: src/changelog.md:848
 msgid ""
 "Add support for PEP 660 editable installs in [\\#648](https://github.com/"
 "PyO3/maturin/pull/648)"
 msgstr ""
 
-#: src/changelog.md:800
+#: src/changelog.md:849
 msgid ""
 "Publish musllinux_1_1 wheels for maturin in [\\#651](https://github.com/PyO3/"
 "maturin/pull/651)"
 msgstr ""
 
-#: src/changelog.md:801
+#: src/changelog.md:850
 msgid ""
 "Refactor `develop` command to act identical to PEP 660 editable wheels in "
 "[\\#653](https://github.com/PyO3/maturin/pull/653)"
 msgstr ""
 
-#: src/changelog.md:802
+#: src/changelog.md:851
 msgid ""
 "Upgrade to Rust 2021 edition in [\\#655](https://github.com/PyO3/maturin/"
 "pull/655)"
 msgstr ""
 
-#: src/changelog.md:803
+#: src/changelog.md:852
 msgid ""
 "Add support for powerpc64 and powerpc64le on FreeBSD by pkubaj in [\\#656]"
 "(https://github.com/PyO3/maturin/pull/656)"
 msgstr ""
 
-#: src/changelog.md:804
+#: src/changelog.md:853
 msgid ""
 "Fix false positive missing pyinit warning on arm64 macOS in [\\#673](https://"
 "github.com/PyO3/maturin/pull/673)"
 msgstr ""
 
-#: src/changelog.md:805
+#: src/changelog.md:854
 msgid ""
 "Build without rustls on arm64 Windows by nsait-linaro in [\\#674](https://"
 "github.com/PyO3/maturin/pull/674)"
 msgstr ""
 
-#: src/changelog.md:806
+#: src/changelog.md:855
 msgid ""
 "Publish Windows arm64 wheels to PyPI by nsait-linaro in [\\#675](https://"
 "github.com/PyO3/maturin/pull/675)"
 msgstr ""
 
-#: src/changelog.md:807
+#: src/changelog.md:856
 msgid ""
 "Add support for building on Windows mingw platforms in [\\#677](https://"
 "github.com/PyO3/maturin/pull/677)"
 msgstr ""
 
-#: src/changelog.md:808
+#: src/changelog.md:857
 msgid ""
 "Allow building for non-abi3 pypy wheels when the abi3 feature is enabled in "
 "[\\#678](https://github.com/PyO3/maturin/pull/678)"
 msgstr ""
 
-#: src/changelog.md:809
+#: src/changelog.md:858
 msgid ""
 "Add support for cross compiling to different operating systems in [\\#680]"
 "(https://github.com/PyO3/maturin/pull/680)"
 msgstr ""
 
-#: src/changelog.md:811
+#: src/changelog.md:860
 msgid ""
 "[0.11.5](https://github.com/pyo3/maturin/compare/v0.11.4...v0.11.5) - "
 "2021-10-13"
 msgstr ""
 
-#: src/changelog.md:813
+#: src/changelog.md:862
 msgid ""
 "Fixed module documentation missing bug of pyo3 bindings in [\\#639](https://"
 "github.com/PyO3/maturin/pull/639)"
 msgstr ""
 
-#: src/changelog.md:814
+#: src/changelog.md:863
 msgid ""
 "Fix musllinux auditwheel wrongly detects libc forbidden link in [\\#643]"
 "(https://github.com/PyO3/maturin/pull/643)"
 msgstr ""
 
-#: src/changelog.md:815
+#: src/changelog.md:864
 msgid ""
 "Fix finding conda Python interpreters on Windows by RobertColton in [\\#644]"
 "(https://github.com/PyO3/maturin/pull/644)"
 msgstr ""
 
-#: src/changelog.md:816
+#: src/changelog.md:865
 msgid ""
 "Fix Unicode metadata when uploading to PyPI in [\\#645](https://github.com/"
 "PyO3/maturin/pull/645)"
 msgstr ""
 
-#: src/changelog.md:817
+#: src/changelog.md:866
 msgid "Fix incorrectly folded long `Summary` metadata"
 msgstr ""
 
-#: src/changelog.md:818
+#: src/changelog.md:867
 msgid ""
 "Fix cross compilation for Python 3.10 in [\\#646](https://github.com/PyO3/"
 "maturin/pull/646)"
 msgstr ""
 
-#: src/changelog.md:820
+#: src/changelog.md:869
 msgid ""
 "[0.11.4](https://github.com/pyo3/maturin/compare/v0.11.3...v0.11.4) - "
 "2021-09-28"
 msgstr ""
 
-#: src/changelog.md:822
+#: src/changelog.md:871
 msgid ""
 "Autodetect PyPy executables in [\\#617](https://github.com/PyO3/maturin/"
 "pull/617)"
 msgstr ""
 
-#: src/changelog.md:823
+#: src/changelog.md:872
 msgid ""
 "auditwheel: add `libz.so.1` to whitelisted libraries in [\\#625](https://"
 "github.com/PyO3/maturin/pull/625)"
 msgstr ""
 
-#: src/changelog.md:824
+#: src/changelog.md:873
 msgid ""
 "auditwheel: detect musl libc in [\\#629](https://github.com/PyO3/maturin/"
 "pull/629)"
 msgstr ""
 
-#: src/changelog.md:825
+#: src/changelog.md:874
 msgid ""
 "Fixed Python 3.10 and later versions detection on Windows in [\\#630]"
 "(https://github.com/PyO3/maturin/pull/630)"
 msgstr ""
 
-#: src/changelog.md:826
+#: src/changelog.md:875
 msgid ""
 "Install entrypoint scripts in `maturin develop` command in [\\#633](https://"
 "github.com/PyO3/maturin/pull/633) and [\\#634](https://github.com/PyO3/"
 "maturin/pull/634)"
 msgstr ""
 
-#: src/changelog.md:827
+#: src/changelog.md:876
 msgid ""
 "Add support for installing optional dependencies in `maturin develop` "
 "command in [\\#635](https://github.com/PyO3/maturin/pull/635)"
 msgstr ""
 
-#: src/changelog.md:828
+#: src/changelog.md:877
 msgid ""
 "Fixed build error when `manylinux`/`compatibility` options is specified in "
 "`pyproject.toml` in [\\#637](https://github.com/PyO3/maturin/pull/637)"
 msgstr ""
 
-#: src/changelog.md:830
+#: src/changelog.md:879
 msgid ""
 "[0.11.3](https://github.com/pyo3/maturin/compare/v0.11.2...v0.11.3) - "
 "2021-08-25"
 msgstr ""
 
-#: src/changelog.md:832
+#: src/changelog.md:881
 msgid ""
 "Add path option for Python source in [\\#584](https://github.com/PyO3/"
 "maturin/pull/584)"
 msgstr ""
 
-#: src/changelog.md:833
+#: src/changelog.md:882
 msgid ""
 "Add auditwheel support for musllinux in [\\#597](https://github.com/PyO3/"
 "maturin/pull/597)"
 msgstr ""
 
-#: src/changelog.md:834
+#: src/changelog.md:883
 msgid ""
 "`[tool.maturin]` options from `pyproject.toml` will be used automatically in "
 "[\\#605](https://github.com/PyO3/maturin/pull/605)"
 msgstr ""
 
-#: src/changelog.md:835
+#: src/changelog.md:884
 msgid ""
 "Skip unavailable Python interpreters from pyenv in [\\#609](https://github."
 "com/PyO3/maturin/pull/609)"
 msgstr ""
 
-#: src/changelog.md:837
+#: src/changelog.md:886
 msgid ""
 "[0.11.2](https://github.com/pyo3/maturin/compare/v0.11.1...v0.11.2) - "
 "2021-07-20"
 msgstr ""
 
-#: src/changelog.md:839
+#: src/changelog.md:888
 msgid ""
 "Use UTF-8 encoding when reading `pyproject.toml` by domdfcoding in [\\#588]"
 "(https://github.com/PyO3/maturin/pull/588)"
 msgstr ""
 
-#: src/changelog.md:840
+#: src/changelog.md:889
 msgid ""
 "Use Cargo's `repository` field as `Source Code` in project URL in [\\#590]"
 "(https://github.com/PyO3/maturin/pull/590)"
 msgstr ""
 
-#: src/changelog.md:841
+#: src/changelog.md:890
 msgid ""
 "Fold long header fields in Python metadata in [\\#594](https://github.com/"
 "PyO3/maturin/pull/594)"
 msgstr ""
 
-#: src/changelog.md:842
+#: src/changelog.md:891
 msgid ""
 "Fix `maturin develop` for PyPy on Unix in [\\#596](https://github.com/PyO3/"
 "maturin/pull/596)"
 msgstr ""
 
-#: src/changelog.md:844
+#: src/changelog.md:893
 msgid ""
 "[0.11.1](https://github.com/pyo3/maturin/compare/v0.11.0...v0.11.1) - "
 "2021-07-10"
 msgstr ""
 
-#: src/changelog.md:846
+#: src/changelog.md:895
 msgid ""
 "Fix sdist error when VCS has uncommitted renamed files in [\\#585](https://"
 "github.com/PyO3/maturin/pull/585)"
 msgstr ""
 
-#: src/changelog.md:847
+#: src/changelog.md:896
 msgid ""
 "Add `maturin completions <shell>` command to generate shell completions in "
 "[\\#586](https://github.com/PyO3/maturin/pull/586)"
 msgstr ""
 
-#: src/changelog.md:849
+#: src/changelog.md:898
 msgid ""
 "[0.11.0](https://github.com/pyo3/maturin/compare/v0.10.6...v0.11.0) - "
 "2021-07-04"
 msgstr ""
 
-#: src/changelog.md:851
+#: src/changelog.md:900
 msgid ""
 "Add support for reading metadata from [PEP 621](https://www.python.org/dev/"
 "peps/pep-0621/) project table in `pyproject.toml` in [\\#555](https://github."
 "com/PyO3/maturin/pull/555)"
 msgstr ""
 
-#: src/changelog.md:852
+#: src/changelog.md:901
 msgid ""
 "Users should migrate away from the old `[package.metadata.maturin]` table of "
 "`Cargo.toml` to this new `[project]` table of `pyproject.toml`"
 msgstr ""
 
-#: src/changelog.md:853
+#: src/changelog.md:902
 msgid ""
 "Add PEP 656 musllinux support in [\\#543](https://github.com/PyO3/maturin/"
 "pull/543)"
 msgstr ""
 
-#: src/changelog.md:854
+#: src/changelog.md:903
 msgid "`--manylinux` is now called `--compatibility` and supports musllinux"
 msgstr ""
 
-#: src/changelog.md:855
+#: src/changelog.md:904
 msgid ""
 "The pure rust install layout changed from just the shared library to a "
 "python module that reexports the shared library. This should have now "
@@ -3593,613 +3847,613 @@ msgid ""
 "`my_project`)"
 msgstr ""
 
-#: src/changelog.md:856
+#: src/changelog.md:905
 msgid ""
 "Add support for packaging type stubs in pure Rust project layout in [\\#567]"
 "(https://github.com/PyO3/maturin/pull/567)"
 msgstr ""
 
-#: src/changelog.md:857
+#: src/changelog.md:906
 msgid ""
 "Support i386 on OpenBSD in [\\#568](https://github.com/PyO3/maturin/pull/568)"
 msgstr ""
 
-#: src/changelog.md:858
+#: src/changelog.md:907
 msgid ""
 "Support Aarch64 on OpenBSD in [\\#570](https://github.com/PyO3/maturin/"
 "pull/570)"
 msgstr ""
 
-#: src/changelog.md:859
+#: src/changelog.md:908
 msgid ""
 "Support Aarch64 on FreeBSD in [\\#571](https://github.com/PyO3/maturin/"
 "pull/571)"
 msgstr ""
 
-#: src/changelog.md:860
+#: src/changelog.md:909
 msgid ""
 "`Cargo.toml`'s `authors` field is now optional per Rust [RFC 3052](https://"
 "github.com/rust-lang/rfcs/blob/master/text/3052-optional-authors-field.md) "
 "in [\\#573](https://github.com/PyO3/maturin/pull/573)"
 msgstr ""
 
-#: src/changelog.md:861
+#: src/changelog.md:910
 msgid ""
 "Allow dotted keys in `Cargo.toml` by switch from `toml_edit` to `toml` crate "
 "in [\\#577](https://github.com/PyO3/maturin/pull/577)"
 msgstr ""
 
-#: src/changelog.md:862
+#: src/changelog.md:911
 msgid ""
 "Fix source distribution with local path dependencies on Windows in [\\#580]"
 "(https://github.com/PyO3/maturin/pull/580)"
 msgstr ""
 
-#: src/changelog.md:864
+#: src/changelog.md:913
 msgid ""
 "[0.10.6](https://github.com/pyo3/maturin/compare/v0.10.5...v0.10.6) - "
 "2021-05-21"
 msgstr ""
 
-#: src/changelog.md:866
+#: src/changelog.md:915
 msgid ""
 "Fix corrupted macOS binary release in [\\#547](https://github.com/PyO3/"
 "maturin/pull/547)"
 msgstr ""
 
-#: src/changelog.md:867
+#: src/changelog.md:916
 msgid ""
 "Fix build with the \"upload\" feature disabled by ravenexp in [\\#548]"
 "(https://github.com/PyO3/maturin/pull/548)"
 msgstr ""
 
-#: src/changelog.md:869
+#: src/changelog.md:918
 msgid ""
 "[0.10.5](https://github.com/pyo3/maturin/compare/v0.10.4...v0.10.5) - "
 "2021-05-21"
 msgstr ""
 
-#: src/changelog.md:871
+#: src/changelog.md:920
 msgid ""
 "Add `manylinux_2_27` support in [\\#521](https://github.com/PyO3/maturin/"
 "pull/521)"
 msgstr ""
 
-#: src/changelog.md:872
+#: src/changelog.md:921
 msgid ""
 "Add support for Windows arm64 target in [\\#524](https://github.com/PyO3/"
 "maturin/pull/524)"
 msgstr ""
 
-#: src/changelog.md:873
+#: src/changelog.md:922
 msgid ""
 "Always output PEP 600 platform tags in [\\#525](https://github.com/PyO3/"
 "maturin/pull/525)"
 msgstr ""
 
-#: src/changelog.md:874
+#: src/changelog.md:923
 msgid ""
 "Fix missing `PyInit_<module_name>` warning with Rust submodule in [\\#528]"
 "(https://github.com/PyO3/maturin/pull/528)"
 msgstr ""
 
-#: src/changelog.md:875
+#: src/changelog.md:924
 msgid ""
 "Better cross compiling support for PyO3 binding on Unix in [\\#454](https://"
 "github.com/PyO3/maturin/pull/454)"
 msgstr ""
 
-#: src/changelog.md:876
+#: src/changelog.md:925
 msgid ""
 "Fix s390x architecture support in [\\#530](https://github.com/PyO3/maturin/"
 "pull/530)"
 msgstr ""
 
-#: src/changelog.md:877
+#: src/changelog.md:926
 msgid ""
 "Fix auditwheel panic with s390x wheels in [\\#532](https://github.com/PyO3/"
 "maturin/pull/532)"
 msgstr ""
 
-#: src/changelog.md:878
+#: src/changelog.md:927
 msgid ""
 "Support uploading heterogeneous wheels by ravenexp in [\\#544](https://"
 "github.com/PyO3/maturin/pull/544)"
 msgstr ""
 
-#: src/changelog.md:879
+#: src/changelog.md:928
 msgid ""
 "Warn about `pyproject.toml` missing maturin version constraint in [\\#545]"
 "(https://github.com/PyO3/maturin/pull/545)"
 msgstr ""
 
-#: src/changelog.md:881
+#: src/changelog.md:930
 msgid ""
 "[0.10.4](https://github.com/pyo3/maturin/compare/v0.10.3...v0.10.4) - "
 "2021-04-28"
 msgstr ""
 
-#: src/changelog.md:883
+#: src/changelog.md:932
 msgid ""
 "Interpreter search now uses python 3.6 to 3.12 in [\\#495](https://github."
 "com/PyO3/maturin/pull/495)"
 msgstr ""
 
-#: src/changelog.md:884
+#: src/changelog.md:933
 msgid ""
 "Consider requires-python when searching for interpreters in [\\#495](https://"
 "github.com/PyO3/maturin/pull/495)"
 msgstr ""
 
-#: src/changelog.md:885
+#: src/changelog.md:934
 msgid ""
 "Support Rust extension as a submodule in mixed Python/Rust projects in "
 "[\\#489](https://github.com/PyO3/maturin/pull/489)"
 msgstr ""
 
-#: src/changelog.md:887
+#: src/changelog.md:936
 msgid ""
 "[0.10.3](https://github.com/pyo3/maturin/compare/v0.10.2...v0.10.3) - "
 "2021-04-13"
 msgstr ""
 
-#: src/changelog.md:889
+#: src/changelog.md:938
 msgid ""
 "The `upload` command is now implemented, it is mostly similar to `twine "
 "upload`. [\\#484](https://github.com/PyO3/maturin/pull/484)"
 msgstr ""
 
-#: src/changelog.md:890
+#: src/changelog.md:939
 msgid "Interpreter search now uses python 3.6 to 3.12"
 msgstr ""
 
-#: src/changelog.md:891
+#: src/changelog.md:940
 msgid ""
 "Add basic support for OpenBSD in [\\#496](https://github.com/PyO3/maturin/"
 "pull/496)"
 msgstr ""
 
-#: src/changelog.md:892
+#: src/changelog.md:941
 msgid ""
 "Fix the PowerPC platform by messense in [\\#503](https://github.com/PyO3/"
 "maturin/pull/503)"
 msgstr ""
 
-#: src/changelog.md:894
+#: src/changelog.md:943
 msgid ""
 "[0.10.2](https://github.com/pyo3/maturin/compare/v0.10.1...v0.10.2) - "
 "2021-04-03"
 msgstr ""
 
-#: src/changelog.md:896
+#: src/changelog.md:945
 msgid "Fix `--target` being silently ignored"
 msgstr ""
 
-#: src/changelog.md:898
+#: src/changelog.md:947
 msgid ""
 "[0.10.1](https://github.com/pyo3/maturin/compare/v0.10.0...v0.10.1) - "
 "2021-04-03"
 msgstr ""
 
-#: src/changelog.md:900
+#: src/changelog.md:949
 msgid ""
 "Fix a regression in 0.10.0 that would incorrectly assume we're building for "
 "musl instead of gnu by messense in [\\#487](https://github.com/PyO3/maturin/"
 "pull/487)"
 msgstr ""
 
-#: src/changelog.md:901
+#: src/changelog.md:950
 msgid "Basic s390x support"
 msgstr ""
 
-#: src/changelog.md:903
+#: src/changelog.md:952
 msgid ""
 "[0.10.0](https://github.com/pyo3/maturin/compare/v0.9.4...v0.10.0) - "
 "2021-04-02"
 msgstr ""
 
-#: src/changelog.md:905
+#: src/changelog.md:954
 msgid ""
 "Change manylinux default version based on target arch by messense in [\\#424]"
 "(https://github.com/PyO3/maturin/pull/424)"
 msgstr ""
 
-#: src/changelog.md:906
+#: src/changelog.md:955
 msgid ""
 "Support local path dependencies in source distribution (i.e. you can now "
 "package a workspace into an sdist)"
 msgstr ""
 
-#: src/changelog.md:907
+#: src/changelog.md:956
 msgid ""
 "Set a more reasonable LC_ID_DYLIB entry on macOS by messense [\\#433]"
 "(https://github.com/PyO3/maturin/pull/433)"
 msgstr ""
 
-#: src/changelog.md:908
+#: src/changelog.md:957
 msgid ""
 "Add `--skip-existing` option to publish by messense [\\#444](https://github."
 "com/PyO3/maturin/pull/444)"
 msgstr ""
 
-#: src/changelog.md:909
+#: src/changelog.md:958
 msgid ""
 "maturn develop install dependencies automatically by messense [\\#443]"
 "(https://github.com/PyO3/maturin/pull/443)"
 msgstr ""
 
-#: src/changelog.md:910
+#: src/changelog.md:959
 msgid ""
 "Load credential from pypirc using repository name instead of package name by "
 "messense [\\#445](https://github.com/PyO3/maturin/pull/445)"
 msgstr ""
 
-#: src/changelog.md:911
+#: src/changelog.md:960
 msgid ""
 "Add `manylinux_2_24` support in [\\#451](https://github.com/PyO3/maturin/"
 "pull/451)"
 msgstr ""
 
-#: src/changelog.md:912
+#: src/changelog.md:961
 msgid ""
 "Improve error message when auditwheel failed to find versioned offending "
 "symbols in [\\#452](https://github.com/PyO3/maturin/pull/452)"
 msgstr ""
 
-#: src/changelog.md:913
+#: src/changelog.md:962
 msgid ""
 "Add auditwheel test to CI in [\\#455](https://github.com/PyO3/maturin/"
 "pull/455)"
 msgstr ""
 
-#: src/changelog.md:914
+#: src/changelog.md:963
 msgid "Fix sdist transitive path dependencies."
 msgstr ""
 
-#: src/changelog.md:915
+#: src/changelog.md:964
 msgid ""
 "auditwheel choose higher priority tag when possible in [\\#456](https://"
 "github.com/PyO3/maturin/pull/456), dropped `auditwheel` Cargo feature."
 msgstr ""
 
-#: src/changelog.md:916
+#: src/changelog.md:965
 msgid ""
 "develop now writes an [INSTALLER](https://packaging.python.org/"
 "specifications/recording-installed-packages/#the-installer-file) file"
 msgstr ""
 
-#: src/changelog.md:917
+#: src/changelog.md:966
 msgid ""
 "develop removes an old .dist-info directory if it exists before installing "
 "the new one"
 msgstr ""
 
-#: src/changelog.md:918
+#: src/changelog.md:967
 msgid ""
 "Fix wheels for PyPy on windows containing extension modules with incorrect "
 "names. [\\#482](https://github.com/PyO3/maturin/pull/482)"
 msgstr ""
 
-#: src/changelog.md:920
+#: src/changelog.md:969
 msgid ""
 "[0.9.4](https://github.com/pyo3/maturin/compare/v0.9.3...v0.9.4) - 2021-02-18"
 msgstr ""
 
-#: src/changelog.md:922
+#: src/changelog.md:971
 msgid "Fix building a bin with musl"
 msgstr ""
 
-#: src/changelog.md:924
+#: src/changelog.md:973
 msgid "[0.9.3](https://github.com/pyo3/maturin/compare/v0.9.2...v0.9.3)"
 msgstr ""
 
-#: src/changelog.md:926
+#: src/changelog.md:975
 msgid "CI failure"
 msgstr ""
 
-#: src/changelog.md:928
+#: src/changelog.md:977
 msgid ""
 "[0.9.2](https://github.com/pyo3/maturin/compare/v0.9.1...v0.9.2) - 2021-02-17"
 msgstr ""
 
-#: src/changelog.md:930
+#: src/changelog.md:979
 msgid ""
 "Escape version in wheel metadata by messense in [\\#420](https://github.com/"
 "PyO3/maturin/pull/420)"
 msgstr ""
 
-#: src/changelog.md:931
+#: src/changelog.md:980
 msgid ""
 "Set executable bit on shared library by messense in [\\#421](https://github."
 "com/PyO3/maturin/pull/421)"
 msgstr ""
 
-#: src/changelog.md:932
+#: src/changelog.md:981
 msgid ""
 "Rename `classifier` to `classifiers` for pypi compatibility. The old "
 "`classifier` is still available and now also works with pypi"
 msgstr ""
 
-#: src/changelog.md:933
+#: src/changelog.md:982
 msgid ""
 "Fix building for musl by automatically setting `-C target-feature=-crt-"
 "static`"
 msgstr ""
 
-#: src/changelog.md:935
+#: src/changelog.md:984
 msgid ""
 "[0.9.1](https://github.com/pyo3/maturin/compare/v0.9.0...v0.9.1) - 2021-01-13"
 msgstr ""
 
-#: src/changelog.md:937
+#: src/changelog.md:986
 msgid "Error when the `abi3` feature is selected but no minimum version"
 msgstr ""
 
-#: src/changelog.md:938
+#: src/changelog.md:987
 msgid ""
 "Support building universal2 wheels (x86 and aarch64 in a single file) by "
 "messense in [\\#403](https://github.com/PyO3/maturin/pull/403)"
 msgstr ""
 
-#: src/changelog.md:939
+#: src/changelog.md:988
 msgid ""
 "Recognize `PYO3_CROSS_LIB_DIR` for cross compiling with abi3 targeting "
 "windows."
 msgstr ""
 
-#: src/changelog.md:940
+#: src/changelog.md:989
 msgid ""
 "`package.metadata.maturin.classifier` is renamed to `classifiers` by kngwyu "
 "in [\\#416](https://github.com/PyO3/maturin/pull/416)"
 msgstr ""
 
-#: src/changelog.md:941
+#: src/changelog.md:990
 msgid "Added more instructions to building complex manylinux setups"
 msgstr ""
 
-#: src/changelog.md:943
+#: src/changelog.md:992
 msgid ""
 "[0.9.0](https://github.com/pyo3/maturin/compare/v0.8.3...v0.9.0) - 2021-01-10"
 msgstr ""
 
-#: src/changelog.md:945
+#: src/changelog.md:994
 msgid "Added support for building abi3 wheels with pyo3 0.13.1"
 msgstr ""
 
-#: src/changelog.md:946
+#: src/changelog.md:995
 msgid ""
 "Python 3.9 is supported (it should have worked before, but it is now tested "
 "on ci)"
 msgstr ""
 
-#: src/changelog.md:947
+#: src/changelog.md:996
 msgid ""
 "There are 64-bit and aarch64 binary builds for linux and 64-bit builds for "
 "windows, mac and freebsd-12-1"
 msgstr ""
 
-#: src/changelog.md:948
+#: src/changelog.md:997
 msgid ""
 "The auditwheel options have changed to `--manylinux=[off|2010|2014]` with "
 "manylinux2010 as default, and optionally `--skip-auditwheel`."
 msgstr ""
 
-#: src/changelog.md:949
+#: src/changelog.md:998
 msgid "Removed Python 3.5 since it is unsupported"
 msgstr ""
 
-#: src/changelog.md:950
+#: src/changelog.md:999
 msgid "The default and minimum manylinux version is now manylinux2010"
 msgstr ""
 
-#: src/changelog.md:951
+#: src/changelog.md:1000
 msgid ""
 "restructured text (rst) readmes are now supported, by clbarnes in [\\#360]"
 "(https://github.com/PyO3/maturin/pull/360)"
 msgstr ""
 
-#: src/changelog.md:952
+#: src/changelog.md:1001
 msgid ""
 "Allow python 3 interpreter with debuginfo use maturin by inevity in [\\#370]"
 "(https://github.com/PyO3/maturin/pull/370)"
 msgstr ""
 
-#: src/changelog.md:953
+#: src/changelog.md:1002
 msgid ""
 "pypirc is checked for credentials by houqp in [\\#374](https://github.com/"
 "PyO3/maturin/pull/374)"
 msgstr ""
 
-#: src/changelog.md:954
+#: src/changelog.md:1003
 msgid ""
 "Added support for PowerPC by mzpqnxow and programmerjake in [\\#366](https://"
 "github.com/PyO3/maturin/pull/366)"
 msgstr ""
 
-#: src/changelog.md:955
+#: src/changelog.md:1004
 msgid ""
 "`project-url` is now a toml dictionary instead of a toml list to conform to "
 "the standard"
 msgstr ""
 
-#: src/changelog.md:956
+#: src/changelog.md:1005
 msgid "No more retry loop when the password was wrong"
 msgstr ""
 
-#: src/changelog.md:957
+#: src/changelog.md:1006
 msgid ""
 "When bootstrapping, also search for `cargo.exe` if `cargo` was not found"
 msgstr ""
 
-#: src/changelog.md:959
+#: src/changelog.md:1008
 msgid ""
 "[0.8.3](https://github.com/pyo3/maturin/compare/v0.8.2...v0.8.3) - 2020-08-17"
 msgstr ""
 
-#: src/changelog.md:961 src/changelog.md:975 src/changelog.md:981
-#: src/changelog.md:987 src/changelog.md:1004 src/changelog.md:1017
-#: src/changelog.md:1058 src/changelog.md:1068 src/changelog.md:1076
-#: src/changelog.md:1092 src/changelog.md:1103 src/changelog.md:1122
-#: src/changelog.md:1136 src/changelog.md:1174 src/changelog.md:1199
-#: src/changelog.md:1210 src/changelog.md:1229 src/changelog.md:1246
+#: src/changelog.md:1010 src/changelog.md:1024 src/changelog.md:1030
+#: src/changelog.md:1036 src/changelog.md:1053 src/changelog.md:1066
+#: src/changelog.md:1107 src/changelog.md:1117 src/changelog.md:1125
+#: src/changelog.md:1141 src/changelog.md:1152 src/changelog.md:1171
+#: src/changelog.md:1185 src/changelog.md:1223 src/changelog.md:1248
+#: src/changelog.md:1259 src/changelog.md:1278 src/changelog.md:1295
 msgid "Added"
 msgstr ""
 
-#: src/changelog.md:963
+#: src/changelog.md:1012
 msgid "tox is now supported due to a bugfix in the latest version of tox"
 msgstr ""
 
-#: src/changelog.md:964
+#: src/changelog.md:1013
 msgid ""
 "`[tool.maturin]` now supports `sdist-include = [\"path/**/*\"]` to include "
 "arbitrary files in source distributions ([\\#296](https://github.com/PyO3/"
 "maturin/pull/296))."
 msgstr ""
 
-#: src/changelog.md:966
+#: src/changelog.md:1015
 msgid ""
 "Add support for PyO3 `0.12`'s `PYO3_PYTHON` environment variable. [\\#331]"
 "(https://github.com/PyO3/maturin/pull/331)"
 msgstr ""
 
-#: src/changelog.md:968 src/changelog.md:992 src/changelog.md:998
-#: src/changelog.md:1009 src/changelog.md:1034 src/changelog.md:1040
-#: src/changelog.md:1046 src/changelog.md:1062 src/changelog.md:1086
-#: src/changelog.md:1142 src/changelog.md:1154 src/changelog.md:1160
-#: src/changelog.md:1183 src/changelog.md:1193 src/changelog.md:1215
-#: src/changelog.md:1223 src/changelog.md:1235
+#: src/changelog.md:1017 src/changelog.md:1041 src/changelog.md:1047
+#: src/changelog.md:1058 src/changelog.md:1083 src/changelog.md:1089
+#: src/changelog.md:1095 src/changelog.md:1111 src/changelog.md:1135
+#: src/changelog.md:1191 src/changelog.md:1203 src/changelog.md:1209
+#: src/changelog.md:1232 src/changelog.md:1242 src/changelog.md:1264
+#: src/changelog.md:1272 src/changelog.md:1284
 msgid "Fixed"
 msgstr ""
 
-#: src/changelog.md:970
+#: src/changelog.md:1019
 msgid ""
 "Fix incorrectly returning full path (not basename) from PEP 517 "
 "`build_sdist` hook. This fixes tox support from maturin's side"
 msgstr ""
 
-#: src/changelog.md:971
+#: src/changelog.md:1020
 msgid ""
 "Packages installed with `maturin develop` are now visible to pip and can be "
 "uninstalled with pip"
 msgstr ""
 
-#: src/changelog.md:973
+#: src/changelog.md:1022
 msgid ""
 "[0.8.2](https://github.com/pyo3/maturin/compare/v0.8.1...v0.8.2) - 2020-06-29"
 msgstr ""
 
-#: src/changelog.md:977
+#: src/changelog.md:1026
 msgid ""
 "Python 3.8 was added to PATH in the docker image by oconnor663 in [\\#302]"
 "(https://github.com/PyO3/maturin/pull/302)"
 msgstr ""
 
-#: src/changelog.md:979
+#: src/changelog.md:1028
 msgid ""
 "[0.8.1](https://github.com/pyo3/maturin/compare/v0.8.0...v0.8.1) - 2020-04-30"
 msgstr ""
 
-#: src/changelog.md:983
+#: src/changelog.md:1032
 msgid ""
 "cffi is installed if it's missing and python is running inside a virtualenv."
 msgstr ""
 
-#: src/changelog.md:985
+#: src/changelog.md:1034
 msgid ""
 "[0.8.0](https://github.com/pyo3/maturin/compare/v0.7.9...v0.8.0) - 2020-04-03"
 msgstr ""
 
-#: src/changelog.md:989
+#: src/changelog.md:1038
 msgid "There is now a binary wheel for aarch64"
 msgstr ""
 
-#: src/changelog.md:990
+#: src/changelog.md:1039
 msgid "Warn if there are local dependencies"
 msgstr ""
 
-#: src/changelog.md:994
+#: src/changelog.md:1043
 msgid ""
 "Omit author_email if `@` is not found in authors by evandrocoan in [\\#290]"
 "(https://github.com/PyO3/maturin/pull/290)"
 msgstr ""
 
-#: src/changelog.md:996
+#: src/changelog.md:1045
 msgid ""
 "[0.7.9](https://github.com/pyo3/maturin/compare/v0.7.8...v0.7.9) - 2020-03-06"
 msgstr ""
 
-#: src/changelog.md:1000
+#: src/changelog.md:1049
 msgid "This release includes binary wheels for mac os"
 msgstr ""
 
-#: src/changelog.md:1002
+#: src/changelog.md:1051
 msgid ""
 "[0.7.8](https://github.com/pyo3/maturin/compare/v0.7.7...v0.7.8) - 2020-03-06"
 msgstr ""
 
-#: src/changelog.md:1006
+#: src/changelog.md:1055
 msgid ""
 "Added support from arm, specifically arm7l, aarch64 by ijl in [\\#273]"
 "(https://github.com/PyO3/maturin/pull/273)"
 msgstr ""
 
-#: src/changelog.md:1007
+#: src/changelog.md:1056
 msgid ""
 "Added support for manylinux2014 by ijl in [\\#273](https://github.com/PyO3/"
 "maturin/pull/273)"
 msgstr ""
 
-#: src/changelog.md:1011
+#: src/changelog.md:1060
 msgid ""
 "Remove python 2 from tags by ijl in [\\#254](https://github.com/PyO3/maturin/"
 "pull/254)"
 msgstr ""
 
-#: src/changelog.md:1012
+#: src/changelog.md:1061
 msgid ""
 "32-bit wheels didn't work on linux. This has been fixed by dae in [\\#250]"
 "(https://github.com/PyO3/maturin/pull/250)"
 msgstr ""
 
-#: src/changelog.md:1013
+#: src/changelog.md:1062
 msgid ""
 "The path of the RECORD file on windows used a backward slash instead of a "
 "forward slash"
 msgstr ""
 
-#: src/changelog.md:1015
+#: src/changelog.md:1064
 msgid ""
 "[0.7.7](https://github.com/pyo3/maturin/compare/v0.7.6...v0.7.7) - 2019-11-12"
 msgstr ""
 
-#: src/changelog.md:1019
+#: src/changelog.md:1068
 msgid ""
 "The setup.py installer for bootstrapping maturin now checks for cargo "
 "instead of failing with a complex error message."
 msgstr ""
 
-#: src/changelog.md:1020
+#: src/changelog.md:1069
 msgid "Upload errors now show the filesize"
 msgstr ""
 
-#: src/changelog.md:1022 src/changelog.md:1028 src/changelog.md:1111
-#: src/changelog.md:1132 src/changelog.md:1148 src/changelog.md:1178
-#: src/changelog.md:1189 src/changelog.md:1203 src/changelog.md:1240
-#: src/changelog.md:1252
+#: src/changelog.md:1071 src/changelog.md:1077 src/changelog.md:1160
+#: src/changelog.md:1181 src/changelog.md:1197 src/changelog.md:1227
+#: src/changelog.md:1238 src/changelog.md:1252 src/changelog.md:1289
+#: src/changelog.md:1301
 msgid "Changed"
 msgstr ""
 
-#: src/changelog.md:1024
+#: src/changelog.md:1073
 msgid ""
 "maturin's metadata now lists a requirement of python3.5 or later to install."
 msgstr ""
 
-#: src/changelog.md:1026
+#: src/changelog.md:1075
 msgid ""
 "[0.7.6](https://github.com/pyo3/maturin/compare/v0.7.5...v0.7.6) - 2019-09-28"
 msgstr ""
 
-#: src/changelog.md:1030
+#: src/changelog.md:1079
 msgid ""
 "Only `--features`, `--no-default-features` and `--all-features` in `--cargo-"
 "extra-args` are passed to `cargo metadata` when determining the bindings, "
@@ -4207,162 +4461,162 @@ msgid ""
 "build` but by `cargo metadata`."
 msgstr ""
 
-#: src/changelog.md:1032
+#: src/changelog.md:1081
 msgid ""
 "[0.7.5](https://github.com/pyo3/maturin/compare/v0.7.4...v0.7.5) - 2019-09-24"
 msgstr ""
 
-#: src/changelog.md:1036
+#: src/changelog.md:1085
 msgid "Fix clippy error to fix publishing from ci"
 msgstr ""
 
-#: src/changelog.md:1038
+#: src/changelog.md:1087
 msgid ""
 "[0.7.4](https://github.com/pyo3/maturin/compare/v0.7.3...v0.7.4) - 2019-09-22"
 msgstr ""
 
-#: src/changelog.md:1042
+#: src/changelog.md:1091
 msgid "Fix tests"
 msgstr ""
 
-#: src/changelog.md:1044 src/changelog.md:1050
+#: src/changelog.md:1093 src/changelog.md:1099
 msgid ""
 "[0.7.3](https://github.com/pyo3/maturin/compare/v0.7.2...v0.7.3) - 2019-09-22"
 msgstr ""
 
-#: src/changelog.md:1048
+#: src/changelog.md:1097
 msgid "Fix building when the bindings crate is behind a feature flag"
 msgstr ""
 
-#: src/changelog.md:1052 src/changelog.md:1096
+#: src/changelog.md:1101 src/changelog.md:1145
 msgid "Removed"
 msgstr ""
 
-#: src/changelog.md:1054
+#: src/changelog.md:1103
 msgid ""
 "The manylinux docker container doesn't contain musl anymore. If you're "
 "targeting musl, there's no need to use manylinux."
 msgstr ""
 
-#: src/changelog.md:1056
+#: src/changelog.md:1105
 msgid ""
 "[0.7.2](https://github.com/pyo3/maturin/compare/v0.7.1...v0.7.2) - 2019-09-05"
 msgstr ""
 
-#: src/changelog.md:1060
+#: src/changelog.md:1109
 msgid ""
 "Allow cross compilation with cffi and a python interpreter with the host "
 "target"
 msgstr ""
 
-#: src/changelog.md:1064
+#: src/changelog.md:1113
 msgid "Renamed a folder to maturin so PEP 517 backend works again."
 msgstr ""
 
-#: src/changelog.md:1066
+#: src/changelog.md:1115
 msgid ""
 "[0.7.1](https://github.com/pyo3/maturin/compare/v0.7.0...v0.7.1) - 2019-08-31"
 msgstr ""
 
-#: src/changelog.md:1070
+#: src/changelog.md:1119
 msgid ""
 "`maturin build --interpreter`/`maturin publish --interpreter` builds only a "
 "source distribution."
 msgstr ""
 
-#: src/changelog.md:1072
+#: src/changelog.md:1121
 msgid ""
 "[0.7.0](https://github.com/pyo3/maturin/compare/v0.6.1...v0.7.0) - 2019-08-30"
 msgstr ""
 
-#: src/changelog.md:1074
+#: src/changelog.md:1123
 msgid ""
 "With this release, the name of this project changes from _pyo3-pack_ to "
 "_maturin_."
 msgstr ""
 
-#: src/changelog.md:1078
+#: src/changelog.md:1127
 msgid "Mixed rust/python layout"
 msgstr ""
 
-#: src/changelog.md:1079
+#: src/changelog.md:1128
 msgid "Added PEP 517 support"
 msgstr ""
 
-#: src/changelog.md:1080
+#: src/changelog.md:1129
 msgid ""
 "Added a `maturin sdist` command as workaround for [pypa/pip#6041](https://"
 "github.com/pypa/pip/issues/6041)"
 msgstr ""
 
-#: src/changelog.md:1081
+#: src/changelog.md:1130
 msgid ""
 "Support settings all applicable fields from the python core metadata "
 "specification in Cargo.toml"
 msgstr ""
 
-#: src/changelog.md:1082
+#: src/changelog.md:1131
 msgid ""
 "Support for FreeBSD by kxepal [\\#173](https://github.com/PyO3/maturin/"
 "pull/173)"
 msgstr ""
 
-#: src/changelog.md:1084
+#: src/changelog.md:1133
 msgid "[0.6.1](https://github.com/pyo3/maturin/compare/v0.6.0...v0.6.1)"
 msgstr ""
 
-#: src/changelog.md:1088
+#: src/changelog.md:1137
 msgid "Downgraded to structopt 0.2.16 to avoid the yanked 0.2.17"
 msgstr ""
 
-#: src/changelog.md:1090
+#: src/changelog.md:1139
 msgid "[0.6.0](https://github.com/pyo3/maturin/compare/v0.5.0...v0.6.0)"
 msgstr ""
 
-#: src/changelog.md:1094
+#: src/changelog.md:1143
 msgid ""
 "Basic pypy support by ijl [\\#105](https://github.com/PyO3/maturin/pull/105)"
 msgstr ""
 
-#: src/changelog.md:1098
+#: src/changelog.md:1147
 msgid "Python 2 support"
 msgstr ""
 
-#: src/changelog.md:1099
+#: src/changelog.md:1148
 msgid "The custom progress bar was removed and cargo's output is shown instead"
 msgstr ""
 
-#: src/changelog.md:1101
+#: src/changelog.md:1150
 msgid "[0.5.0](https://github.com/pyo3/maturin/compare/v0.4.2...v0.5.0)"
 msgstr ""
 
-#: src/changelog.md:1105
+#: src/changelog.md:1154
 msgid ""
 "Support for conda environments on windows by paddyhoran [\\#52](https://"
 "github.com/PyO3/maturin/pull/52)"
 msgstr ""
 
-#: src/changelog.md:1106
+#: src/changelog.md:1155
 msgid ""
 "maturin will generate a header for cffi crates using cbinding, which means "
 "you don't need a `build.rs` anymore. The option to provide your own header "
 "file using a `build.rs` still exists."
 msgstr ""
 
-#: src/changelog.md:1107
+#: src/changelog.md:1156
 msgid ""
 "The [konstin2/maturin](https://cloud.docker.com/u/konstin2/repository/docker/"
 "konstin2/maturin) docker image makes it easy to build fully manylinux "
 "compliant wheels. See the readme for usage details."
 msgstr ""
 
-#: src/changelog.md:1108
+#: src/changelog.md:1157
 msgid ""
 "Support for manylinux2010 by ijl [\\#70](https://github.com/PyO3/maturin/"
 "pull/70)"
 msgstr ""
 
-#: src/changelog.md:1109
+#: src/changelog.md:1158
 msgid ""
 "The `--manxlinux=[1|1-unchecked|2010|2010-unchecked|off]` option allows to "
 "build for manylinux1 and manylinux2010, both with audithweel (`1` or `2010`) "
@@ -4370,43 +4624,43 @@ msgid ""
 "linux tag with `off`."
 msgstr ""
 
-#: src/changelog.md:1113
+#: src/changelog.md:1162
 msgid ""
 "The `--skip-auditwheel` flag has been deprecated in favor of `--manylinux=[1|"
 "1-unchecked|2010|2010-unchecked|off]`."
 msgstr ""
 
-#: src/changelog.md:1114
+#: src/changelog.md:1163
 msgid ""
 "Switched to rustls. This means the upload feature can be used from the "
 "docker container and builds of maturin itself are manylinux compliant when "
 "compiled with the musl target."
 msgstr ""
 
-#: src/changelog.md:1116
+#: src/changelog.md:1165
 msgid ""
 "[0.4.2](https://github.com/pyo3/maturin/compare/v0.4.1...v0.4.2) - 2018-12-15"
 msgstr ""
 
-#: src/changelog.md:1118
+#: src/changelog.md:1167
 msgid ""
 "Fixup release because the appveyor failed to release artifacts for windows "
 "for 0.4.1."
 msgstr ""
 
-#: src/changelog.md:1120
+#: src/changelog.md:1169
 msgid ""
 "[0.4.1](https://github.com/pyo3/maturin/compare/v0.4.0...v0.4.1) - 2018-12-15"
 msgstr ""
 
-#: src/changelog.md:1124
+#: src/changelog.md:1173
 msgid ""
 "You can now specify [trove classifiers](https://pypi.org/classifiers/) in "
 "your Cargo.toml with `package.metadata.maturin.classifier`. Implemented by "
 "ijl in [\\#48](https://github.com/PyO3/maturin/pull/48). Example:"
 msgstr ""
 
-#: src/changelog.md:1125
+#: src/changelog.md:1174
 msgid ""
 "```toml\n"
 " [package.metadata.maturin]\n"
@@ -4414,170 +4668,170 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/changelog.md:1130
+#: src/changelog.md:1179
 msgid ""
 "[0.4.0](https://github.com/pyo3/maturin/compare/v0.3.10...v0.4.0) - "
 "2018-11-20"
 msgstr ""
 
-#: src/changelog.md:1134
+#: src/changelog.md:1183
 msgid ""
 "publish defaults to release and strip, unless `--debug` or `--no-strip` are "
 "given."
 msgstr ""
 
-#: src/changelog.md:1138
+#: src/changelog.md:1187
 msgid "New ci script based on hyperfine which also builds debian packages."
 msgstr ""
 
-#: src/changelog.md:1140
+#: src/changelog.md:1189
 msgid ""
 "[0.3.10](https://github.com/pyo3/maturin/compare/v0.3.9...v0.3.10) - "
 "2018-11-16"
 msgstr ""
 
-#: src/changelog.md:1144
+#: src/changelog.md:1193
 msgid "Fix rust-cpython detection and compilation"
 msgstr ""
 
-#: src/changelog.md:1146
+#: src/changelog.md:1195
 msgid "[0.3.9](https://github.com/pyo3/maturin/compare/v0.3.8...v0.3.9)"
 msgstr ""
 
-#: src/changelog.md:1150
+#: src/changelog.md:1199
 msgid ""
 "Update reqwest to 0.9.4 which has [seanmonstar/reqwest#374](https://github."
 "com/seanmonstar/reqwest/issues/374) fixed"
 msgstr ""
 
-#: src/changelog.md:1152
+#: src/changelog.md:1201
 msgid "[0.3.8](https://github.com/pyo3/maturin/compare/v0.3.7...v0.3.8)"
 msgstr ""
 
-#: src/changelog.md:1156
+#: src/changelog.md:1205
 msgid ""
 "Pin reqwest to 0.9.2 to work around [seanmonstar/reqwest#374](https://github."
 "com/seanmonstar/reqwest/issues/374)"
 msgstr ""
 
-#: src/changelog.md:1158
+#: src/changelog.md:1207
 msgid "[0.3.7](https://github.com/pyo3/maturin/compare/v0.3.6...v0.3.7)"
 msgstr ""
 
-#: src/changelog.md:1162
+#: src/changelog.md:1211
 msgid ""
 "Added cargo lock to project [\\#9](https://github.com/PyO3/maturin/issues/9)"
 msgstr ""
 
-#: src/changelog.md:1164
+#: src/changelog.md:1213
 msgid "[0.3.6](https://github.com/pyo3/maturin/compare/v0.3.5...v0.3.5)"
 msgstr ""
 
-#: src/changelog.md:1166
+#: src/changelog.md:1215
 msgid "With deflate and the strip options, the wheels get about 25x smaller:"
 msgstr ""
 
-#: src/changelog.md:1168
+#: src/changelog.md:1217
 msgid "wheel"
 msgstr ""
 
-#: src/changelog.md:1168
+#: src/changelog.md:1217
 msgid "baseline"
 msgstr ""
 
-#: src/changelog.md:1168
+#: src/changelog.md:1217
 msgid "deflate"
 msgstr ""
 
-#: src/changelog.md:1168
+#: src/changelog.md:1217
 msgid "strip + deflate"
 msgstr ""
 
-#: src/changelog.md:1170
+#: src/changelog.md:1219
 msgid "get_fourtytwo-2.0.1-cp36-cp36m-manylinux1_x86_64.whl"
 msgstr ""
 
-#: src/changelog.md:1170 src/changelog.md:1172
+#: src/changelog.md:1219 src/changelog.md:1221
 msgid "2,8M"
 msgstr ""
 
-#: src/changelog.md:1170
+#: src/changelog.md:1219
 msgid "771K"
 msgstr ""
 
-#: src/changelog.md:1170
+#: src/changelog.md:1219
 msgid "102K"
 msgstr ""
 
-#: src/changelog.md:1171
+#: src/changelog.md:1220
 msgid "hello_world-0.1.0-py2.py3-none-manylinux1_x86_64.whl"
 msgstr ""
 
-#: src/changelog.md:1171
+#: src/changelog.md:1220
 msgid "3,9M"
 msgstr ""
 
-#: src/changelog.md:1171
+#: src/changelog.md:1220
 msgid "1,1M"
 msgstr ""
 
-#: src/changelog.md:1171
+#: src/changelog.md:1220
 msgid "180K"
 msgstr ""
 
-#: src/changelog.md:1172
+#: src/changelog.md:1221
 msgid "points-0.1.0-py2.py3-none-manylinux1_x86_64.whl"
 msgstr ""
 
-#: src/changelog.md:1172
+#: src/changelog.md:1221
 msgid "752K"
 msgstr ""
 
-#: src/changelog.md:1172
+#: src/changelog.md:1221
 msgid "85K"
 msgstr ""
 
-#: src/changelog.md:1176
+#: src/changelog.md:1225
 msgid "`--strip` by ijl [\\#7](https://github.com/PyO3/maturin/pull/7)"
 msgstr ""
 
-#: src/changelog.md:1180
+#: src/changelog.md:1229
 msgid "Renamed `--bindings-crate` to `--bindings`"
 msgstr ""
 
-#: src/changelog.md:1181
+#: src/changelog.md:1230
 msgid ""
 "Use deflate compression for zips by ijl [\\#6](https://github.com/PyO3/"
 "maturin/pull/6)"
 msgstr ""
 
-#: src/changelog.md:1185
+#: src/changelog.md:1234
 msgid "`--target` is now actually used for the wheel compatibility tag"
 msgstr ""
 
-#: src/changelog.md:1187
+#: src/changelog.md:1236
 msgid ""
 "[0.3.5](https://github.com/pyo3/maturin/compare/v0.3.4...v0.3.5) - 2018-09-20"
 msgstr ""
 
-#: src/changelog.md:1191
+#: src/changelog.md:1240
 msgid "Upgraded to reqwest 0.9"
 msgstr ""
 
-#: src/changelog.md:1195
+#: src/changelog.md:1244
 msgid "\"Broken Pipe\" with musl builds (through the reqwest upgrade)"
 msgstr ""
 
-#: src/changelog.md:1197
+#: src/changelog.md:1246
 msgid ""
 "[0.3.4](https://github.com/pyo3/maturin/compare/v0.3.3...v0.3.4) - 2018-09-18"
 msgstr ""
 
-#: src/changelog.md:1201
+#: src/changelog.md:1250
 msgid "A `--target` option which behaves like cargo option of the same name"
 msgstr ""
 
-#: src/changelog.md:1205
+#: src/changelog.md:1254
 msgid ""
 "Musl and auditwheel compliance: Using the new `musl` feature combined with "
 "the musl target, you can build completely static binaries. The `password-"
@@ -4586,103 +4840,103 @@ msgid ""
 "audtiwheel compliant."
 msgstr ""
 
-#: src/changelog.md:1206
+#: src/changelog.md:1255
 msgid ""
 "Replaced `--debug` with `--release`. All builds are now debug by default"
 msgstr ""
 
-#: src/changelog.md:1208
+#: src/changelog.md:1257
 msgid ""
 "[0.3.3](https://github.com/pyo3/maturin/compare/v0.3.1...v0.3.3) - 2018-09-17"
 msgstr ""
 
-#: src/changelog.md:1212
+#: src/changelog.md:1261
 msgid "Builds for i686 linux and mac"
 msgstr ""
 
-#: src/changelog.md:1213
+#: src/changelog.md:1262
 msgid "Builds for maturin as wheel"
 msgstr ""
 
-#: src/changelog.md:1217
+#: src/changelog.md:1266
 msgid "Usage with stable"
 msgstr ""
 
-#: src/changelog.md:1218
+#: src/changelog.md:1267
 msgid "Wrong tags in WHEEL file on non-linux platforms"
 msgstr ""
 
-#: src/changelog.md:1219
+#: src/changelog.md:1268
 msgid "Uploading on windows"
 msgstr ""
 
-#: src/changelog.md:1221
+#: src/changelog.md:1270
 msgid ""
 "[0.3.1](https://github.com/pyo3/maturin/compare/v0.3.0...v0.3.1) - 2017-09-14"
 msgstr ""
 
-#: src/changelog.md:1225
+#: src/changelog.md:1274
 msgid "Windows compilation"
 msgstr ""
 
-#: src/changelog.md:1227
+#: src/changelog.md:1276
 msgid ""
 "[0.3.0](https://github.com/pyo3/maturin/compare/v0.2.0...v0.3.0) - 2017-09-14"
 msgstr ""
 
-#: src/changelog.md:1231
+#: src/changelog.md:1280
 msgid "Packaging binaries"
 msgstr ""
 
-#: src/changelog.md:1232
+#: src/changelog.md:1281
 msgid ""
 "[Published on pypi](https://pypi.org/project/maturin/). You can now `pip "
 "install maturin`"
 msgstr ""
 
-#: src/changelog.md:1233
+#: src/changelog.md:1282
 msgid "A Dockerfile based on manylinux1"
 msgstr ""
 
-#: src/changelog.md:1237
+#: src/changelog.md:1286
 msgid "Travis ci setup builds all types of wheels for linux and mac"
 msgstr ""
 
-#: src/changelog.md:1238
+#: src/changelog.md:1287
 msgid ""
 "`--no-default-features --features auditwheel` creates a manylinux compliant "
 "binary for maturin"
 msgstr ""
 
-#: src/changelog.md:1242
+#: src/changelog.md:1291
 msgid "Replaced elfkit with goblin"
 msgstr ""
 
-#: src/changelog.md:1244
+#: src/changelog.md:1293
 msgid ""
 "[0.2.0](https://github.com/pyo3/maturin/compare/v0.1.0...v0.2.0) - 2018-09-03"
 msgstr ""
 
-#: src/changelog.md:1248
+#: src/changelog.md:1297
 msgid "Cffi support"
 msgstr ""
 
-#: src/changelog.md:1249
+#: src/changelog.md:1298
 msgid "A `develop` subcommand"
 msgstr ""
 
-#: src/changelog.md:1250
+#: src/changelog.md:1299
 msgid "A tox example"
 msgstr ""
 
-#: src/changelog.md:1254
+#: src/changelog.md:1303
 msgid "Show a progress bar for cargo's compile progress"
 msgstr ""
 
-#: src/changelog.md:1256
+#: src/changelog.md:1305
 msgid "0.1.0 - 2018-08-22"
 msgstr ""
 
-#: src/changelog.md:1258
+#: src/changelog.md:1307
 msgid "Initial Release"
 msgstr ""

@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-03-16T14:34:05Z\n"
+"POT-Creation-Date: 2026-04-14T09:23:28Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -225,52 +225,36 @@ msgid ""
 msgstr ""
 
 #: src/contributing.md:99
-msgid ""
-"There are some optional hacks that can speed up the tests (over 80s to 17s "
-"on my machine)."
+msgid "There is one optional hack that can speed up the tests."
 msgstr ""
 
 #: src/contributing.md:100
-msgid ""
-"By running `cargo build --release --manifest-path test-crates/cargo-mock/"
-"Cargo.toml` you can activate a cargo cache avoiding to rebuild the pyo3 test "
-"crates with every python version."
-msgstr ""
-
-#: src/contributing.md:101
-msgid ""
-"Delete `target/test-cache` to clear the cache (e.g. after changing a test "
-"crate) or remove `test-crates/cargo-mock/target/release/cargo` to deactivate "
-"it."
-msgstr ""
-
-#: src/contributing.md:102
 msgid ""
 "By running the tests with the `faster-tests` feature, binaries are stripped "
 "and wheels are only stored and not compressed."
 msgstr ""
 
-#: src/contributing.md:104
+#: src/contributing.md:102
 msgid "Releasing"
 msgstr ""
 
-#: src/contributing.md:106
+#: src/contributing.md:104
 msgid "_These instructions are a work in progress_"
 msgstr ""
 
-#: src/contributing.md:108
+#: src/contributing.md:106
 msgid "Update the changelog:"
 msgstr ""
 
-#: src/contributing.md:114
+#: src/contributing.md:112
 msgid "Update the version in `Cargo.toml` and run:"
 msgstr ""
 
-#: src/contributing.md:120
+#: src/contributing.md:118
 msgid "Create a PR a release PR."
 msgstr ""
 
-#: src/contributing.md:122
+#: src/contributing.md:120
 msgid ""
 "After the release PR merged, update main, create a git tag and push the tag."
 msgstr ""
