@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-03-17 11:59:05 +0800",
-      "hash" : "517bb9eded2179c1f604cdea4956314892c76013",
-      "title" : "[pre-commit.ci] pre-commit autoupdate (#3088)"
+      "date" : "2026-04-14 07:19:27 +0000",
+      "hash" : "666caaa8eac68cff1ae96b651f35e90fcd59835a",
+      "title" : "fix: skip interpreters with empty output for WSL2 cross-compile (#3137)"
     }
   },
   "type" : "branch",
