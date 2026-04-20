@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-03-17T10:07:51Z\n"
+"POT-Creation-Date: 2026-04-14T09:38:47Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -52,7 +52,7 @@ msgstr ""
 #: src/bindings.md:19
 msgid ""
 "```toml\n"
-"pyo3 = { version = \"0.27.0\", features = [\"abi3\"] }\n"
+"pyo3 = { version = \"0.28.2\", features = [\"abi3\"] }\n"
 "```"
 msgstr ""
 
