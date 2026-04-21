@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-03-16T14:34:05Z\n"
+"POT-Creation-Date: 2026-04-14T09:23:28Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -30,12 +30,15 @@ msgid ""
 "For a pure Rust project, the structure is as expected and what you get from "
 "`cargo new`:"
 msgstr ""
+"對於純 Rust 專案，其結構正如預期，與執行 `cargo new` 所得到的結構一致："
 
 #: src/project_layout.md:19
 msgid ""
 "Maturin will add a necessary `__init__.py` to the package when building the "
 "wheel. For convenience, this file includes the following:"
 msgstr ""
+"maturin 在建置 wheel 時，會為軟體包增添必要的 `__init__.py`。為了方便起見，該"
+"檔案包含以下內容："
 
 #: src/project_layout.md:26
 msgid "\"__all__\""
@@ -85,10 +88,12 @@ msgid ""
 "You can specify a different python source directory in `pyproject.toml` by "
 "setting `tool.maturin.python-source`, for example"
 msgstr ""
+"您可以在 `pyproject.toml` 中透過設定 `tool.maturin.python-source` 來指定不同"
+"的 Python 來源目錄，例如"
 
 #: src/project_layout.md:77
 msgid "**pyproject.toml**"
-msgstr ""
+msgstr "**pyproject.toml**"
 
 #: src/project_layout.md:79
 msgid ""
@@ -97,6 +102,10 @@ msgid ""
 "python-source = \"python\"\n"
 "```"
 msgstr ""
+"```toml\n"
+"[tool.maturin]\n"
+"python-source = \"python\"\n"
+"```"
 
 #: src/project_layout.md:84
 msgid "then the project structure would look like this:"
@@ -214,7 +223,7 @@ msgstr ""
 
 #: src/project_layout.md:206
 msgid "Data"
-msgstr ""
+msgstr "資料"
 
 #: src/project_layout.md:208
 msgid ""

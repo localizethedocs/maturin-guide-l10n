@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-03-16T14:34:05Z\n"
+"POT-Creation-Date: 2026-04-14T09:23:28Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -54,7 +54,7 @@ msgstr ""
 
 #: src/sphinx.md:23
 msgid "Read The Docs Integration"
-msgstr ""
+msgstr "Read The Docs 整合"
 
 #: src/sphinx.md:25
 msgid ""
@@ -189,6 +189,12 @@ msgid ""
 "  command = \"maturin develop -m ../Cargo.toml && make html\"\n"
 "```"
 msgstr ""
+"```toml\n"
+"[build]\n"
+"  base = \"docs\"\n"
+"  publish = \"_build/html\"\n"
+"  command = \"maturin develop -m ../Cargo.toml && make html\"\n"
+"```"
 
 #: src/sphinx.md:85
 msgid ""
