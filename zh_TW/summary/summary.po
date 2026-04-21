@@ -1,0 +1,84 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-04-14T09:23:28Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/SUMMARY.md:1
+msgid "Summary"
+msgstr "摘要"
+
+#: src/SUMMARY.md:3
+msgid "Introduction"
+msgstr "介紹"
+
+#: src/SUMMARY.md:7
+msgid "Installation"
+msgstr "安裝"
+
+#: src/SUMMARY.md:8
+msgid "Tutorial"
+msgstr "教學"
+
+#: src/SUMMARY.md:9
+msgid "Project Layout"
+msgstr "專案配置"
+
+#: src/SUMMARY.md:10
+msgid "Bindings"
+msgstr ""
+
+#: src/SUMMARY.md:11
+msgid "Python Metadata"
+msgstr ""
+
+#: src/SUMMARY.md:12
+msgid "Configuration"
+msgstr "組態"
+
+#: src/SUMMARY.md:13
+msgid "Environment Variables"
+msgstr "環境變數"
+
+#: src/SUMMARY.md:14
+msgid "Local Development"
+msgstr "本機開發"
+
+#: src/SUMMARY.md:15
+msgid "Import Hook"
+msgstr "匯入掛鉤"
+
+#: src/SUMMARY.md:16
+msgid "Distribution"
+msgstr ""
+
+#: src/SUMMARY.md:17
+msgid "SBOM"
+msgstr ""
+
+#: src/SUMMARY.md:18
+msgid "Sphinx Integration"
+msgstr "Sphinx 整合"
+
+#: src/SUMMARY.md:22
+msgid "Migration Guide"
+msgstr "遷移指南"
+
+#: src/SUMMARY.md:23
+msgid "Changelog"
+msgstr "變更日誌"
+
+#: src/SUMMARY.md:27
+msgid "Contributing"
+msgstr ""
+
+#: src/SUMMARY.md:28
+msgid "Platform Support"
+msgstr "平臺支援"
