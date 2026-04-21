@@ -24,6 +24,8 @@ msgid ""
 "Maturin supports building through `pyproject.toml`. To use it, create a "
 "`pyproject.toml` next to your `Cargo.toml` with the following content:"
 msgstr ""
+"maturin 支援透過 `pyproject.toml` 進行建置。若要使用此功能，請在 `Cargo."
+"toml` 旁建立一個內容如下的 `pyproject.toml`："
 
 #: src/distribution.md:7
 msgid ""

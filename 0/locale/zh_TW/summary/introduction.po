@@ -266,10 +266,12 @@ msgid ""
 "You can specify a different python source directory in `pyproject.toml` by "
 "setting `tool.maturin.python-source`, for example"
 msgstr ""
+"您可以在 `pyproject.toml` 中透過設定 `tool.maturin.python-source` 來指定不同"
+"的 Python 來源目錄，例如"
 
 #: src/index.md:151
 msgid "**pyproject.toml**"
-msgstr ""
+msgstr "**pyproject.toml**"
 
 #: src/index.md:153
 msgid ""
@@ -279,6 +281,11 @@ msgid ""
 "module-name = \"my_project._lib_name\"\n"
 "```"
 msgstr ""
+"```toml\n"
+"[tool.maturin]\n"
+"python-source = \"python\"\n"
+"module-name = \"my_project._lib_name\"\n"
+"```"
 
 #: src/index.md:159
 msgid "then the project structure would look like this:"
@@ -410,6 +417,8 @@ msgid ""
 "maturin supports building through `pyproject.toml`. To use it, create a "
 "`pyproject.toml` next to your `Cargo.toml` with the following content:"
 msgstr ""
+"maturin 支援透過 `pyproject.toml` 進行建置。若要使用此功能，請在 `Cargo."
+"toml` 旁建立一個內容如下的 `pyproject.toml`："
 
 #: src/index.md:241
 msgid ""
@@ -491,7 +500,7 @@ msgstr ""
 
 #: src/index.md:278
 msgid "Manylinux and auditwheel"
-msgstr ""
+msgstr "manylinux 與 auditwheel"
 
 #: src/index.md:280
 msgid ""
@@ -532,6 +541,9 @@ msgid ""
 "on the manylinux2014 image, and passes arguments to the `maturin` binary. "
 "You can use it like this:"
 msgstr ""
+"為了完全符合 manylinux 規範，您需要在 CentOS Docker 容器中進行編譯。[pyo3/"
+"maturin](https://ghcr.io/pyo3/maturin) 映像檔是以 manylinux2014 映像檔為基"
+"礎，並將參數傳遞給 maturin 執行檔。您可以像這樣使用它："
 
 #: src/index.md:299
 msgid ""
@@ -547,7 +559,7 @@ msgstr ""
 #: src/index.md:302
 msgid ""
 "maturin itself is manylinux compliant when compiled for the musl target."
-msgstr ""
+msgstr "當針對 musl 目標進行編譯時，maturin 本身符合 manylinux 標準。"
 
 #: src/index.md:304
 msgid "Examples"
@@ -565,12 +577,17 @@ msgid ""
 "python) - ConnectorX enables you to load data from databases into Python in "
 "the fastest and most memory efficient way"
 msgstr ""
+"[connector-x](https://github.com/sfu-db/connector-x/tree/main/connectorx-"
+"python) - ConnectorX 讓您能以最快且最節省記憶體的方式，將資料從資料庫載入到 "
+"Python 中"
 
 #: src/index.md:308
 msgid ""
 "[datafusion-python](https://github.com/apache/arrow-datafusion-python) - a "
 "Python library that binds to Apache Arrow in-memory query engine DataFusion"
 msgstr ""
+"[datafusion-python](https://github.com/apache/arrow-datafusion-python) - 一個"
+"綁定至 Apache Arrow 記憶體內查詢引擎 DataFusion 的 Python 程式庫"
 
 #: src/index.md:309
 msgid ""
@@ -583,12 +600,15 @@ msgid ""
 "[orjson](https://github.com/ijl/orjson) - A fast, correct JSON library for "
 "Python"
 msgstr ""
+"[orjson](https://github.com/ijl/orjson) - 一款快速且正確的 Python JSON 程式庫"
 
 #: src/index.md:311
 msgid ""
 "[polars](https://github.com/pola-rs/polars/tree/master/py-polars) - Fast "
 "multi-threaded DataFrame library in Rust | Python | Node.js"
 msgstr ""
+"[polars](https://github.com/pola-rs/polars/tree/master/py-polars) - 適用於 "
+"Rust | Python | Node.js 的快速多執行緒 DataFrame 程式庫"
 
 #: src/index.md:312
 msgid ""
@@ -606,6 +626,7 @@ msgstr ""
 msgid ""
 "[pyxel](https://github.com/kitao/pyxel) - A retro game engine for Python"
 msgstr ""
+"[pyxel]( https://github.com/kitao/pyxel) - 一款專為 Python 設計的復古遊戲引擎"
 
 #: src/index.md:315
 msgid ""
@@ -656,7 +677,7 @@ msgstr ""
 
 #: src/index.md:326
 msgid "help maturin users with issues on GitHub and Gitter"
-msgstr ""
+msgstr "在 GitHub 和 Gitter 上協助 maturin 使用者解決議題"
 
 #: src/index.md:327
 msgid "improve documentation"
