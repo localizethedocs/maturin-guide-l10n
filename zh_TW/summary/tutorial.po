@@ -1,0 +1,324 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-04-14T09:38:47Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/tutorial.md:1
+msgid "Tutorial"
+msgstr ""
+
+#: src/tutorial.md:3
+msgid ""
+"In this tutorial we will wrap a version of [the guessing game from The Rust "
+"Book](https://doc.rust-lang.org/book/ch02-00-guessing-game-tutorial.html) to "
+"run in Python using pyo3."
+msgstr ""
+
+#: src/tutorial.md:7
+msgid "Create a new Rust project"
+msgstr "建立新的 Rust 專案"
+
+#: src/tutorial.md:9
+msgid ""
+"First, create a new Rust library project using `cargo new --lib --edition "
+"2021 guessing-game`. This will create a directory with the following "
+"structure."
+msgstr ""
+
+#: src/tutorial.md:19
+msgid ""
+"Edit `Cargo.toml` to configure the project and module name, and add the "
+"dependencies (`rand` and `pyo3`). Configure `pyo3` with additional features "
+"to make an extension module compatible with multiple Python versions using "
+"the stable ABI (`abi3`)."
+msgstr ""
+
+#: src/tutorial.md:24
+msgid ""
+"```toml\n"
+"[package]\n"
+"name = \"guessing-game\"\n"
+"version = \"0.1.0\"\n"
+"edition = \"2021\"\n"
+"\n"
+"[lib]\n"
+"name = \"guessing_game\"\n"
+"# \"cdylib\" is necessary to produce a shared library for Python to import "
+"from.\n"
+"crate-type = [\"cdylib\"]\n"
+"\n"
+"[dependencies]\n"
+"rand = \"0.9.0\"\n"
+"\n"
+"[dependencies.pyo3]\n"
+"version = \"0.28.2\"\n"
+"# \"abi3-py38\" tells pyo3 (and maturin) to build using the stable ABI with "
+"minimum Python version 3.8\n"
+"features = [\"abi3-py38\"]\n"
+"```"
+msgstr ""
+
+#: src/tutorial.md:44
+msgid ""
+"Add a `pyproject.toml` to configure [PEP 518](https://peps.python.org/"
+"pep-0518/) build system requirements."
+msgstr ""
+
+#: src/tutorial.md:46 src/tutorial.md:114
+msgid ""
+"```toml\n"
+"[build-system]\n"
+"requires = [\"maturin>=1.0,<2.0\"]\n"
+"build-backend = \"maturin\"\n"
+"```"
+msgstr ""
+
+#: src/tutorial.md:52
+msgid ""
+"If you are using pyo3 0.26 or earlier you need to enable the `extension-"
+"module` feature of pyo3 to skip linking against libpython.so (this is "
+"automatically done in pyo3 0.27):"
+msgstr ""
+
+#: src/tutorial.md:54
+msgid ""
+"```toml\n"
+"[tool.maturin]\n"
+"features = [\"pyo3/extension-module\"]\n"
+"```"
+msgstr ""
+
+#: src/tutorial.md:59
+msgid "Use `maturin new`"
+msgstr "使用 `maturin new`"
+
+#: src/tutorial.md:61
+msgid ""
+"New projects can also be quickly created using the `maturin new` command:"
+msgstr ""
+
+#: src/tutorial.md:80
+msgid ""
+"The above process can be achieved by running `maturin new -b pyo3 "
+"guessing_game` then edit `Cargo.toml` to add `abi3-py38` feature."
+msgstr ""
+
+#: src/tutorial.md:83
+msgid "Install and configure maturin (in a virtual environment)"
+msgstr ""
+
+#: src/tutorial.md:85
+msgid ""
+"Create a virtual environment and install maturin. Note maturin has minimal "
+"dependencies!"
+msgstr ""
+
+#: src/tutorial.md:97
+msgid ""
+"maturin is configured in `pyproject.toml` as introduced by [PEP 518](https://"
+"www.python.org/dev/peps/pep-0518/). This file lives in the root of your "
+"project tree:"
+msgstr ""
+
+#: src/tutorial.md:109
+msgid ""
+"Configuration in this file is quite simple for most projects. You just need "
+"to indicate maturin as a requirement (and restrict the version) and as the "
+"build-backend (Python supports a number of build-backends since [PEP 517]"
+"(https://www.python.org/dev/peps/pep-0517/))."
+msgstr ""
+
+#: src/tutorial.md:120
+msgid ""
+"Various other tools may also be configured in `pyproject.toml` and the "
+"Python community seems to be consolidating declarative configuration in this "
+"file."
+msgstr ""
+
+#: src/tutorial.md:123
+msgid "Program the guessing game in Rust"
+msgstr ""
+
+#: src/tutorial.md:125
+msgid ""
+"When you create a `lib` project with `cargo new` it creates a file `src/lib."
+"rs` with some default code. Edit that file and replace the default code with "
+"the code below. As mentioned, we will implement a slightly modified version "
+"of [the guessing game from The Rust Book](https://doc.rust-lang.org/book/"
+"ch02-00-guessing-game-tutorial.html). Instead of implementing as a `bin` "
+"crate, we're using a `lib` and will expose the main logic as a Python "
+"function."
+msgstr ""
+
+#: src/tutorial.md:141
+msgid "\"Guess the number!\""
+msgstr ""
+
+#: src/tutorial.md:146
+msgid "\"Please input your guess.\""
+msgstr ""
+
+#: src/tutorial.md:152
+msgid "\"Failed to read line\""
+msgstr ""
+
+#: src/tutorial.md:159
+msgid "\"You guessed: {}\""
+msgstr ""
+
+#: src/tutorial.md:162
+msgid "\"Too small!\""
+msgstr ""
+
+#: src/tutorial.md:163
+msgid "\"Too big!\""
+msgstr ""
+
+#: src/tutorial.md:165
+msgid "\"You win!\""
+msgstr ""
+
+#: src/tutorial.md:171
+msgid ""
+"/// A Python module implemented in Rust. The name of this function must "
+"match\n"
+"/// the `lib.name` setting in the `Cargo.toml`, else Python will not be able "
+"to\n"
+"/// import the module.\n"
+msgstr ""
+
+#: src/tutorial.md:183
+msgid ""
+"Thanks to pyo3, there's very little difference between this and the example "
+"in The Rust Book. All we had to do was:"
+msgstr ""
+
+#: src/tutorial.md:186
+msgid "Include the pyo3 prelude"
+msgstr ""
+
+#: src/tutorial.md:187
+msgid "Add `#[pyfunction]` to our function"
+msgstr ""
+
+#: src/tutorial.md:188
+msgid ""
+"Add the `#[pymodule]` block to expose the function as part of a Python module"
+msgstr ""
+
+#: src/tutorial.md:190
+msgid ""
+"Refer to the [pyo3 User Guide](https://pyo3.rs/) for more information on "
+"using pyo3. It can do a lot more!"
+msgstr ""
+
+#: src/tutorial.md:193
+msgid "Build and install the module with `maturin develop`"
+msgstr ""
+
+#: src/tutorial.md:195
+msgid ""
+"Note that _this is just a Rust project_ at this point, and with few "
+"exceptions you can build it as you'd expect using `cargo build`. maturin "
+"helps with this, however, adding some platform-specific build configuration "
+"and ultimately packaging the binary results as a wheel (a `.whl` file, which "
+"is an archive of compiled components suitable for installation with `pip`, "
+"the Python package manager)."
+msgstr ""
+
+#: src/tutorial.md:202
+msgid "So let's use maturin to build and install in our current environment."
+msgstr ""
+
+#: src/tutorial.md:204
+msgid ""
+"You can also compile a performance-optimized program by adding the `-r` or "
+"`--release` flag for speed testing."
+msgstr ""
+
+#: src/tutorial.md:239
+msgid ""
+"Your `guessing_game` module should now be available in your current virtual "
+"environment. Go ahead and play a few games!"
+msgstr ""
+
+#: src/tutorial.md:242
+msgid ""
+"```shell\n"
+"(.venv) ferris@rustbox [~/src/rust/guessing-game] % python\n"
+"Python 3.9.6 (default, Aug 25 2021, 16:04:27)\n"
+"[Clang 12.0.5 (clang-1205.0.22.9)] on darwin\n"
+"Type \"help\", \"copyright\", \"credits\" or \"license\" for more "
+"information.\n"
+">>> import guessing_game\n"
+">>> guessing_game.guess_the_number()\n"
+"Guess the number!\n"
+"Please input your guess.\n"
+"42\n"
+"You guessed: 42\n"
+"Too small!\n"
+"Please input your guess.\n"
+"80\n"
+"You guessed: 80\n"
+"Too big!\n"
+"Please input your guess.\n"
+"50\n"
+"You guessed: 50\n"
+"Too small!\n"
+"Please input your guess.\n"
+"60\n"
+"You guessed: 60\n"
+"Too big!\n"
+"Please input your guess.\n"
+"55\n"
+"You guessed: 55\n"
+"You win!\n"
+"```"
+msgstr ""
+
+#: src/tutorial.md:272
+msgid "Create a wheel for distribution"
+msgstr ""
+
+#: src/tutorial.md:274
+msgid ""
+"`maturin develop` actually skips the wheel generation part and installs "
+"directly in the current environment. `maturin build` on the other hand will "
+"produce a wheel you can distribute. Note the wheel contains \"tags\" in its "
+"filename that correspond to supported Python versions, platforms, and/or "
+"architectures, so yours might look a little different. If you want to "
+"distribute broadly, you may need to build on multiple platforms and use a "
+"[`manylinux`](https://github.com/pypa/manylinux) Docker container to build "
+"wheels compatible with a wide range of Linux distros."
+msgstr ""
+
+#: src/tutorial.md:291
+msgid ""
+"To make your package available to others on [PyPI](https://pypi.org), use "
+"[`uv publish`](https://docs.astral.sh/uv/guides/package/#publishing-your-"
+"package) or [`twine upload`](https://twine.readthedocs.io/en/stable/)."
+msgstr ""
+
+#: src/tutorial.md:294
+msgid "Summary"
+msgstr ""
+
+#: src/tutorial.md:296
+msgid ""
+"Congratulations! You successfully created a Python module implemented "
+"entirely in Rust thanks to pyo3 and maturin."
+msgstr ""
+
+#: src/tutorial.md:299
+msgid ""
+"This demonstrates how easy it is to get started with maturin, but keep "
+"reading to learn more about all the additional features."
+msgstr ""
