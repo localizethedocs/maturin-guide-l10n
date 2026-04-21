@@ -1,0 +1,550 @@
+<!DOCTYPE HTML>
+<html lang="en_US" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Distribution - Maturin User Guide</title>
+
+
+        <!-- Custom HTML head -->
+        <script type="text/javascript" src="ltd-provenance.js"></script>
+        <script type="text/javascript" src="ltd-current.js"></script>
+        <script type="text/javascript" src="../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon-de23e50b.svg">
+        <link rel="shortcut icon" href="favicon-8114d1fc.png">
+        <link rel="stylesheet" href="css/variables-8adf115d.css">
+        <link rel="stylesheet" href="css/general-2459343d.css">
+        <link rel="stylesheet" href="css/chrome-ae938929.css">
+        <link rel="stylesheet" href="css/print-9e4910d8.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="fonts/fonts-9644e21d.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="mdbook-highlight-css" href="highlight-493f70e1.css">
+        <link rel="stylesheet" id="mdbook-tomorrow-night-css" href="tomorrow-night-4c0ae647.css">
+        <link rel="stylesheet" id="mdbook-ayu-highlight-css" href="ayu-highlight-3fdfc3ac.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="tweak-1c60b912.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex-f77dd1a1.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc-8dd453fb.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="mdbook-body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="mdbook-sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("mdbook-sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="mdbook-sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="mdbook-sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="mdbook-page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="mdbook-menu-bar-hover-placeholder"></div>
+                <div id="mdbook-menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="mdbook-sidebar-toggle" class="icon-button" for="mdbook-sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="mdbook-sidebar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/></svg></span>
+                        </label>
+                        <button id="mdbook-theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="mdbook-theme-list">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M371.3 367.1c27.3-3.9 51.9-19.4 67.2-42.9L600.2 74.1c12.6-19.5 9.4-45.3-7.6-61.2S549.7-4.4 531.1 9.6L294.4 187.2c-24 18-38.2 46.1-38.4 76.1L371.3 367.1zm-19.6 25.4l-116-104.4C175.9 290.3 128 339.6 128 400c0 3.9 .2 7.8 .6 11.6c1.8 17.5-10.2 36.4-27.8 36.4H96c-17.7 0-32 14.3-32 32s14.3 32 32 32H240c61.9 0 112-50.1 112-112c0-2.5-.1-5-.2-7.5z"/></svg></span>
+                        </button>
+                        <ul id="mdbook-theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="mdbook-theme-ayu">Ayu</button></li>
+                        </ul>
+                        <button id="mdbook-search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="mdbook-searchbar">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352c79.5 0 144-64.5 144-144s-64.5-144-144-144S64 128.5 64 208s64.5 144 144 144z"/></svg></span>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Maturin User Guide</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <span class=fa-svg id="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H354.7L384 93.3V160h64V93.3c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0H128zM384 352v32 64H128V384 368 352H384zm64 32h32c17.7 0 32-14.3 32-32V256c0-35.3-28.7-64-64-64H64c-35.3 0-64 28.7-64 64v96c0 17.7 14.3 32 32 32H64v64c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V384zm-16-88c-13.3 0-24-10.7-24-24s10.7-24 24-24s24 10.7 24 24s-10.7 24-24 24z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/PyO3/maturin/tree/main/guide" title="Git repository" aria-label="Git repository">
+                            <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg></span>
+                        </a>
+                        <a href="https://github.com/PyO3/maturin/edit/main/guide/src/distribution.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <span class=fa-svg id="git-edit-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M421.7 220.3l-11.3 11.3-22.6 22.6-205 205c-6.6 6.6-14.8 11.5-23.8 14.1L30.8 511c-8.4 2.5-17.5 .2-23.7-6.1S-1.5 489.7 1 481.2L38.7 353.1c2.6-9 7.5-17.2 14.1-23.8l205-205 22.6-22.6 11.3-11.3 33.9 33.9 62.1 62.1 33.9 33.9zM96 353.9l-9.3 9.3c-.9 .9-1.6 2.1-2 3.4l-25.3 86 86-25.3c1.3-.4 2.5-1.1 3.4-2l9.3-9.3H112c-8.8 0-16-7.2-16-16V353.9zM453.3 19.3l39.4 39.4c25 25 25 65.5 0 90.5l-14.5 14.5-22.6 22.6-11.3 11.3-33.9-33.9-62.1-62.1L314.3 67.7l11.3-11.3 22.6-22.6 14.5-14.5c25-25 65.5-25 90.5 0z"/></svg></span>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="mdbook-search-wrapper" class="hidden">
+                    <form id="mdbook-searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="mdbook-searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="mdbook-searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <span class=fa-svg id="fa-spin"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M304 48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zm0 416c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM48 304c26.5 0 48-21.5 48-48s-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48zm464-48c0-26.5-21.5-48-48-48s-48 21.5-48 48s21.5 48 48 48s48-21.5 48-48zM142.9 437c18.7-18.7 18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zm0-294.2c18.7-18.7 18.7-49.1 0-67.9S93.7 56.2 75 75s-18.7 49.1 0 67.9s49.1 18.7 67.9 0zM369.1 437c18.7 18.7 49.1 18.7 67.9 0s18.7-49.1 0-67.9s-49.1-18.7-67.9 0s-18.7 49.1 0 67.9z"/></svg></span>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="mdbook-searchresults-outer" class="searchresults-outer hidden">
+                        <div id="mdbook-searchresults-header" class="searchresults-header"></div>
+                        <ul id="mdbook-searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('mdbook-sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('mdbook-sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#mdbook-sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="mdbook-content" class="content">
+                    <main>
+                        <h1 id="distribution"><a class="header" href="#distribution">Distribution</a></h1>
+<h2 id="build-wheels"><a class="header" href="#build-wheels">Build Wheels</a></h2>
+<p>When building Rust binary or library, it’s possible to depend on libraries and symbols only available on the build machine.
+To ensure the wheels are portable, native python modules on linux must only dynamically link a set of libraries and symbols called manylinux and musllinux.
+The pypa offers special docker images to ensure compliance with the <a href="https://peps.python.org/pep-0599/#the-manylinux2014-policy">manylinux rules</a>.
+If you want to publish linux wheels on pypi, <strong>you need to use a manylinux docker image or <a href="#use-zig">build with zig</a></strong>.</p>
+<p>The Rust compiler since version 1.64 <a href="https://blog.rust-lang.org/2022/08/01/Increasing-glibc-kernel-requirements.html">requires at least glibc 2.17</a>, so you need to use at least manylinux2014.
+For publishing, we recommend enforcing the same manylinux version as the image with the manylinux flag, e.g. use <code>--manylinux 2014</code> if you are building in <code>quay.io/pypa/manylinux2014_x86_64</code>.
+The <a href="https://github.com/PyO3/maturin-action">PyO3/maturin-action</a> github action already takes care of this if you set e.g. <code>manylinux: 2014</code>.</p>
+<p>If you are publishing to PyPI, you can use <code>--compatibility pypi</code> to allow only builds for targets that are accepted by PyPI, and reject builds for unsupported operating systems and architectures.</p>
+<p>maturin can check the generated library for manylinux compliance (an auditwheel reimplementation) and gives the wheel the proper platform tag.</p>
+<ul>
+<li>If your system’s glibc is too new, it will assign the <code>linux</code> tag.</li>
+<li>If you link other shared libraries, maturin will try to bundle them within the wheel, note that this requires <a href="https://github.com/NixOS/patchelf">patchelf</a>,
+which can be installed along with maturin from PyPI: <code>pip install maturin[patchelf]</code>.</li>
+</ul>
+<p>You can also manually disable those checks and directly use native linux target with <code>--manylinux off</code>.</p>
+<p>The <a href="https://ghcr.io/pyo3/maturin">pyo3/maturin</a> image is based on the manylinux2014 image, and passes arguments to the <code>maturin</code> binary. You can use it like this:</p>
+<pre><code>docker run --rm -v $(pwd):/io ghcr.io/pyo3/maturin build --release  # or other maturin arguments
+</code></pre>
+<p>Note that this image is very basic and only contains python, maturin and stable Rust. If you need additional tools, you can run commands inside the manylinux container.
+See <a href="https://github.com/konstin/complex-manylinux-maturin-docker">konstin/complex-manylinux-maturin-docker</a> for a small educational example
+or <a href="https://github.com/nanoporetech/fast-ctc-decode/blob/b226ea0f2b2f4f474eff47349703d57d2ea4801b/.github/workflows/publish.yml">nanoporetech/fast-ctc-decode</a> for a real world setup.</p>
+<pre><code>Usage: maturin build [OPTIONS] [ARGS]...
+
+Arguments:
+  [ARGS]...
+          Rustc flags
+
+Options:
+      --strip [&lt;STRIP&gt;]
+          Strip the library for minimum file size. Can be set to `true` or `false`, or used as a flag (`--strip` implies `true`)
+
+          [env: MATURIN_STRIP=]
+          [possible values: true, false]
+
+      --sdist
+          Build a source distribution and build wheels from it.
+
+          This verifies that the source distribution is complete and can be used to build the project from source.
+
+      --pgo
+          Build with Profile-Guided Optimization (PGO).
+
+          Requires `pgo-command` to be set in `[tool.maturin]` in pyproject.toml. This performs a three-phase build: instrumented build, profile training, and optimized rebuild.
+
+  -i, --interpreter [&lt;INTERPRETER&gt;...]
+          The python versions to build wheels for, given as the executables of interpreters such as `python3.9` or `/usr/bin/python3.8`
+
+  -f, --find-interpreter
+          Find interpreters from the host machine
+
+  -b, --bindings &lt;BINDINGS&gt;
+          Which kind of bindings to use
+
+          [possible values: pyo3, pyo3-ffi, cffi, uniffi, bin]
+
+      --compatibility [&lt;compatibility&gt;...]
+          Control the platform tag and PyPI compatibility.
+
+          This options offers both fine-grained control over the linux libc tag and a more automatic PyPI-compatibility option.
+
+          The `pypi` option applies on all platforms and ensure that only tags that can be uploaded to PyPI are used. The linux-specific options are `manylinux` tags (for example `manylinux2014`/`manylinux_2_24`) or `musllinux` tags (for example `musllinux_1_2`), and `linux` for the native linux tag. They are
+          ignored on non-linux platforms.
+
+          Note that `manylinux1` and `manylinux2010` are unsupported by the rust compiler. Wheels with the native `linux` tag will be rejected by pypi, unless they are separately validated by `auditwheel`.
+
+          The default is the lowest compatible `manylinux` tag, or plain `linux` if nothing matched.
+
+      --auditwheel &lt;AUDITWHEEL&gt;
+          Audit wheel for manylinux compliance
+
+          Possible values:
+          - repair: Audit and repair wheel for manylinux compliance
+          - check:  Check wheel for manylinux compliance, but do not repair
+          - skip:   Don't check for manylinux compliance
+
+      --zig
+          For manylinux targets, use zig to ensure compliance for the chosen manylinux version
+
+          Default to manylinux2014/manylinux_2_17 if you do not specify an `--compatibility`
+
+          Make sure you installed zig with `pip install maturin[zig]`
+
+  -o, --out &lt;OUT&gt;
+          The directory to store the built wheels in. Defaults to a new "wheels" directory in the project's target directory
+
+      --include-debuginfo
+          Include debug info files (.pdb on Windows, .dSYM on macOS, .dwp on Linux) in the wheel. When enabled, maturin automatically configures split-debuginfo=packed so that separate debug info files are produced
+
+      --sbom-include &lt;SBOM_INCLUDE&gt;...
+          Additional SBOM files to include in the `.dist-info/sboms` directory. Can be specified multiple times
+
+  -q, --quiet
+          Do not print cargo log messages
+
+      --ignore-rust-version
+          Ignore `rust-version` specification in packages
+
+  -v, --verbose...
+          Use verbose output (-vv very verbose/build.rs output)
+
+      --color &lt;WHEN&gt;
+          Coloring: auto, always, never
+
+      --config &lt;KEY=VALUE&gt;
+          Override a configuration value (unstable)
+
+  -Z &lt;FLAG&gt;
+          Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
+
+      --future-incompat-report
+          Outputs a future incompatibility report at the end of the build (unstable)
+
+      --compression-method &lt;COMPRESSION_METHOD&gt;
+          Zip compression method. Only Stored and Deflated are currently compatible with all package managers
+
+          Possible values:
+          - deflated: Deflate compression (levels 0-9, default 6)
+          - stored:   No compression
+          - bzip2:    BZIP2 compression (levels 0-9, default 6)
+          - zstd:     Zstandard compression (supported from Python 3.14; levels -7-22, default 3)
+
+          [default: deflated]
+
+      --compression-level &lt;COMPRESSION_LEVEL&gt;
+          Zip compression level. Defaults to method default
+
+      --compression-enable-large-file-support
+          Whether to use large file support for ZIP files. Defaults to false
+
+      --generate-stubs
+          Auto generate Python type stubs by introspecting the binary. Requires PyO3 and its "experimental-inspect" feature
+
+  -h, --help
+          Print help (see a summary with '-h')
+
+Compilation Options:
+  -r, --release
+          Build artifacts in release mode, with optimizations
+
+  -j, --jobs &lt;N&gt;
+          Number of parallel jobs, defaults to # of CPUs
+
+      --profile &lt;PROFILE-NAME&gt;
+          Build artifacts with the specified Cargo profile
+
+      --target &lt;TRIPLE&gt;
+          Build for the target triple
+
+          [env: CARGO_BUILD_TARGET=]
+
+      --target-dir &lt;DIRECTORY&gt;
+          Directory for all generated artifacts
+
+      --timings=&lt;FMTS&gt;
+          Timing output formats (unstable) (comma separated): html, json
+
+Feature Selection:
+  -F, --features &lt;FEATURES&gt;
+          Space or comma separated list of features to activate
+
+      --all-features
+          Activate all available features
+
+      --no-default-features
+          Do not activate the `default` feature
+
+Manifest Options:
+  -m, --manifest-path &lt;PATH&gt;
+          Path to Cargo.toml
+
+      --frozen
+          Require Cargo.lock and cache are up to date
+
+      --locked
+          Require Cargo.lock is up to date
+
+      --offline
+          Run without accessing the network
+</code></pre>
+<h2 id="source-distribution"><a class="header" href="#source-distribution">Source Distribution</a></h2>
+<p>Maturin supports building through <code>pyproject.toml</code>. To use it, create a <code>pyproject.toml</code> next to your <code>Cargo.toml</code> with the following content:</p>
+<pre><code class="language-toml">[build-system]
+requires = ["maturin&gt;=1.0,&lt;2.0"]
+build-backend = "maturin"
+</code></pre>
+<p>If a <code>pyproject.toml</code> with a <code>[build-system]</code> entry is present, maturin can build a source distribution of your package when <code>--sdist</code> is specified.
+The source distribution will contain the same files as <code>cargo package</code>. To only build a source distribution, use the <code>maturin sdist</code> command.</p>
+<p>You can then e.g. install your package with <code>pip install .</code>. With <code>pip install . -v</code> you can see the output of cargo and maturin.</p>
+<p>You can use the options <code>compatibility</code>, <code>skip-auditwheel</code>, <code>bindings</code>, <code>strip</code> and common Cargo build options such as <code>features</code> under <code>[tool.maturin]</code> the same way you would when running maturin directly.
+The <code>bindings</code> key is required for cffi and bin projects as those can’t be automatically detected. Currently, all builds are in release mode (see <a href="https://discuss.python.org/t/pep-517-debug-vs-release-builds/1924">this thread</a> for details).</p>
+<p>For a non-manylinux build with cffi bindings you could use the following:</p>
+<pre><code class="language-toml">[build-system]
+requires = ["maturin&gt;=1.0,&lt;2.0"]
+build-backend = "maturin"
+
+[tool.maturin]
+bindings = "cffi"
+compatibility = "linux"
+</code></pre>
+<p><code>manylinux</code> option is also accepted as an alias of <code>compatibility</code> for backward compatibility with old version of maturin.</p>
+<p>To include arbitrary files in the sdist for use during compilation specify <code>include</code> as an array of <code>path</code> globs with <code>format</code> set to <code>sdist</code>:</p>
+<pre><code class="language-toml">[tool.maturin]
+include = [{ path = "path/**/*", format = "sdist" }]
+</code></pre>
+<h3 id="cross-compiling"><a class="header" href="#cross-compiling">Cross Compiling</a></h3>
+<p>Maturin has decent cross compilation support for <code>pyo3</code> and <code>bin</code> bindings,
+other kind of bindings may work but aren’t tested regularly.</p>
+<h4 id="cross-compile-to-linuxmacos"><a class="header" href="#cross-compile-to-linuxmacos">Cross-compile to Linux/macOS</a></h4>
+<h5 id="use-docker"><a class="header" href="#use-docker">Use Docker</a></h5>
+<p>For manylinux support the <a href="https://github.com/rust-cross/manylinux-cross">manylinux-cross</a> docker images can be used.
+And <a href="https://github.com/PyO3/maturin-action">maturin-action</a> makes it easy to do cross compilation on GitHub Actions.</p>
+<h5 id="use-zig"><a class="header" href="#use-zig">Use Zig</a></h5>
+<p>Since v0.12.7 maturin added support for linking with <a href="https://andrewkelley.me/post/zig-cc-powerful-drop-in-replacement-gcc-clang.html"><code>zig cc</code></a>,
+compile for Linux works and is regularly tested on CI, other platforms may also work but aren’t tested regularly.</p>
+<p>You can install zig following the <a href="https://ziglang.org/download">official documentation</a>, or install it from PyPI via <code>pip install ziglang</code>.
+Then pass <code>--zig</code> to maturin <code>build</code> or <code>publish</code> commands to use it, for example</p>
+<pre><code class="language-bash">maturin build --release --target aarch64-unknown-linux-gnu --zig
+</code></pre>
+<h4 id="cross-compile-to-windows"><a class="header" href="#cross-compile-to-windows">Cross-compile to Windows</a></h4>
+<p>Pyo3 0.16.5 added an experimental feature <code>generate-import-lib</code> enables the user to cross compile
+extension modules for Windows targets without setting the <code>PYO3_CROSS_LIB_DIR</code> environment variable
+or providing any Windows Python library files.</p>
+<pre><code class="language-toml">[dependencies]
+pyo3 = { version = "0.28.2", features = ["generate-import-lib"] }
+</code></pre>
+<p>It uses an external <a href="https://docs.rs/python3-dll-a/latest/python3_dll_a/"><code>python3-dll-a</code></a> crate to
+generate import libraries for the Python DLL for MinGW-w64 and MSVC compile targets.
+Note: MSVC targets require LLVM binutils or MSVC build tools to be available on the host system.
+More specifically, <code>python3-dll-a</code> requires <code>llvm-dlltool</code> or <code>lib.exe</code> executable to be present in <code>PATH</code> when targeting <code>*-pc-windows-msvc</code>.</p>
+<p>maturin integrates <a href="https://github.com/messense/cargo-xwin"><code>cargo-xwin</code></a> to enable MSVC targets cross compilation support,
+it will download and unpack the Microsoft CRT headers and import libraries, and Windows SDK headers and import libraries
+needed for compiling and linking automatically.</p>
+<p><strong>By using this to cross compiling to Windows MSVC targets you are consented to accept the license at <a href="https://go.microsoft.com/fwlink/?LinkId=2086102">https://go.microsoft.com/fwlink/?LinkId=2086102</a></strong>.
+(Building on Windows natively does not apply.)</p>
+<h2 id="github-actions"><a class="header" href="#github-actions">GitHub Actions</a></h2>
+<p>If your project uses GitHub Actions, you can use the <code>maturin generate-ci</code> command to generate a GitHub Actions workflow file.</p>
+<pre><code class="language-bash">mkdir -p .github/workflows
+maturin generate-ci github &gt; .github/workflows/CI.yml
+</code></pre>
+<p>There are some options to customize the generated workflow file:</p>
+<pre><code>Generate CI configuration
+
+Usage: maturin generate-ci [OPTIONS] &lt;CI&gt;
+
+Arguments:
+  &lt;CI&gt;
+          CI provider
+
+          Possible values:
+          - github: GitHub
+
+Options:
+  -m, --manifest-path &lt;PATH&gt;
+          Path to Cargo.toml
+
+  -v, --verbose...
+          Use verbose output.
+
+          * Default: Show build information and `cargo build` output. * `-v`: Use `cargo build -v`.
+          * `-vv`: Show debug logging and use `cargo build -vv`. * `-vvv`: Show trace logging.
+
+          You can configure fine-grained logging using the `RUST_LOG` environment variable.
+          (&lt;https://docs.rs/tracing-subscriber/latest/tracing_subscriber/filter/struct.EnvFilter.html#directives&gt;)
+
+  -o, --output &lt;PATH&gt;
+          Output path
+
+          [default: -]
+
+      --platform &lt;platform&gt;...
+          Platform support
+
+          [default: linux musllinux windows macos]
+
+          Possible values:
+          - all:        All
+          - manylinux:  Manylinux
+          - musllinux:  Musllinux
+          - windows:    Windows
+          - macos:      macOS
+          - emscripten: Emscripten
+
+      --pytest
+          Enable pytest
+
+      --zig
+          Use zig to do cross compilation
+
+      --skip-attestation
+          Skip artifact attestation
+
+  -h, --help
+          Print help (see a summary with '-h')
+</code></pre>
+<h3 id="using-pypis-trusted-publishing"><a class="header" href="#using-pypis-trusted-publishing">Using PyPI’s trusted publishing</a></h3>
+<p>By default, the workflow provided by <code>generate-ci</code> will publish the release artifacts to PyPI using API token authentication. However, maturin also supports <a href="https://docs.pypi.org/trusted-publishers/">trusted publishing (OpenID Connect)</a>.</p>
+<p>To enable it, modify the <code>release</code> action in the generated GitHub workflow file:</p>
+<ul>
+<li>remove <code>MATURIN_PYPI_TOKEN</code> from the <code>env</code> section to make maturin use trusted publishing</li>
+<li>add <code>id-token: write</code> to the action’s <code>permissions</code> (see <a href="https://docs.github.com/en/actions/deployment/security-hardening-your-deployments/configuring-openid-connect-in-pypi">Configuring OpenID Connect in PyPI</a> from GitHub’s documentation).</li>
+<li>if <code>Environment name: pypi</code> was set in PyPI, add <code>environment: pypi</code></li>
+</ul>
+<p>Make sure to follow the steps listed in <a href="https://docs.pypi.org/trusted-publishers/adding-a-publisher/">PyPI’s documentation</a> to set up your GitHub repository as a trusted publisher in the PyPI project settings before attempting to run the workflow.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="import_hook.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                            </a>
+
+                            <a rel="next prefetch" href="sbom.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="import_hook.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M41.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l160 160c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L109.3 256 246.6 118.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-160 160z"/></svg></span>
+                    </a>
+
+                    <a rel="next prefetch" href="sbom.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M278.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-160 160c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L210.7 256 73.4 118.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l160 160z"/></svg></span>
+                    </a>
+            </nav>
+
+        </div>
+
+        <template id=fa-eye><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M288 32c-80.8 0-145.5 36.8-192.6 80.6C48.6 156 17.3 208 2.5 243.7c-3.3 7.9-3.3 16.7 0 24.6C17.3 304 48.6 356 95.4 399.4C142.5 443.2 207.2 480 288 480s145.5-36.8 192.6-80.6c46.8-43.5 78.1-95.4 93-131.1c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C433.5 68.8 368.8 32 288 32zM432 256c0 79.5-64.5 144-144 144s-144-64.5-144-144s64.5-144 144-144s144 64.5 144 144zM288 192c0 35.3-28.7 64-64 64c-11.5 0-22.3-3-31.6-8.4c-.2 2.8-.4 5.5-.4 8.4c0 53 43 96 96 96s96-43 96-96s-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6z"/></svg></span></template>
+        <template id=fa-eye-slash><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M38.8 5.1C28.4-3.1 13.3-1.2 5.1 9.2S-1.2 34.7 9.2 42.9l592 464c10.4 8.2 25.5 6.3 33.7-4.1s6.3-25.5-4.1-33.7L525.6 386.7c39.6-40.6 66.4-86.1 79.9-118.4c3.3-7.9 3.3-16.7 0-24.6c-14.9-35.7-46.2-87.7-93-131.1C465.5 68.8 400.8 32 320 32c-68.2 0-125 26.3-169.3 60.8L38.8 5.1zM223.1 149.5C248.6 126.2 282.7 112 320 112c79.5 0 144 64.5 144 144c0 24.9-6.3 48.3-17.4 68.7L408 294.5c5.2-11.8 8-24.8 8-38.5c0-53-43-96-96-96c-2.8 0-5.6 .1-8.4 .4c5.3 9.3 8.4 20.1 8.4 31.6c0 10.2-2.4 19.8-6.6 28.3l-90.3-70.8zm223.1 298L373 389.9c-16.4 6.5-34.3 10.1-53 10.1c-79.5 0-144-64.5-144-144c0-6.9 .5-13.6 1.4-20.2L83.1 161.5C60.3 191.2 44 220.8 34.5 243.7c-3.3 7.9-3.3 16.7 0 24.6c14.9 35.7 46.2 87.7 93 131.1C174.5 443.2 239.2 480 320 480c47.8 0 89.9-12.9 126.2-32.5z"/></svg></span></template>
+        <template id=fa-copy><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M502.6 70.63l-61.25-61.25C435.4 3.371 427.2 0 418.7 0H255.1c-35.35 0-64 28.66-64 64l.0195 256C192 355.4 220.7 384 256 384h192c35.2 0 64-28.8 64-64V93.25C512 84.77 508.6 76.63 502.6 70.63zM464 320c0 8.836-7.164 16-16 16H255.1c-8.838 0-16-7.164-16-16L239.1 64.13c0-8.836 7.164-16 16-16h128L384 96c0 17.67 14.33 32 32 32h47.1V320zM272 448c0 8.836-7.164 16-16 16H63.1c-8.838 0-16-7.164-16-16L47.98 192.1c0-8.836 7.164-16 16-16H160V128H63.99c-35.35 0-64 28.65-64 64l.0098 256C.002 483.3 28.66 512 64 512h192c35.2 0 64-28.8 64-64v-32h-47.1L272 448z"/></svg></span></template>
+        <template id=fa-play><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M73 39c-14.8-9.1-33.4-9.4-48.5-.9S0 62.6 0 80V432c0 17.4 9.4 33.4 24.5 41.9s33.7 8.1 48.5-.9L361 297c14.3-8.7 23-24.2 23-41s-8.7-32.2-23-41L73 39z"/></svg></span></template>
+        <template id=fa-clock-rotate-left><span class=fa-svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc. --><path d="M75 75L41 41C25.9 25.9 0 36.6 0 57.9V168c0 13.3 10.7 24 24 24H134.1c21.4 0 32.1-25.9 17-41l-30.8-30.8C155 85.5 203 64 256 64c106 0 192 86 192 192s-86 192-192 192c-40.8 0-78.6-12.7-109.7-34.4c-14.5-10.1-34.4-6.6-44.6 7.9s-6.6 34.4 7.9 44.6C151.2 495 201.7 512 256 512c141.4 0 256-114.6 256-256S397.4 0 256 0C185.3 0 121.3 28.7 75 75zm181 53c-13.3 0-24 10.7-24 24V256c0 6.4 2.5 12.5 7 17l72 72c9.4 9.4 24.6 9.4 33.9 0s9.4-24.6 0-33.9l-65-65V152c0-13.3-10.7-24-24-24z"/></svg></span></template>
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr-ef4e11c1.min.js"></script>
+        <script src="mark-09e88c2c.min.js"></script>
+        <script src="searcher-c2a407aa.js"></script>
+
+        <script src="clipboard-1626706a.min.js"></script>
+        <script src="highlight-abc7f01d.js"></script>
+        <script src="book-a0b12cfe.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
