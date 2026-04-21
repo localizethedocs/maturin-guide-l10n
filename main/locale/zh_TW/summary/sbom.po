@@ -25,7 +25,7 @@ msgstr ""
 
 #: src/sbom.md:7
 msgid "Overview"
-msgstr ""
+msgstr "概覽"
 
 #: src/sbom.md:9
 msgid "Three kinds of SBOMs can be included in a wheel:"

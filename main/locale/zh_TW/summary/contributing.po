@@ -29,7 +29,7 @@ msgstr ""
 
 #: src/contributing.md:9
 msgid "Report Bugs"
-msgstr ""
+msgstr "回報臭蟲"
 
 #: src/contributing.md:11
 msgid ""
@@ -39,7 +39,7 @@ msgstr ""
 
 #: src/contributing.md:13
 msgid "Fix Bugs"
-msgstr ""
+msgstr "修正臭蟲"
 
 #: src/contributing.md:15
 msgid ""

@@ -32,16 +32,19 @@ msgid ""
 "tools for creating native Python extension modules. It supports CPython, "
 "PyPy, and GraalPy."
 msgstr ""
+"[pyo3](https://github.com/PyO3/pyo3) 是 Python 的 Rust 綁定，包含用於建立原"
+"生 Python 擴充模組的工具。它支援 CPython、PyPy 與 GraalPy。"
 
 #: src/bindings.md:13
 msgid ""
 "maturin automatically detects pyo3 bindings when it's added as a dependency "
 "in `Cargo.toml`."
 msgstr ""
+"當 `pyo3` 被增添為 `Cargo.toml` 中的依賴時，maturin 會自動偵測 pyo3 綁定。"
 
 #: src/bindings.md:15
 msgid "`Py_LIMITED_API`/abi3"
-msgstr ""
+msgstr "`Py_LIMITED_API`/abi3"
 
 #: src/bindings.md:17
 msgid ""
@@ -55,6 +58,9 @@ msgid ""
 "pyo3 = { version = \"0.28.2\", features = [\"abi3\"] }\n"
 "```"
 msgstr ""
+"```toml\n"
+"pyo3 = { version = \"0.28.2\", features = [\"abi3\"] }\n"
+"```"
 
 #: src/bindings.md:23
 msgid ""
@@ -98,6 +104,9 @@ msgid ""
 "will install it, otherwise you have to install it yourself (`pip install "
 "cffi`)."
 msgstr ""
+"Cffi wheel 與包括 pypy 在內的所有 Python 版本相容。如果未安裝 `cffi` 且 "
+"Python 是在虛擬環境（virtualenv）中執行，maturin 會自動安裝它，否則您必須自行"
+"安裝（`pip install cffi`）。"
 
 #: src/bindings.md:44
 msgid ""
@@ -111,15 +120,15 @@ msgstr ""
 
 #: src/bindings.md:56
 msgid "\"CARGO_MANIFEST_DIR\""
-msgstr ""
+msgstr "\"CARGO_MANIFEST_DIR\""
 
 #: src/bindings.md:64
 msgid "\"target\""
-msgstr ""
+msgstr "\"target\""
 
 #: src/bindings.md:64
 msgid "\"header.h\""
-msgstr ""
+msgstr "\"header.h\""
 
 #: src/bindings.md:68
 msgid ""
@@ -142,10 +151,12 @@ msgid ""
 "dependency. You can specify `cffi` explicitly via either command line with `-"
 "b cffi` or in `pyproject.toml`."
 msgstr ""
+"maturin 會自動偵測 `cffi` 綁定，但前提是沒有 pyo3 依賴。您可以透過命令行引數 "
+"`-b cffi` 或在 `pyproject.toml` 中明確指定 `cffi`。"
 
 #: src/bindings.md:80
 msgid "`bin`"
-msgstr ""
+msgstr "`bin`"
 
 #: src/bindings.md:82
 msgid ""
@@ -192,15 +203,15 @@ msgstr ""
 
 #: src/bindings.md:105
 msgid "\"sys\""
-msgstr ""
+msgstr "\"sys\""
 
 #: src/bindings.md:106
 msgid "\"argv\""
-msgstr ""
+msgstr "\"argv\""
 
 #: src/bindings.md:120
 msgid "In pyproject.toml:"
-msgstr ""
+msgstr "在 pyproject.toml 中："
 
 #: src/bindings.md:122
 msgid ""
@@ -209,10 +220,14 @@ msgid ""
 "print_cli_args = \"my_module:print_cli_args\"\n"
 "```"
 msgstr ""
+"```toml\n"
+"[project.scripts]\n"
+"print_cli_args = \"my_module:print_cli_args\"\n"
+"```"
 
 #: src/bindings.md:127
 msgid "`uniffi`"
-msgstr ""
+msgstr "`uniffi`"
 
 #: src/bindings.md:129
 msgid ""
@@ -220,3 +235,6 @@ msgid ""
 "generate Python `ctypes` bindings from an interface definition file. uniffi "
 "wheels are compatible with all python versions including pypy."
 msgstr ""
+"uniffi 綁定使用 [uniffi-rs](https://mozilla.github.io/uniffi-rs/) 從介面定義"
+"檔生成 Python `ctypes` 綁定。uniffi 的 wheel 檔案與包括 pypy 在內的所有 "
+"Python 版本相容。"
