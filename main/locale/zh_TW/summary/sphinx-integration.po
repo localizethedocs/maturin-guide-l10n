@@ -22,6 +22,9 @@ msgid ""
 "readthedocs.org/) which automates documentation building, versioning, and "
 "hosting for you."
 msgstr ""
+"Sphinx 是 Python 社群中廣受歡迎的文件產生器。它通常與 [Read The Docs]"
+"(https://readthedocs.org/) 等服務搭配使用，這些服務能為您自動化文件的建置、版"
+"本控制與託管。"
 
 #: src/sphinx.md:7
 msgid ""
@@ -63,20 +66,25 @@ msgid ""
 "build environment, you can do it by adding a `.readthedocs.yaml` in your "
 "project root:"
 msgstr ""
+"若要在 [Read The Docs](https://readthedocs.org/) 上建置文件，您需要告知它在建"
+"置環境中安裝 Rust 編譯器與 Python 直譯器，您可以透過在專案根目錄中增添一個 `."
+"readthedocs.yaml` 來完成："
 
 #: src/sphinx.md:30
 msgid ""
 "# https://docs.readthedocs.io/en/stable/config-file/v2.html#supported-"
 "settings\n"
 msgstr ""
+"# https://docs.readthedocs.io/en/stable/config-file/v2.html#supported-"
+"settings\n"
 
 #: src/sphinx.md:31
 msgid "version"
-msgstr ""
+msgstr "version"
 
 #: src/sphinx.md:33
 msgid "sphinx"
-msgstr ""
+msgstr "sphinx"
 
 #: src/sphinx.md:35
 msgid "builder"
