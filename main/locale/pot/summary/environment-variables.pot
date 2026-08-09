@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-03-17T10:07:51Z\n"
+"POT-Creation-Date: 2026-08-04T11:08:16Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -191,39 +191,70 @@ msgstr ""
 
 #: src/environment-variables.md:59
 msgid ""
-"`MATURIN_EMSCRIPTEN_VERSION`: The version of emscripten to use for "
-"emscripten builds"
+"`MATURIN_PYEMSCRIPTEN_PLATFORM_VERSION` / `PYEMSCRIPTEN_PLATFORM_VERSION`: "
+"The [PEP 783](https://peps.python.org/pep-0783/) PyEmscripten platform "
+"version (e.g. `2025_0`) used to derive the "
+"`pyemscripten_<year>_<patch>_wasm32` wheel platform tag. Pyodide exposes "
+"this via `sysconfig.get_config_var(\"PYEMSCRIPTEN_PLATFORM_VERSION\")`; "
+"maturin also checks `pyodide config get pyemscripten_platform_version` when "
+"available."
 msgstr ""
 
-#: src/environment-variables.md:60
+#: src/environment-variables.md:65
+msgid ""
+"`MATURIN_PYODIDE_ABI_VERSION` / `PYODIDE_ABI_VERSION`: Historical Pyodide "
+"ABI version variable name (e.g. `2025_0`) used to derive the PEP 783 "
+"`pyemscripten_<year>_<patch>_wasm32` tag. Available via `pyodide config get "
+"pyodide_abi_version`. Pyodide previously referred to the same platform as "
+"`pyodide_<year>_<patch>`, but PyPI accepts the PEP 783 `pyemscripten_*` tag."
+msgstr ""
+
+#: src/environment-variables.md:70
+msgid ""
+"`MATURIN_EMSCRIPTEN_VERSION`: The version of emscripten to use for "
+"emscripten builds (legacy `emscripten_<emcc-version>_wasm32` tag, used for "
+"Pyodide ≤ 0.27 only). Prefer `MATURIN_PYEMSCRIPTEN_PLATFORM_VERSION` / "
+"`MATURIN_PYODIDE_ABI_VERSION` when possible — wheels built with the legacy "
+"tag are not installable on PEP 783-compliant runtimes."
+msgstr ""
+
+#: src/environment-variables.md:75
 msgid "`MATURIN_STRIP`: Strip the library for minimum file size"
 msgstr ""
 
-#: src/environment-variables.md:61
+#: src/environment-variables.md:76
+msgid ""
+"`MATURIN_PGO`: Build with Profile-Guided Optimization (same as `--pgo`), "
+"works with `maturin build`, `maturin develop` and PEP 517 builds (e.g. `pip "
+"install .`). Set to `0`, `false`, `no` or `off` to disable, any other value "
+"enables it"
+msgstr ""
+
+#: src/environment-variables.md:77
 msgid ""
 "`MATURIN_NO_MISSING_BUILD_BACKEND_WARNING`: Suppress missing build backend "
 "warning"
 msgstr ""
 
-#: src/environment-variables.md:62
+#: src/environment-variables.md:78
 msgid ""
 "`MATURIN_USE_XWIN`: Set to `1` to force to use `xwin` for cross compiling "
 "even on Windows that supports native compilation"
 msgstr ""
 
-#: src/environment-variables.md:63
+#: src/environment-variables.md:79
 msgid ""
 "`ANDROID_API_LEVEL`: The Android API level to target when cross compiling "
 "for Android"
 msgstr ""
 
-#: src/environment-variables.md:64
+#: src/environment-variables.md:80
 msgid ""
 "`TARGET_SYSROOT`: The sysroot to use for auditwheel wheel when cross "
 "compiling"
 msgstr ""
 
-#: src/environment-variables.md:65
+#: src/environment-variables.md:81
 msgid ""
 "`ARCHFLAGS`: Flags to control the architecture of the build on macOS, for "
 "example you can use `ARCHFLAGS=\"-arch x86_64 -arch arm64\"` to build "
