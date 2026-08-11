@@ -58,9 +58,6 @@ msgid ""
 "pyo3 = { version = \"0.28.2\", features = [\"abi3\"] }\n"
 "```"
 msgstr ""
-"```toml\n"
-"pyo3 = { version = \"0.28.2\", features = [\"abi3\"] }\n"
-"```"
 
 #: src/bindings.md:23
 msgid ""
