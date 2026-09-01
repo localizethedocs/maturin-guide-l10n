@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-04-14T09:23:28Z\n"
+"POT-Creation-Date: 2026-09-01T13:14:47Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -59,7 +59,7 @@ msgid ""
 "rand = \"0.9.0\"\n"
 "\n"
 "[dependencies.pyo3]\n"
-"version = \"0.28.2\"\n"
+"version = \"0.29.0\"\n"
 "# \"abi3-py38\" tells pyo3 (and maturin) to build using the stable ABI with "
 "minimum Python version 3.8\n"
 "features = [\"abi3-py38\"]\n"
@@ -72,7 +72,7 @@ msgid ""
 "pep-0518/) build system requirements."
 msgstr ""
 
-#: src/tutorial.md:46 src/tutorial.md:114
+#: src/tutorial.md:46 src/tutorial.md:133
 msgid ""
 "```toml\n"
 "[build-system]\n"
@@ -105,30 +105,34 @@ msgid ""
 "New projects can also be quickly created using the `maturin new` command:"
 msgstr ""
 
-#: src/tutorial.md:80
+#: src/tutorial.md:96
+msgid "'-h'"
+msgstr ""
+
+#: src/tutorial.md:99
 msgid ""
 "The above process can be achieved by running `maturin new -b pyo3 "
 "guessing_game` then edit `Cargo.toml` to add `abi3-py38` feature."
 msgstr ""
 
-#: src/tutorial.md:83
+#: src/tutorial.md:102
 msgid "Install and configure maturin (in a virtual environment)"
 msgstr ""
 
-#: src/tutorial.md:85
+#: src/tutorial.md:104
 msgid ""
 "Create a virtual environment and install maturin. Note maturin has minimal "
 "dependencies!"
 msgstr ""
 
-#: src/tutorial.md:97
+#: src/tutorial.md:116
 msgid ""
 "maturin is configured in `pyproject.toml` as introduced by [PEP 518](https://"
 "www.python.org/dev/peps/pep-0518/). This file lives in the root of your "
 "project tree:"
 msgstr ""
 
-#: src/tutorial.md:109
+#: src/tutorial.md:128
 msgid ""
 "Configuration in this file is quite simple for most projects. You just need "
 "to indicate maturin as a requirement (and restrict the version) and as the "
@@ -136,18 +140,18 @@ msgid ""
 "(https://www.python.org/dev/peps/pep-0517/))."
 msgstr ""
 
-#: src/tutorial.md:120
+#: src/tutorial.md:139
 msgid ""
 "Various other tools may also be configured in `pyproject.toml` and the "
 "Python community seems to be consolidating declarative configuration in this "
 "file."
 msgstr ""
 
-#: src/tutorial.md:123
+#: src/tutorial.md:142
 msgid "Program the guessing game in Rust"
 msgstr ""
 
-#: src/tutorial.md:125
+#: src/tutorial.md:144
 msgid ""
 "When you create a `lib` project with `cargo new` it creates a file `src/lib."
 "rs` with some default code. Edit that file and replace the default code with "
@@ -158,35 +162,35 @@ msgid ""
 "function."
 msgstr ""
 
-#: src/tutorial.md:141
+#: src/tutorial.md:160
 msgid "\"Guess the number!\""
 msgstr ""
 
-#: src/tutorial.md:146
+#: src/tutorial.md:165
 msgid "\"Please input your guess.\""
 msgstr ""
 
-#: src/tutorial.md:152
+#: src/tutorial.md:171
 msgid "\"Failed to read line\""
 msgstr ""
 
-#: src/tutorial.md:159
+#: src/tutorial.md:178
 msgid "\"You guessed: {}\""
 msgstr ""
 
-#: src/tutorial.md:162
+#: src/tutorial.md:181
 msgid "\"Too small!\""
 msgstr ""
 
-#: src/tutorial.md:163
+#: src/tutorial.md:182
 msgid "\"Too big!\""
 msgstr ""
 
-#: src/tutorial.md:165
+#: src/tutorial.md:184
 msgid "\"You win!\""
 msgstr ""
 
-#: src/tutorial.md:171
+#: src/tutorial.md:190
 msgid ""
 "/// A Python module implemented in Rust. The name of this function must "
 "match\n"
@@ -195,36 +199,36 @@ msgid ""
 "/// import the module.\n"
 msgstr ""
 
-#: src/tutorial.md:183
+#: src/tutorial.md:202
 msgid ""
 "Thanks to pyo3, there's very little difference between this and the example "
 "in The Rust Book. All we had to do was:"
 msgstr ""
 
-#: src/tutorial.md:186
+#: src/tutorial.md:205
 msgid "Include the pyo3 prelude"
 msgstr ""
 
-#: src/tutorial.md:187
+#: src/tutorial.md:206
 msgid "Add `#[pyfunction]` to our function"
 msgstr ""
 
-#: src/tutorial.md:188
+#: src/tutorial.md:207
 msgid ""
 "Add the `#[pymodule]` block to expose the function as part of a Python module"
 msgstr ""
 
-#: src/tutorial.md:190
+#: src/tutorial.md:209
 msgid ""
 "Refer to the [pyo3 User Guide](https://pyo3.rs/) for more information on "
 "using pyo3. It can do a lot more!"
 msgstr ""
 
-#: src/tutorial.md:193
+#: src/tutorial.md:212
 msgid "Build and install the module with `maturin develop`"
 msgstr ""
 
-#: src/tutorial.md:195
+#: src/tutorial.md:214
 msgid ""
 "Note that _this is just a Rust project_ at this point, and with few "
 "exceptions you can build it as you'd expect using `cargo build`. maturin "
@@ -234,23 +238,23 @@ msgid ""
 "the Python package manager)."
 msgstr ""
 
-#: src/tutorial.md:202
+#: src/tutorial.md:221
 msgid "So let's use maturin to build and install in our current environment."
 msgstr ""
 
-#: src/tutorial.md:204
+#: src/tutorial.md:223
 msgid ""
 "You can also compile a performance-optimized program by adding the `-r` or "
 "`--release` flag for speed testing."
 msgstr ""
 
-#: src/tutorial.md:239
+#: src/tutorial.md:258
 msgid ""
 "Your `guessing_game` module should now be available in your current virtual "
 "environment. Go ahead and play a few games!"
 msgstr ""
 
-#: src/tutorial.md:242
+#: src/tutorial.md:261
 msgid ""
 "```shell\n"
 "(.venv) ferris@rustbox [~/src/rust/guessing-game] % python\n"
@@ -284,11 +288,11 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/tutorial.md:272
+#: src/tutorial.md:291
 msgid "Create a wheel for distribution"
 msgstr ""
 
-#: src/tutorial.md:274
+#: src/tutorial.md:293
 msgid ""
 "`maturin develop` actually skips the wheel generation part and installs "
 "directly in the current environment. `maturin build` on the other hand will "
@@ -300,24 +304,24 @@ msgid ""
 "wheels compatible with a wide range of Linux distros."
 msgstr ""
 
-#: src/tutorial.md:291
+#: src/tutorial.md:310
 msgid ""
 "To make your package available to others on [PyPI](https://pypi.org), use "
 "[`uv publish`](https://docs.astral.sh/uv/guides/package/#publishing-your-"
 "package) or [`twine upload`](https://twine.readthedocs.io/en/stable/)."
 msgstr ""
 
-#: src/tutorial.md:294
+#: src/tutorial.md:313
 msgid "Summary"
 msgstr ""
 
-#: src/tutorial.md:296
+#: src/tutorial.md:315
 msgid ""
 "Congratulations! You successfully created a Python module implemented "
 "entirely in Rust thanks to pyo3 and maturin."
 msgstr ""
 
-#: src/tutorial.md:299
+#: src/tutorial.md:318
 msgid ""
 "This demonstrates how easy it is to get started with maturin, but keep "
 "reading to learn more about all the additional features."
