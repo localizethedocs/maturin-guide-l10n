@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-04-14T09:23:28Z\n"
+"POT-Creation-Date: 2026-09-01T13:14:47Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -87,6 +87,11 @@ msgstr ""
 msgid ""
 "```toml\n"
 "[tool.maturin]\n"
+"# Python import name of the built extension module.\n"
+"# Accepts dotted names like \"my_package._native\" so the Rust extension is\n"
+"# installed as a submodule (useful for mixed Python/Rust projects).\n"
+"# See the project layout docs for a full example.\n"
+"module-name = \"my_package._native\"\n"
 "# Include additional files\n"
 "include = []\n"
 "# Exclude files\n"
@@ -104,6 +109,13 @@ msgid ""
 "python-source = \"src\"\n"
 "# Python packages to include\n"
 "python-packages = [\"foo\", \"bar\"]\n"
+"# Path to the wheel data directory (see the Data section of the project "
+"layout\n"
+"# docs). Defaults to looking for `<module-name>.data` next to the project "
+"root\n"
+"# when that directory exists. Relative paths are resolved from the project "
+"root.\n"
+"data = \"my_package.data\"\n"
 "# Strip the library for minimum file size\n"
 "strip = true\n"
 "# Source distribution generator,\n"
@@ -124,17 +136,199 @@ msgid ""
 "environment\n"
 "# variable.\n"
 "use-base-python = false\n"
+"# Shell command run during Profile-Guided Optimization (PGO) profile "
+"generation.\n"
+"# Required when building with `--pgo` / `MATURIN_PGO`. Executed in a "
+"temporary\n"
+"# virtualenv with the instrumented wheel installed.\n"
+"# Example: \"python -m pytest tests/benchmarks\"\n"
+"pgo-command = \"python -m pytest tests/benchmarks\"\n"
+"# Select which Cargo compile targets to build when the crate defines more "
+"than\n"
+"# one matching target. Each entry is an object with a required `name` (as "
+"in\n"
+"# Cargo.toml) and an optional `kind` (`bin`, `cdylib`, `dylib`, `lib`, "
+"`rlib`,\n"
+"# or `staticlib`). This is unrelated to `[tool.maturin.target.<triple>]` "
+"below.\n"
+"# targets = [\n"
+"#   { name = \"my_extension\", kind = \"cdylib\" },\n"
+"# ]\n"
 "```"
 msgstr ""
 
-#: src/config.md:86
+#: src/config.md:107
+msgid "`module-name`"
+msgstr ""
+
+#: src/config.md:109
+msgid ""
+"By default maturin derives the extension module name from the Cargo package "
+"name. Set `module-name` to override that, including with a dotted import "
+"path such as `my_package._native`. That places the compiled extension inside "
+"a Python package, which is the usual layout for mixed Python/Rust projects."
+msgstr ""
+
+#: src/config.md:114
+msgid ""
+"See [Import Rust as a submodule of your project](./project_layout.md#import-"
+"rust-as-a-submodule-of-your-project) for a complete example (including "
+"matching `#[pymodule]` / `#[pyo3(name = ...)]` changes)."
+msgstr ""
+
+#: src/config.md:118
+msgid "`data`"
+msgstr ""
+
+#: src/config.md:120
+msgid ""
+"Path to a wheel [data directory](https://packaging.python.org/en/latest/"
+"specifications/binary-distribution-format/#the-data-directory) whose "
+"contents are installed into the corresponding wheel install schemes (`data`, "
+"`scripts`, `headers`, `purelib`, `platlib`)."
+msgstr ""
+
+#: src/config.md:124
+msgid ""
+"If unset, maturin uses `<module-name>.data` at the project root when that "
+"directory exists. Relative paths are resolved from the project root."
+msgstr ""
+
+#: src/config.md:127
+msgid ""
+"See [Data](./project_layout.md#data) for the expected subdirectory layout."
+msgstr ""
+
+#: src/config.md:129
+msgid "`targets`"
+msgstr ""
+
+#: src/config.md:131
+msgid ""
+"`targets` filters which Cargo compile targets maturin builds when a crate "
+"exposes several candidates (for example multiple `cdylib` or `bin` targets). "
+"It is **not** the same as `[tool.maturin.target.<triple>]`, which configures "
+"per-architecture options such as the macOS deployment target."
+msgstr ""
+
+#: src/config.md:136
+msgid ""
+"```toml\n"
+"[tool.maturin]\n"
+"# Only build these Cargo targets (name must match Cargo.toml)\n"
+"targets = [\n"
+"  { name = \"my_extension\", kind = \"cdylib\" },\n"
+"  { name = \"my_cli\", kind = \"bin\" },\n"
+"]\n"
+"```"
+msgstr ""
+
+#: src/config.md:145
+msgid ""
+"`name` is required. `kind` is optional; when set it must match one of `bin`, "
+"`cdylib`, `dylib`, `lib`, `rlib`, or `staticlib`."
+msgstr ""
+
+#: src/config.md:148
+msgid "`pgo-command`"
+msgstr ""
+
+#: src/config.md:150
+msgid ""
+"Command used for the profile-training step of Profile-Guided Optimization. "
+"Required when you pass `--pgo` (or set `MATURIN_PGO`). Maturin runs the "
+"command in a temporary virtualenv after installing the instrumented wheel."
+msgstr ""
+
+#: src/config.md:154
+msgid ""
+"```toml\n"
+"[tool.maturin]\n"
+"pgo-command = \"python -m pytest tests/benchmarks\"\n"
+"```"
+msgstr ""
+
+#: src/config.md:159
+msgid ""
+"See the `--pgo` option under [Build](./distribution.md) for the overall "
+"three-phase flow."
+msgstr ""
+
+#: src/config.md:162
+msgid "`generate-ci`"
+msgstr ""
+
+#: src/config.md:164
+msgid ""
+"Defaults for `maturin generate-ci` (currently GitHub Actions). CLI flags "
+"that overlap with this table are deprecated in favor of pyproject "
+"configuration."
+msgstr ""
+
+#: src/config.md:167
+msgid ""
+"```toml\n"
+"[tool.maturin.generate-ci.github]\n"
+"# Enable a pytest job in the generated workflow\n"
+"pytest = true\n"
+"# Use zig for manylinux cross compilation\n"
+"zig = true\n"
+"# Skip artifact attestation steps\n"
+"skip-attestation = false\n"
+"# Publish with PyPI trusted publishing (OIDC) instead of an API token\n"
+"trusted-publishing = true\n"
+"# Optional GitHub Actions environment name for the release job\n"
+"publishing-environment = \"release\"\n"
+"# Extra arguments passed to maturin on every platform\n"
+"args = \"--find-interpreter\"\n"
+"\n"
+"# Per-platform overrides. Each platform may set a simple `targets` list\n"
+"# (architecture names such as \"x86_64\" / \"aarch64\") or a detailed\n"
+"# `[[tool.maturin.generate-ci.github.<platform>.target]]` array, plus "
+"shared\n"
+"# keys: runner, manylinux, container, docker-options, rust-toolchain,\n"
+"# rustup-components, before-script-linux, args.\n"
+"[tool.maturin.generate-ci.github.linux]\n"
+"runner = \"ubuntu-22.04\"\n"
+"manylinux = \"2_28\"\n"
+"targets = [\"x86_64\", \"aarch64\"]\n"
+"\n"
+"[tool.maturin.generate-ci.github.macos]\n"
+"targets = [\"aarch64\"]\n"
+"\n"
+"# Detailed per-target form (mutually exclusive with `targets` on the same "
+"platform):\n"
+"# [[tool.maturin.generate-ci.github.linux.target]]\n"
+"# arch = \"x86_64\"\n"
+"# manylinux = \"2_28\"\n"
+"#\n"
+"# [[tool.maturin.generate-ci.github.linux.target]]\n"
+"# arch = \"aarch64\"\n"
+"# runner = \"self-hosted-arm64\"\n"
+"# before-script-linux = \"yum install -y openssl-devel\"\n"
+"```"
+msgstr ""
+
+#: src/config.md:206
+msgid ""
+"Supported platform tables under `[tool.maturin.generate-ci.github]` are "
+"`linux`, `musllinux`, `windows`, `macos`, `emscripten`, and `android`."
+msgstr ""
+
+#: src/config.md:209
+msgid ""
+"See [GitHub Actions](./distribution.md#github-actions) for usage of `maturin "
+"generate-ci` and trusted publishing details."
+msgstr ""
+
+#: src/config.md:212
 msgid ""
 "The `[tool.maturin.include]` and `[tool.maturin.exclude]` configuration are "
 "inspired by [Poetry](https://python-poetry.org/docs/pyproject/#exclude-and-"
 "include)."
 msgstr ""
 
-#: src/config.md:90
+#: src/config.md:216
 msgid ""
 "Glob patterns are resolved relative to the directory containing `pyproject."
 "toml`. When using `python-source` (e.g. `python-source = \"src/python\"`), "
@@ -146,22 +340,22 @@ msgid ""
 "the package-relative path (`mypackage/data.txt`)."
 msgstr ""
 
-#: src/config.md:99
+#: src/config.md:225
 msgid "To specify files or globs directly:"
 msgstr ""
 
-#: src/config.md:101
+#: src/config.md:227
 msgid ""
 "```toml\n"
 "include = [\"path/**/*\", \"some/other/file\"]\n"
 "```"
 msgstr ""
 
-#: src/config.md:105
+#: src/config.md:231
 msgid "To specify a specific target format (`sdist` or `wheel`):"
 msgstr ""
 
-#: src/config.md:107
+#: src/config.md:233
 msgid ""
 "```toml\n"
 "include = [\n"
@@ -172,19 +366,19 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/config.md:115
+#: src/config.md:241
 msgid ""
 "The default behavior applies these configurations to both `sdist` and "
 "`wheel` targets."
 msgstr ""
 
-#: src/config.md:118
+#: src/config.md:244
 msgid ""
 "To include files generated by a Cargo build script (`build.rs`) from the "
 "crate's `OUT_DIR`:"
 msgstr ""
 
-#: src/config.md:121
+#: src/config.md:247
 msgid ""
 "```toml\n"
 "include = [\n"
@@ -194,20 +388,20 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/config.md:127
+#: src/config.md:253
 msgid ""
 "The `path` is a glob pattern relative to `OUT_DIR`, and `to` specifies the "
 "target directory inside the wheel. This only applies to wheel builds (not "
 "sdist), since `OUT_DIR` does not exist until `cargo build` runs."
 msgstr ""
 
-#: src/config.md:131
+#: src/config.md:257
 msgid ""
 "To include files from a different workspace member's `OUT_DIR`, specify the "
 "crate name:"
 msgstr ""
 
-#: src/config.md:134
+#: src/config.md:260
 msgid ""
 "```toml\n"
 "include = [\n"
@@ -217,11 +411,11 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/config.md:140
+#: src/config.md:266
 msgid "SBOM options"
 msgstr ""
 
-#: src/config.md:142
+#: src/config.md:268
 msgid ""
 "```toml\n"
 "[tool.maturin.sbom]\n"
@@ -237,22 +431,22 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/config.md:155
+#: src/config.md:281
 msgid "See the [SBOM](./sbom.md) page for more details."
 msgstr ""
 
-#: src/config.md:157
+#: src/config.md:283
 msgid "target specific maturin options"
 msgstr ""
 
-#: src/config.md:159
+#: src/config.md:285
 msgid ""
 "Currently only macOS deployment target SDK version can be configured for "
 "`x86_64-apple-darwin` and `aarch64-apple-darwin` targets, other targets have "
 "no options yet."
 msgstr ""
 
-#: src/config.md:163
+#: src/config.md:289
 msgid ""
 "```toml\n"
 "[tool.maturin.target.<triple>]\n"
