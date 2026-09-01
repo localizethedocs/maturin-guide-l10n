@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-08-01 23:49:19 +0800",
-      "hash" : "cf57dff9763e08426a599a1da7d90c2d394c6a37",
-      "title" : "fix(generate-stubs): write stubs into the module's package directory (#3282)"
+      "date" : "2026-08-24 11:50:39 +0000",
+      "hash" : "479658ad9bce22c6e4955b2e47182111c166e37c",
+      "title" : "Release v1.15.0 (#3294)"
     }
   },
   "type" : "branch",
