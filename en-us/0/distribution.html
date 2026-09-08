@@ -1,0 +1,487 @@
+<!DOCTYPE HTML>
+<html lang="en_US" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>Distribution - Maturin User Guide</title>
+
+
+        <!-- Custom HTML head -->
+        <script type="text/javascript" src="ltd-provenance.js"></script>
+        <script type="text/javascript" src="ltd-current.js"></script>
+        <script type="text/javascript" src="../../ltd-config.js"></script>
+        <script type="text/javascript" src="../../ltd-flyout.js"></script>
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="favicon.svg">
+        <link rel="shortcut icon" href="favicon.png">
+        <link rel="stylesheet" href="css/variables.css">
+        <link rel="stylesheet" href="css/general.css">
+        <link rel="stylesheet" href="css/chrome.css">
+        <link rel="stylesheet" href="css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" id="highlight-css" href="highlight.css">
+        <link rel="stylesheet" id="tomorrow-night-css" href="tomorrow-night.css">
+        <link rel="stylesheet" id="ayu-highlight-css" href="ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+        <link rel="stylesheet" href="tweak.css">
+
+
+        <!-- Provide site root and default themes to javascript -->
+        <script>
+            const path_to_root = "";
+            const default_light_theme = "light";
+            const default_dark_theme = "navy";
+            window.path_to_searchindex_js = "searchindex.js";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="toc.js"></script>
+    </head>
+    <body>
+    <div id="mdbook-help-container">
+        <div id="mdbook-help-popup">
+            <h2 class="mdbook-help-title">Keyboard shortcuts</h2>
+            <div>
+                <p>Press <kbd>←</kbd> or <kbd>→</kbd> to navigate between chapters</p>
+                <p>Press <kbd>S</kbd> or <kbd>/</kbd> to search in the book</p>
+                <p>Press <kbd>?</kbd> to show this help</p>
+                <p>Press <kbd>Esc</kbd> to hide this help</p>
+            </div>
+        </div>
+    </div>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                let theme = localStorage.getItem('mdbook-theme');
+                let sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            const default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? default_dark_theme : default_light_theme;
+            let theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            let sidebar = null;
+            const sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+                sidebar_toggle.checked = false;
+            }
+            if (sidebar === 'visible') {
+                sidebar_toggle.checked = true;
+            } else {
+                html.classList.remove('sidebar-visible');
+            }
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="default_theme">Auto</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search (`/`)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="/ s" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">Maturin User Guide</h1>
+
+                    <div class="right-buttons">
+                        <a href="print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+                        <a href="https://github.com/PyO3/maturin/tree/main/guide" title="Git repository" aria-label="Git repository">
+                            <i id="git-repository-button" class="fa fa-github"></i>
+                        </a>
+                        <a href="https://github.com/PyO3/maturin/edit/main/guide/src/distribution.md" title="Suggest an edit" aria-label="Suggest an edit" rel="edit">
+                            <i id="git-edit-button" class="fa fa-edit"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <div class="search-wrapper">
+                            <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                            <div class="spinner-wrapper">
+                                <i class="fa fa-spinner fa-spin"></i>
+                            </div>
+                        </div>
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="distribution"><a class="header" href="#distribution">Distribution</a></h1>
+<h2 id="source-distribution"><a class="header" href="#source-distribution">Source Distribution</a></h2>
+<p>Maturin supports building through <code>pyproject.toml</code>. To use it, create a <code>pyproject.toml</code> next to your <code>Cargo.toml</code> with the following content:</p>
+<pre><code class="language-toml">[build-system]
+requires = ["maturin&gt;=0.14,&lt;0.15"]
+build-backend = "maturin"
+</code></pre>
+<p>If a <code>pyproject.toml</code> with a <code>[build-system]</code> entry is present, maturin can build a source distribution of your package when <code>--sdist</code> is specified.
+The source distribution will contain the same files as <code>cargo package</code>. To only build a source distribution, use the <code>maturin sdist</code> command.</p>
+<p>You can then e.g. install your package with <code>pip install .</code>. With <code>pip install . -v</code> you can see the output of cargo and maturin.</p>
+<p>You can use the options <code>compatibility</code>, <code>skip-auditwheel</code>, <code>bindings</code>, <code>strip</code> and common Cargo build options such as <code>features</code> under <code>[tool.maturin]</code> the same way you would when running maturin directly.
+The <code>bindings</code> key is required for cffi and bin projects as those can't be automatically detected. Currently, all builds are in release mode (see <a href="https://discuss.python.org/t/pep-517-debug-vs-release-builds/1924">this thread</a> for details).</p>
+<p>For a non-manylinux build with cffi bindings you could use the following:</p>
+<pre><code class="language-toml">[build-system]
+requires = ["maturin&gt;=0.14,&lt;0.15"]
+build-backend = "maturin"
+
+[tool.maturin]
+bindings = "cffi"
+compatibility = "linux"
+</code></pre>
+<p><code>manylinux</code> option is also accepted as an alias of <code>compatibility</code> for backward compatibility with old version of maturin.</p>
+<p>To include arbitrary files in the sdist for use during compilation specify <code>include</code> as an array of <code>path</code> globs with <code>format</code> set to <code>sdist</code>:</p>
+<pre><code class="language-toml">[tool.maturin]
+include = [{ path = "path/**/*", format = "sdist" }]
+</code></pre>
+<h2 id="build-wheels"><a class="header" href="#build-wheels">Build Wheels</a></h2>
+<p>For portability reasons, native python modules on linux must only dynamically link a set of very few libraries which are installed basically everywhere, hence the name manylinux.
+The pypa offers special docker images and a tool called <a href="https://github.com/pypa/auditwheel/">auditwheel</a> to ensure compliance with the <a href="https://peps.python.org/pep-0599/#the-manylinux2014-policy">manylinux rules</a>).
+If you want to publish widely usable wheels for linux pypi, <strong>you need to use a manylinux docker image</strong> or <a href="#use-zig">build with zig</a>.</p>
+<p>The Rust compiler since version 1.64 <a href="https://blog.rust-lang.org/2022/08/01/Increasing-glibc-kernel-requirements.html">requires at least glibc 2.17</a>, so you need to use at least manylinux2014.
+For publishing, we recommend enforcing the same manylinux version as the image with the manylinux flag, e.g. use <code>--manylinux 2014</code> if you are building in <code>quay.io/pypa/manylinux2014_x86_64</code>.
+The <a href="https://github.com/PyO3/maturin-action">PyO3/maturin-action</a> github action already takes care of this if you set e.g. <code>manylinux: 2014</code>.</p>
+<p>maturin contains a reimplementation of auditwheel automatically checks the generated library and gives the wheel the proper platform tag.</p>
+<ul>
+<li>If your system's glibc is too new, it will assign the <code>linux</code> tag.</li>
+<li>If you link other shared libraries, maturin will try to bundle them within the wheel, note that this requires <a href="https://github.com/NixOS/patchelf">patchelf</a>,
+it can be installed along with maturin from PyPI: <code>pip install maturin[patchelf]</code>.</li>
+</ul>
+<p>You can also manually disable those checks and directly use native linux target with <code>--manylinux off</code>.</p>
+<p>For full manylinux compliance you need to compile in a CentOS docker container. The <a href="https://ghcr.io/pyo3/maturin">pyo3/maturin</a> image is based on the manylinux2010 image,
+and passes arguments to the <code>maturin</code> binary. You can use it like this:</p>
+<pre><code>docker run --rm -v $(pwd):/io ghcr.io/pyo3/maturin build --release  # or other maturin arguments
+</code></pre>
+<p>Note that this image is very basic and only contains python, maturin and stable Rust. If you need additional tools, you can run commands inside the manylinux container.
+See <a href="https://github.com/konstin/complex-manylinux-maturin-docker">konstin/complex-manylinux-maturin-docker</a> for a small educational example
+or <a href="https://github.com/nanoporetech/fast-ctc-decode/blob/b226ea0f2b2f4f474eff47349703d57d2ea4801b/.github/workflows/publish.yml">nanoporetech/fast-ctc-decode</a> for a real world setup.</p>
+<pre><code>Usage: maturin build [OPTIONS] [ARGS]...
+
+Arguments:
+  [ARGS]...
+          Rustc flags
+
+Options:
+  -r, --release
+          Build artifacts in release mode, with optimizations
+
+      --strip
+          Strip the library for minimum file size
+
+      --sdist
+          Build a source distribution
+
+      --compatibility [&lt;compatibility&gt;...]
+          Control the platform tag on linux.
+
+          Options are `manylinux` tags (for example `manylinux2014`/`manylinux_2_24`) or `musllinux`
+          tags (for example `musllinux_1_2`) and `linux` for the native linux tag.
+
+          Note that `manylinux1` and `manylinux2010` is unsupported by the rust compiler. Wheels
+          with the native `linux` tag will be rejected by pypi, unless they are separately validated
+          by `auditwheel`.
+
+          The default is the lowest compatible `manylinux` tag, or plain `linux` if nothing matched
+
+          This option is ignored on all non-linux platforms
+
+  -i, --interpreter [&lt;INTERPRETER&gt;...]
+          The python versions to build wheels for, given as the executables of interpreters such as
+          `python3.9` or `/usr/bin/python3.8`
+
+  -f, --find-interpreter
+          Find interpreters from the host machine
+
+  -b, --bindings &lt;BINDINGS&gt;
+          Which kind of bindings to use
+
+          [possible values: pyo3, pyo3-ffi, rust-cpython, cffi, uniffi, bin]
+
+  -o, --out &lt;OUT&gt;
+          The directory to store the built wheels in. Defaults to a new "wheels" directory in the
+          project's target directory
+
+      --skip-auditwheel
+          Don't check for manylinux compliance
+
+      --zig
+          For manylinux targets, use zig to ensure compliance for the chosen manylinux version
+
+          Default to manylinux2014/manylinux_2_17 if you do not specify an `--compatibility`
+
+          Make sure you installed zig with `pip install maturin[zig]`
+
+      --universal2
+          Control whether to build universal2 wheel for macOS or not. Only applies to macOS targets,
+          do nothing otherwise
+
+  -q, --quiet
+          Do not print cargo log messages
+
+  -j, --jobs &lt;N&gt;
+          Number of parallel jobs, defaults to # of CPUs
+
+      --profile &lt;PROFILE-NAME&gt;
+          Build artifacts with the specified Cargo profile
+
+  -F, --features &lt;FEATURES&gt;
+          Space or comma separated list of features to activate
+
+      --all-features
+          Activate all available features
+
+      --no-default-features
+          Do not activate the `default` feature
+
+      --target &lt;TRIPLE&gt;
+          Build for the target triple
+
+          [env: CARGO_BUILD_TARGET=]
+
+      --target-dir &lt;DIRECTORY&gt;
+          Directory for all generated artifacts
+
+  -m, --manifest-path &lt;PATH&gt;
+          Path to Cargo.toml
+
+      --ignore-rust-version
+          Ignore `rust-version` specification in packages
+
+  -v, --verbose...
+          Use verbose output (-vv very verbose/build.rs output)
+
+      --color &lt;WHEN&gt;
+          Coloring: auto, always, never
+
+      --frozen
+          Require Cargo.lock and cache are up to date
+
+      --locked
+          Require Cargo.lock is up to date
+
+      --offline
+          Run without accessing the network
+
+      --config &lt;KEY=VALUE&gt;
+          Override a configuration value (unstable)
+
+  -Z &lt;FLAG&gt;
+          Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details
+
+      --timings=&lt;FMTS&gt;
+          Timing output formats (unstable) (comma separated): html, json
+
+      --future-incompat-report
+          Outputs a future incompatibility report at the end of the build (unstable)
+
+  -h, --help
+          Print help information (use `-h` for a summary)
+</code></pre>
+<h3 id="cross-compiling"><a class="header" href="#cross-compiling">Cross Compiling</a></h3>
+<p>Maturin has decent cross compilation support for <code>pyo3</code> and <code>bin</code> bindings,
+other kind of bindings may work but aren't tested regularly.</p>
+<h4 id="cross-compile-to-linuxmacos"><a class="header" href="#cross-compile-to-linuxmacos">Cross-compile to Linux/macOS</a></h4>
+<h5 id="use-docker"><a class="header" href="#use-docker">Use Docker</a></h5>
+<p>For manylinux support the <a href="https://github.com/rust-cross/manylinux-cross">manylinux-cross</a> docker images can be used.
+And <a href="https://github.com/PyO3/maturin-action">maturin-action</a> makes it easy to do cross compilation on GitHub Actions.</p>
+<h5 id="use-zig"><a class="header" href="#use-zig">Use Zig</a></h5>
+<p>Since v0.12.7 maturin added support for linking with <a href="https://andrewkelley.me/post/zig-cc-powerful-drop-in-replacement-gcc-clang.html"><code>zig cc</code></a>,
+compile for  Linux works and is regularly tested on CI, other platforms may also work but aren't tested regularly.</p>
+<p>You can install zig following the <a href="https://ziglang.org/download">official documentation</a>, or install it from PyPI via <code>pip install ziglang</code>.
+Then pass <code>--zig</code> to maturin <code>build</code> or <code>publish</code> commands to use it, for example</p>
+<pre><code class="language-bash">maturin build --release --target aarch64-unknown-linux-gnu --zig
+</code></pre>
+<h4 id="cross-compile-to-windows"><a class="header" href="#cross-compile-to-windows">Cross-compile to Windows</a></h4>
+<p>Pyo3 0.16.5 added an experimental feature <code>generate-import-lib</code> enables the user to cross compile
+extension modules for Windows targets without setting the <code>PYO3_CROSS_LIB_DIR</code> environment variable
+or providing any Windows Python library files.</p>
+<pre><code class="language-toml">[dependencies]
+pyo3 = { version = "0.18.0", features = ["extension-module", "generate-import-lib"] }
+</code></pre>
+<p>It uses an external <a href="https://docs.rs/python3-dll-a/latest/python3_dll_a/"><code>python3-dll-a</code></a> crate to
+generate import libraries for the Python DLL for MinGW-w64 and MSVC compile targets.
+Note: MSVC targets require LLVM binutils or MSVC build tools to be available on the host system.
+More specifically, <code>python3-dll-a</code> requires <code>llvm-dlltool</code> or <code>lib.exe</code> executable to be present in <code>PATH</code> when targeting <code>*-pc-windows-msvc</code>.</p>
+<p>maturin integrates <a href="https://github.com/messense/cargo-xwin"><code>cargo-xwin</code></a> to enable MSVC targets cross compilation support,
+it will download and unpack the Microsoft CRT headers and import libraries, and Windows SDK headers and import libraries
+needed for compiling and linking automatically.</p>
+<p><strong>By using this to cross compiling to Windows MSVC targets you are consented to accept the license at <a href="https://go.microsoft.com/fwlink/?LinkId=2086102">https://go.microsoft.com/fwlink/?LinkId=2086102</a></strong>.
+(Building on Windows natively does not apply.)</p>
+<h2 id="github-actions"><a class="header" href="#github-actions">GitHub Actions</a></h2>
+<p>If your project uses GitHub Actions, you can use the <code>maturin generate-ci</code> command to generate a GitHub Actions workflow file.</p>
+<pre><code class="language-bash">mkdir -p .github/workflows
+maturin generate-ci github &gt; .github/workflows/CI.yml
+</code></pre>
+<p>There are some options to customize the generated workflow file:</p>
+<pre><code>Generate CI configuration
+
+Usage: maturin generate-ci [OPTIONS] &lt;CI&gt;
+
+Arguments:
+  &lt;CI&gt;
+          CI provider
+
+          Possible values:
+          - github: GitHub
+
+Options:
+  -m, --manifest-path &lt;PATH&gt;
+          Path to Cargo.toml
+
+  -o, --output &lt;PATH&gt;
+          Output path
+
+          [default: -]
+
+      --platform &lt;platform&gt;...
+          Platform support
+
+          [default: linux windows macos]
+
+          Possible values:
+          - all:        All
+          - linux:      Linux
+          - windows:    Windows
+          - macos:      macOS
+          - emscripten: Emscripten
+
+      --pytest
+          Enable pytest
+
+      --zig
+          Use zig to do cross compilation
+
+  -h, --help
+          Print help information (use `-h` for a summary)
+</code></pre>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="develop.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="sphinx.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="develop.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="sphinx.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="elasticlunr.min.js"></script>
+        <script src="mark.min.js"></script>
+        <script src="searcher.js"></script>
+
+        <script src="clipboard.min.js"></script>
+        <script src="highlight.js"></script>
+        <script src="book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+
+    </div>
+    </body>
+</html>
