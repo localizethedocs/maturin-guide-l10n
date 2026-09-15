@@ -1,0 +1,114 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-03-17T10:07:51Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/platform_support.md:1
+msgid "Platform Support"
+msgstr "平臺支援"
+
+#: src/platform_support.md:3
+msgid ""
+"Being built on cargo and rustc, maturin is limited by [rust's platform "
+"support](https://doc.rust-lang.org/nightly/rustc/platform-support.html)."
+msgstr ""
+
+#: src/platform_support.md:5
+msgid "Automated tests"
+msgstr ""
+
+#: src/platform_support.md:7
+msgid ""
+"On GitHub actions, windows, macOS and linux are tested, all on 64-bit x86. "
+"FreeBSD is also tested though Cirrus CI, but might get removed at some "
+"point. Since CI is very time intensive to maintain, I'd like to stick to "
+"GitHub action and these three platforms."
+msgstr ""
+
+#: src/platform_support.md:12
+msgid "Releases"
+msgstr ""
+
+#: src/platform_support.md:14
+msgid "The following targets are built into wheels and downloadable binaries:"
+msgstr ""
+
+#: src/platform_support.md:16
+msgid "Windows: 32-bit and 64-bit x86 as well as arm64"
+msgstr ""
+
+#: src/platform_support.md:17
+msgid ""
+"Linux: x86, x86_64, armv7, aarch64 and ppc64le (musl), as well as s390x (gnu)"
+msgstr ""
+
+#: src/platform_support.md:18
+msgid "macOS: x86_64 and aarch64"
+msgstr ""
+
+#: src/platform_support.md:20
+msgid "Other Operating Systems"
+msgstr ""
+
+#: src/platform_support.md:22
+msgid ""
+"It should be possible to build maturin and for maturin to build wheels on "
+"other platforms supported by rust. To add a new os, add it in target.rs and, "
+"if it doesn't behave like the other unixes, in `PythonInterpreter::get_tag`. "
+"Please also submit the output of `python -m sysconfig` as a file in the "
+"`sysconfig` folder. It's ok to edit setup.py to deactivate default features "
+"so `pip install` works, but new platforms should not require complex "
+"workaround in `compile.rs`."
+msgstr ""
+
+#: src/platform_support.md:28
+msgid "Architectures"
+msgstr ""
+
+#: src/platform_support.md:30
+msgid ""
+"All architectures included in manylinux (aarch64, armv7l, ppc64le, ppc64, "
+"i686, x86_64, s390x) are supported. I'm not sure whether it makes sense to "
+"allow architectures that aren't even supported by [manylinux](https://github."
+"com/pypa/manylinux)."
+msgstr ""
+
+#: src/platform_support.md:34
+msgid "Python Support"
+msgstr ""
+
+#: src/platform_support.md:36
+msgid ""
+"CPython 3.8 to 3.14 are supported and tested on CI, though the entire 3.x "
+"series should work. This will be changed as new python versions are released "
+"and others have their end of life."
+msgstr ""
+
+#: src/platform_support.md:39
+msgid "PyPy 3.8 and later also works, as does GraalPy 23.0 and later."
+msgstr ""
+
+#: src/platform_support.md:41
+msgid "Manylinux/Musllinux"
+msgstr ""
+
+#: src/platform_support.md:43
+msgid ""
+"`manylinux2014` and  its newer versions as well as `musllinux_1_1` and its "
+"newer versions are supported."
+msgstr ""
+
+#: src/platform_support.md:46
+msgid ""
+"Since Rust and the manylinux project drop support for old manylinux/"
+"musllinux versions sometimes, after maturin 1.0 manylinux version bumps will "
+"be minor versions rather than major versions."
+msgstr ""
