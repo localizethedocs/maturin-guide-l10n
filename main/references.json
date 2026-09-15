@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-08-01 23:49:19 +0800",
-      "hash" : "cf57dff9763e08426a599a1da7d90c2d394c6a37",
-      "title" : "fix(generate-stubs): write stubs into the module's package directory (#3282)"
+      "date" : "2026-09-11 23:07:51 +0800",
+      "hash" : "316d5130972efba3082e0977781a36bc7aedcae8",
+      "title" : "Fix MinGW stable ABI library names in generated PyO3 config (#3298)"
     }
   },
   "type" : "branch",
