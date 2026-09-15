@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-03-17T10:07:51Z\n"
+"POT-Creation-Date: 2026-09-15T13:36:11Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -11,7 +11,7 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=1; plural=0;\n"
 
-#: src/import_hook.md:1 src/import_hook.md:213
+#: src/import_hook.md:1 src/import_hook.md:219
 msgid "Import Hook"
 msgstr ""
 
@@ -266,31 +266,31 @@ msgid ""
 "the top of the script:"
 msgstr ""
 
-#: src/import_hook.md:105
+#: src/import_hook.md:106
 msgid "# Must come first. Not active for imports above.\n"
 msgstr ""
 
-#: src/import_hook.md:107
+#: src/import_hook.md:108
 msgid "# An editable-installed Maturin project.\n"
 msgstr ""
 
-#: src/import_hook.md:109
+#: src/import_hook.md:110
 msgid "# `foo/my_rust_script.rs` defines a pyo3 module.\n"
 msgstr ""
 
-#: src/import_hook.md:112
+#: src/import_hook.md:113
 msgid ""
 "The Maturin project importer and the Rust file importer can be used "
 "separately:"
 msgstr ""
 
-#: src/import_hook.md:122
+#: src/import_hook.md:125
 msgid ""
 "The import hook can be configured to control its behaviour (see [Install "
 "Arguments](#install-arguments))."
 msgstr ""
 
-#: src/import_hook.md:124
+#: src/import_hook.md:127
 msgid ""
 "The import hook is intended for use in development environments and not for "
 "production environments, so any calls to `install()` should ideally be "
@@ -299,7 +299,7 @@ msgid ""
 "is convenient."
 msgstr ""
 
-#: src/import_hook.md:129
+#: src/import_hook.md:132
 msgid ""
 "The hook remains active across multiple Python modules so a single "
 "`install()` at the top of the main module is sometimes sufficient. This can "
@@ -308,55 +308,55 @@ msgid ""
 "aware that each call replaces the previous settings."
 msgstr ""
 
-#: src/import_hook.md:133
+#: src/import_hook.md:136
 msgid ""
 "Tip: If you want to use non-defaults across multiple modules you can create "
 "a function like:"
 msgstr ""
 
-#: src/import_hook.md:143
+#: src/import_hook.md:147
 msgid "# your custom configuration here\n"
 msgstr ""
 
-#: src/import_hook.md:147
+#: src/import_hook.md:151
 msgid ""
 "Then call `install_maturin_hook()` at the top of each module. This will "
 "ensure the custom options are used everywhere without any code duplication."
 msgstr ""
 
-#: src/import_hook.md:150
+#: src/import_hook.md:154
 msgid "Import Rust File"
 msgstr ""
 
-#: src/import_hook.md:152
+#: src/import_hook.md:156
 msgid ""
 "When a `.rs` file is imported, a Maturin project with [pyo3](https://pyo3."
 "rs/) bindings will be created for it in the Maturin build cache and the "
 "resulting library will be built and loaded."
 msgstr ""
 
-#: src/import_hook.md:155
+#: src/import_hook.md:159
 msgid "For example, `my_extension.rs`:"
 msgstr ""
 
-#: src/import_hook.md:167
+#: src/import_hook.md:171
 msgid ""
 "The `#[pymodule]` must have the same name as the filename. The version of "
 "`pyo3` is determined by `maturin new --bindings pyo3`."
 msgstr ""
 
-#: src/import_hook.md:172
+#: src/import_hook.md:176
 msgid "Environment Variables"
 msgstr ""
 
-#: src/import_hook.md:174
+#: src/import_hook.md:178
 msgid ""
 "The import hook can be disabled by setting `MATURIN_IMPORT_HOOK_ENABLED=0`. "
 "This can be used to disable the import hook in production while leaving "
 "calls to `install()` in place."
 msgstr ""
 
-#: src/import_hook.md:177
+#: src/import_hook.md:181
 msgid ""
 "Build files will be stored in an appropriate place for the current system "
 "but can be overridden by setting `MATURIN_BUILD_DIR`. These files can be "
@@ -364,38 +364,38 @@ msgid ""
 "precedence for storing build files is:"
 msgstr ""
 
-#: src/import_hook.md:181
+#: src/import_hook.md:185
 msgid "`MATURIN_BUILD_DIR`"
 msgstr ""
 
-#: src/import_hook.md:182
+#: src/import_hook.md:186
 msgid ""
 "(Each environment will store its cache in a subdirectory of the given path)."
 msgstr ""
 
-#: src/import_hook.md:183
+#: src/import_hook.md:187
 msgid "`<virtualenv_dir>/maturin_build_cache`"
 msgstr ""
 
-#: src/import_hook.md:184
+#: src/import_hook.md:188
 msgid "`<system_cache_dir>/maturin_build_cache`"
 msgstr ""
 
-#: src/import_hook.md:185
+#: src/import_hook.md:189
 msgid "e.g. `~/.cache/maturin_build_cache` on POSIX."
 msgstr ""
 
-#: src/import_hook.md:187
+#: src/import_hook.md:191
 msgid ""
 "See the location being used with the CLI: `python -m maturin_import_hook "
 "cache info`"
 msgstr ""
 
-#: src/import_hook.md:189
+#: src/import_hook.md:193
 msgid "Logging"
 msgstr ""
 
-#: src/import_hook.md:191
+#: src/import_hook.md:195
 msgid ""
 "By default, the `maturin_import_hook` logger does not propagate to the root "
 "logger. This is so that `INFO` level messages are shown without having to "
@@ -405,13 +405,13 @@ msgid ""
 "shown even if the root logger has `DEBUG` level visible."
 msgstr ""
 
-#: src/import_hook.md:196
+#: src/import_hook.md:200
 msgid ""
 "If you prefer, `maturin_import_hook.reset_logger()` can be called to undo "
 "the default configuration and propagate the messages as normal."
 msgstr ""
 
-#: src/import_hook.md:199
+#: src/import_hook.md:203
 msgid ""
 "When debugging issues with the import hook, you should first call "
 "`reset_logger()` then configure the root logger to show `DEBUG` messages. "
@@ -419,15 +419,15 @@ msgid ""
 "get more information from Maturin."
 msgstr ""
 
-#: src/import_hook.md:205
-msgid "'%(asctime)s %(name)s [%(levelname)s] %(message)s'"
+#: src/import_hook.md:210
+msgid "\"%(asctime)s %(name)s [%(levelname)s] %(message)s\""
 msgstr ""
 
-#: src/import_hook.md:211
+#: src/import_hook.md:217
 msgid "Background"
 msgstr ""
 
-#: src/import_hook.md:215
+#: src/import_hook.md:221
 msgid ""
 "An [import hook](https://docs.python.org/3/reference/import.html#import-"
 "hooks) is a class added to [sys.meta_path](https://docs.python.org/3/library/"
@@ -440,55 +440,55 @@ msgid ""
 "the project importer)."
 msgstr ""
 
-#: src/import_hook.md:222
+#: src/import_hook.md:228
 msgid ""
 "[MaturinProjectImporter](https://github.com/PyO3/maturin-import-hook/blob/"
 "main/src/maturin_import_hook/project_importer.py):"
 msgstr ""
 
-#: src/import_hook.md:224
+#: src/import_hook.md:230
 msgid ""
 "Detects when an import corresponds to an editable installed Maturin project."
 msgstr ""
 
-#: src/import_hook.md:225
+#: src/import_hook.md:231
 msgid "Determines if the current build of the project is up to date."
 msgstr ""
 
-#: src/import_hook.md:226 src/import_hook.md:233
+#: src/import_hook.md:232 src/import_hook.md:239
 msgid "Rebuilds the project if necessary."
 msgstr ""
 
-#: src/import_hook.md:228
+#: src/import_hook.md:234
 msgid ""
 "[MaturinRustFileImporter](https://github.com/PyO3/maturin-import-hook/blob/"
 "main/src/maturin_import_hook/rust_file_importer.py):"
 msgstr ""
 
-#: src/import_hook.md:230
+#: src/import_hook.md:236
 msgid ""
 "Searches `sys.path` for an `.rs` file matching the import (e.g. for `import "
 "foo.bar`, the hook will look for `foo/bar.rs` at each search path)."
 msgstr ""
 
-#: src/import_hook.md:232
+#: src/import_hook.md:238
 msgid ""
 "Creates a temporary Maturin project for the `.rs` file or reuses the project "
 "if it already exists."
 msgstr ""
 
-#: src/import_hook.md:235
+#: src/import_hook.md:241
 msgid ""
 "The above steps are a simplification as supporting `importlib.reload()` "
 "requires more complex logic. See [reloading.md](https://github.com/PyO3/"
 "maturin-import-hook/blob/main/docs/reloading.md) for more details."
 msgstr ""
 
-#: src/import_hook.md:238
+#: src/import_hook.md:244
 msgid "Sitecustomize"
 msgstr ""
 
-#: src/import_hook.md:240
+#: src/import_hook.md:246
 msgid ""
 "If a [sitecustomize.py](https://docs.python.org/3/library/site.html) file "
 "exists in the `site-packages` directory of a Python installation it is "
@@ -497,21 +497,21 @@ msgid ""
 "activate the import hook."
 msgstr ""
 
-#: src/import_hook.md:245
+#: src/import_hook.md:251
 msgid "Advanced Usage"
 msgstr ""
 
-#: src/import_hook.md:247
+#: src/import_hook.md:253
 msgid "Install Arguments"
 msgstr ""
 
-#: src/import_hook.md:249
+#: src/import_hook.md:255
 msgid ""
 "The arguments to `install()` are ([source](https://github.com/PyO3/maturin-"
 "import-hook/blob/main/src/maturin_import_hook/__init__.py)):"
 msgstr ""
 
-#: src/import_hook.md:252
+#: src/import_hook.md:258
 msgid ""
 "\"\"\"\n"
 "enable_project_importer: enable the hook for automatically rebuilding "
@@ -554,39 +554,39 @@ msgid ""
 "\"\"\""
 msgstr ""
 
-#: src/import_hook.md:280
+#: src/import_hook.md:286
 msgid "Subclassing"
 msgstr ""
 
-#: src/import_hook.md:282
+#: src/import_hook.md:288
 msgid ""
 "The import hook classes can be subclassed to further customize to specific "
 "use cases. For example settings can be configured per-project or loaded from "
 "configuration files."
 msgstr ""
 
-#: src/import_hook.md:296
+#: src/import_hook.md:303
 msgid "# ...\n"
 msgstr ""
 
-#: src/import_hook.md:302
+#: src/import_hook.md:310
 msgid "Custom File Searching"
 msgstr ""
 
-#: src/import_hook.md:304
+#: src/import_hook.md:312
 msgid ""
 "The `file_searcher` argument to `install()` can be used to customize which "
 "files should be included/excluded when deciding whether a package needs to "
 "be rebuilt:"
 msgstr ""
 
-#: src/import_hook.md:325
+#: src/import_hook.md:335
 msgid ""
 "See `maturin_import_hook.project.DefaultProjectFileSearcher` for the default "
 "list of include/exclude criteria."
 msgstr ""
 
-#: src/import_hook.md:327
+#: src/import_hook.md:337
 msgid ""
 "The class variables of `DefaultProjectFileSearcher` can be edited **before** "
 "calling `install()` to make simple customizations."
