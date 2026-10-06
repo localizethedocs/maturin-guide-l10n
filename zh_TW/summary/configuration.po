@@ -1,0 +1,167 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: Maturin User Guide\n"
+"POT-Creation-Date: 2026-03-16T14:34:29Z\n"
+"PO-Revision-Date: \n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: zh_TW\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+
+#: src/config.md:1
+msgid "Configuration"
+msgstr "組態"
+
+#: src/config.md:3
+msgid "Configuration format"
+msgstr "組態格式"
+
+#: src/config.md:5
+msgid ""
+"You can configure maturin in `tool.maturin` section of [`pyproject.toml`]"
+"(https://peps.python.org/pep-0518/#tool-table)."
+msgstr ""
+
+#: src/config.md:7
+msgid "Configuration keys"
+msgstr ""
+
+#: src/config.md:9
+msgid "Cargo options"
+msgstr "Cargo 選項"
+
+#: src/config.md:11
+msgid ""
+"```toml\n"
+"[tool.maturin]\n"
+"# Build artifacts with the specified Cargo profile\n"
+"profile = \"release\"\n"
+"# List of features to activate\n"
+"features = [\"foo\", \"bar\"]\n"
+"# Activate all available features\n"
+"all-features = false\n"
+"# Do not activate the `default` feature\n"
+"no-default-features = false\n"
+"# Cargo manifest path\n"
+"manifest-path = \"Cargo.toml\"\n"
+"# Require Cargo.lock and cache are up to date\n"
+"frozen = false\n"
+"# Require Cargo.lock is up to date\n"
+"locked = false\n"
+"# Override a configuration value (unstable)\n"
+"config = []\n"
+"# Unstable (nightly-only) flags to Cargo, see 'cargo -Z help' for details\n"
+"unstable-flags = []\n"
+"# Extra arguments that will be passed to rustc as `cargo rustc [...] -- "
+"[...] [arg1] [arg2]`\n"
+"rustc-args = []\n"
+"```"
+msgstr ""
+
+#: src/config.md:35
+msgid ""
+"These are `cargo` build options, refer Cargo documentation [here](https://"
+"doc.rust-lang.org/cargo/commands/cargo-rustc.html)."
+msgstr ""
+
+#: src/config.md:37
+msgid "maturin options"
+msgstr "maturin 選項"
+
+#: src/config.md:39
+msgid ""
+"```toml\n"
+"[tool.maturin]\n"
+"# Include additional files\n"
+"include = []\n"
+"# Exclude files\n"
+"exclude = []\n"
+"# Bindings type\n"
+"bindings = \"pyo3\"\n"
+"# Control the platform tag on linux\n"
+"compatibility = \"manylinux2014\"\n"
+"# Don't check for manylinux compliance\n"
+"skip-auditwheel = false\n"
+"# Python source directory\n"
+"python-source = \"src\"\n"
+"# Python packages to include\n"
+"python-packages = [\"foo\", \"bar\"]\n"
+"# Strip the library for minimum file size\n"
+"strip = true\n"
+"# Source distribution generator,\n"
+"# supports cargo (default) and git.\n"
+"sdist-generator = \"cargo\"\n"
+"```"
+msgstr ""
+
+#: src/config.md:62
+msgid ""
+"The `[tool.maturin.include]` and `[tool.maturin.exclude]` configuration are "
+"inspired by [Poetry](https://python-poetry.org/docs/pyproject/#include-and-"
+"exclude)."
+msgstr ""
+
+#: src/config.md:66
+msgid "To specify files or globs directly:"
+msgstr ""
+
+#: src/config.md:68
+msgid ""
+"```toml\n"
+"include = [\"path/**/*\", \"some/other/file\"]\n"
+"```"
+msgstr ""
+"```toml\n"
+"include = [\"path/**/*\", \"some/other/file\"]\n"
+"```"
+
+#: src/config.md:72
+msgid "To specify a specific target format (`sdist` or `wheel`):"
+msgstr ""
+
+#: src/config.md:74
+msgid ""
+"```toml\n"
+"include = [\n"
+"  { path = \"path/**/*\", format = \"sdist\" },\n"
+"  { path = \"all\", format = [\"sdist\", \"wheel\"] },\n"
+"  { path = \"for/wheel/**/*\", format = \"wheel\" }\n"
+"]\n"
+"```"
+msgstr ""
+"```toml\n"
+"include = [\n"
+"  { path = \"path/**/*\", format = \"sdist\" },\n"
+"  { path = \"all\", format = [\"sdist\", \"wheel\"] },\n"
+"  { path = \"for/wheel/**/*\", format = \"wheel\" }\n"
+"]\n"
+"```"
+
+#: src/config.md:82
+msgid ""
+"The default behavior is apply these configurations to both `sdist` and "
+"`wheel` targets."
+msgstr ""
+
+#: src/config.md:85
+msgid "target specific maturin options"
+msgstr ""
+
+#: src/config.md:87
+msgid ""
+"Currently only macOS deployment target SDK version can be configured for "
+"`x86_64-apple-darwin` and `aarch64-apple-darwin` targets, other targets have "
+"no options yet."
+msgstr ""
+
+#: src/config.md:91
+msgid ""
+"```toml\n"
+"[tool.maturin.target.<triple>]\n"
+"# macOS deployment target SDK version\n"
+"macos-deployment-target = \"11.0\"\n"
+"```"
+msgstr ""
