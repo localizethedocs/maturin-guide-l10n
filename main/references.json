@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-08-01 23:49:19 +0800",
-      "hash" : "cf57dff9763e08426a599a1da7d90c2d394c6a37",
-      "title" : "fix(generate-stubs): write stubs into the module's package directory (#3282)"
+      "date" : "2026-09-25 11:16:19 +0000",
+      "hash" : "4c4d695109ef2799d6331681f9cafbccc4722bac",
+      "title" : "Sort compressed tag sets (#3315)"
     }
   },
   "type" : "branch",
