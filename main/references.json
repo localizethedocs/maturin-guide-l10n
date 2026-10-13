@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-08-01 23:49:19 +0800",
-      "hash" : "cf57dff9763e08426a599a1da7d90c2d394c6a37",
-      "title" : "fix(generate-stubs): write stubs into the module's package directory (#3282)"
+      "date" : "2026-10-08 19:27:47 +0800",
+      "hash" : "6fe12cbc0cf6ebcc1f09bf6d8cfbf36bda9d997f",
+      "title" : "fix: avoid global uv fallback in pixi environments (#3306)"
     }
   },
   "type" : "branch",
