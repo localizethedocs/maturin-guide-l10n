@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-08-01 23:49:19 +0800",
-      "hash" : "cf57dff9763e08426a599a1da7d90c2d394c6a37",
-      "title" : "fix(generate-stubs): write stubs into the module's package directory (#3282)"
+      "date" : "2026-10-20 08:38:11 +0800",
+      "hash" : "f2b52a471c2092cff4b8db9a6c755b6e4fd6511c",
+      "title" : "[pre-commit.ci] pre-commit autoupdate (#3335)"
     }
   },
   "type" : "branch",
