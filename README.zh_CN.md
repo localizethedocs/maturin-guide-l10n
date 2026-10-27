@@ -1,5 +1,5 @@
 <div align="center">
-<h1 id="localization-of-the-maturin-user-guide">Localization of The Maturin User Guide</h1>
+<h1 id="localization-of-the-maturin-user-guide">Maturin 用户指南的本地化</h1>
 </div>
 
 <details><summary><strong>切换语言</strong></summary>
