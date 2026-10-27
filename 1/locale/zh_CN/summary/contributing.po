@@ -178,8 +178,8 @@ msgstr ""
 
 #: src/contributing.md:81
 msgid ""
-"When command line interface changes, run `python3 test-crates/update_readme."
-"py` to update related documentation."
+"When command line interface changes, run `python3 test-crates/"
+"update_readme.py` to update related documentation."
 msgstr ""
 
 #: src/contributing.md:83
@@ -188,9 +188,10 @@ msgstr ""
 
 #: src/contributing.md:85
 msgid ""
-"To build the guide for local viewing, install [mdBook](https://rust-lang."
-"github.io/mdBook/guide/installation.html) and run `mdbook watch guide` from "
-"the repository root. The output can then be found at `guide/book/index.html`."
+"To build the guide for local viewing, install [mdBook](https://rust-"
+"lang.github.io/mdBook/guide/installation.html) and run `mdbook watch guide` "
+"from the repository root. The output can then be found at `guide/book/"
+"index.html`."
 msgstr ""
 
 #: src/contributing.md:88

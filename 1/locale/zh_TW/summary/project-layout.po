@@ -54,9 +54,9 @@ msgstr ""
 
 #: src/project_layout.md:43
 msgid ""
-"**Note**: there is currently no way to tell maturin to include extra data (e."
-"g. `package_data` in setuptools) for a pure Rust project. Instead, consider "
-"using the layout described below for the mixed Rust/Python project."
+"**Note**: there is currently no way to tell maturin to include extra data "
+"(e.g. `package_data` in setuptools) for a pure Rust project. Instead, "
+"consider using the layout described below for the mixed Rust/Python project."
 msgstr ""
 
 #: src/project_layout.md:47
@@ -228,8 +228,8 @@ msgstr "資料"
 #: src/project_layout.md:208
 msgid ""
 "You can add wheel data by creating a `<module_name>.data` folder or setting "
-"its location as `data` in pyproject.toml under `[tool.maturin]` or in Cargo."
-"toml under `[project.metadata.maturin]`."
+"its location as `data` in pyproject.toml under `[tool.maturin]` or in "
+"Cargo.toml under `[project.metadata.maturin]`."
 msgstr ""
 
 #: src/project_layout.md:210

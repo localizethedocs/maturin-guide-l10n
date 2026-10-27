@@ -21,8 +21,8 @@ msgstr ""
 
 #: src/installation.md:5
 msgid ""
-"[![Packaging status](https://repology.org/badge/vertical-allrepos/maturin."
-"svg?columns=4)](https://repology.org/project/maturin/versions)"
+"[![Packaging status](https://repology.org/badge/vertical-allrepos/"
+"maturin.svg?columns=4)](https://repology.org/project/maturin/versions)"
 msgstr ""
 
 #: src/installation.md:7
@@ -75,8 +75,8 @@ msgstr ""
 #: src/installation.md:34
 msgid ""
 "**Note**: Installing maturin with Homebrew will also install Rust as a "
-"dependency, even if you already have Rust installed via [rustup](https://www."
-"rust-lang.org/tools/install). This results in two separate Rust "
+"dependency, even if you already have Rust installed via [rustup](https://"
+"www.rust-lang.org/tools/install). This results in two separate Rust "
 "installations, which can cause conflicts. If you've already installed Rust "
 "with `rustup`, consider installing maturin with a method other than Homebrew "
 "(such as from source with cargo)."
@@ -104,10 +104,10 @@ msgstr ""
 
 #: src/installation.md:53
 msgid ""
-"On Alpine Linux, [maturin is in community repository](https://pkgs."
-"alpinelinux.org/packages?name=maturin&branch=edge&repo=community) and can be "
-"installed with `apk` after [enabling the community repository](https://wiki."
-"alpinelinux.org/wiki/Enable_Community_Repository):"
+"On Alpine Linux, [maturin is in community repository](https://"
+"pkgs.alpinelinux.org/packages?name=maturin&branch=edge&repo=community) and "
+"can be installed with `apk` after [enabling the community repository]"
+"(https://wiki.alpinelinux.org/wiki/Enable_Community_Repository):"
 msgstr ""
 
 #: src/installation.md:60

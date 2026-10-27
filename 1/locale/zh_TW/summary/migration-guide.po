@@ -53,9 +53,9 @@ msgstr ""
 
 #: src/migration.md:19
 msgid ""
-"Package metadata is now specified in `[tool.maturin]` section of `pyproject."
-"toml` instead of `Cargo.toml`. Note that the replacement for `package."
-"metadata.maturin.name` is `tool.maturin.module-name`."
+"Package metadata is now specified in `[tool.maturin]` section of "
+"`pyproject.toml` instead of `Cargo.toml`. Note that the replacement for "
+"`package.metadata.maturin.name` is `tool.maturin.module-name`."
 msgstr ""
 
 #: src/migration.md:22

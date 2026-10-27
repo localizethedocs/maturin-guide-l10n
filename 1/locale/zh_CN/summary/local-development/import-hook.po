@@ -330,8 +330,8 @@ msgstr ""
 
 #: src/import_hook.md:152
 msgid ""
-"When a `.rs` file is imported, a Maturin project with [pyo3](https://pyo3."
-"rs/) bindings will be created for it in the Maturin build cache and the "
+"When a `.rs` file is imported, a Maturin project with [pyo3](https://"
+"pyo3.rs/) bindings will be created for it in the Maturin build cache and the "
 "resulting library will be built and loaded."
 msgstr ""
 
