@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-04-14T09:23:28Z\n"
+"POT-Creation-Date: 2026-10-27T13:53:10Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -56,9 +56,9 @@ msgid ""
 "(https://img.shields.io/crates/v/maturin.svg?logo=rust&style=flat-square)]"
 "(https://crates.io/crates/maturin) [![PyPI](https://img.shields.io/pypi/v/"
 "maturin.svg?logo=python&style=flat-square)](https://pypi.org/project/"
-"maturin) [![discord server](https://img.shields.io/"
-"discord/1209263839632424990?logo=discord&style=flat-square)](https://discord."
-"gg/33kcChzH7f)"
+"maturin) [![discord server](https://img.shields.io/discord/"
+"1209263839632424990?logo=discord&style=flat-square)](https://discord.gg/"
+"33kcChzH7f)"
 msgstr ""
 
 #: src/index.md:79
@@ -66,8 +66,8 @@ msgid ""
 "Build and publish crates with [pyo3, cffi and uniffi bindings](https://"
 "maturin.rs/bindings) as well as rust binaries as python packages with "
 "minimal configuration. It supports building wheels for python 3.8+ on "
-"Windows, Linux, macOS and FreeBSD, can upload them to [pypi](https://pypi."
-"org/) and has basic PyPy and GraalPy support."
+"Windows, Linux, macOS and FreeBSD, can upload them to [pypi](https://"
+"pypi.org/) and has basic PyPy and GraalPy support."
 msgstr ""
 
 #: src/index.md:82
@@ -80,9 +80,9 @@ msgstr ""
 
 #: src/index.md:86
 msgid ""
-"You can either download binaries from the [latest release](https://github."
-"com/PyO3/maturin/releases/latest) or install it with [pipx](https://pypa."
-"github.io/pipx/) or [uv](https://github.com/astral-sh/uv):"
+"You can either download binaries from the [latest release](https://"
+"github.com/PyO3/maturin/releases/latest) or install it with [pipx](https://"
+"pypa.github.io/pipx/) or [uv](https://github.com/astral-sh/uv):"
 msgstr ""
 
 #: src/index.md:95 src/index.md:169
@@ -182,8 +182,9 @@ msgstr ""
 #: src/index.md:130
 msgid ""
 "To create a mixed rust/python project, create a folder with your module name "
-"(i.e. `lib.name` in Cargo.toml) next to your Cargo.toml and add your python "
-"sources there:"
+"(i.e. [`lib.name` in Cargo.toml](https://doc.rust-lang.org/cargo/reference/"
+"cargo-targets.html#the-name-field)) next to your Cargo.toml and add your "
+"python sources there:"
 msgstr ""
 
 #: src/index.md:144
@@ -225,9 +226,9 @@ msgstr ""
 
 #: src/index.md:175
 msgid ""
-"With cffi you can do `from .my_project import lib` and then use `lib."
-"my_native_function`, with pyo3 you can directly `from .my_project import "
-"my_native_function`."
+"With cffi you can do `from .my_project import lib` and then use "
+"`lib.my_native_function`, with pyo3 you can directly `from .my_project "
+"import my_native_function`."
 msgstr ""
 
 #: src/index.md:177
@@ -340,8 +341,8 @@ msgstr ""
 #: src/index.md:246
 msgid ""
 "You can use the options `compatibility`, `skip-auditwheel`, `bindings`, "
-"`strip` and common Cargo build options such as `features` under `[tool."
-"maturin]` the same way you would when running maturin directly. The "
+"`strip` and common Cargo build options such as `features` under "
+"`[tool.maturin]` the same way you would when running maturin directly. The "
 "`bindings` key is required for cffi and bin projects as those can't be "
 "automatically detected. Currently, all builds are in release mode (see [this "
 "thread](https://discuss.python.org/t/pep-517-debug-vs-release-builds/1924) "
@@ -413,8 +414,8 @@ msgid ""
 "The Rust compiler since version 1.64 [requires at least glibc 2.17](https://"
 "blog.rust-lang.org/2022/08/01/Increasing-glibc-kernel-requirements.html), so "
 "you need to use at least manylinux2014. For publishing, we recommend "
-"enforcing the same manylinux version as the image with the manylinux flag, e."
-"g. use `--manylinux 2014` if you are building in `quay.io/pypa/"
+"enforcing the same manylinux version as the image with the manylinux flag, "
+"e.g. use `--manylinux 2014` if you are building in `quay.io/pypa/"
 "manylinux2014_x86_64`. The [PyO3/maturin-action](https://github.com/PyO3/"
 "maturin-action) github action already takes care of this if you set e.g. "
 "`manylinux: 2014`."
@@ -515,53 +516,66 @@ msgstr ""
 
 #: src/index.md:309
 msgid ""
+"[pdfcrate](https://github.com/ratazzi/pdfcrate) - An ergonomic, high-level "
+"PDF generation library for Rust and Python — a Prawn-style layout API for "
+"composing documents, not low-level PDF plumbing"
+msgstr ""
+
+#: src/index.md:310
+msgid ""
 "[polars](https://github.com/pola-rs/polars/tree/master/py-polars) - Fast "
 "multi-threaded DataFrame library in Rust | Python | Node.js"
 msgstr ""
 
-#: src/index.md:310
+#: src/index.md:311
 msgid ""
 "[pydantic-core](https://github.com/pydantic/pydantic-core) - Core validation "
 "logic for pydantic written in Rust"
 msgstr ""
 
-#: src/index.md:311
+#: src/index.md:312
 msgid ""
 "[pyrus-cramjam](https://github.com/milesgranger/pyrus-cramjam) - Thin Python "
 "wrapper to de/compression algorithms in Rust"
 msgstr ""
 
-#: src/index.md:312
+#: src/index.md:313
 msgid ""
 "[pyxel](https://github.com/kitao/pyxel) - A retro game engine for Python"
 msgstr ""
 
-#: src/index.md:313
+#: src/index.md:314
+msgid ""
+"[quebec](https://github.com/ratazzi/quebec) - A database-backed background "
+"job queue for Python, inspired by Rails' Solid Queue"
+msgstr ""
+
+#: src/index.md:315
 msgid ""
 "[roapi](https://github.com/roapi/roapi) - ROAPI automatically spins up read-"
 "only APIs for static datasets without requiring you to write a single line "
 "of code"
 msgstr ""
 
-#: src/index.md:314
+#: src/index.md:316
 msgid ""
 "[robyn](https://github.com/sansyrox/robyn) - A fast and extensible async "
 "python web server with a Rust runtime"
 msgstr ""
 
-#: src/index.md:315
+#: src/index.md:317
 msgid ""
 "[ruff](https://github.com/charliermarsh/ruff) - An extremely fast Python "
 "linter, written in Rust"
 msgstr ""
 
-#: src/index.md:316
+#: src/index.md:318
 msgid ""
 "[rnet](https://github.com/0x676e67/rnet) - Asynchronous Python HTTP Client "
 "with Black Magic"
 msgstr ""
 
-#: src/index.md:317
+#: src/index.md:319
 msgid ""
 "[rustpy-xlsxwriter](https://github.com/rahmadafandi/rustpy-xlsxwriter): A "
 "high-performance Python library for generating Excel files, utilizing the "
@@ -569,96 +583,96 @@ msgid ""
 "efficient data handling."
 msgstr ""
 
-#: src/index.md:318
+#: src/index.md:320
 msgid ""
 "[tantivy-py](https://github.com/quickwit-oss/tantivy-py) - Python bindings "
 "for Tantivy"
 msgstr ""
 
-#: src/index.md:319
+#: src/index.md:321
 msgid ""
 "[tpchgen-cli](https://github.com/clflushopt/tpchgen-rs/tree/main/tpchgen-"
 "cli) - Python CLI binding for `tpchgen`, a blazing fast TPC-H benchmark data "
 "generator built in pure Rust with zero dependencies."
 msgstr ""
 
-#: src/index.md:320
+#: src/index.md:322
 msgid ""
 "[watchfiles](https://github.com/samuelcolvin/watchfiles) - Simple, modern "
 "and high performance file watching and code reload in python"
 msgstr ""
 
-#: src/index.md:321
+#: src/index.md:323
 msgid ""
 "[wonnx](https://github.com/webonnx/wonnx/tree/master/wonnx-py) - Wonnx is a "
 "GPU-accelerated ONNX inference run-time written 100% in Rust"
 msgstr ""
 
-#: src/index.md:323
+#: src/index.md:325
 msgid "Contributing"
 msgstr ""
 
-#: src/index.md:325
+#: src/index.md:327
 msgid ""
 "Everyone is welcomed to contribute to maturin! There are many ways to "
 "support the project, such as:"
 msgstr ""
 
-#: src/index.md:327
+#: src/index.md:329
 msgid "help maturin users with issues on GitHub and Gitter"
 msgstr ""
 
-#: src/index.md:328
+#: src/index.md:330
 msgid "improve documentation"
 msgstr ""
 
-#: src/index.md:329
+#: src/index.md:331
 msgid "write features and bugfixes"
 msgstr ""
 
-#: src/index.md:330
+#: src/index.md:332
 msgid "publish blogs and examples of how to use maturin"
 msgstr ""
 
-#: src/index.md:332
+#: src/index.md:334
 msgid ""
 "Our [contributing notes](https://github.com/PyO3/maturin/blob/main/guide/src/"
 "contributing.md) have more resources if you wish to volunteer time for "
 "maturin and are searching where to start."
 msgstr ""
 
-#: src/index.md:334
+#: src/index.md:336
 msgid ""
 "If you don't have time to contribute yourself but still wish to support the "
 "project's future success, some of our maintainers have GitHub sponsorship "
 "pages:"
 msgstr ""
 
-#: src/index.md:336
+#: src/index.md:338
 msgid "[messense](https://github.com/sponsors/messense)"
 msgstr ""
 
-#: src/index.md:338
+#: src/index.md:340
 msgid "License"
 msgstr ""
 
-#: src/index.md:340
+#: src/index.md:342
 msgid "Licensed under either of:"
 msgstr ""
 
-#: src/index.md:342
+#: src/index.md:344
 msgid ""
 "Apache License, Version 2.0, ([LICENSE-APACHE](https://github.com/PyO3/"
 "maturin/blob/main/license-apache) or http://www.apache.org/licenses/"
 "LICENSE-2.0)"
 msgstr ""
 
-#: src/index.md:343
+#: src/index.md:345
 msgid ""
 "MIT license ([LICENSE-MIT](https://github.com/PyO3/maturin/blob/main/license-"
 "mit) or http://opensource.org/licenses/MIT)"
 msgstr ""
 
-#: src/index.md:345
+#: src/index.md:347
 msgid "at your option."
 msgstr ""
