@@ -165,8 +165,8 @@ msgstr ""
 
 #: src/sbom.md:78
 msgid ""
-"The output file is named `<crate_name>.cyclonedx.json` and placed in the `."
-"dist-info/sboms/` directory."
+"The output file is named `<crate_name>.cyclonedx.json` and placed in the "
+"`.dist-info/sboms/` directory."
 msgstr ""
 
 #: src/sbom.md:81

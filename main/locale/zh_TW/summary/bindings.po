@@ -157,16 +157,16 @@ msgstr "\"header.h\""
 #: src/bindings.md:91
 msgid ""
 "Maturin uses the cbindgen-generated header to create a module that exposes "
-"`ffi` and `lib` objects as attributes. See the [cffi docs](https://cffi."
-"readthedocs.io/en/latest/using.html) for more information on using these "
-"`ffi`/`lib` objects to call the Rust code from Python."
+"`ffi` and `lib` objects as attributes. See the [cffi docs](https://"
+"cffi.readthedocs.io/en/latest/using.html) for more information on using "
+"these `ffi`/`lib` objects to call the Rust code from Python."
 msgstr ""
 
 #: src/bindings.md:96
 msgid ""
 "**Note**: Maturin _does not_ automatically detect `cffi` bindings. You "
-"_must_ specify them via either command line with `-b cffi` or in `pyproject."
-"toml`."
+"_must_ specify them via either command line with `-b cffi` or in "
+"`pyproject.toml`."
 msgstr ""
 
 #: src/bindings.md:99

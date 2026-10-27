@@ -77,8 +77,8 @@ msgstr ""
 msgid ""
 "All architectures included in manylinux (aarch64, armv7l, ppc64le, ppc64, "
 "i686, x86_64, s390x) are supported. I'm not sure whether it makes sense to "
-"allow architectures that aren't even supported by [manylinux](https://github."
-"com/pypa/manylinux)."
+"allow architectures that aren't even supported by [manylinux](https://"
+"github.com/pypa/manylinux)."
 msgstr ""
 
 #: src/platform_support.md:34
