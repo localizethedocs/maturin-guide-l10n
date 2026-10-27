@@ -1,7 +1,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: Maturin User Guide\n"
-"POT-Creation-Date: 2026-08-04T11:08:16Z\n"
+"POT-Creation-Date: 2026-10-27T14:18:30Z\n"
 "PO-Revision-Date: \n"
 "Last-Translator: \n"
 "Language-Team: \n"
@@ -36,8 +36,8 @@ msgid ""
 "The Rust compiler since version 1.64 [requires at least glibc 2.17](https://"
 "blog.rust-lang.org/2022/08/01/Increasing-glibc-kernel-requirements.html), so "
 "you need to use at least manylinux2014. For publishing, we recommend "
-"enforcing the same manylinux version as the image with the manylinux flag, e."
-"g. use `--manylinux 2014` if you are building in `quay.io/pypa/"
+"enforcing the same manylinux version as the image with the manylinux flag, "
+"e.g. use `--manylinux 2014` if you are building in `quay.io/pypa/"
 "manylinux2014_x86_64`. The [PyO3/maturin-action](https://github.com/PyO3/"
 "maturin-action) github action already takes care of this if you set e.g. "
 "`manylinux: 2014`."
@@ -118,9 +118,9 @@ msgid ""
 "      --pgo\n"
 "          Build with Profile-Guided Optimization (PGO).\n"
 "\n"
-"          Requires `pgo-command` to be set in `[tool.maturin]` in pyproject."
-"toml. This performs a three-phase build: instrumented build, profile "
-"training, and optimized rebuild.\n"
+"          Requires `pgo-command` to be set in `[tool.maturin]` in "
+"pyproject.toml. This performs a three-phase build: instrumented build, "
+"profile training, and optimized rebuild.\n"
 "\n"
 "          Can also be enabled via the MATURIN_PGO environment variable.\n"
 "\n"
@@ -322,8 +322,8 @@ msgstr ""
 #: src/distribution.md:214
 msgid ""
 "You can use the options `compatibility`, `skip-auditwheel`, `bindings`, "
-"`strip` and common Cargo build options such as `features` under `[tool."
-"maturin]` the same way you would when running maturin directly. The "
+"`strip` and common Cargo build options such as `features` under "
+"`[tool.maturin]` the same way you would when running maturin directly. The "
 "`bindings` key is required for cffi and bin projects as those can't be "
 "automatically detected. Currently, all builds are in release mode (see [this "
 "thread](https://discuss.python.org/t/pep-517-debug-vs-release-builds/1924) "
@@ -408,16 +408,24 @@ msgstr ""
 
 #: src/distribution.md:255
 msgid ""
-"You can install zig following the [official documentation](https://ziglang."
-"org/download), or install it from PyPI via `pip install ziglang`. Then pass "
-"`--zig` to maturin `build` or `publish` commands to use it, for example"
+"You can install zig following the [official documentation](https://"
+"ziglang.org/download), or install it from PyPI via `pip install ziglang`. "
+"Then pass `--zig` to maturin `build` or `publish` commands to use it, for "
+"example"
 msgstr ""
 
 #: src/distribution.md:262
-msgid "Cross-compile to Windows"
+msgid ""
+"For macOS targets, maturin passes the deployment target to zig. It uses the "
+"same version as the wheel tag: `MACOSX_DEPLOYMENT_TARGET`, or `macos-"
+"deployment-target` from `pyproject.toml`, or rustc's default."
 msgstr ""
 
 #: src/distribution.md:264
+msgid "Cross-compile to Windows"
+msgstr ""
+
+#: src/distribution.md:266
 msgid ""
 "Pyo3 0.16.5 added an experimental feature `generate-import-lib` enables the "
 "user to cross compile extension modules for Windows targets without setting "
@@ -425,7 +433,7 @@ msgid ""
 "Python library files."
 msgstr ""
 
-#: src/distribution.md:268
+#: src/distribution.md:270
 msgid ""
 "```toml\n"
 "[dependencies]\n"
@@ -433,7 +441,7 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/distribution.md:273
+#: src/distribution.md:275
 msgid ""
 "It uses an external [`python3-dll-a`](https://docs.rs/python3-dll-a/latest/"
 "python3_dll_a/) crate to generate import libraries for the Python DLL for "
@@ -443,7 +451,7 @@ msgid ""
 "present in `PATH` when targeting `*-pc-windows-msvc`."
 msgstr ""
 
-#: src/distribution.md:278
+#: src/distribution.md:280
 msgid ""
 "maturin integrates [`cargo-xwin`](https://github.com/messense/cargo-xwin) to "
 "enable MSVC targets cross compilation support, it will download and unpack "
@@ -451,7 +459,7 @@ msgid ""
 "import libraries needed for compiling and linking automatically."
 msgstr ""
 
-#: src/distribution.md:282
+#: src/distribution.md:284
 msgid ""
 "**By using this to cross compiling to Windows MSVC targets you are consented "
 "to accept the license at [https://go.microsoft.com/fwlink/?LinkId=2086102]"
@@ -459,21 +467,21 @@ msgid ""
 "natively does not apply.)"
 msgstr ""
 
-#: src/distribution.md:285
+#: src/distribution.md:287
 msgid "GitHub Actions"
 msgstr ""
 
-#: src/distribution.md:287
+#: src/distribution.md:289
 msgid ""
 "If your project uses GitHub Actions, you can use the `maturin generate-ci` "
 "command to generate a GitHub Actions workflow file."
 msgstr ""
 
-#: src/distribution.md:294
+#: src/distribution.md:296
 msgid "There are some options to customize the generated workflow file:"
 msgstr ""
 
-#: src/distribution.md:296
+#: src/distribution.md:298
 msgid ""
 "```\n"
 "Generate CI configuration\n"
@@ -495,8 +503,8 @@ msgid ""
 "          Use verbose output.\n"
 "\n"
 "          * Default: Show build information and `cargo build` output. * `-"
-"v`: Use `cargo build -v`. * `-vv`: Show debug logging and use `cargo build -"
-"vv`. * `-vvv`: Show trace logging.\n"
+"v`: Use `cargo build -v`. * `-vv`: Show debug logging and use `cargo build "
+"-vv`. * `-vvv`: Show trace logging.\n"
 "\n"
 "          You can configure fine-grained logging using the `RUST_LOG` "
 "environment variable. (<https://docs.rs/tracing-subscriber/latest/"
@@ -525,8 +533,8 @@ msgid ""
 "in pyproject.toml]\n"
 "\n"
 "      --zig\n"
-"          Use zig to do cross compilation [deprecated: use [tool.maturin."
-"generate-ci.github] in pyproject.toml]\n"
+"          Use zig to do cross compilation [deprecated: use "
+"[tool.maturin.generate-ci.github] in pyproject.toml]\n"
 "\n"
 "      --skip-attestation\n"
 "          Skip artifact attestation [deprecated: use [tool.maturin.generate-"
@@ -537,11 +545,11 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/distribution.md:349
+#: src/distribution.md:351
 msgid "Using PyPI's trusted publishing"
 msgstr ""
 
-#: src/distribution.md:351
+#: src/distribution.md:353
 msgid ""
 "By default, the workflow provided by `generate-ci` will publish the release "
 "artifacts to PyPI using API token authentication. However, maturin also "
@@ -549,11 +557,11 @@ msgid ""
 "publishers/)."
 msgstr ""
 
-#: src/distribution.md:353
+#: src/distribution.md:355
 msgid "You can enable it by adding the following to your `pyproject.toml`:"
 msgstr ""
 
-#: src/distribution.md:355
+#: src/distribution.md:357
 msgid ""
 "```toml\n"
 "[tool.maturin.generate-ci.github]\n"
@@ -564,22 +572,22 @@ msgid ""
 "```"
 msgstr ""
 
-#: src/distribution.md:362
+#: src/distribution.md:364
 msgid ""
 "When `trusted-publishing = true`, the generated workflow will run `uv "
 "publish --trusted-publishing always` and omit the `UV_PUBLISH_TOKEN` "
-"environment variable. Setting `publishing-environment` adds an `environment:"
-"` key to the release job; this is optional but recommended when you have "
-"configured a [GitHub Actions environment](https://docs.github.com/en/actions/"
-"deployment/targeting-different-environments/using-environments-for-"
-"deployment) matching the environment name configured in PyPI's trusted "
+"environment variable. Setting `publishing-environment` adds an "
+"`environment:` key to the release job; this is optional but recommended when "
+"you have configured a [GitHub Actions environment](https://docs.github.com/"
+"en/actions/deployment/targeting-different-environments/using-environments-"
+"for-deployment) matching the environment name configured in PyPI's trusted "
 "publisher settings."
 msgstr ""
 
-#: src/distribution.md:370
+#: src/distribution.md:372
 msgid ""
-"Make sure to follow the steps listed in [PyPI's documentation](https://docs."
-"pypi.org/trusted-publishers/adding-a-publisher/) to set up your GitHub "
+"Make sure to follow the steps listed in [PyPI's documentation](https://"
+"docs.pypi.org/trusted-publishers/adding-a-publisher/) to set up your GitHub "
 "repository as a trusted publisher in the PyPI project settings before "
 "attempting to run the workflow."
 msgstr ""
