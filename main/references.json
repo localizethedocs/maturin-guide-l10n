@@ -37,9 +37,9 @@
     "branch" : "main",
     "commit" : 
     {
-      "date" : "2026-08-01 23:49:19 +0800",
-      "hash" : "cf57dff9763e08426a599a1da7d90c2d394c6a37",
-      "title" : "fix(generate-stubs): write stubs into the module's package directory (#3282)"
+      "date" : "2026-10-23 04:37:22 +0000",
+      "hash" : "f2cefaa061c79c500f4660c1e34f75d4eb0a5321",
+      "title" : "fix: update rustix to 1.1.5 (#3344)"
     }
   },
   "type" : "branch",
