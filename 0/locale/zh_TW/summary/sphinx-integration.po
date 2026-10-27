@@ -67,8 +67,8 @@ msgid ""
 "project root:"
 msgstr ""
 "若要在 [Read The Docs](https://readthedocs.org/) 上建置文件，您需要告知它在建"
-"置環境中安裝 Rust 編譯器與 Python 直譯器，您可以透過在專案根目錄中增添一個 `."
-"readthedocs.yaml` 來完成："
+"置環境中安裝 Rust 編譯器與 Python 直譯器，您可以透過在專案根目錄中增添一個 "
+"`.readthedocs.yaml` 來完成："
 
 #: src/sphinx.md:30
 msgid ""
